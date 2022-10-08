@@ -10,12 +10,14 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('welcome');
 }); 
 
-Route::get('/layouts/app', 'App\Http\HomeControler@app')->middleware('auth');
+Route::get('dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');  
+require __DIR__.'/auth.php'; 
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'app'])->name('home');
 
 Route::resource('curso', CursosController::class)->middleware('auth');
 Route::resource('profe', ProfesoresController::class)->middleware('auth');
