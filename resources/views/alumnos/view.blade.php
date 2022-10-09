@@ -24,34 +24,34 @@
                 @endif
                 
                 <div class="card-body">
-                <h6 class="card-title"><strong>Nombre y Apellido:</strong>
+                <h6 class="card-title"><strong>Nombre:</strong>
                      {{ $alumno->nombre }} <hr>
                 </h6>
-                <h5 class="card-title"><strong>Edad:</strong> 
+                <h5 class="card-title"><strong>Primer Apellido:</strong> 
                     {{ $alumno->primer_apellido }} 
                     <hr>
                 </h5>
-                <h5 class="card-title"><strong>Lugar de expedicion del Documento:</strong> 
+                <h5 class="card-title"><strong>Segundo Apellido:</strong> 
                     {{ $alumno->segundo_apellido }} 
                     <hr>
                 </h5>
-                <h5 class="card-title"><strong>Referencia familiar:</strong> 
+                <h5 class="card-title"><strong>Sexo:</strong> 
                     {{ $alumno->sexo }} 
                     <hr>
                 </h5>
-                <h5 class="card-title"><strong>Telefomo de la referencia familiar:</strong> 
+                <h5 class="card-title"><strong>Fecha Nacimiento:</strong> 
                     {{ $alumno->fecha_nacimiento }} 
                     <hr>
                 </h5>
-                <h5 class="card-title"><strong>Talla del uniforme:</strong> 
+                <h5 class="card-title"><strong>CURP:</strong> 
                     {{ $alumno->curp }} 
                     <hr>
                 </h5>
-                <h5 class="card-title"><strong>Correo:</strong> 
+                <h5 class="card-title"><strong>Edad:</strong> 
                     {{ $alumno->edad }} 
                     <hr>
                 </h5>
-                <h5 class="card-title"><strong>Ciudad:</strong> 
+                <h5 class="card-title"><strong>Grado Escolar:</strong> 
                     {{ $alumno->grado_escolar }} 
                     <hr>
                 </h5>
