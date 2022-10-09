@@ -13,76 +13,75 @@
 
             <div class="row">
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Nombre y Apellido</label>
+                    <label class="col-sm-6 col-form-label">Nombre (s)</label>
                     <div class="col-sm-12">
-                      <input type="text" name="nameFullAlumno" class="form-control" required/>
+                      <input type="text" name="nombre" class="form-control" required/>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Cédula</label>
+                    <label class="col-sm-6 col-form-label">Primer Apellido</label>
                     <div class="col-sm-12">
-                      <input type="number" name="cedula_alumno" class="form-control" />
+                      <input type="text" name="primer_apellido" class="form-control" />
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Lugar de expedición de Documento</label>
+                    <label class="col-sm-6 col-form-label">Segundo Apellido</label>
                     <div class="col-sm-12">
-                      <input type="text" name="lugar_exp_document" class="form-control" />
+                      <input type="text" name="segundo_apellido" class="form-control" />
                     </div>
                 </div>
               </div>
 
             <div class="row">
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Referencia Familiar</label>
+                    <label class="col-sm-6 col-form-label">Sexo</label>
                     <div class="col-sm-12">
-                      <input type="text" name="ref_family" class="form-control" />
+                      <input type="text" name="sexo" class="form-control" />
                     </div>
                 </div>
+
+         
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Celular de la referencia familiar</label>
+                    <label class="col-sm-6 col-form-label">Fecha Nacimiento</label>
                     <div class="col-sm-12">
-                      <input type="number" name="phone_ref_family" class="form-control"/>
+                      <input type="number" name="fecha_nacimiento" class="form-control"/>
                     </div>
                 </div>
+
+                
+               
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Talla del Uniforme</label>
+                    <label class="col-sm-6 col-form-label">CURP</label>
                     <div class="col-sm-12">
-                      <input type="number" name="talla_uniforme" class="form-control" />
+                      <input type="number" name="curp" class="form-control" />
                     </div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Correo del Alumno</label>
+                    <label class="col-sm-6 col-form-label">Edad</label>
                     <div class="col-sm-12">
-                      <input type="text" name="email_alumno" class="form-control" required />
+                      <input type="text" name="edad" class="form-control" required />
                     </div>
                 </div>
 
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Ciudad</label>
+                    <label class="col-sm-6 col-form-label">Grado Escolar</label>
                     <div class="col-sm-12">
-                      <input type="text" name="ciudad" class="form-control" />
+                      <input type="text" name="grado_escolar" class="form-control" />
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Teléfono</label>
-                    <div class="col-sm-12">
-                      <input type="number" name="phone_alumno" class="form-control"/>
-                    </div>
-                </div>
-            </div>
+             
 
-            <div class="row">
-                <div class="col-md-4">
-                    <label class="col-sm-12 col-form-label">Edad del Alumno</label>
-                    <div class="col-sm-12">
-                      <input type="number" name="edad_alumno" class="form-control"/>
-                    </div>
                 </div>
                 <div class="col-md-4">
+                    <label class="col-sm-6 col-form-label">Observación</label>
+                    <textarea name="observ" class="form-control" rows="4" cols="50"></textarea>
+                </div>
+            </div> 
+
+                <!-- <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Dirección</label>
                     <div class="col-sm-12">
                       <input type="text" name="addres" class="form-control"/>
@@ -113,23 +112,23 @@
                     <label class="col-sm-6 col-form-label">Foto del Alumno</label>
                     <div class="col-sm-9">
                       <input type="file" name="foto_estudiante" class="form-control" />
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Observación</label>
-                    <textarea name="observ" class="form-control" rows="4" cols="50"></textarea>
-                </div>
-            </div>
+                    </div>-->
+               
              
           
             <div class="form-group text-center">
                 <button type="submit" class="btn btn-primary mr-2 mb-3">Registrar Alumno</button>
                 <a href="/"  class="btn btn-inverse-dark btn-fw mb-3">Cancelar</a>
             </div>
+            
+                   
+            
         </form>
         </div>
     </div>
 </div>
 </div>
+
+
 
 @endsection

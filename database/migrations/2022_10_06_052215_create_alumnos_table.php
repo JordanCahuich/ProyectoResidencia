@@ -11,18 +11,14 @@ class CreateAlumnosTable extends Migration
     {
         Schema::create('alumnos', function (Blueprint $table) {
             $table->id();
-            $table->string('nameFullAlumno',150)->nullable();
-            $table->string('cedula_alumno',50)->nullable();
-            $table->string('lugar_exp_document',250)->nullable();
-            $table->string('ref_family',250)->nullable();
-            $table->string('phone_ref_family',50)->nullable();
-            $table->string('talla_uniforme',250)->nullable();
-            $table->string('email_alumno')->nullable();
-            $table->string('ciudad', 150)->nullable();
-            $table->string('phone_alumno')->nullable();
-            $table->string('edad_alumno')->nullable();
-            $table->text('addres')->nullable();
-            $table->string('foto_estudiante',50)->nullable();
+            $table->string('nombre',150)->nullable();
+            $table->string('primer_apellido',50)->nullable();
+            $table->string('segundo_apellido',250)->nullable();
+            $table->string('sexo',250)->nullable();
+            $table->string('fecha_nacimiento',50)->nullable();
+            $table->string('curp',250)->nullable();
+            $table->string('edad')->nullable();
+            $table->string('grado_escolar', 150)->nullable();
             $table->text('observ')->nullable();
 
             

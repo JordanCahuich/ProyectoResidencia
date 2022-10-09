@@ -58,19 +58,19 @@
         <thead>
             <tr>
             <th>Nombre del Alumno</th>
-            <th>Cédula</th>
-            <th>Email</th>
-            <th>Ciudad</th>
+            <th>Sexo</th>
+            <th>Grado</th>
+            <th>CURP</th>
             <th>Acción</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($alumnos as $alumno)
             <tr>
-                <td>{{ $alumno->nameFullAlumno }}</td>
-                <td>{{ $alumno->cedula_alumno }}</td>
-                <td>{{ $alumno->email_alumno  }}</td>
-                <td>{{ $alumno->ciudad }}</td>
+                <td>{{ $alumno->nombre }}</td>
+                <td>{{ $alumno->sexo }}</td>
+                <td>{{ $alumno->grado_escolar}}</td>
+                <td>{{ $alumno->curp }}</td>
 
                 <td style="float: right">
                     <form action="{{ route('alumno.destroy',$alumno->id) }}" method="POST">
@@ -108,3 +108,4 @@
 @endif
 
 @endsection
+

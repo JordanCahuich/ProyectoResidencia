@@ -25,55 +25,40 @@
                 
                 <div class="card-body">
                 <h6 class="card-title"><strong>Nombre y Apellido:</strong>
-                     {{ $alumno->nameFullAlumno }} <hr>
+                     {{ $alumno->nombre }} <hr>
                 </h6>
                 <h5 class="card-title"><strong>Edad:</strong> 
-                    {{ $alumno->edad_alumno }} 
+                    {{ $alumno->primer_apellido }} 
                     <hr>
                 </h5>
                 <h5 class="card-title"><strong>Lugar de expedicion del Documento:</strong> 
-                    {{ $alumno->lugar_exp_document }} 
+                    {{ $alumno->segundo_apellido }} 
                     <hr>
                 </h5>
                 <h5 class="card-title"><strong>Referencia familiar:</strong> 
-                    {{ $alumno->ref_family }} 
+                    {{ $alumno->sexo }} 
                     <hr>
                 </h5>
                 <h5 class="card-title"><strong>Telefomo de la referencia familiar:</strong> 
-                    {{ $alumno->phone_ref_family }} 
+                    {{ $alumno->fecha_nacimiento }} 
                     <hr>
                 </h5>
                 <h5 class="card-title"><strong>Talla del uniforme:</strong> 
-                    {{ $alumno->talla_uniforme }} 
+                    {{ $alumno->curp }} 
                     <hr>
                 </h5>
                 <h5 class="card-title"><strong>Correo:</strong> 
-                    {{ $alumno->email_alumno }} 
+                    {{ $alumno->edad }} 
                     <hr>
                 </h5>
                 <h5 class="card-title"><strong>Ciudad:</strong> 
-                    {{ $alumno->ciudad }} 
-                    <hr>
-                </h5>
-                <h5 class="card-title"><strong>Teléfono:</strong> 
-                    {{ $alumno->phone_alumno }} 
+                    {{ $alumno->grado_escolar }} 
                     <hr>
                 </h5>
                 
-                <h5 class="card-title"><strong>Dirrección:</strong> 
-                    {{ $alumno->addres }} 
-                    <hr>
-                </h5>
-                <h5 class="card-title"><strong>Curso:</strong> 
-                    {{ $alumno->curso->nombre_curso ?? 'Curso Borrado' }} 
-                    <hr>
-                </h5>
-                <h5 class="card-title"><strong>Sede:</strong> 
-                    {{ $alumno->profesor->nameFull }} 
-                    <hr>
-                </h5>
+            
                 <h5 class="card-title"><strong>Observeción:</strong> 
-                    {{ $alumno->profesor->observ }} 
+                    {{ $alumno->observ }} 
                     <hr>
                 </h5>
                 </div>
