@@ -13,65 +13,65 @@
           @method('PATCH')
             <div class="row">
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Nombre y Apellido</label>
+                    <label class="col-sm-6 col-form-label">Nombre</label>
                     <div class="col-sm-12">
-                      <input type="text" name="nameFullAlumno" class="form-control" value="{{ $alumno->nameFullAlumno }}" required/>
+                      <input type="text" name="nombre" class="form-control" value="{{ $alumno->nombre}}" required/>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Cédula</label>
+                    <label class="col-sm-6 col-form-label">Primer Apellido</label>
                     <div class="col-sm-12">
-                      <input type="number" name="cedula_alumno" class="form-control" value="{{ $alumno->cedula_alumno }}" />
+                      <input type="text" name="primer_apellido" class="form-control" value="{{ $alumno->primer_apellido }}" />
                     </div>
                 </div>
                 <div class="col-md-4">
-                  <label class="col-sm-6 col-form-label">Lugar de expedición de Documento</label>
+                  <label class="col-sm-6 col-form-label">Segundo Apellido</label>
                   <div class="col-sm-12">
-                    <input type="text" name="lugar_exp_document" class="form-control" value="{{ $alumno->lugar_exp_document }}"/>
+                    <input type="text" name="segundo_apellido" class="form-control" value="{{ $alumno->segundo_apellido }}"/>
                   </div>
               </div>
             </div>
             <div class="row">
               <div class="col-md-4">
-                  <label class="col-sm-6 col-form-label">Referencia Familiar</label>
+                  <label class="col-sm-6 col-form-label">Sexo</label>
                   <div class="col-sm-12">
-                    <input type="text" name="ref_family" class="form-control"  value="{{ $alumno->ref_family }}"/>
+                    <input type="text" name="sexo" class="form-control"  value="{{ $alumno->sexo }}"/>
                   </div>
               </div>
               <div class="col-md-4">
-                  <label class="col-sm-6 col-form-label">Celular de la referencia familiar</label>
+                  <label class="col-sm-6 col-form-label">Fecha Nacimiento</label>
                   <div class="col-sm-12">
-                    <input type="number" name="phone_ref_family" class="form-control" value="{{ $alumno->phone_ref_family }}"/>
+                    <input type="number" name="fecha_nacimiento" class="form-control" value="{{ $alumno->fecha_nacimiento }}"/>
                   </div>
               </div>
               <div class="col-md-4">
-                  <label class="col-sm-6 col-form-label">Talla del Uniforme</label>
+                  <label class="col-sm-6 col-form-label">CURP</label>
                   <div class="col-sm-12">
-                    <input type="number" name="talla_uniforme" class="form-control"  value="{{ $alumno->talla_uniforme }}"/>
+                    <input type="number" name="curp" class="form-control"  value="{{ $alumno->curp }}"/>
                   </div>
               </div>
           </div>
 
             <div class="row">
               <div class="col-md-4">
-                <label class="col-sm-6 col-form-label">Correo</label>
+                <label class="col-sm-6 col-form-label">Edad</label>
                 <div class="col-sm-12">
-                  <input type="email" name="email_alumno" class="form-control" value="{{ $alumno->email_alumno }}"/>
+                  <input type="number" name="edad" class="form-control" value="{{ $alumno->edad }}"/>
                 </div>
             </div>
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Ciudad</label>
+                    <label class="col-sm-6 col-form-label">Grado Escolar</label>
                     <div class="col-sm-12">
-                      <input type="text" name="ciudad" class="form-control" value="{{ $alumno->ciudad }}"/>
+                      <input type="text" name="grado_escolar" class="form-control" value="{{ $alumno->grado_escolar }}"/>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <!-- <div class="col-md-4">
                     <label class="col-sm-6 col-form-label">Teléfono</label>
                     <div class="col-sm-12">
                       <input type="number" name="phone_alumno" class="form-control" value="{{ $alumno->phone_alumno }}"/>
                     </div>
                 </div>
-            </div>
+            </div> 
 
             <div class="row">
               <div class="col-md-4">
@@ -79,7 +79,7 @@
                 <div class="col-sm-12">
                   <input type="number" name="edad_alumno" class="form-control" value="{{ $alumno->edad_alumno }}"/>
                 </div>
-              </div>
+              </div> 
                 <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Dirección</label>
                     <div class="col-sm-12">
@@ -132,7 +132,8 @@
                   <label for="exampleInputUsername1">Cambiar Foto</label>
                   <input type="file" name="foto_estudiante" class="form-control">
               </div>
-              <div class="col-md-4">
+              <div class="col-md-4"> -->
+
                 <label class="col-sm-6 col-form-label">Observación</label>
                 <textarea name="observ" class="form-control" rows="4" cols="50"></textarea>
             </div>
