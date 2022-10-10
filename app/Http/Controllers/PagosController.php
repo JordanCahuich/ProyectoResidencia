@@ -9,7 +9,7 @@ class PagosController extends Controller
     
     public function index()
     {
-        return view('pagos.index');
+        return view('pago.index');
     }
     public function create(){
 
@@ -18,7 +18,7 @@ class PagosController extends Controller
 
     }
     public function register(){
-        return view ('pagos.register');
+        return view ('pago.register');
     }
 
 
