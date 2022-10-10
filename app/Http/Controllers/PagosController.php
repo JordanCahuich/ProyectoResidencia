@@ -7,10 +7,9 @@ use Illuminate\Http\Request;
 class PagosController extends Controller
 {
     
-    public function index(Request $r)
+    public function index()
     {
-        $pagos= Pago::all();
-        return view('pagos.index',compact());
+        return view('pagos.index');
     }
     public function create(){
 
@@ -21,18 +20,7 @@ class PagosController extends Controller
     public function register(){
         return view ('pagos.register');
     }
-    public function search(Request $request)
-    {
-        $pagos = Pago::query();
-        with(['Alumnos'])
-        ->when(request('search',function ($query) {
 
-        })
-        ->paginate(5){
-            return view ('/pagos.register', compact('pagos'));
-        }
-        
-    }
 
 }
     
