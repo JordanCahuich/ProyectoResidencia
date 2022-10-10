@@ -42,8 +42,8 @@
       </a>
       <div class="collapse" id="auth">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="{{ route('pago.create') }}">Registrar nuevo Pago</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{ route('pago.index') }}">Lista de Pagos</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ route('pagos.create') }}">Historial de pagos</a></li>
+          
         </ul>
       </div>
     </li>

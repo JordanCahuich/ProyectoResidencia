@@ -29,3 +29,4 @@ class Pago extends Model
     }
 
 }
+

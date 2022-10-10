@@ -17,6 +17,7 @@ class Pagos extends Model
     public function curso(){
         return $this->belongsTo(Cursos::class);
     }
+    
 
     /* de 1 a muchos */
     public function alumno(){
