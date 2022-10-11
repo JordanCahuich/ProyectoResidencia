@@ -25,11 +25,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="margin: 25px auto;",>
+<div class="container" style="margin: 0px auto;",>
 
 <div style="text-align:center; " >
 
-    <h1>REGISTRO DE PAGOS</h1>
+    <h2>REGISTRO DE PAGOS</h2>
     
 
     <form class="form-inline row" style="margin: 40px 40px;" style="text-align:center; " >
@@ -45,14 +45,9 @@
         </div>
 
     </form>
-
-
-
 </div>
 
 @foreach($Alumnos as $p)
-
-
 
 <div class="row row-list">
 
@@ -60,19 +55,91 @@
 
     <div class="col-md-8 " style="text-align: justify">
 
-        <h2 class="country" style="margin: 10px 0;"> <b>{{$p->nameFullAlumno}}</b></h2>
-
-    
-
-
-
-
+    <h4 class="country" style="margin: 0px auto;"> <b> Alumno: {{$p->nombre}} {{$p->primer_apellido}} {{$p->segundo_apellido}}  ({{$p->id}})</b></h4>
+        
     </div>
 
     <div class="col-md-6" >
 
         </div>
 </div>
+
+<table class="default" style="margin: 10px auto"  border=2 width="800" height="50";>
+<tr>
+  <th>Agosto</th>
+  <th>Septiembre</th>
+  <th>Octube</th>
+  <th>Noviembre</th>
+  <th>Diciembre</th>
+  <th>Enero</th>
+  <th>Febrero</th>
+  <th>Marzo</th>
+  <th>Abril</th>
+  <th>Mayo</th>
+  <th>Junio</th>
+  <th>julio</th>
+</tr>
+<tr>
+  <td>000</td>
+  <td>000</td>
+  <td>000</td>
+  <td>000</td>
+  <td>000</td>
+  <td>000</td>
+  <td>000</td>
+  <td>000</td>
+  <td>000</td>
+  <td>000</td>
+  <td>000</td>
+  <td>000</td>
+</tr>
+
+</table>
+<table class="default" style="margin: 20px auto"  border=2 width="400" height="100";>
+<tr>
+  <th>Concepto</th>
+  <th>Monto</th>
+
+</tr>
+<tr>
+  <td>Inscripcion</td>
+  <td>000</td>
+  
+</tr>
+<tr>
+  <td>Colegiatura</td>
+  <td>000</td>
+  
+</tr>
+<tr>
+  <td>Cuota</td>
+  <td>000</td>
+  
+</tr>
+<tr>
+  <td>Recargo</td>
+  <td>000</td>
+  
+</tr>
+<tr>
+  <td>Total</td>
+  <td>000</td>
+  
+</tr>
+
+</table>
+</div>
+
+<form class="form-inline row" style="margin: 0px auto;" style="text-align:center"; >
+
+        <div class="col-md-2">
+        <button class="btn btn-success" type="submit" >Cancelar</button>
+        <button class="btn btn-success" type="submit" >Adjuntar Comprobante</button>
+        <button class="btn btn-success" type="submit" >Guardar</button>
+
+        </div>
+
+    </form>
 
 
 @endforeach

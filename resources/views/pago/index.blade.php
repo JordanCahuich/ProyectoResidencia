@@ -17,7 +17,7 @@
 
 @section('content')
 <div class="container" style="margin: 20px auto">
-    <h1>Historial de pagos</h1>
+    <h2>Historial de pagos</h2>
 
     </div>
     <form class="form-inline row">
@@ -37,9 +37,26 @@
         </a>
     <div class="row float-right" style="margin: 0px 40px;"> 
        
-    </div>
+    </div> 
     </form>
+   
+    <table class="default" style="margin: 20px auto"  border=2 width="200" height="150";>
 
+<tr>
+  <th>Atrasados</th>
+</tr>
+<tr>
+  <td>000</td>
+</tr>
+
+<table class="default" style="margin: 20px auto"  border=2 width="200" height="150"  text-align: center;>
+<tr>
+  <th>Al dia</th>
+</tr>
+<tr>
+  <td>000</td>
+</tr>
+</table>
 
 </div>
 
