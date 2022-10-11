@@ -8,11 +8,9 @@ use App\Http\Controllers\SettingsController;
 
 use Illuminate\Support\Facades\Route;
 
-
 Route::get('/', function () {
     return view('welcome');
 }); 
-
 Route::get('/pagos', [PagosController::class,'index']);
 Route::get('/pagos/register', [PagosController::class,'search']);
 

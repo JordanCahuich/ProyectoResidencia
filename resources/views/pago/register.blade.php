@@ -21,7 +21,6 @@
 
 <body>
 
-
 @extends('layouts.app')
 
 @section('content')
@@ -68,7 +67,7 @@
 <tr>
   <th>Agosto</th>
   <th>Septiembre</th>
-  <th>Octube</th>
+  <th>Octubre</th>
   <th>Noviembre</th>
   <th>Diciembre</th>
   <th>Enero</th>
@@ -130,13 +129,12 @@
 </table>
 </div>
 
-<form class="form-inline row" style="margin: 0px auto;" style="text-align:center"; >
+<form class="container" style="margin: 10px auto;" style="text-align:center"; >
 
-        <div class="col-md-2">
+        <div class="row justify-content-around">
         <button class="btn btn-success" type="submit" >Cancelar</button>
         <button class="btn btn-success" type="submit" >Adjuntar Comprobante</button>
         <button class="btn btn-success" type="submit" >Guardar</button>
-
         </div>
 
     </form>

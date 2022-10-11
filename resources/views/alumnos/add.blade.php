@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <div class="row justify-content-center">
 <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
@@ -119,7 +118,7 @@
                       <input type="file" name="foto_estudiante" class="form-control" />
                     </div>-->
              
-          
+    
             <div class="form-group text-center">
                 <button type="submit" class="btn btn-primary mr-2 mb-3">Registrar Alumno</button>
                 <a href="/"  class="btn btn-inverse-dark btn-fw mb-3">Cancelar</a>
