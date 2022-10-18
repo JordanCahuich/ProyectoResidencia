@@ -10,7 +10,7 @@ use App\Models\Profesores;
 class Alumnos extends Model
 {
     use HasFactory;
-
+    protected $table = 'Alumnos'; 
     protected $fillable = [
         'id','nombre', 'primer_apellido','segundo_apellido','sexo','fecha_nacimiento','curp','edad','grado_escolar','observ','curso_id','profesor_id'
     ];
@@ -30,8 +30,13 @@ class Alumnos extends Model
     }
     public function scopeNombres($query, $nombres) {
         if ($nombres) {
-            return $query->where('nameFullAlumno','like',"%$nombres%");
+            return $query->where('nombre','like',"%$nombres%");
         }
     }
 
+    public function scopeGrados($query, $grados) {
+        if ($grados) {
+            return $query->where('grado_escolar','like',"%$grados%");
+        }
+    }
 }

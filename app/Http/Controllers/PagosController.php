@@ -10,12 +10,11 @@ class PagosController extends Controller
 {
     public function index(Request $request)
     {
-
         $id = $request->get('Matricula');
         $nombre = $request->get('Nombre');
-    
-        $Alumnos= Alumnos::ids($id)->nombres($nombre)->paginate(10);
-        return view('pago.index',['Alumnos'=> $Alumnos]);
+        $grado = $request->get('Grado');
+        $alumnos= Alumnos::nombres($nombre)->ids($id)->grados($grado)->paginate(5);
+        return view('pago.index',['Alumnos'=> $alumnos]);
    
     }
     public function create(){

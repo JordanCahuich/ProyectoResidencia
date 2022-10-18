@@ -17,9 +17,10 @@
 
 @section('content')
 <div class="container" style="margin: 20px auto">
-    <h2>Historial de pagos</h2>
+  <div style="text-align:center; " >
+ 
+  <h2>Historial de pagos</h2>
 
-    </div>
     <form class="form-inline row">
         <input  name="Nombre" class="form-control mr-sm-2" style="width: 150px; height: 25px;" type="search" placeholder="nombre" aria-label="Search">
 
@@ -35,26 +36,20 @@
         <a href="/pagos/register" class="btn btn-secondary">
             Registar 
         </a>
-    <div class="row float-right" style="margin: 0px 40px;"> 
-       
-    </div> 
+       </div>
+
     </form>
+</div>
    
     @foreach($Alumnos as $p)
 
 <div class="row row-list">
 
-
-
     <div class="col-md-8 " style="text-align: justify">
 
-    <h4 class="country" style="margin: 0px auto;"> <b> Alumno: {{$p->nameFullAlumno}} {{$p->primer_apellido}} {{$p->segundo_apellido}}  ({{$p->id}})</b></h4>
+    <h4 class="country" style="margin: 0px auto;"> <b> Alumno: {{$p->nombre}} {{$p->primer_apellido}} {{$p->segundo_apellido}}  ({{$p->id}})</b></h4>
         
     </div>
-
-    <div class="col-md-6" >
-
-        </div>
 </div>
 
 @endforeach
