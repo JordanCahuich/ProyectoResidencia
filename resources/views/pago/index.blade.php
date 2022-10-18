@@ -40,6 +40,24 @@
     </div> 
     </form>
    
+    @foreach($Alumnos as $p)
+
+<div class="row row-list">
+
+
+
+    <div class="col-md-8 " style="text-align: justify">
+
+    <h4 class="country" style="margin: 0px auto;"> <b> Alumno: {{$p->nameFullAlumno}} {{$p->primer_apellido}} {{$p->segundo_apellido}}  ({{$p->id}})</b></h4>
+        
+    </div>
+
+    <div class="col-md-6" >
+
+        </div>
+</div>
+
+@endforeach
     <table class="default" style="margin: 20px auto"  border=2 width="200" height="150";>
 
 <tr>

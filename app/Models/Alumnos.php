@@ -12,7 +12,7 @@ class Alumnos extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nombre', 'primer_apellido','segundo_apellido','sexo','fecha_nacimiento','curp','edad','grado_escolar','observ','curso_id','profesor_id'
+        'id','nombre', 'primer_apellido','segundo_apellido','sexo','fecha_nacimiento','curp','edad','grado_escolar','observ','curso_id','profesor_id'
     ];
 
     /** un alumno puede tener mas de 1 curso*/
@@ -22,6 +22,16 @@ class Alumnos extends Model
 
     public function profesor(){
         return $this->belongsTo(Profesores::class);
+    }
+    public function scopeIds($query, $ids) {
+        if ($ids) {
+            return $query->where('id','like',"%$ids%");
+        }
+    }
+    public function scopeNombres($query, $nombres) {
+        if ($nombres) {
+            return $query->where('nameFullAlumno','like',"%$nombres%");
+        }
     }
 
 }
