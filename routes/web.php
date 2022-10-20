@@ -13,7 +13,7 @@ Route::get('/', function () {
 }); 
 Route::get('/pagos', [PagosController::class,'index']);
 Route::get('/pagos/register', [PagosController::class,'search']);
-
+Route::get('/pagos/concepts', [PagosController::class,'concepts']);
 
 Route::get('dashboard', function () {
     return view('dashboard');

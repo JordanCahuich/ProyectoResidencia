@@ -15,7 +15,6 @@ class PagosController extends Controller
             $nombre = $request->get('Nombre');
             $grado = $request->get('Grado');
          
-        
         $alumnos= Alumnos::nombres($nombre)->ids($id)->grados($grado)->paginate(5);
         return view('pago.index',['Alumnos'=> $alumnos]);
    
@@ -39,5 +38,9 @@ class PagosController extends Controller
     }
     public function search2(Request $request)
     {
+    }
+
+    public function concepts (){
+        return view ('pago.concepts');
     }
 }
