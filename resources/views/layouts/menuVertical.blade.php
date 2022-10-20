@@ -43,7 +43,7 @@
       <div class="collapse" id="ui-basic">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"> <a class="nav-link" href="{{ route('pago.index') }}">Historial de pagos</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{ route('pago.concepts') }}">Conceptos</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ route('pago.conceptos') }}">Conceptos</a></li>
           <li class="nav-item"> <a class="nav-link" href="{{ route('pago.index') }}">Formas de pago</a></li>
           <li class="nav-item"> <a class="nav-link" href="{{ route('pago.index') }}">Configuracion</a></li>
         

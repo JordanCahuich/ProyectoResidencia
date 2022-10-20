@@ -40,7 +40,7 @@ class PagosController extends Controller
     {
     }
 
-    public function concepts (){
-        return view ('pago.concepts');
+    public function conceptos (){
+        return view ('pago.conceptos');
     }
 }
