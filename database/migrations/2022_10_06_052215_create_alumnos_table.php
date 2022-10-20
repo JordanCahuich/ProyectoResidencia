@@ -20,6 +20,7 @@ class CreateAlumnosTable extends Migration
             $table->string('edad')->nullable();
             $table->string('grado_escolar', 150)->nullable();
             $table->text('observ')->nullable();
+    
 
             
             $table->foreignId('curso_id')
@@ -32,10 +33,10 @@ class CreateAlumnosTable extends Migration
                 ->constrained('profesores')
                 ->onDelete('set null');     
 
+                
             $table->timestamps();
         });
     }
-
 
     public function down()
     {

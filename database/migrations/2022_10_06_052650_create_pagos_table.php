@@ -11,7 +11,7 @@ class CreatePagosTable extends Migration
     {
         Schema::create('pagos', function (Blueprint $table) {
             $table->id();
-
+            $table->string('nombre')->nullable();
            $table->unsignedBigInteger('alumno_id')->nullable();
             $table->foreign('alumno_id')
             ->references('id')->on('alumnos')->onDelete('set null');
@@ -19,6 +19,11 @@ class CreatePagosTable extends Migration
             $table->unsignedBigInteger('curso_id')->nullable();
             $table->foreign('curso_id')
             ->references('id')->on('cursos')->onDelete('set null');
+
+            
+            $table->unsignedBigInteger('concepto_id')->nullable();
+            $table->foreign('concepto_id')
+            ->references('id')->on('conceptos')->onDelete('set null');
 
             $table->integer('valor_curso')->nullable();
             $table->integer('aporte')->nullable();
