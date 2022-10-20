@@ -23,10 +23,7 @@ class CreateAlumnosTable extends Migration
     
 
             
-            $table->foreignId('curso_id')
-                ->nullable()
-                ->constrained('cursos')
-                ->onDelete('set null');
+         
 
             $table->foreignId('profesor_id')
                 ->nullable()

@@ -25,18 +25,24 @@ class Alumnos extends Model
     }
     public function scopeIds($query, $ids) {
         if ($ids) {
-            return $query->where('id','like',"%$ids%");
+            return $query->with('id','LIKE',"%$ids%");
+        }else{
+
         }
     }
     public function scopeNombres($query, $nombres) {
         if ($nombres) {
-            return $query->where('nombre','like',"%$nombres%");
+            return $query->with('nombre','LIKE',"%$nombres%");
+        }else{
+            
         }
     }
 
     public function scopeGrados($query, $grados) {
         if ($grados) {
-            return $query->where('grado_escolar','like',"%$grados%");
+            return $query->with('grado_escolar','LIKE',"%$grados%");
+        }else{
+            
         }
     }
 }
