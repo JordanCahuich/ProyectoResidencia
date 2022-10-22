@@ -9,10 +9,12 @@ use App\Http\Controllers\SettingsController;
 
 use Illuminate\Support\Facades\Route;
 
-
 Route::get('/', function () {
     return view('welcome');
 }); 
+Route::get('/pagos', [PagosController::class,'index']);
+Route::get('/pagos/register', [PagosController::class,'search']);
+Route::get('/pagos/conceptos', [PagosController::class,'conceptos']);
 
 Route::get('/cargas/index', [CargasController::class, 'index']);
 Route::get('/cargas/create', [CargasController::class, 'create']);
@@ -21,7 +23,6 @@ Route::get('dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');  
 require __DIR__.'/auth.php'; 
-
 
 Route::resource('curso', CursosController::class)->middleware('auth');
 Route::resource('profe', ProfesoresController::class)->middleware('auth');
