@@ -11,6 +11,7 @@ use App\Models\Pagos;
 
 
 
+
 class AlumnosController extends Controller
 {
     
@@ -130,39 +131,32 @@ class AlumnosController extends Controller
             $file->move(public_path('/fotosAlumnos/'),$nombrearchivo); 
 
             $alumno = Alumnos::findOrFail($id);
-            $alumno->nameFullAlumno         = $request->nameFullAlumno;
-            $alumno->cedula_alumno          = $request->cedula_alumno;
-            $alumno->lugar_exp_document     = $request->lugar_exp_document;
-            $alumno->ref_family             = $request->ref_family;
-            $alumno->phone_ref_family       = $request->phone_ref_family;
-            $alumno->talla_uniforme         = $request->talla_uniforme;
-            $alumno->email_alumno           = $request->email_alumno;
-            $alumno->ciudad                 = $request->ciudad;
-            $alumno->phone_alumno           = $request->phone_alumno;
-            $alumno->edad_alumno            = $request->edad_alumno;
-            $alumno->addres                 = $request->addres;
-            $alumno->foto_estudiante        = $request->$nombrearchivo;
-            $alumno->observ                 = $request->observ;
-            $alumno->curso_id               = $request->curso_id;
-            $alumno->profesor_id            = $request->profesor_id;
+            $alumno->nombre                   = $request->nombre;
+            $alumno->primer_apellido          = $request->primer_apellido;
+            $alumno->segundo_apellido         = $request->segundo_apellido;
+            $alumno->sexo                     = $request->sexo;
+            $alumno->fecha_nacimiento         = $request->fecha_nacimiento;
+            $alumno->curp                     = $request->curp;
+            $alumno->edad                     = $request->edad;
+            $alumno->grado_escolar            = $request->grado_escolar;
+            $alumno->observ                   = $request->observ;
+            $alumno->curso_id                 = $request->curso_id;
+            $alumno->profesor_id              = $request->profesor_id;
 
             $alumno->save(); 
         }else{
             $alumno = Alumnos::findOrFail($id);
-            $alumno->nameFullAlumno         = $request->nameFullAlumno;
-            $alumno->cedula_alumno          = $request->cedula_alumno;
-            $alumno->lugar_exp_document     = $request->lugar_exp_document;
-            $alumno->ref_family             = $request->ref_family;
-            $alumno->phone_ref_family       = $request->phone_ref_family;
-            $alumno->talla_uniforme         = $request->talla_uniforme;
-            $alumno->email_alumno           = $request->email_alumno;
-            $alumno->ciudad                 = $request->ciudad;
-            $alumno->phone_alumno           = $request->phone_alumno;
-            $alumno->edad_alumno            = $request->edad_alumno;
-            $alumno->addres                 = $request->addres;
-            $alumno->observ                 = $request->observ;
-            $alumno->curso_id               = $request->curso_id;
-            $alumno->profesor_id            = $request->profesor_id;
+            $alumno->nombre                   = $request->nombre;
+            $alumno->primer_apellido          = $request->primer_apellido;
+            $alumno->segundo_apellido         = $request->segundo_apellido;
+            $alumno->sexo                     = $request->sexo;
+            $alumno->fecha_nacimiento         = $request->fecha_nacimiento;
+            $alumno->curp                     = $request->curp;
+            $alumno->edad                     = $request->edad;
+            $alumno->grado_escolar            = $request->grado_escolar;
+            $alumno->observ                   = $request->observ;
+            $alumno->curso_id                 = $request->curso_id;
+            $alumno->profesor_id              = $request->profesor_id;
             $alumno->save(); 
         } 
 

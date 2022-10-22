@@ -41,12 +41,17 @@
                 </div>
 
          
+                
+
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Fecha Nacimiento</label>
-                    <div class="col-sm-12">
-                      <input type="number" name="fecha_nacimiento" class="form-control"/>
-                    </div>
+                <label for="exampleInputUsername1">Fecha Nacimiento</label>
+                <input type="date" name="fecha_nacimiento" class="form-control" required>
+                @if ($errors->has('fecha_nacimiento'))
+                <div class="col-sm-12">
+                    <span class="text-danger">{{ $errors->first('fecha_nacimiento') }}</span>
                 </div>
+                @endif
+            </div>
 
                 
                
