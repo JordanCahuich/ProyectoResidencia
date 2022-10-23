@@ -12,6 +12,8 @@ class CreatePagosTable extends Migration
         Schema::create('pagos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre')->nullable();
+            $table->date('fecha')->nullable();
+            $table->date('vigencia')->nullable();
            $table->unsignedBigInteger('alumno_id')->nullable();
            
            $table->foreign('alumno_id')
@@ -22,10 +24,11 @@ class CreatePagosTable extends Migration
            ->references('id')->on('cursos')->onDelete('set null');
 
         
-            $table->integer('valor_curso')->nullable();
-            $table->integer('aporte')->nullable();
+            $table->double('importetotal')->nullable();
+            $table->integer('folio')->nullable();
             $table->string('photo_pago')->nullable();
-
+            $table->boolean('status')->nullable();
+            $table->string('tipo')->nullable();
             $table->timestamps();
         });
     }

@@ -60,7 +60,6 @@ class AlumnosController extends Controller
                 'edad'=>$request->get('edad'),
                 'grado_escolar'=>$request->get('grado_escolar'),
                 'observ'=>$request->get('observ'),
-                'curso_id'=>$request->get('curso_id'),
                 'profesor_id'=>$request->get('profesor_id'),
                  
 
@@ -77,7 +76,6 @@ class AlumnosController extends Controller
                 'edad'=>$request->get('edad'),
                 'grado_escolar'=>$request->get('grado_escolar'),
                 'observ'=>$request->get('observ'),
-                'curso_id'=>$request->get('curso_id'),
                 'profesor_id'=>$request->get('profesor_id'),
                  
             ]);

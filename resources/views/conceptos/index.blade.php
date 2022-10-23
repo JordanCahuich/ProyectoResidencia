@@ -33,6 +33,11 @@
 
 </hr>
 
+<div>
+<a href="/concepto/create" class="btn btn-secondary" style="background-color: 	#ffc400">
+            Registar 
+        </a>
+</div>
 <table class="default" style="margin: 10px auto"  border=2 width="800" height="50";>
 <tr style="background-color: 	#2962ff">
   <th>Concepto/th>
@@ -74,7 +79,7 @@
 </table>
 </div>
 
-@endforeach
+
 @endsection
 
 </div>
