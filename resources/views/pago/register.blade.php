@@ -28,7 +28,7 @@
 
 <div style="text-align:center; " >
 
-    <h2>REGISTRO DE PAGOS</h2>
+    <h3>REGISTRO DE PAGOS</h3>
     
     <form class="form-inline row" style="margin: 40px 40px;" style="text-align:center;" >
 
