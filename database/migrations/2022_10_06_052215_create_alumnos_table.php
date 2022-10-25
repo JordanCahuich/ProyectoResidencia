@@ -18,22 +18,28 @@ class CreateAlumnosTable extends Migration
             $table->string('fecha_nacimiento',50)->nullable();
             $table->string('curp',250)->nullable();
             $table->string('edad')->nullable();
-            $table->string('grado_escolar', 150)->nullable();
+            $table->string('tipo_sangre',150)->nullable();
+            $table->string('nivel_escolar', 150)->nullable();
+            $table->string('grado',50)->nullable();
+            $table->string('grupo',50)->nullable();
             $table->text('observ')->nullable();
-    
+            $table->string('foto_estudiante',50)->nullable();
 
             
-         
+            $table->foreignId('curso_id')
+                ->nullable()
+                ->constrained('cursos')
+                ->onDelete('set null');
 
             $table->foreignId('profesor_id')
                 ->nullable()
                 ->constrained('profesores')
                 ->onDelete('set null');     
 
-                
             $table->timestamps();
         });
     }
+
 
     public function down()
     {

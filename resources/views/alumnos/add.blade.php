@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <div class="row justify-content-center">
 <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
@@ -12,52 +13,44 @@
 
             <div class="row">
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Nombre (s)</label>
+                    <label class="col-sm-6 col-form-label">Nombre (S)</label>
                     <div class="col-sm-12">
                       <input type="text" name="nombre" class="form-control" required/>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Primer Apellido</label>
+                    <label class="col-sm-6 col-form-label">Apellido paterno</label>
                     <div class="col-sm-12">
                       <input type="text" name="primer_apellido" class="form-control" />
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Segundo Apellido</label>
+                    <label class="col-sm-6 col-form-label">Apellido materno</label>
                     <div class="col-sm-12">
                       <input type="text" name="segundo_apellido" class="form-control" />
                     </div>
                 </div>
-              </div>
+              
 
-            <div class="row">
+              <div class="col-md-4">
+                    <label class="col-sm-12 col-form-label">Genero</label>
+                    <select name="sexo" class="form-control form-control-sm">
+                        <option selected=>Seleccione</option>
+                            <option>Masculino</option>
+                            <option>Femenino</option>
+                    </select>
+                </div>
+
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Sexo</label>
+                    <label class="col-sm-6 col-form-label">Fecha Nacimiento</label>
                     <div class="col-sm-12">
-                      <input type="text" name="sexo" class="form-control" />
+                      <input type="text" name="fecha_nacimiento" class="form-control"/>
                     </div>
                 </div>
-
-         
-                
-
-                <div class="col-md-4">
-                <label for="exampleInputUsername1">Fecha Nacimiento</label>
-                <input type="date" name="fecha_nacimiento" class="form-control" required>
-                @if ($errors->has('fecha_nacimiento'))
-                <div class="col-sm-12">
-                    <span class="text-danger">{{ $errors->first('fecha_nacimiento') }}</span>
-                </div>
-                @endif
-            </div>
-
-                
-               
                 <div class="col-md-4">
                     <label class="col-sm-6 col-form-label">CURP</label>
                     <div class="col-sm-12">
-                      <input type="number" name="curp" class="form-control" />
+                      <input type="text" name="curp" class="form-control" />
                     </div>
                 </div>
             </div>
@@ -66,70 +59,79 @@
                 <div class="col-md-4">
                     <label class="col-sm-6 col-form-label">Edad</label>
                     <div class="col-sm-12">
-                      <input type="text" name="edad" class="form-control" required />
+                      <input type="number" name="edad" class="form-control" required />
                     </div>
                 </div>
+
+                
+                <div class="col-md-4">
+                    <label class="col-sm-12 col-form-label">Tipo de sangre</label>
+                    <select name="tipo_sangre" class="form-control form-control-sm">
+                        <option selected=>Seleccione</option>
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
+                            <option>O+</option>
+                            <option>O-</option>
+                    </select>
+                </div>
+
+
 
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Grado Escolar</label>
+                    <label class="col-sm-12 col-form-label">Nivel escolar </label>
+                    <select name="nivel_escolar" class="form-control form-control-sm">
+                        <option selected=>Seleccione</option>
+                            <option>Primaria</option>
+                            <option>Prescolar</option>
+                    </select>
+                </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="col-sm-12 col-form-label">Grado</label>
                     <div class="col-sm-12">
-                      <input type="text" name="grado_escolar" class="form-control" />
+                      <input type="number" name="grado" class="form-control"/>
                     </div>
                 </div>
-             
+                <div class="col-md-4">
+                    <label class="col-sm-12 col-form-label">Grupo</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="grupo" class="form-control"/>
+                    </div>
+                </div>
+               
+            
 
+
+
+        
+
+                
+                <div class="col-md-4">
+                    <label class="col-sm-6 col-form-label">Foto del Alumno</label>
+                    <div class="col-sm-9">
+                      <input type="file" name="foto_estudiante" class="form-control" />
+                    </div>
                 </div>
                 <div class="col-md-4">
                     <label class="col-sm-6 col-form-label">Observación</label>
                     <textarea name="observ" class="form-control" rows="4" cols="50"></textarea>
                 </div>
-            </div> 
-
-                <!-- <div class="col-md-4">
-                    <label class="col-sm-12 col-form-label">Dirección</label>
-                    <div class="col-sm-12">
-                      <input type="text" name="addres" class="form-control"/>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <label class="col-sm-12 col-form-label">Asignar Curso</label>
-                    <select name="curso_id" class="form-control form-control-sm">
-                        <option value="">Seleccione</option>
-                        @foreach ($cursos as $curso)
-                            <option value="{{ $curso->id }}"> {{ $curso->nombre_curso }}</option>
-                        @endforeach
-                    </select>
-                </div>
             </div>
-
-            <div class="row mb-5">
-                <div class="col-md-4">
-                    <label class="col-sm-12 col-form-label">Asignar Sede</label>
-                    <select name="profesor_id" class="form-control form-control-sm">
-                        <option value="">Seleccione</option>
-                        @foreach ($profesores as $profe)
-                            <option value="{{ $profe->id }}"> {{ $profe->nameFull }}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Foto del Alumno</label>
-                    <div class="col-sm-9">
-                      <input type="file" name="foto_estudiante" class="form-control" />
-                    </div>-->
              
-    
+          
             <div class="form-group text-center">
                 <button type="submit" class="btn btn-primary mr-2 mb-3">Registrar Alumno</button>
                 <a href="/"  class="btn btn-inverse-dark btn-fw mb-3">Cancelar</a>
             </div>
-            
         </form>
         </div>
     </div>
 </div>
 </div>
-
-
 
 @endsection
