@@ -40,7 +40,7 @@ partial -->
         <span class="menu-title">Sección de Pagos</span>
         <i class="menu-arrow"></i>
       </a>
-      <div class="collapse" id="ui-basic">
+      <div class="collapse" id="auth">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"> <a class="nav-link" href="{{ route('pago.index') }}">Historial de pagos</a></li>
           <li class="nav-item"> <a class="nav-link" href="{{ route('concepto.forma') }}">Formas de pago</a></li>
@@ -53,12 +53,12 @@ partial -->
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-        <i class="mdi mdi-file-document-box-outline menu-icon"></i>
+      <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        <i class="mdi mdi-file-export"></i>
         <span class="menu-title">Sección de Carga Academica</span>
         <i class="menu-arrow"></i>
       </a>
-      <div class="collapse" id="auth">
+      <div class="collapse" id="collapseExample">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"> <a class="nav-link" href="{{ route('carga.create') }}">Registrar nueva carga</a></li>
           <li class="nav-item"> <a class="nav-link" href="{{ route('carga.index') }}">Lista de cargas</a></li>
@@ -66,10 +66,6 @@ partial -->
       </div>
     </li>
 
-
-
-
-  
 
   </ul>
 </nav>

@@ -16,7 +16,8 @@ class CargasController extends Controller
    
     public function index()
     {
-       return view('cargas.index');
+        $Alumnos= Alumnos::all();
+       return view('cargas.index', ['Alumnos' => $Alumnos]);
     }
 
     public function create()

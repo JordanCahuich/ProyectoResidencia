@@ -6,8 +6,8 @@ use App\Http\Controllers\AlumnosController;
 use App\Http\Controllers\PagosController; 
 use App\Http\Controllers\ConceptosController; 
 use App\Http\Controllers\CargasController;
-use App\Http\Controllers\SettingsController; 
-
+use App\Http\Controllers\SettingsController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
