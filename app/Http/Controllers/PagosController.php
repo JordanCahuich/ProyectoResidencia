@@ -8,9 +8,16 @@ use App\Models\Alumnos;
 
 class PagosController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('pago.index');
+        
+            $id = $request->get('Matricula');
+            $nombre = $request->get('Nombre');
+            $grado = $request->get('Grado');
+         
+        $alumnos= Alumnos::nombres($nombre)->ids($id)->grados($grado)->paginate(5);
+        return view('pago.index',['Alumnos'=> $alumnos]);
+   
     }
     public function create(){
 
@@ -19,6 +26,7 @@ class PagosController extends Controller
 
     }
     public function register(){
+
         return view ('pagos.search');
     }
     public function search(Request $request)
@@ -28,5 +36,10 @@ class PagosController extends Controller
         $Alumnos= Alumnos::where('id',$id)->get(); 
            return view('pago.register',['Alumnos'=> $Alumnos]);
     }
-
+    public function conceptos (){
+        return view ('pago.conceptos');
+    }
+    public function configPago (){
+        return view ('pago.config');
+    }
 }

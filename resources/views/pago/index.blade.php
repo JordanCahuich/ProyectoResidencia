@@ -1,5 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="en">
+<html lang="en" >
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>Pagos</title>
@@ -16,44 +16,60 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="margin: 20px auto">
-    <h2>Historial de pagos</h2>
+<div class="container" style="margin: 20px auto" >
+  <div style="text-align:center; " >
+ 
+  <h2>Historial de pagos</h2>
 
-    </div>
     <form class="form-inline row">
         <input  name="Nombre" class="form-control mr-sm-2" style="width: 150px; height: 25px;" type="search" placeholder="nombre" aria-label="Search">
 
-        <input  name="Matricula" class="form-control mr-sm-2" style="width: 100px; height: 25px; margin: 10px" type="search" placeholder="Matricula" aria-label="Search">
+        <input  name="Matricula" class="form-control mr-sm-2" style="width: 150px; height: 25px; margin: 10px" type="search" placeholder="Matricula" aria-label="Search">
         <input  name="Grado" class="form-control mr-sm-2" style="width: 100px; height: 25px; margin: 10px" type="search" placeholder="Grado" aria-label="Search">
         <input  name="Grupo" class="form-control mr-sm-2" style="width: 100px; height: 25px; margin: 10px" type="search" placeholder="Grupo" aria-label="Search">
 
         <div class="col-md-2">
 
-        <button class="btn btn-success" type="submit" >Search</button>
+        <button class="btn btn-success" type="submit" >Buscar</button>
         
         </div>
-        <a href="/pagos/register" class="btn btn-secondary">
+        <a href="/pagos/register" class="btn btn-secondary" style="background-color: 	#ffc400">
             Registar 
         </a>
-    <div class="row float-right" style="margin: 0px 40px;"> 
-       
-    </div> 
-    </form>
-   
-    <table class="default" style="margin: 20px auto"  border=2 width="200" height="150";>
+       </div>
 
-<tr>
+    </form>
+</div>
+   
+<hr>
+    @foreach($Alumnos as $p)
+
+<div class="row row-list">
+
+    <div class="col-md-8 " style="text-align: justify">
+
+    <h4 class="country" style="margin: 0px auto;"> <b> Alumno: {{$p->nombre}} {{$p->primer_apellido}} {{$p->segundo_apellido}}  ({{$p->id}})</b></h4>
+        
+    </div>
+</div>
+
+</hr>
+@endforeach
+<div class="row justify-content-around"; ;>
+    <table class="default" style="margin: 10px "  border=2 width="200" height="150";>
+
+<tr style="background-color: 	#2962ff">
   <th>Atrasados</th>
 </tr>
-<tr>
+<tr style="background-color: #ffecb3">
   <td>000</td>
 </tr>
 
-<table class="default" style="margin: 20px auto"  border=2 width="200" height="150"  text-align: center;>
-<tr>
+<table class="default" style="margin: 10px "  border=2 width="200" height="150"  text-align: center;>
+<tr style="background-color: 	#2962ff">
   <th>Al dia</th>
 </tr>
-<tr>
+<tr style="background-color: #ffecb3">
   <td>000</td>
 </tr>
 </table>

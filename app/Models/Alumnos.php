@@ -12,7 +12,7 @@ class Alumnos extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nombre', 'primer_apellido','segundo_apellido','sexo','fecha_nacimiento','curp','edad','tipo_sangre','nivel_escolar','grado','grupo','foto_estudiante','observ','curso_id','profesor_id'
+        'nombre', 'primer_apellido','segundo_apellido','sexo','fecha_nacimiento','curp','edad','tipo_sangre','nivel_escolar','grado','grupo','foto_estudiante','observ','profesor_id'
     ];
 
     /** un alumno puede tener mas de 1 curso*/

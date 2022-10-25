@@ -11,6 +11,7 @@ use App\Models\Pagos;
 
 
 
+
 class AlumnosController extends Controller
 {
     
@@ -63,7 +64,6 @@ class AlumnosController extends Controller
                 'grupo'=>$request->get('grupo'),
                 'foto_estudiante'=>$nombrearchivo,
                 'observ'=>$request->get('observ'),
-                'curso_id'=>$request->get('curso_id'),
                 'profesor_id'=>$request->get('profesor_id'),
                  
 
@@ -84,7 +84,6 @@ class AlumnosController extends Controller
                 'grupo'=>$request->get('grupo'),
                 'foto_estudiante'=>$nombrearchivo,
                 'observ'=>$request->get('observ'),
-                'curso_id'=>$request->get('curso_id'),
                 'profesor_id'=>$request->get('profesor_id'),
                  
             ]);
