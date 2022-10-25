@@ -43,9 +43,35 @@
             <th>Concepto</th>
             <th>Monto</th>
             <th>Creacion</th>
-            <th>Acción</th>
+            <th>Acción
+            </th>
             </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>
 
+        </td>
+        <td>
+
+        </td>
+
+        <td><th style="float: right">
+                    <form  method="POST">
+                        <a class="btn btn-inverse-success"   style="padding: 8px 5px !important;" title="Actualizar Registro">
+                            <i class="mdi mdi-autorenew"></i>Actualizar
+                        </a>
+                        @csrf
+                        @method('DELETE')
+                        
+                        <button type="submit" class="btn btn-inverse-danger"  style="padding:  8px 5px !important;" title="Borrar Alumno">
+                            <i class="mdi mdi-delete-sweep"></i>Borrar
+                        </button>
+                    </form>
+                </th>
+            </td>
+    </tr>
+</tbody>
 </hr>
 </table>
 </div>
