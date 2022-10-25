@@ -36,11 +36,10 @@ class PagosController extends Controller
         $Alumnos= Alumnos::where('id',$id)->get(); 
            return view('pago.register',['Alumnos'=> $Alumnos]);
     }
-    public function search2(Request $request)
-    {
-    }
-
     public function conceptos (){
         return view ('pago.conceptos');
+    }
+    public function configPago (){
+        return view ('pago.config');
     }
 }
