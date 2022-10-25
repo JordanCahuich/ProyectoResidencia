@@ -43,7 +43,23 @@
       <div class="collapse" id="auth">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"> <a class="nav-link" href="{{ route('pago.index') }}">Historial de pagos</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ route('pago.index') }}">Formas de pago</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ route('pago.index') }}">Configuracion</a></li>
           
+        </ul>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        <i class="mdi mdi-account-multiple-plus menu-icon"></i>
+        <span class="menu-title">Sección de Alumnos</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="collapseExample">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{{ route('pago.index') }}">Registrar nuevo Alumno</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ route('pago.index') }}">Lista de Alumnos</a></li>
         </ul>
       </div>
     </li>

@@ -69,7 +69,7 @@
             <tr>
                 <td>{{ $alumno->nombre }}</td>
                 <td>{{ $alumno->sexo }}</td>
-                <td>{{ $alumno->grado_escolar}}</td>
+                <td>{{ $alumno->grado}}</td>
                 <td>{{ $alumno->curp }}</td>
 
                 <td style="float: right">

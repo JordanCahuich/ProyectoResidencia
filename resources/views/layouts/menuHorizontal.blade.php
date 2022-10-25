@@ -4,7 +4,7 @@
       <!--<a class="navbar-brand brand-logo" href="/">
         <img src="{{ asset('images/logo.svg') }}" alt="logo"/>
       </a> -->
-      <strong style="font-weight: 800; font-size:28px; text-center; margin:0 auto;"> SGE</strong>
+      <strong style="font-weight: 800; font-size:28px; text-center; margin:0 auto;"> Jean Piaget</strong>
       
       <!--<a class="navbar-brand brand-logo-mini" href="/">
         <img src="{{ asset('images/logo-mini.svg') }}" alt="logo"/>

@@ -35,7 +35,7 @@
                     {{ $alumno->segundo_apellido }} 
                     <hr>
                 </h5>
-                <h5 class="card-title"><strong>Sexo:</strong> 
+                <h5 class="card-title"><strong>Genero:</strong> 
                     {{ $alumno->sexo }} 
                     <hr>
                 </h5>
@@ -51,8 +51,26 @@
                     {{ $alumno->edad }} 
                     <hr>
                 </h5>
-                <h5 class="card-title"><strong>Grado Escolar:</strong> 
-                    {{ $alumno->grado_escolar }} 
+                <h5 class="card-title"><strong>Tipo Sangre:</strong> 
+                    {{ $alumno->tipo_sangre }} 
+                    <hr>
+                </h5>
+
+                </h5>
+                <h5 class="card-title"><strong>Nivel Escolar:</strong> 
+                    {{ $alumno->nivel_escolar }} 
+                    <hr>
+                </h5>
+
+                </h5>
+                <h5 class="card-title"><strong>Grado:</strong> 
+                    {{ $alumno->grado }} 
+                    <hr>
+                </h5>
+
+                </h5>
+                <h5 class="card-title"><strong>Grupo:</strong> 
+                    {{ $alumno->grupo }} 
                     <hr>
                 </h5>
                 
@@ -65,46 +83,5 @@
             </div>
             </div>
 
-            <div class="col-md-6">
-                @if(!empty($pagosCursoAlumno))
-                <div class="list-group">
-                    <p class="list-group-item list-group-item-action active text-center">
-                      RECIBOS DE PAGO DEL ALUMNO
-                    </p> 
-                    @foreach ($pagosCursoAlumno as $pago)
-                        <p class="list-group-item list-group-item-action" style="display: flex; justify-content: space-between">
-                            <span>
-                                Aporte: {{ $pago->aporte }}  
-                            </span>
-                            <span class="text-center"> 
-                                Fecha: {{ $pago->created_at->format('Y-m-d') }} 
-                            </span>
-                            <span>
-                                <a href="/fotosPagos/{{ $pago->photo_pago }}" class="btn btn-info" target="_blank">ver recibo</a> 
-                            </span>
-                        </p>
-                    @endforeach
-                  </div>
-                <p style="background-color: #f9f9f9; padding:10px 5px; color:#333; font-weight:bold;">
-                    TOTAL APORTE: $ {{ $sumaPagoTotal }} de {{ $valorCurso }}
-                </p>
-                    @if ($sumaPagoTotal == $valorCurso)
-                        <p style="background-color: #ccc; padding:10px 5px; color:green; font-weight:bold;">
-                            El alumno ha cancelado todo el valor del curso.
-                        </p>
-                    @endif
-                @else
-                <h3 class="text-center font-weight-bold mt-5" style="color: crimson">
-                     No existe ningún pago registrado 
-                    </h3>
-                @endif
-            </div>
-        </div>
-
-
-            </div>
-        </div>
-    </div>
-</div>
-
+            
 @endsection
