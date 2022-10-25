@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Conceptos;
 class ConceptosController extends Controller
 {
     public function index()
@@ -12,7 +12,8 @@ class ConceptosController extends Controller
     }
     public function formaPago()
     {
-       return view('conceptos.pago');
+      $conceptos= conceptos::all();
+       return view('conceptos.pago',['Conceptos'=> $conceptos]);
     }
     
     public function create()

@@ -48,7 +48,7 @@
             </tr>
 </thead>
             <tbody>
-            @foreach ($conceptos as $concepto)
+            @foreach ($Conceptos as $concepto)
             <tr>
                 <td>{{ $concepto->nombre }}</td>
                 <td>{{ $concepto->monto }}</td>

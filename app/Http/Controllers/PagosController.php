@@ -37,6 +37,7 @@ class PagosController extends Controller
            return view('pago.register',['Alumnos'=> $Alumnos]);
     }
     public function conceptos (){
+     
         return view ('pago.conceptos');
     }
     public function configPago (){
