@@ -36,12 +36,11 @@
     <div class="card">
         <div class="card-body">
         <h2 class="card-title text-center"></h2>
-        
+        <form method="post" action="/concepto" class="form-horizontal" enctype="multipart/form-data">
             @csrf
-
             <div class="form-group">
                 <label for="exampleInputUsername1">Nombre del concepto</label>
-                <input type="text" name="nombre" class="form-control" required>
+                <input type="text" name="name" class="form-control" required>
                 @if ($errors->has('nombre'))
                 <div class="alert alert-danger">
                     <span class="text-danger">{{ $errors->first('nombre') }}</span>
@@ -50,7 +49,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputUsername1">Monto del concepto</label>
-                <input type="number" name="monto" class="form-control" required>
+                <input type="number" name="cantidad" class="form-control" required>
                 @if ($errors->has('monto'))
                 <div class="alert alert-danger">
                     <span class="text-danger">{{ $errors->first('monto') }}</span>
@@ -59,7 +58,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputUsername1">Fecha de creación</label>
-                <input type="date" name="fecha" class="form-control" required>
+                <input type="date" name="fech" class="form-control" required>
                 @if ($errors->has('fecha'))
                 <div class="alert alert-danger">
                     <span class="text-danger">{{ $errors->first('fecha') }}</span>
@@ -70,6 +69,8 @@
                 <button type="submit" class="btn btn-primary mr-2 mb-3" style="background-color: 	#64dd17">Guardar</button>
                 <a href="/"  class="btn btn-inverse-dark btn-fw mb-3" style="background-color: 	#d50000">Cancelar</a>
             </div>
+            <input type="submit" name="enviar" id="btn_enviar" value="Guardar" class="btn-success">
+
         </form>
         </div>
     </div>

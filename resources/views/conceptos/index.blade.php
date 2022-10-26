@@ -49,14 +49,20 @@
 </thead>
 <tbody>
     <tr>
-        <td>
-
+        
+    @foreach($Conceptos as $c)
+    <td>
+    <h4 class="country" style="margin: 0px auto;"> <b>{{$c->nombre}}</b></h4>
+   
         </td>
         <td>
-
+        <h4 class="country" style="margin: 0px auto;"> <b>{{$c->monto}}</b></h4>
         </td>
-
-        <td><th style="float: right">
+        <td>
+        <h4 class="country" style="margin: 0px auto;"> <b>{{$c->fecha}}</b></h4>
+        </td>
+        @endforeach
+        <td style="float: right">
                     <form  method="POST">
                         <a class="btn btn-inverse-success"   style="padding: 8px 5px !important;" title="Actualizar Registro">
                             <i class="mdi mdi-autorenew"></i>Actualizar
@@ -68,7 +74,7 @@
                             <i class="mdi mdi-delete-sweep"></i>Borrar
                         </button>
                     </form>
-                </th>
+                </td>
             </td>
     </tr>
 </tbody>

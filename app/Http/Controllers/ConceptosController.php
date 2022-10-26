@@ -8,7 +8,8 @@ class ConceptosController extends Controller
 {
     public function index()
     {
-       return view('conceptos.index');
+      $Conceptos = Conceptos::all();
+       return view('conceptos.index',['Conceptos'=> $Conceptos]);
     }
     public function formaPago()
     {
@@ -20,4 +21,15 @@ class ConceptosController extends Controller
     {
        return view('conceptos.add');
     }
+    public function store(Request $r)
+    {
+      $inputs = $r->all();
+       $concept = new Conceptos(['nombre'=> $inputs['name'],
+       'monto'=> $inputs['cantidad'],
+       'fecha'=> $inputs['fech']
+   ]);
+   $concept->save();
+   return redirect('/concepts');
+    }
+    
 }
