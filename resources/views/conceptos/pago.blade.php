@@ -50,10 +50,9 @@
             <tbody>
             @foreach ($Conceptos as $concepto)
             <tr>
-                <td>{{ $concepto->nombre }}</td>
-                <td>{{ $concepto->monto }}</td>
+                <td>{{ $concepto->nombres }}</td>
+                <td>{{ $concepto->montos }}</td>
                 <td>
-                     {{ date('d-m-Y', strtotime($concepto->fecha))  }}
                     </td>
                 <td style="float: right">
                     <form action="{{ route('concepto.destroy',$concepto->id) }}" method="POST">

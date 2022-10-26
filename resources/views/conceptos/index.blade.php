@@ -59,9 +59,8 @@
         <h4 class="country" style="margin: 0px auto;"> <b>{{$c->monto}}</b></h4>
         </td>
         <td>
-        <h4 class="country" style="margin: 0px auto;"> <b>{{$c->fecha}}</b></h4>
+        <h4 class="country" style="margin: 0px auto;"> <b>{{ date('d-m-Y', strtotime($c->fecha))}}</b></h4>
         </td>
-        @endforeach
         <td style="float: right">
                     <form  method="POST">
                         <a class="btn btn-inverse-success"   style="padding: 8px 5px !important;" title="Actualizar Registro">
@@ -77,6 +76,8 @@
                 </td>
             </td>
     </tr>
+    @endforeach
+        
 </tbody>
 </hr>
 </table>
