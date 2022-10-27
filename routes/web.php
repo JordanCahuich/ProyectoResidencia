@@ -20,6 +20,12 @@ Route::get('/pagos/config', [PagosController::class,'configPago'])->name('pagos.
 Route::get('/concepts', [ConceptosController::class,'index']);
 Route::get('/concepts/create', [ConceptosController::class,'create']);
 Route::get('/concepts/pago', [ConceptosController::class,'formaPago'])->name('concepto.forma');
+Route::get('/concepts/{id}/edit',[ConceptosController::class,'edit']);
+
+
+Route::put('/concepts/{id}',[ConceptosController::class,'update']);
+
+Route::delete('/concepts/{id}',[ConceptosController::class,'destroy']);
 
 Route::get('/cargas/index', [CargasController::class, 'index']);
 Route::get('/cargas/create', [CargasController::class, 'create']);

@@ -21,6 +21,11 @@ class ConceptosController extends Controller
     {
        return view('conceptos.add');
     }
+    public function edit($id)
+    {
+      $conceptos= conceptos::find($id);
+        return view('conceptos.edit', ['concept'=>$conceptos]);
+    }
     public function store(Request $r)
     {
       $inputs = $r->all();
@@ -31,5 +36,21 @@ class ConceptosController extends Controller
    $concept->save();
    return redirect('/concepts');
     }
-    
+    public function update($id, Request $r)
+    {
+        $inputs = $r->all();
+        $concept = conceptos::find($id);
+        $concept->nombre = $inputs['name'];
+        $concept->monto = $inputs['cantidad'];
+        $concept->fecha = $inputs['fech'];
+        $concept->save();
+
+        return redirect('/concepts');
+    }
+    public function destroy($id)
+    {
+        $concepts = conceptos::find($id);
+            $concepts->delete();
+        return redirect('/concepts');
+    }
 }

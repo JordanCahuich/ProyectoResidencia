@@ -73,8 +73,7 @@
                 <td>{{ $alumno->curp }}</td>
 
                 <td style="float: right">
-                    <form action="{{ route('alumno.destroy',$alumno->id) }}" method="POST">
-                        <a class="btn btn-inverse-primary" href="{{ route('alumno.show',$alumno->id) }}"  style="padding: 8px 15px !important;" title="Ver Detalles">
+                         <a class="btn btn-inverse-primary" href="{{ route('alumno.show',$alumno->id) }}"  style="padding: 8px 15px !important;" title="Ver Detalles">
                             <i class="mdi mdi-account-card-details"></i> Ver
                         </a>
                         <a class="btn btn-inverse-success" href="{{ route('alumno.edit',$alumno->id) }}"  style="padding: 8px 5px !important;" title="Actualizar Registro">
