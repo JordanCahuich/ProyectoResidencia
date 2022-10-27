@@ -18,7 +18,6 @@
 
 
 <body>
-<hr>
 @extends('layouts.app')
 
 @section('content')
@@ -30,6 +29,7 @@
     
 </div>
 </hr>
+
 <div class="row justify-content-end";>
 <a href="/concepto/create" class="btn btn-secondary" style="background-color: 	#ffc400">
             Registar 
@@ -37,9 +37,9 @@
 </div>
 <hr>
 <div class="table-responsive">
-        <table id="datatables-example" class="table table-hover">
+        <table id="datatables-example" class="table table-hover" style="background-color: 	#FFFACD">
         <thead>
-            <tr>
+            <tr style="background-color: #87CEFA">
             <th>Concepto</th>
             <th>Monto</th>
             <th>Creacion</th>
@@ -68,7 +68,7 @@
                         <form action="/concepts/{{$c->id}}}" method="post">
                         @method('DELETE')
                         @csrf
-                        <button type="submit" class="btn btn-inverse-danger"  style="float: right; padding:  8px 5px !important;" title="Borrar Alumno">
+                        <button type="submit" class="btn btn-inverse-danger"  style="float: right; padding:  8px 5px !important;" title="Borrar Concepto">
                             <i class="mdi mdi-delete-sweep"></i>Borrar
                         </button>
                     </form>
