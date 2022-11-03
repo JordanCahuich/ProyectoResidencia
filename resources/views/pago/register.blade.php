@@ -95,37 +95,25 @@
 </tr>
 
 </table>
-<table class="default" style="margin: 20px auto"  border=2 width="400" height="100";>
-<tr style="background-color: 	#2962ff">
+
+<table class="default" style="margin: 20px auto"; border=2; width="400" height="100";>
+
+ <tr style="background-color: 	#2962ff">
   <th>Concepto</th>
   <th>Monto</th>
 
 </tr>
+@foreach($Conceptos as $c)
 <tr style="background-color: #ffecb3">
-  <td>Inscripcion</td>
-  <td>000</td>
+
+<td>{{ $c->nombre}}</td>
+  <td>{{$c->monto}}</td>
   
 </tr>
-<tr  style="background-color: #ffecb3">
-  <td>Colegiatura</td>
-  <td>000</td>
-  
-</tr>
-<tr style="background-color: #ffecb3">
-  <td>Cuota</td>
-  <td>000</td>
-  
-</tr>
-<tr style="background-color: #ffecb3">
-  <td>Recargo</td>
-  <td>000</td>
-  
-</tr>
-<tr style="background-color: #ffecb3">
-  <td>Total</td>
-  <td>000</td>
-  
-</tr>
+
+
+@endforeach
+
 
 </table>
 </div>
