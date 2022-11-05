@@ -31,11 +31,20 @@
     <div class="card" style="background-color:#FFFACD">
         <div class="card-body">
         <h2 class="card-title text-center"></h2>
-        <form method="post" action="/concepto" class="form-horizontal" enctype="multipart/form-data">
+        <form method="post" action="/concepts/pago" class="form-horizontal" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="exampleInputUsername1">Tipo de pago</label>
-                <input type="text" name="name" class="form-control" required>
+                <input type="text" name="Tipo" class="form-control" required>
+                @if ($errors->has('tipo'))
+                <div class="alert alert-danger">
+                    <span class="text-danger">{{ $errors->first('tipo') }}</span>
+                </div>
+                @endif
+            </div>
+            <div class="form-group">
+                <label for="exampleInputUsername1">Nombre de cuenta</label>
+                <input type="text" name="Nombre" class="form-control" required>
                 @if ($errors->has('nombre'))
                 <div class="alert alert-danger">
                     <span class="text-danger">{{ $errors->first('nombre') }}</span>
@@ -43,20 +52,11 @@
                 @endif
             </div>
             <div class="form-group">
-                <label for="exampleInputUsername1">Nombre de cuenta</label>
-                <input type="number" name="cantidad" class="form-control" required>
-                @if ($errors->has('monto'))
-                <div class="alert alert-danger">
-                    <span class="text-danger">{{ $errors->first('monto') }}</span>
-                </div>
-                @endif
-            </div>
-            <div class="form-group">
                 <label for="exampleInputUsername1">valor</label>
-                <input type="date" name="fech" class="form-control" required>
-                @if ($errors->has('fecha'))
+                <input type="number" name="Valor" class="form-control" required>
+                @if ($errors->has('valor'))
                 <div class="alert alert-danger">
-                    <span class="text-danger">{{ $errors->first('fecha') }}</span>
+                    <span class="text-danger">{{ $errors->first('valor') }}</span>
                 </div>
                 @endif
             </div>

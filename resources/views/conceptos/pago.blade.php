@@ -32,7 +32,7 @@
 </hr>
 
 <div class="row justify-content-end";>
-<a href="/concepto/create" class="btn btn-secondary" style="background-color: 	#ffc400">
+<a href="/concepts/formapago" class="btn btn-secondary" style="background-color: 	#ffc400">
             Registar 
         </a>
 </div>
@@ -49,15 +49,15 @@
             </tr>
 </thead>
             <tbody>
-            @foreach ($Conceptos as $concepto)
+            @foreach ($Forma as $forma)
             <tr>
-                <td>{{ $concepto->nombres }}</td>
-                <td>{{ $concepto->montos }}</td>
-                <td>
-                    </td>
+                <td>{{ $forma->tipo }}</td>
+                <td>{{ $forma->nombre }}</td>
+                <td>{{ $forma->valor }}</td>
+                
                 <td style="float: right">
-                    <form action="{{ route('concepto.destroy',$concepto->id) }}" method="POST">
-                        <a class="btn btn-inverse-success" href="{{ route('concepto.edit',$concepto->id) }}"  style="padding: 8px 5px !important;" title="Actualizar Registro">
+                    <form action="{{ route('concepto.destroy',$forma->id) }}" method="POST">
+                        <a class="btn btn-inverse-success" href="{{ route('concepto.edit',$forma->id) }}"  style="padding: 8px 5px !important;" title="Actualizar Registro">
                             <i class="mdi mdi-autorenew"></i>Actualizar
                         </a>
                         @csrf
