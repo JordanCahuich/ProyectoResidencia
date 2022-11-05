@@ -64,9 +64,11 @@
 </div>
 </hr>
 
-<table class="default" style="margin: 10px auto"  border=2 width="800" height="50";>
-<tr style="background-color: 	#2962ff">
-  <th>Agosto</th>
+<div class="table-responsive-center">
+        <table  id="datatables-example" class="table table-hover" style="background-color: 	#FFFACD">
+        <thead>
+            <tr style="background-color: #87CEFA">
+            <th>Agosto</th>
   <th>Septiembre</th>
   <th>Octubre</th>
   <th>Noviembre</th>
@@ -78,6 +80,10 @@
   <th>Mayo</th>
   <th>Junio</th>
   <th>julio</th>
+            </th>
+            </tr>
+</thead>
+
 </tr>
 <tr style="background-color: #ffecb3">
   <td>000</td>
@@ -95,21 +101,25 @@
 </tr>
 
 </table>
-
-<table class="default" style="margin: 20px auto"; border=2; width="400" height="100";>
-
- <tr style="background-color: 	#2962ff">
+<hr>
+<div class="table-responsive-center">
+        <table  id="datatables-example" class="table table-hover" style="background-color: 	#FFFACD">
+        <thead  >
+        <tr   style="background-color: #87CEFA" >
   <th>Concepto</th>
   <th>Monto</th>
 
 </tr>
+</thead>
+<tbody>
 @foreach($Conceptos as $c)
-<tr style="background-color: #ffecb3">
+<tr  style="background-color: #ffecb3">
 
 <td>{{ $c->nombre}}</td>
   <td>{{$c->monto}}</td>
   
 </tr>
+
 
 
 @endforeach
@@ -118,7 +128,6 @@
 </table>
 </div>
 
-<hr>
 <form class="container" style="margin: 10px auto;"; style="text-align:center"; >
 
         <div class="row justify-content-around";>

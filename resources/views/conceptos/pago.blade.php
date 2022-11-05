@@ -18,7 +18,7 @@
 
 
 <body>
-<hr>
+
 @extends('layouts.app')
 
 @section('content')
@@ -29,21 +29,22 @@
     <h3>FORMAS DE PAGO</h3>
     
 </div>
+</hr>
 
 <div class="row justify-content-end";>
 <a href="/concepto/create" class="btn btn-secondary" style="background-color: 	#ffc400">
             Registar 
         </a>
 </div>
-</hr>
+<hr>
 
 <div class="table-responsive">
-        <table id="datatables-example" class="table table-hover">
+        <table id="datatables-example" class="table table-hover" style="background-color: 	#FFFACD">
         <thead>
-            <tr>
-            <th>Concepto</th>
-            <th>Monto</th>
-            <th>Creacion</th>
+            <tr style="background-color: #87CEFA">
+            <th>Tipo</th>
+            <th>Nombre</th>
+            <th>Valor</th>
             <th>Acción</th>
             </tr>
 </thead>
