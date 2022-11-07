@@ -12,6 +12,11 @@ class FormaPagoController extends Controller
       //$conceptos= conceptos::all();
        return view('pago.addPago');
     }
+    public function edit($id)
+    {
+      $formapago= FormaPago::find($id);
+        return view('conceptos.editpago', ['forma'=>$formapago]);
+    }
     public function store(Request $r)
     {
       $inputs = $r->all();
@@ -21,5 +26,16 @@ class FormaPagoController extends Controller
    ]);
    $formapago->save();
    return redirect('/concepts/pago');
+    }
+    public function update($id, Request $r)
+    {
+        $inputs = $r->all();
+        $formapago =FormaPago::find($id);
+        $formapago->tipo = $inputs['Tipo'];
+        $formapago->nombre = $inputs['Nombre'];
+        $formapago->valor = $inputs['Valor'];
+        $formapago->save();
+
+        return redirect('/concepts/pago');
     }
 }

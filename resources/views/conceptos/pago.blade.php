@@ -56,14 +56,13 @@
                 <td>{{ $forma->valor }}</td>
                 
                 <td style="float: right">
-                    <form action="{{ route('concepto.destroy',$forma->id) }}" method="POST">
-                        <a class="btn btn-inverse-success" href="{{ route('concepto.edit',$forma->id) }}"  style="padding: 8px 5px !important;" title="Actualizar Registro">
+                <a href="/concepts/pago/{{$forma->id}}/edit" class="btn btn-inverse-success"   style="float: left; padding: 8px 5px !important margin: 10px;" title="Actualizar Registro">
                             <i class="mdi mdi-autorenew"></i>Actualizar
                         </a>
-                        @csrf
+                        <form action="/concepts/pago/{{$c->id}}}" method="post">
                         @method('DELETE')
-                        
-                        <button type="submit" class="btn btn-inverse-danger"  style="padding:  8px 5px !important;" title="Borrar Alumno">
+                        @csrf
+                        <button type="submit" class="btn btn-inverse-danger"  style="float: right; padding:  8px 5px !important;" title="Borrar Concepto">
                             <i class="mdi mdi-delete-sweep"></i>Borrar
                         </button>
                     </form>

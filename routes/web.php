@@ -24,10 +24,10 @@ Route::get('/concepts/pago', [ConceptosController::class,'formaPago'])->name('co
 Route::get('/concepts/formapago', [FormaPagoController::class,'create'])->name('formapago.create');
 Route::post('/concepts/pago',[FormaPagoController::class,'store']);
 Route::get('/concepts/{id}/edit',[ConceptosController::class,'edit']);
-
+Route::get('/concepts/pago/{id}/edit',[FormaPagoController::class,'edit'])->name('concepto.formaedit');
 
 Route::put('/concepts/{id}',[ConceptosController::class,'update']);
-
+Route::put('/concepts/pago{id}',[FormaPagoController::class,'update']);
 Route::delete('/concepts/{id}',[ConceptosController::class,'destroy']);
 
 Route::get('/cargas/index', [CargasController::class, 'index']);
