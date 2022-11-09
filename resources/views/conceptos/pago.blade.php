@@ -59,10 +59,10 @@
                 <a href="/concepts/pago/{{$forma->id}}/edit" class="btn btn-inverse-success"   style="float: left; padding: 8px 5px !important margin: 10px;" title="Actualizar Registro">
                             <i class="mdi mdi-autorenew"></i>Actualizar
                         </a>
-                        <form action="/concepts/pago/{{$c->id}}}" method="post">
+                        <form action="/concepts/pago/{{$forma->id}}}" method="post">
                         @method('DELETE')
                         @csrf
-                        <button type="submit" class="btn btn-inverse-danger"  style="float: right; padding:  8px 5px !important;" title="Borrar Concepto">
+                        <button type="submit" class="btn btn-inverse-danger"  style="float: right; padding:  8px 5px !important;" title="Borrar">
                             <i class="mdi mdi-delete-sweep"></i>Borrar
                         </button>
                     </form>

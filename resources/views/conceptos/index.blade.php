@@ -61,7 +61,7 @@
         <td>
         <h4 class="country" style="margin: 0px auto;"> <b>{{ date('d-m-Y', strtotime($c->fecha))}}</b></h4>
         </td>
-        <td style="">
+        <td style="float: right">
                         <a href="/concepts/{{$c->id}}/edit" class="btn btn-inverse-success"   style="float: left; padding: 8px 5px !important margin: 10px;" title="Actualizar Registro">
                             <i class="mdi mdi-autorenew"></i>Actualizar
                         </a>

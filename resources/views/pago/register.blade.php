@@ -13,6 +13,8 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
+  
+  
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
 
@@ -47,14 +49,14 @@
 
 <hr>
 @foreach($Alumnos as $p)
-
+<FONT FACE="century gothic" SIZE=4 COLOR="#056daa"  >
 <div class="row row-list">
 
 
 
     <div class="col-md-8 " style="text-align: justify">
 
-    <h4 class="country" style="margin: 0px auto;"> <b> Alumno: {{$p->nombre}} {{$p->primer_apellido}} {{$p->segundo_apellido}}  ({{$p->id}})</b></h4>
+    <h4 class="country"  style="margin: 10px 0px;"> <b> Alumno: {{$p->nombre}} {{$p->primer_apellido}} {{$p->segundo_apellido}}  ({{$p->id}})</b></h4>
         
     </div>
 
@@ -86,53 +88,58 @@
 
 </tr>
 <tr style="background-color: #ffecb3">
-  <td>000</td>
-  <td>000</td>
-  <td>000</td>
-  <td>000</td>
-  <td>000</td>
-  <td>000</td>
-  <td>000</td>
-  <td>000</td>
-  <td>000</td>
-  <td>000</td>
-  <td>000</td>
-  <td>000</td>
+  <td><input type="checkbox" name="casilla1"></td>
+  <td><input type="checkbox" name="casilla1"></td>
+  <td><input type="checkbox" name="casilla1"></td>
+  <td><input type="checkbox" name="casilla1"></td>
+  <td><input type="checkbox" name="casilla1"></td>
+  <td><input type="checkbox" name="casilla1"></td>
+  <td><input type="checkbox" name="casilla1"></td>
+  <td><input type="checkbox" name="casilla1"></td>
+  <td><input type="checkbox" name="casilla1"></td>
+  <td><input type="checkbox" name="casilla1"></td>
+  <td><input type="checkbox" name="casilla1"></td>
+  <td><input type="checkbox" name="casilla1"></td>
 </tr>
-
-</table>
-<hr>
-<div class="table-responsive-center">
-        <table  id="datatables-example" class="table table-hover" style="background-color: 	#FFFACD">
-        <thead  >
-        <tr   style="background-color: #87CEFA" >
-  <th>Concepto</th>
-  <th>Monto</th>
-
-</tr>
-</thead>
-<tbody>
-@foreach($Conceptos as $c)
-<tr  style="background-color: #ffecb3">
-
-<td>{{ $c->nombre}}</td>
-  <td>{{$c->monto}}</td>
-  
-</tr>
-
-
-
-@endforeach
-
 
 </table>
 </div>
+
+<hr>
+<FONT FACE="century gothic" SIZE=4 COLOR="#056daa" style="text-align:center"  >
+<div>
+  
+    
+  <label for="validationCustom04" class="form-label" >Seleccionar Conceptos</label>
+  <select class="form-select" id="validationCustom04" required>
+    <option selected disabled value="" >Seleccionar...</option>
+    @foreach($Conceptos as $c)
+    <option>{{$c->nombre}} ${{$c->monto}}</option>
+    @endforeach
+   
+  </select>
+  <div class="invalid-feedback">
+    Please select a valid state.
+</div>
+</div>
+
+</FONT>
+<hr>
 
 <form class="container" style="margin: 10px auto;"; style="text-align:center"; >
 
         <div class="row justify-content-around";>
         <button class="btn btn-success" type="submit" style="background-color: 	#d50000">Cancelar</button>
-        <button class="btn btn-success" type="submit" style="background-color: 	#ffc400" >Adjuntar Comprobante</button>
+<form   action="../../form-result.php" method="post" enctype="multipart/form-data" target="_blank"  style="background-color:#ffc400">
+
+  <p>
+
+    Enviar Comprobante:
+    <input  type="file" name="subido"archivo>
+</form>
+  </p>
+
+</form>
         <button class="btn btn-success" type="submit" style="background-color: 	#64dd17" >Guardar</button>
         </div>
 
@@ -144,4 +151,5 @@
 </hr>
 </div>
 </body>
+
 </html>

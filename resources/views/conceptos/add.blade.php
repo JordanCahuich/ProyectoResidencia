@@ -62,7 +62,7 @@
             </div>
             <div class="form-group text-center">
                 <button type="submit" class="btn btn-primary mr-2 mb-3" style="background-color: 	#64dd17">Guardar</button>
-                <a href="/"  class="btn btn-inverse-dark btn-fw mb-3" style="background-color: 	#d50000">Cancelar</a>
+                <a href="/concepts"  class="btn btn-inverse-dark btn-fw mb-3" style="background-color: 	#d50000">Cancelar</a>
             </div>
         
         </form>

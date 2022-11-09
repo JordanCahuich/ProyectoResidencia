@@ -7,6 +7,17 @@ use App\Models\FormaPago;
 
 class FormaPagoController extends Controller
 {
+    
+    public function index()
+    {
+       
+    }
+
+    public function show()
+    {
+
+    }
+
     public function create()
     {
       //$conceptos= conceptos::all();
@@ -36,6 +47,12 @@ class FormaPagoController extends Controller
         $formapago->valor = $inputs['Valor'];
         $formapago->save();
 
+        return redirect('/concepts/pago');
+    }
+    public function destroy($id)
+    {
+        $forma = FormaPago::find($id);
+            $forma->delete();
         return redirect('/concepts/pago');
     }
 }

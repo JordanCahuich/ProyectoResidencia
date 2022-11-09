@@ -26,12 +26,12 @@
     <div class="card">
         <div class="card-body">
         <h2 class="card-title text-center"></h2>
-        <form method="post" action="/concepto/edit{{$formapago->id}}" class="form-horizontal" enctype="multipart/form-data">
+        <form method="post" action="/concepto/edit{{$forma->id}}" class="form-horizontal" enctype="multipart/form-data">
         @method('PUT')
             @csrf
             <div class="form-group">
                 <label for="name" class="control-label">Tipo de Pago:</label>
-                    <input type="text" name="Tipo" id="Tipo" class="form-control" value="{{$formapago->tipo}}">
+                    <input type="text" name="Tipo" id="Tipo" class="form-control" value="{{$forma->tipo}}">
 
                     @if ($errors->has('tipo'))
                 <div class="alert alert-danger">
@@ -41,7 +41,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputUsername1">Nombre de la cuenta</label>
-                <input type="text" name="Nombre" class="form-control" value="{{$formapago->Nombre}}" required>
+                <input type="text" name="Nombre" class="form-control" value="{{$forma->Nombre}}" required>
                
                 @if ($errors->has('nombre'))
                 <div class="alert alert-danger">
@@ -51,7 +51,7 @@
             </div>
             <div class="form-group">
             <label for="exampleInputUsername1">Numero de cuenta</label>
-                <input type="number" name="Valor" class="form-control" value="{{$formapago->valor}}" required>
+                <input type="number" name="Valor" class="form-control" value="{{$forma->valor}}" required>
                
                 @if ($errors->has('valor'))
                 <div class="alert alert-danger">
@@ -61,7 +61,7 @@
             </div>
             <div class="form-group text-center">
                 <button type="submit" class="btn btn-primary mr-2 mb-3" style="background-color: 	#64dd17">Guardar</button>
-                <a href="/concepts"  class="btn btn-inverse-dark btn-fw mb-3" style="background-color: 	#d50000">Cancelar</a>
+                <a href="/concepts/pago"  class="btn btn-inverse-dark btn-fw mb-3" style="background-color: 	#d50000">Cancelar</a>
             </div>
     
         </form>
