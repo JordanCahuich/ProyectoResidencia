@@ -26,12 +26,12 @@
     <div class="card">
         <div class="card-body">
         <h2 class="card-title text-center"></h2>
-        <form method="post" action="/concepto/edit{{$forma->id}}" class="form-horizontal" enctype="multipart/form-data">
+        <form method="post" action="/concepts/pago/{{$forma->id}}" class="form-horizontal" enctype="multipart/form-data">
         @method('PUT')
             @csrf
             <div class="form-group">
                 <label for="name" class="control-label">Tipo de Pago:</label>
-                    <input type="text" name="Tipo" id="Tipo" class="form-control" value="{{$forma->tipo}}">
+                    <input type="text" name="Tipo"  class="form-control" value="{{$forma->tipo}}">
 
                     @if ($errors->has('tipo'))
                 <div class="alert alert-danger">
@@ -41,7 +41,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputUsername1">Nombre de la cuenta</label>
-                <input type="text" name="Nombre" class="form-control" value="{{$forma->Nombre}}" required>
+                <input type="text" name="Nombre" class="form-control" value="{{$forma->nombre}}" required>
                
                 @if ($errors->has('nombre'))
                 <div class="alert alert-danger">

@@ -27,7 +27,7 @@ Route::get('/concepts/{id}/edit',[ConceptosController::class,'edit']);
 Route::get('/concepts/pago/{id}/edit',[FormaPagoController::class,'edit'])->name('concepto.formaedit');
 
 Route::put('/concepts/{id}',[ConceptosController::class,'update']);
-Route::put('/concepts/pago{id}',[FormaPagoController::class,'update']);
+Route::put('/concepts/pago/{id}',[FormaPagoController::class,'update']);
 Route::delete('/concepts/{id}',[ConceptosController::class,'destroy']);
 Route::delete('/concepts/pago/{id}',[FormaPagoController::class,'destroy']);
 
