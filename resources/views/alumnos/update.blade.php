@@ -13,11 +13,7 @@
           @method('PATCH')
             <div class="row">
                 <div class="col-md-4">
-<<<<<<< HEAD
                     <label class="col-sm-6 col-form-label">Nombre Alumno</label>
-=======
-                    <label class="col-sm-6 col-form-label">Nombre Alumnos</label>
->>>>>>> d4f32d593be4070d5b8c71789add86e418ed556b
                     <div class="col-sm-12">
                       <input type="text" name="nombre" class="form-control" value="{{ $alumno->nombre}}" required/>
                     </div>

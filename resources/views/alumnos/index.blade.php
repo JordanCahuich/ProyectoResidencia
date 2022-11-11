@@ -61,6 +61,7 @@
             <th>Sexo</th>
             <th>Grado</th>
             <th>CURP</th>
+            <th>NIVEL</th>
             <th>Acción</th>
             </tr>
         </thead>
@@ -71,6 +72,7 @@
                 <td>{{ $alumno->sexo }}</td>
                 <td>{{ $alumno->grado}}</td>
                 <td>{{ $alumno->curp }}</td>
+                <td>{{ $alumno->nivel_escolar}}</td>
 
                 <td style="float: right">
                          <a class="btn btn-inverse-primary" href="{{ route('alumno.show',$alumno->id) }}"  style="padding: 8px 15px !important;" title="Ver Detalles">

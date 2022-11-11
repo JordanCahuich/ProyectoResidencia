@@ -11,11 +11,19 @@
         <form class="forms-sample" method="post" action="{{ route('alumno.store') }}" enctype="multipart/form-data">
             @csrf
 
+            <div class="col-md-4">
+                    <label class="col-sm-6 col-form-label">Foto del Alumno</label>
+                    <div class="col-sm-9">
+                      <input type="file" name="foto_estudiante" class="form-control" />
+                    </div>
+                </div>
+
             <div class="row">
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Nombre (S)</label>
+                    <label class="col-sm-6 col-form-label">Nombre(s)</label>
                     <div class="col-sm-12">
                       <input type="text" name="nombre" class="form-control" required/>
+                     
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -90,33 +98,131 @@
                     </select>
                 </div>
 
-            <div class="row">
+                <div class="row">
                 <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Grado</label>
                     <div class="col-sm-12">
                       <input type="number" name="grado" class="form-control"/>
                     </div>
                 </div>
+
+            
                 <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Grupo</label>
                     <div class="col-sm-12">
                       <input type="text" name="grupo" class="form-control"/>
                     </div>
                 </div>
-               
-            
 
-
-
-        
+                <div class="col-md-4">
+                    <label class="col-sm-12 col-form-label">Periodo escolar</label>
+                    <select name="periodo_escolar" class="form-control form-control-sm">
+                        <option selected=>Seleccione</option>
+                            <option>2022-2023</option>
+                            <option>2021-2022</option>
+                    </select>
+                </div>
 
                 
+
+
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Foto del Alumno</label>
-                    <div class="col-sm-9">
-                      <input type="file" name="foto_estudiante" class="form-control" />
+                    <label class="col-sm-12 col-form-label">Domicilio</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="domicilio" class="form-control"/>
                     </div>
                 </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-12 col-form-label">En caso de emergencia hablar a</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="nombre_emergencia" class="form-control"/>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-12 col-form-label">Tel. Emergencia</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="tel_emergencia" class="form-control"/>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-12 col-form-label">Persona autorizada</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="persona_autorizada" class="form-control"/>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-12 col-form-label">Parentesco</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="parentesco" class="form-control"/>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-12 col-form-label">Tel. 1 Autorizada</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="tel1_autorizada" class="form-control"/>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-12 col-form-label">Tel. 2 Autorizada</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="tel2_autorizada" class="form-control"/>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-12 col-form-label">Domicilio persona autorizada</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="domicilio_autorizada" class="form-control"/>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-12 col-form-label">Persona autorizada 2</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="persona_autorizada2" class="form-control"/>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-12 col-form-label">Parentesco 2</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="parentesco2" class="form-control"/>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-12 col-form-label">Tel. 1 Autorizada 2</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="tel1_autorizada2" class="form-control"/>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-12 col-form-label">Tel. 2 Autorizada 2</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="tel2_autorizada2" class="form-control"/>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-12 col-form-label">Domicilio persona autorizada 2</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="domicilio_autorizada2" class="form-control"/>
+                    </div>
+                </div>
+
+
+
+
+            
+                
+               
                 <div class="col-md-4">
                     <label class="col-sm-6 col-form-label">Observación</label>
                     <textarea name="observ" class="form-control" rows="4" cols="50"></textarea>
