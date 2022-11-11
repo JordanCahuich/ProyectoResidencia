@@ -28,6 +28,9 @@ class Pago extends Model
             return $query->where('id','like',"%id%");
         }
     }
+    public function pago(){
+        return $this->belongsTo(Pago::class);
+    }
 
 }
 

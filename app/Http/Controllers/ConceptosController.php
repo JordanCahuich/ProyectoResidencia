@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Conceptos;
+use App\Models\FormaPago;
 class ConceptosController extends Controller
 {
     public function index()
@@ -13,8 +14,8 @@ class ConceptosController extends Controller
     }
     public function formaPago()
     {
-      $conceptos= conceptos::all();
-       return view('conceptos.pago',['Conceptos'=> $conceptos]);
+      $forma= FormaPago::all();
+       return view('conceptos.pago',['Forma'=> $forma]);
     }
     
     public function create()

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Alumnos;
+use App\Models\Conceptos;
 
 
 class PagosController extends Controller
@@ -31,10 +32,11 @@ class PagosController extends Controller
     }
     public function search(Request $request)
     {
-
+        
+        $Conceptos = Conceptos::all();
         $id = $request->get('matricula');
         $Alumnos= Alumnos::where('id',$id)->get(); 
-           return view('pago.register',['Alumnos'=> $Alumnos]);
+           return view('pago.register',['Alumnos'=> $Alumnos],['Conceptos'=> $Conceptos]);
     }
     public function conceptos (){
      

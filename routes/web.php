@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfesoresController;
 use App\Http\Controllers\AlumnosController;
 use App\Http\Controllers\PagosController; 
 use App\Http\Controllers\ConceptosController; 
+use App\Http\Controllers\FormaPagoController;   
 use App\Http\Controllers\CargasController;
 use App\Http\Controllers\SettingsController;
 use Illuminate\Support\Facades\Artisan;
@@ -20,12 +21,15 @@ Route::get('/pagos/config', [PagosController::class,'configPago'])->name('pagos.
 Route::get('/concepts', [ConceptosController::class,'index']);
 Route::get('/concepts/create', [ConceptosController::class,'create']);
 Route::get('/concepts/pago', [ConceptosController::class,'formaPago'])->name('concepto.forma');
+Route::get('/concepts/formapago', [FormaPagoController::class,'create'])->name('formapago.create');
+Route::post('/concepts/pago',[FormaPagoController::class,'store']);
 Route::get('/concepts/{id}/edit',[ConceptosController::class,'edit']);
-
+Route::get('/concepts/pago/{id}/edit',[FormaPagoController::class,'edit'])->name('concepto.formaedit');
 
 Route::put('/concepts/{id}',[ConceptosController::class,'update']);
-
+Route::put('/concepts/pago/{id}',[FormaPagoController::class,'update']);
 Route::delete('/concepts/{id}',[ConceptosController::class,'destroy']);
+Route::delete('/concepts/pago/{id}',[FormaPagoController::class,'destroy']);
 
 Route::get('/cargas/index', [CargasController::class, 'index']);
 Route::get('/cargas/create', [CargasController::class, 'create']);
