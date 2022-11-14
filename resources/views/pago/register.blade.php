@@ -106,7 +106,7 @@
   title="Seleccionar Conceptos a pagar" multiple required>
     
     @foreach($Conceptos as $c)
-    <option>{{$c->nombre}} ${{$c->monto}}</option>
+    <option>{{$c->nombre}} $ {{$c->monto}}</option>
     @endforeach
    
   </select>
@@ -116,8 +116,25 @@
 </div>
 
 </FONT>
+<FONT FACE="century gothic" SIZE=4 COLOR="#056daa" style="text-align:center"  >
+<div class="form-group">  
+  <label for="conceptos">Forma de Pago</label>
+  <select name="conceptos[]" class="form-control selectpicker" id="conceptos" data-style="btn-primary" 
+  title="Seleccionar forma de pago" multiple required>
+  
+  </FONT>
 <hr>
+<div class="form-group">
+                <label for="exampleInputUsername1">Fecha de Pago</label>
+                <input type="date" name="fech" class="form-control" required>
+                @if ($errors->has('fecha'))
+                <div class="alert alert-danger">
+                    <span class="text-danger">{{ $errors->first('fecha') }}</span>
+                </div>
+                @endif
+            </div>
 
+<div>
 <form class="container" style="margin: 10px auto;"; style="text-align:center"; >
 
         <div class="row justify-content-around";>
