@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd ">
 
 <html lang="en">
 
@@ -15,33 +15,27 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
-
-
 <body>
-<hr>
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="margin: 0px auto;",>
+<div class="container" style="margin: 0px auto; " ,>
 
 <div style="text-align:center; " >
 
     <h3>REGISTRAR NUEVO CONCEPTO</h3>
     
 </div>
-
 <hr>
-</hr>
-<div class="row justify-content-center";>
-    <div class="card">
+<div class="row justify-content-center" style= "background-color:#87CEFA" ;>
+    <div class="card" style="background-color:#FFFACD">
         <div class="card-body">
         <h2 class="card-title text-center"></h2>
-        
+        <form method="post" action="/concepto" class="form-horizontal" enctype="multipart/form-data">
             @csrf
-
             <div class="form-group">
                 <label for="exampleInputUsername1">Nombre del concepto</label>
-                <input type="text" name="nombre" class="form-control" required>
+                <input type="text" name="name" class="form-control" required>
                 @if ($errors->has('nombre'))
                 <div class="alert alert-danger">
                     <span class="text-danger">{{ $errors->first('nombre') }}</span>
@@ -50,7 +44,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputUsername1">Monto del concepto</label>
-                <input type="number" name="monto" class="form-control" required>
+                <input type="number" name="cantidad" class="form-control" required>
                 @if ($errors->has('monto'))
                 <div class="alert alert-danger">
                     <span class="text-danger">{{ $errors->first('monto') }}</span>
@@ -59,7 +53,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputUsername1">Fecha de creación</label>
-                <input type="date" name="fecha" class="form-control" required>
+                <input type="date" name="fech" class="form-control" required>
                 @if ($errors->has('fecha'))
                 <div class="alert alert-danger">
                     <span class="text-danger">{{ $errors->first('fecha') }}</span>
@@ -68,8 +62,9 @@
             </div>
             <div class="form-group text-center">
                 <button type="submit" class="btn btn-primary mr-2 mb-3" style="background-color: 	#64dd17">Guardar</button>
-                <a href="/"  class="btn btn-inverse-dark btn-fw mb-3" style="background-color: 	#d50000">Cancelar</a>
+                <a href="/concepts"  class="btn btn-inverse-dark btn-fw mb-3" style="background-color: 	#d50000">Cancelar</a>
             </div>
+        
         </form>
         </div>
     </div>

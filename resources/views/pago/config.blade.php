@@ -29,11 +29,11 @@
     <h3>CONFIGURACION DE PAGOS</h3>
     
 </div>
-
+<hr>
 <div class="table-responsive">
-        <table id="datatables-example" class="table table-hover">
+        <table id="datatables-example" class="table table-hover" style="background-color: 	#FFFACD">
         <thead>
-            <tr>
+            <tr  style="background-color: #87CEFA">
             <th>#</th>
             <th>Tipo de pago</th>
             <th>Fecha de vencimiento</th>

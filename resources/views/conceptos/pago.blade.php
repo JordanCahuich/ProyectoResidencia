@@ -18,7 +18,7 @@
 
 
 <body>
-<hr>
+
 @extends('layouts.app')
 
 @section('content')
@@ -29,41 +29,40 @@
     <h3>FORMAS DE PAGO</h3>
     
 </div>
+</hr>
 
 <div class="row justify-content-end";>
-<a href="/concepto/create" class="btn btn-secondary" style="background-color: 	#ffc400">
+<a href="/concepts/formapago" class="btn btn-secondary" style="background-color: 	#ffc400">
             Registar 
         </a>
 </div>
-</hr>
+<hr>
 
 <div class="table-responsive">
-        <table id="datatables-example" class="table table-hover">
+        <table id="datatables-example" class="table table-hover" style="background-color: 	#FFFACD">
         <thead>
-            <tr>
-            <th>Concepto</th>
-            <th>Monto</th>
-            <th>Creacion</th>
+            <tr style="background-color: #87CEFA">
+            <th>Tipo</th>
+            <th>Nombre</th>
+            <th>Valor</th>
             <th>Acción</th>
             </tr>
 </thead>
             <tbody>
-            @foreach ($conceptos as $concepto)
+            @foreach ($Forma as $forma)
             <tr>
-                <td>{{ $concepto->nombre }}</td>
-                <td>{{ $concepto->monto }}</td>
-                <td>
-                     {{ date('d-m-Y', strtotime($concepto->fecha))  }}
-                    </td>
+                <td>{{ $forma->tipo }}</td>
+                <td>{{ $forma->nombre }}</td>
+                <td>{{ $forma->valor }}</td>
+                
                 <td style="float: right">
-                    <form action="{{ route('concepto.destroy',$concepto->id) }}" method="POST">
-                        <a class="btn btn-inverse-success" href="{{ route('concepto.edit',$concepto->id) }}"  style="padding: 8px 5px !important;" title="Actualizar Registro">
+                <a href="/concepts/pago/{{$forma->id}}/edit" class="btn btn-inverse-success"   style="float: left; padding: 8px 5px !important margin: 10px;" title="Actualizar Registro">
                             <i class="mdi mdi-autorenew"></i>Actualizar
                         </a>
-                        @csrf
+                        <form action="/concepts/pago/{{$forma->id}}}" method="post">
                         @method('DELETE')
-                        
-                        <button type="submit" class="btn btn-inverse-danger"  style="padding:  8px 5px !important;" title="Borrar Alumno">
+                        @csrf
+                        <button type="submit" class="btn btn-inverse-danger"  style="float: right; padding:  8px 5px !important;" title="Borrar">
                             <i class="mdi mdi-delete-sweep"></i>Borrar
                         </button>
                     </form>

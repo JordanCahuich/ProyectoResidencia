@@ -73,6 +73,90 @@
                     {{ $alumno->grupo }} 
                     <hr>
                 </h5>
+
+                </h5>
+                <h5 class="card-title"><strong>Periodo escolar:</strong> 
+                    {{ $alumno->periodo_escolar }} 
+                    <hr>
+                </h5>
+
+                </h5>
+                <h5 class="card-title"><strong>Domicilio:</strong> 
+                    {{ $alumno->domicilio }} 
+                    <hr>
+                </h5>
+
+                </h5>
+                <h5 class="card-title"><strong>En caso de emergencia hablar a:</strong> 
+                    {{ $alumno->nombre_emergencia}} 
+                    <hr>
+                </h5>
+
+                </h5>
+                <h5 class="card-title"><strong>Tel. emergencia:</strong> 
+                    {{ $alumno->tel_emergencia}} 
+                    <hr>
+                </h5>
+
+                </h5>
+                <h5 class="card-title"><strong>Persona autorizada:</strong> 
+                    {{ $alumno->persona_autorizada}} 
+                    <hr>
+                </h5>
+
+                </h5>
+                <h5 class="card-title"><strong>Parentesco:</strong> 
+                    {{ $alumno->parentesco }} 
+                    <hr>
+                </h5>
+
+                </h5>
+                <h5 class="card-title"><strong>Tel. 1 autorizada:</strong> 
+                    {{ $alumno->tel1_autorizada }} 
+                    <hr>
+                </h5>
+
+                </h5>
+                <h5 class="card-title"><strong>Tel. 2 autorizada:</strong> 
+                    {{ $alumno->tel2_autorizada }} 
+                    <hr>
+                </h5>
+
+                </h5>
+                <h5 class="card-title"><strong>Domicilio persona autorizada:</strong> 
+                    {{ $alumno->domicilio_autorizada }} 
+                    <hr>
+                </h5>
+
+                </h5>
+                <h5 class="card-title"><strong>Persona autorizada 2:</strong> 
+                    {{ $alumno->persona_autorizada2}} 
+                    <hr>
+                </h5>
+
+                </h5>
+                <h5 class="card-title"><strong>Parentesco 2:</strong> 
+                    {{ $alumno->parentesco2 }} 
+                    <hr>
+                </h5>
+
+                </h5>
+                <h5 class="card-title"><strong>Tel. 1 autorizada 2:</strong> 
+                    {{ $alumno->tel1_autorizada2 }} 
+                    <hr>
+                </h5>
+
+                </h5>
+                <h5 class="card-title"><strong>Tel. 2 autorizada 2:</strong> 
+                    {{ $alumno->tel2_autorizada2}} 
+                    <hr>
+                </h5>
+
+                </h5>
+                <h5 class="card-title"><strong>Domicilio persona autorizada 2:</strong> 
+                    {{ $alumno->domicilio_autorizada2 }} 
+                    <hr>
+                </h5>
                 
             
                 <h5 class="card-title"><strong>Observeción:</strong> 

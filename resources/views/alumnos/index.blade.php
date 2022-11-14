@@ -61,6 +61,7 @@
             <th>Sexo</th>
             <th>Grado</th>
             <th>CURP</th>
+            <th>NIVEL</th>
             <th>Acción</th>
             </tr>
         </thead>
@@ -71,10 +72,10 @@
                 <td>{{ $alumno->sexo }}</td>
                 <td>{{ $alumno->grado}}</td>
                 <td>{{ $alumno->curp }}</td>
+                <td>{{ $alumno->nivel_escolar}}</td>
 
                 <td style="float: right">
-                    <form action="{{ route('alumno.destroy',$alumno->id) }}" method="POST">
-                        <a class="btn btn-inverse-primary" href="{{ route('alumno.show',$alumno->id) }}"  style="padding: 8px 15px !important;" title="Ver Detalles">
+                         <a class="btn btn-inverse-primary" href="{{ route('alumno.show',$alumno->id) }}"  style="padding: 8px 15px !important;" title="Ver Detalles">
                             <i class="mdi mdi-account-card-details"></i> Ver
                         </a>
                         <a class="btn btn-inverse-success" href="{{ route('alumno.edit',$alumno->id) }}"  style="padding: 8px 5px !important;" title="Actualizar Registro">
@@ -83,7 +84,7 @@
                         @csrf
                         
                         @method('DELETE')
-                        <button type="submit" class="btn btn-inverse-danger" onclick="return confirm('Estas seguro que deseas borrar el alumno: {{ $alumno->nameFullAlumno }} ?');"  style="padding:  8px 5px !important;" title="Borrar Alumno">
+                        <button type="submit" class="btn btn-inverse-danger" onclick="return confirm('Estas seguro que deseas borrar el alumno: {{ $alumno->nombre }} ?');"  style="padding:  8px 5px !important;" title="Borrar Alumno">
                             <i class="mdi mdi-delete-sweep"></i>Borrar
                         </button>
                         
