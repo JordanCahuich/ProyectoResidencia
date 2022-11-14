@@ -23,6 +23,36 @@ class PagosController extends Controller
     public function create(){
 
     }
+    public function store(Request $r)
+    {
+        dd(request()->all());
+      $inputs = $r->all();
+       $pago = new Pagos(['nombre'=> $inputs['name'],
+       'monto'=> $inputs['cantidad'],
+       'fecha'=> $inputs['fech']
+   ]);
+   $concept->save();
+   return redirect('/concepts');
+    }
+    public function update($id, Request $r)
+    {
+        $inputs = $r->all();
+        $concept = conceptos::find($id);
+        $concept->nombre = $inputs['name'];
+        $concept->monto = $inputs['cantidad'];
+        $concept->fecha = $inputs['fech'];
+        $concept->save();
+
+        return redirect('/concepts');
+    }
+
+    public function destroy($id)
+    {
+        $pagos = Pagos::find($id);
+            $pagos->delete();
+        return redirect('/concepts');
+    }
+    
     public function show(){
 
     }

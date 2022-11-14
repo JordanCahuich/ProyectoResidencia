@@ -17,6 +17,7 @@ Route::get('/', function () {
 Route::get('/pago', [PagosController::class,'index']);
 Route::get('/pagos/register', [PagosController::class,'search']);
 Route::get('/pagos/config', [PagosController::class,'configPago'])->name('pagos.configuracion');
+Route::post('/pago',[PagosController::class,'store']);
 
 Route::get('/concepts', [ConceptosController::class,'index']);
 Route::get('/concepts/create', [ConceptosController::class,'create']);
@@ -47,17 +48,11 @@ Route::resource('carga', CargasController::class)->middleware('auth');
 Route::resource('concepto', ConceptosController::class)->middleware('auth');
 Route::post('/pagoSave', 'App\Http\Controllers\PagosController@guardarPago')->name("pagoSave")->middleware('auth'); //Guardando Pago
 
-
 Route::get('excel/exportAlumnos', 'App\Http\Controllers\AlumnosController@exportAlumnos')->name("exportAlumnos")->middleware('auth');
 Route::get('/exportPagos', 'App\Http\Controllers\PagosController@exportPagosAlumnos')->name("exportPagosAlumnos")->middleware('auth');
 
-
 Route::get('/NewPassword',  [SettingsController::class,'NewPassword'])->name('NewPassword')->middleware('auth');
 Route::post('/change/password',  [SettingsController::class,'changePassword'])->name('changePassword');
-
-
-
-
 
 /*Route::get('carga', function () {
     return view('carga');
