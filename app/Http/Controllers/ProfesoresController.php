@@ -1,130 +1,144 @@
 <?php
-
 namespace App\Http\Controllers;
 
-use App\Models\Profesores;
-use App\Models\Cursos;
+use App\Models\Alumnos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\Cursos;
+use App\Models\Profesores;
+use App\Models\Pagos;
+
+
+
 
 class ProfesoresController extends Controller
 {
-
+    
     public function index()
     {
-        //
+       
+        $Profesores = Profesores::all();
+        return view('profes.index', ['Profesores'=> $Profesores]);
+
     }
+
 
     public function create()
     {
-        $update =0;
-        $cursos = Cursos::get();
-        $profes = Profesores::orderBy('id', 'DESC')->paginate(6);
-        return view('profes.addProfe', compact('profes','cursos','update'));
+        return view('profes.add');
+
     }
 
-
+    
     public function store(Request $request)
     {
 
-        //return $request->all();
+  
+
         if ($request->hasFile('foto_profesor')) {
             $file = $request->file('foto_profesor');  
             $nombrearchivo = time()."_".$file->getClientOriginalName();  
-            $file->move(public_path('/fotosProfes/'),$nombrearchivo); 
+            $file->move(public_path('/fotosProfesor/'),$nombrearchivo); 
 
             $data = new Profesores([
-                'nameFull'=>$request->get('nameFull'),
-                'cedula'=>$request->get('cedula'),
-                'phone'=>$request->get('phone'),
+                'name'=>$request->get('name'),
+                'nombre'=>$request->get('nombre'),
+                'fecha_nacimiento'=>$request->get('fecha_nacimiento'),
+                'edad'=>$request->get('edad'),
+                'genero'=>$request->get('genero'),
                 'email'=>$request->get('email'),
-                'profesion'=>$request->get('profesion'),
-                'foto_profesor'=>$nombrearchivo,
-                'curso_id'=>$request->get('curso_id')
+                'telefono'=>$request->get('telefono'),
+                'localidad'=>$request->get('localidad'),
+                'domicilio'=>$request->get('domicilio'),
+         
+                 
+
             ]);
             $data->save(); 
         }else{
             $data = new Profesores([
-                'nameFull'=>$request->get('nameFull'),
-                'cedula'=>$request->get('cedula'),
-                'phone'=>$request->get('phone'),
+                'name'=>$request->get('name'),
+                'nombre'=>$request->get('nombre'),
+                'fecha_nacimiento'=>$request->get('fecha_nacimiento'),
+                'edad'=>$request->get('edad'),
+                'genero'=>$request->get('genero'),
                 'email'=>$request->get('email'),
-                'profesion'=>$request->get('profesion'),
-                'curso_id'=>$request->get('curso_id')
+                'telefono'=>$request->get('telefono'),
+                'localidad'=>$request->get('localidad'),
+                'domicilio'=>$request->get('domicilio'),
+            
+              
             ]);
             $data->save(); 
-        }
+        } 
 
-        return redirect('/profe/create')->with('RegisterProfe','Profesor Guardado Satisfactoriamente');
+     /*  return view('profes.store'); */
+        return redirect('/profes')->with('mensaje','Docente Registrado Correctamente.'); 
+
     }
 
-    public function show(Request $request, $id)
-    {
-        $prof = Profesores::findOrFail($id);
-        return view('profes.view', compact('prof'));
-    }
+    
+   
+    
+    public function edit($id){
 
+     $Profesores= Profesores::find($id);
 
-    public function edit($id)
-    {
-        $update =1;
-        $profe = Profesores::findOrFail($id);
-        $profeidCurso = $profe->curso_id;
-        $cursos = Cursos::all();
-
-        return view('profes.addProfe', compact('profe','cursos','update','profeidCurso'));  
-
+        return view('profes.edit',['profesores'=>$Profesores]);
     }
 
 
     public function update(Request $request, $id)
     {
-
+  
         if ($request->hasFile('foto_profesor')) {
             $file = $request->file('foto_profesor');  
             $nombrearchivo = time()."_".$file->getClientOriginalName();  
-            $file->move(public_path('/fotosProfes/'),$nombrearchivo); 
+            $file->move(public_path('/fotosProfesor/'),$nombrearchivo); 
 
-            $profe = Profesores::findOrFail($id);
-            $profe->nameFull        = $request->nameFull;
-            $profe->cedula          = $request->cedula;
-            $profe->phone           = $request->phone;
-            $profe->email           = $request->email;
-            $profe->profesion       = $request->profesion;
-            $profe->curso_id        = $request->curso_id;
-            $profe->foto_profesor   = $nombrearchivo;
-            
-            $profe->save();
+            $profesor = Profesores::findOrFail($id);
+            $profesor->name                  = $request->name;
+            $profesor->nombre                = $request->nombre;
+            $profesor->fecha_nacimiento      = $request->fecha_nacimiento;
+            $profesor->edad                  = $request->edad;
+            $profesor->genero                = $request->genero;
+            $profesor->email                 = $request->email;
+            $profesor->telefono              = $request->telefono;
+            $profesor->localidad             = $request->localidad;
+            $profesor->domicilio             = $request->domicilio;
+          
+       
+            $profesor->save(); 
         }else{
-            $profe = Profesores::findOrFail($id);
-            $profe->nameFull        = $request->nameFull;
-            $profe->cedula          = $request->cedula;
-            $profe->phone           = $request->phone;
-            $profe->email           = $request->email;
-            $profe->profesion       = $request->profesion;
-            $profe->curso_id        = $request->curso_id;
+            $profesor = Profesores::findOrFail($id);
+            $profesor->name                      = $request->name;
+            $profesor->nombre                    = $request->nombre;
+            $profesor->fecha_nacimiento          = $request->fecha_nacimiento;
+            $profesor->edad                      = $request->edad;
+            $profesor->genero                    = $request->genero;
+            $profesor->email                     = $request->email;
+            $profesor->telefono                  = $request->telefono;
+            $profesor->localidad                 = $request->localidad;
+            $profesor->domicilio                 = $request->domicilio;
             
-            $profe->save();
-        }
-        
-        $update = 0;
-        $cursos = Cursos::get();
-        $profes = Profesores::orderBy('id', 'DESC')->paginate(3);
-        return view('profes.addProfe', compact('profes','cursos','update'));
+            $profesor->save(); 
+        } 
 
+            $updateProfesor ="Docente actualizado Correctamente";
+        return redirect('profes/')->with(['updateProfesor' => $updateProfesor]);
     }
 
 
-    public function destroy(Profesores $profesores, $id){
 
-        $profes = Profesores::findOrFail($id);
-        $profes->delete($id);
-
-        $update =0;
-        $cursos = Cursos::get();
-        $profes = Profesores::orderBy('id', 'DESC')->paginate(6);
-
-        $successDelete ="Sede Borrada correctamente.";
-        return view('profes.addProfe', compact('successDelete','profes','cursos','update'));
+    public function destroy($id){
+        $profesor = Profesores::findOrFail($id);
+        $profesor->delete();
+        return redirect('/profes')->with('mensaje', 'El docente fue borrado correctamente.');
     }
+
+
+    
+    
+
 
 }

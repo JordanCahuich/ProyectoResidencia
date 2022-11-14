@@ -13,20 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('conceptos', function (Blueprint $table) {
+        Schema::create('horarios', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre')->nullable();
-            $table->double('monto')->nullable();
-            $table->string('fecha')->nullable();
-
+            $table-> string('nombre');
+            $table-> string('aula');
             $table->timestamps();
         });
-    }
-
-
-    public function down()
-    {
-        Schema::dropIfExists('conceptos');
     }
 
     /**
@@ -34,4 +26,8 @@ return new class extends Migration
      *
      * @return void
      */
+    public function down()
+    {
+        Schema::dropIfExists('horarios');
+    }
 };

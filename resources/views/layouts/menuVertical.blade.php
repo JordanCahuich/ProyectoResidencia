@@ -14,12 +14,7 @@ partial -->
         <span class="menu-title">Registrar Curso</span>
       </a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{{ route('profe.create') }}">
-        <i class="mdi mdi-chart-pie menu-icon"></i>
-        <span class="menu-title">Registrar Profesor</span>
-      </a>
-    </li>
+  
     <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
         <i class="mdi mdi-account-multiple-plus menu-icon"></i>
@@ -36,7 +31,7 @@ partial -->
 
     <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-        <i class="mdi mdi-file-document-box-outline menu-icon"></i>
+        <i class="mdi mdi-coin"></i>
         <span class="menu-title">Sección de Pagos</span>
         <i class="menu-arrow"></i>
       </a>
@@ -53,13 +48,27 @@ partial -->
     <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
         <i class="mdi mdi-file-export"></i>
-        <span class="menu-title">Sección de Carga Academica</span>
+        <span class="menu-title">Carga Academica</span>
         <i class="menu-arrow"></i>
       </a>
       <div class="collapse" id="collapseExample">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"> <a class="nav-link" href="{{ route('carga.create') }}">Registrar nueva carga</a></li>
           <li class="nav-item"> <a class="nav-link" href="{{ route('carga.index') }}">Lista de cargas</a></li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+        <i class="mdi mdi-chart-pie menu-icon"></i>
+        <span class="menu-title">Seccion de Docentes</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="collapseExample1">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{{ route('profe.create') }}">Registrar docente</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ route('profe.index') }}">Lista de docentes</a></li>
         </ul>
       </div>
     </li>

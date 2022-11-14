@@ -12,12 +12,16 @@ class CreateProfesoresTable extends Migration
     {
         Schema::create('profesores', function (Blueprint $table) {
             $table->id();
-            $table->string('nameFull',150)->nullable();
-            $table->string('cedula',30)->nullable();
-            $table->string('phone',20)->nullable();
+            $table->string('name',150)->nullable();
+            $table->string('nombre',150)->nullable();
+            $table->string('fecha_nacimiento',30)->nullable();
+            $table->string('edad',20)->nullable();
+            $table->string('genero',20)->nullable();
             $table->string('email')->nullable();
-            $table->string('profesion',150)->nullable();
-            $table->string('foto_profesor',50)->nullable();
+            $table->string('telefono',20)->nullable();
+            $table->string('localidad',150)->nullable();
+            $table->string('domicilio',20)->nullable();
+            
 
             
             /*Creando relacion version 8 de Laravel */

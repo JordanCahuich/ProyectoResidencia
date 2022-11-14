@@ -7,70 +7,66 @@
 <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-        <h2 class="card-title text-center">ACTUALIZAR DATOS DEL ALUMNO <hr></h2>
-        <form class="forms-sample" method="post" action="{{ route('alumno.update', $alumno->id) }}" enctype="multipart/form-data">
+        <h2 class="card-title text-center">ACTUALIZAR DATOS DEL DOCENTE <hr></h2>
+        <form class="forms-sample" method="post" action="{{ route('profes.update', $profesor->id) }}" enctype="multipart/form-data">
           @csrf
           @method('PATCH')
             <div class="row">
+
                 <div class="col-md-4">
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-                    <label class="col-sm-6 col-form-label">Nombre Alumno</label>
-=======
-                    <label class="col-sm-6 col-form-label">Nombre Alumnos</label>
->>>>>>> d4f32d593be4070d5b8c71789add86e418ed556b
-=======
-                    <label class="col-sm-6 col-form-label">Nombre Alumnos</label>
->>>>>>> Stashed changes
+                    <label class="col-sm-6 col-form-label">Nombre completo</label>
                     <div class="col-sm-12">
-                      <input type="text" name="nombre" class="form-control" value="{{ $alumno->nombre}}" required/>
+                      <input type="text" name="name" class="form-control" value="{{ $profesor->n}}" required/>
                     </div>
                 </div>
+
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Primer Apellido</label>
+                    <label class="col-sm-6 col-form-label">Fecha de nacimiento</label>
                     <div class="col-sm-12">
-                      <input type="text" name="primer_apellido" class="form-control" value="{{ $alumno->primer_apellido }}" />
+                      <input type="text" name="fecha_naicmiento" class="form-control" value="{{ $profesor->fecha_nacimiento }}" />
                     </div>
                 </div>
+
                 <div class="col-md-4">
-                  <label class="col-sm-6 col-form-label">Segundo Apellido</label>
+                  <label class="col-sm-6 col-form-label">Edad</label>
                   <div class="col-sm-12">
-                    <input type="text" name="segundo_apellido" class="form-control" value="{{ $alumno->segundo_apellido }}"/>
+                    <input type="number" name="edad" class="form-control" value="{{ $profesor->edad }}"/>
                   </div>
               </div>
             </div>
+
             <div class="row">
               <div class="col-md-4">
-                  <label class="col-sm-6 col-form-label">Sexo</label>
+                  <label class="col-sm-6 col-form-label">Genero</label>
                   <div class="col-sm-12">
-                    <input type="text" name="sexo" class="form-control"  value="{{ $alumno->sexo }}"/>
+                    <input type="text" name="genero" class="form-control"  value="{{ $profesor->genero }}"/>
                   </div>
               </div>
               <div class="col-md-4">
-                  <label class="col-sm-6 col-form-label">Fecha Nacimiento</label>
+                  <label class="col-sm-6 col-form-label">Correo electronico</label>
                   <div class="col-sm-12">
-                    <input type="number" name="fecha_nacimiento" class="form-control" value="{{ $alumno->fecha_nacimiento }}"/>
+                    <input type="text" name="email" class="form-control" value="{{ $profesor->email }}"/>
                   </div>
               </div>
               <div class="col-md-4">
-                  <label class="col-sm-6 col-form-label">CURP</label>
+                  <label class="col-sm-6 col-form-label">Telefono</label>
                   <div class="col-sm-12">
-                    <input type="number" name="curp" class="form-control"  value="{{ $alumno->curp }}"/>
+                    <input type="number" name="telefono" class="form-control"  value="{{ $profesor->telefono }}"/>
                   </div>
               </div>
           </div>
 
             <div class="row">
               <div class="col-md-4">
-                <label class="col-sm-6 col-form-label">Edad</label>
+                <label class="col-sm-6 col-form-label">Localidad</label>
                 <div class="col-sm-12">
-                  <input type="number" name="edad" class="form-control" value="{{ $alumno->edad }}"/>
+                  <input type="text" name="localidad" class="form-control" value="{{ $profesor->localidad }}"/>
                 </div>
             </div>
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Grado Escolar</label>
+                    <label class="col-sm-6 col-form-label">Domicilio</label>
                     <div class="col-sm-12">
-                      <input type="text" name="grado_escolar" class="form-control" value="{{ $alumno->grado_escolar }}"/>
+                      <input type="text" name="domicilio" class="form-control" value="{{ $profesor->domicilio }}"/>
                     </div>
                 </div>
                 <!-- <div class="col-md-4">
@@ -142,13 +138,12 @@
               </div>
               <div class="col-md-4"> -->
 
-                <label class="col-sm-6 col-form-label">Observación</label>
-                <textarea name="observ" class="form-control" rows="4" cols="50"></textarea>
+              
             </div>
           </div>
 
             <div class="form-group text-center mt-5 mb-3">
-                <button type="submit" class="btn btn-primary mr-2 mb-3">Actualizar datos del  Alumno</button>
+                <button type="submit" class="btn btn-primary mr-2 mb-3">Actualizar datos del  docente</button>
                 <a href="/"  class="btn btn-inverse-dark btn-fw mb-3">Cancelar</a>
             </div>
         </form>

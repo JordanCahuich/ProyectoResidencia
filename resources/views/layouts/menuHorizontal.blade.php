@@ -1,8 +1,9 @@
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-  <div class="navbar-brand-wrapper d-flex justify-content-center" style="background-color: #FF9900 !important;border-right: 1px solid #FF9900;">
+  <div class="navbar-brand-wrapper d-flex justify-content-center" style="background-color: #45b8e6 !important;border-right: 1px solid #45b8e6;">
     <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
       <!--<a class="navbar-brand brand-logo" href="/">
-        <img src="{{ asset('images/logo.svg') }}" alt="logo"/>
+        <img src="{{ asset('images/logotjp.png') }}" alt="logo" width="50"
+        height="50"/>
       </a> -->
       <strong style="font-weight: 800; font-size:28px; text-center; margin:0 auto;"> Jean Piaget</strong>
       
@@ -14,12 +15,12 @@
       </button>
     </div>  
   </div>
-  <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" style="background-color: #FF9900 !important">
+  <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end" style="background-color: #45b8e6 !important">
     
     <ul class="navbar-nav navbar-nav-right">
       <li class="nav-item nav-profile dropdown">
         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-          <img src="{{ asset('images/faces/face5.jpg') }}" alt="profile"/>
+          <img src="{{ asset('images/logotjp.png') }}" alt="profile"/>
           @if (Auth::check())
           <span class="nav-profile-name"> {{ Auth::user()->name }}</span>
           @endif
