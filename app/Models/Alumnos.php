@@ -30,7 +30,7 @@ class Alumnos extends Model
     }
     public function scopeNombres($query, $nombres) {
         if ($nombres) {
-            return $query->where('nameFullAlumno','like',"%$nombres%");
+            return $query->where('nombre','like',"%$nombres%");
         }
     }
     public function scopeGrados($query, $grados) {

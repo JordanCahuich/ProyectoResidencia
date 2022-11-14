@@ -13,7 +13,19 @@
           @method('PATCH')
             <div class="row">
                 <div class="col-md-4">
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+<<<<<<< HEAD
                     <label class="col-sm-6 col-form-label">Nombre Alumno</label>
+=======
+                    <label class="col-sm-6 col-form-label">Nombre Alumnos</label>
+>>>>>>> d4f32d593be4070d5b8c71789add86e418ed556b
+=======
+                    <label class="col-sm-6 col-form-label">Nombre Alumnos</label>
+>>>>>>> Stashed changes
+=======
+                    <label class="col-sm-6 col-form-label">Nombre Alumno</label>
+>>>>>>> 1467d6e9e6dcca4290b2a3467adef6ac2705a113
                     <div class="col-sm-12">
                       <input type="text" name="nombre" class="form-control" value="{{ $alumno->nombre}}" required/>
                     </div>
@@ -60,9 +72,115 @@
                 </div>
             </div>
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Grado Escolar</label>
+                    <label class="col-sm-6 col-form-label">Tipo Sangre</label>
                     <div class="col-sm-12">
-                      <input type="text" name="grado_escolar" class="form-control" value="{{ $alumno->grado_escolar }}"/>
+                      <input type="text" name="tipo_sangre" class="form-control" value="{{ $alumno->tipo_sangre }}"/>
+                    </div>
+                </div>
+
+                
+                <div class="col-md-4">
+                    <label class="col-sm-6 col-form-label">Nivel escolar</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="nivel_escolar" class="form-control" value="{{ $alumno->nivel_escolar }}"/>
+                    </div>
+                </div>
+  
+                <div class="col-md-4">
+                    <label class="col-sm-6 col-form-label">Nivel escolar</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="nivel_escolar" class="form-control" value="{{ $alumno->nivel_escolar }}"/>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-6 col-form-label">Grado</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="grado" class="form-control" value="{{ $alumno->grado }}"/>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-6 col-form-label">Grupo</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="grupo" class="form-control" value="{{ $alumno->grupo}}"/>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-6 col-form-label">Periodo escolar</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="periodo_escolar" class="form-control" value="{{ $alumno->periodo_escolar}}"/>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-6 col-form-label">Domicilio</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="Domicilio" class="form-control" value="{{ $alumno->domicilio}}"/>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-6 col-form-label">En caso de emergencia hablar a:</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="nombre_emergencia" class="form-control" value="{{ $alumno->nombre_emergencia}}"/>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-6 col-form-label">Tel. Emergencia</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="tel_emergencia" class="form-control" value="{{ $alumno->tel_emergencia}}"/>
+                    </div>
+                </div>
+               
+                <div class="col-md-4">
+                    <label class="col-sm-6 col-form-label">Persona autorizada</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="persona_autorizada" class="form-control" value="{{ $alumno->persona_autorizada}}"/>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-6 col-form-label">Parentesco</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="parentesco" class="form-control" value="{{ $alumno->parentesco}}"/>
+                    </div>
+                </div>
+               
+                <div class="col-md-4">
+                    <label class="col-sm-6 col-form-label">Tel1 Autorizada</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="tel1_autorizada" class="form-control" value="{{ $alumno->tel1_autorizada}}"/>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-6 col-form-label">Tel1 Autorizada</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="tel1_autorizada" class="form-control" value="{{ $alumno->tel1_autorizada}}"/>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-6 col-form-label">Tel2 Autorizada</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="tel2_autorizada" class="form-control" value="{{ $alumno->tel2_autorizada}}"/>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-6 col-form-label">Domicilio Autorizada</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="domicilio_autorizada" class="form-control" value="{{ $alumno->domicilio_autorizada}}"/>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-6 col-form-label">Persona autorizada 2</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="domicilio_autorizada" class="form-control" value="{{ $alumno->domicilio_autorizada}}"/>
                     </div>
                 </div>
                 <!-- <div class="col-md-4">
@@ -134,6 +252,7 @@
               </div>
               <div class="col-md-4"> -->
 
+              <div class="col-md-4">
                 <label class="col-sm-6 col-form-label">Observación</label>
                 <textarea name="observ" class="form-control" rows="4" cols="50"></textarea>
             </div>

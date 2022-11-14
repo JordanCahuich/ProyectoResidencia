@@ -16,25 +16,16 @@ return new class extends Migration
         Schema::create('cargas', function (Blueprint $table) {
             $table->id();
 
-            $table->string('nombre_alumno', 250)->nullable();
-            $table->string('nombre_profesor', 250)->nullable();
+            $table->string('grupo', 250)->nullable();
+            $table->integer('grado')->nullable();
+            $table->string('nivel', 250)->nullable();
+            $table->integer('periodo')->nullable();
+            $table->string('docente', 250)->nullable();
             $table->string('asignatura', 250)->nullable();
-            $table->string('grado', 250)->nullable();
-
-            $table->foreignId('grados_id')
-            ->nullable()
-            ->constrained('grados')
-            ->onDelete('set null');
+            $table->integer('bimestre')->nullable();
+            $table->string('alumnos', 250)->nullable();
             
-            $table->foreignId('asignaturas_id')
-            ->nullable()
-            ->constrained('asignaturas')
-            ->onDelete('set null');
 
-            $table->foreignId('profesores_id')
-            ->nullable()
-            ->constrained('profesores')
-            ->onDelete('set null');
 
             $table->timestamps();
         });

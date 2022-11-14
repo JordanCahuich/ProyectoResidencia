@@ -26,7 +26,7 @@
 <div style="text-align:center; " >
     <FONT FACE="century gothic" SIZE=4 COLOR="#212121">
 
-    <h3>LISTA DE CARGAS</h3>
+    <h3>LISTA DE DOCENTES</h3>
   
 </div>
 </hr>
@@ -39,54 +39,54 @@
         <table id="datatables-example" class="table table-hover" style="background-color: 	#c3e2ee">
         <thead>
             <tr style="background-color: #0babdb">
-            <th>Grupo</th>
-            <th>Grado</th>
-            <th>Nivel</th>
-            <th>Periodo</th>
-            <th>Docente</th>
-            <th>Asignatura</th>
-            <th>Bimestre</th>
-            <th>Alumnos</th>
+            <th>Nombre completo</th>
+            <th>Fecha de nacimiento</th>
+            <th>Edad</th>
+            <th>Genero</th>
+            <th>Email</th>
+            <th>Telefono</th>
+            <th>Localidad</th>
+            <th>Domicilio</th>
             <th>Acción</th>
             </tr>
 </thead>
 <tbody>
     <tr>
         
-    @foreach($Cargas as $c)
+    @foreach($Profesores as $p)
   
         <td>
-        <h4 class="country" style="margin: 0px auto;" > <b>{{$c->grupo}}</b></h4>
+        <h4 class="country" style="margin: 0px auto;" > <b>{{$p->nombre}}</b></h4>
         </td>
         <td>
-        <h4 class="country" style="margin: 0px auto;"> <b>{{$c->grado}}</b></h4>
+        <h4 class="country" style="margin: 0px auto;"> <b>{{$p->fecha_nacimiento}}</b></h4>
         </td>
         <td>
-        <h4 class="country" style="margin: 0px auto;"> <b>{{$c->nivel}}</b></h4>
+        <h4 class="country" style="margin: 0px auto;"> <b>{{$p->edad}}</b></h4>
         </td>
         <td>
-        <h4 class="country" style="margin: 0px auto;"> <b>{{$c->periodo}}</b></h4>
+        <h4 class="country" style="margin: 0px auto;"> <b>{{$p->genero}}</b></h4>
         </td>
         <td>
-        <h4 class="country" style="margin: 0px auto;"> <b>{{$c->docente}}</b></h4>
+        <h4 class="country" style="margin: 0px auto;"> <b>{{$p->email}}</b></h4>
         </td>
         <td>
-        <h4 class="country" style="margin: 0px auto;"> <b>{{$c->asignatura}}</b></h4>
+        <h4 class="country" style="margin: 0px auto;"> <b>{{$p->telefono}}</b></h4>
         </td>
         <td>
-        <h4 class="country" style="margin: 0px auto;"> <b>{{$c->bimestre}}</b></h4>
+        <h4 class="country" style="margin: 0px auto;"> <b>{{$p->localidad}}</b></h4>
         </td>
         <td>
-        <h4 class="country" style="margin: 0px auto;"> <b>{{$c->alumnos}}</b></h4>
+        <h4 class="country" style="margin: 0px auto;"> <b>{{$p->domicilio}}</b></h4>
         </td>
         <td style="float: right">
-                        <a href="/cargas/{{$c->id}}/edit" class="btn btn-inverse-success"   style="float: left; padding: 8px 5px !important margin: 10px;" title="Actualizar Registro">
+                        <a href="/profes/{{$p->id}}/edit" class="btn btn-inverse-success"   style="float: left; padding: 8px 5px !important margin: 10px;" title="Actualizar Registro">
                             <i class="mdi mdi-autorenew"></i>Actualizar
                         </a>
-                        <form action="/cargas/{{$c->id}}}" method="post">
+                        <form action="/profes/{{$p->id}}}" method="post">
                         @method('DELETE')
                         @csrf
-                        <button type="submit" class="btn btn-inverse-danger"  style="float: right; padding:  8px 5px !important;" title="Borrar Carga">
+                        <button type="submit" class="btn btn-inverse-danger"  style="float: right; padding:  8px 5px !important;" title="Borrar Concepto">
                             <i class="mdi mdi-delete-sweep"></i>Borrar
                         </button>
                     </form>

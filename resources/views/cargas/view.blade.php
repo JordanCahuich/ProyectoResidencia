@@ -20,35 +20,35 @@
               
                 
                 <div class="card-body">
-                <h6 class="card-title"><strong>Nombre:</strong>
-                     {{ $profesor->nombre }} <hr>
+                <h6 class="card-title"><strong>Grupo:</strong>
+                     {{ $carga->nombre }} <hr>
                 </h6>
-                <h5 class="card-title"><strong>Fecha de nacimiento:</strong> 
-                    {{ $profesor->fecha_nacimiento }} 
+                <h5 class="card-title"><strong>Grado:</strong> 
+                    {{ $carga->fecha_nacimiento }} 
                     <hr>
                 </h5>
-                <h5 class="card-title"><strong>Edad:</strong> 
-                    {{ $profesor->edad }} 
+                <h5 class="card-title"><strong>Nivel:</strong> 
+                    {{ $carga->edad }} 
                     <hr>
                 </h5>
-                <h5 class="card-title"><strong>Genero:</strong> 
-                    {{ $profesor->genero }} 
+                <h5 class="card-title"><strong>Periodo:</strong> 
+                    {{ $carga->genero }} 
                     <hr>
                 </h5>
-                <h5 class="card-title"><strong>Correo Electronico:</strong> 
-                    {{ $profesor->email }} 
+                <h5 class="card-title"><strong>Docente:</strong> 
+                    {{ $carga->email }} 
                     <hr>
                 </h5>
-                <h5 class="card-title"><strong>Telefono:</strong> 
-                    {{ $profesor->telefono }} 
+                <h5 class="card-title"><strong>Asignatura:</strong> 
+                    {{ $carga->telefono }} 
                     <hr>
                 </h5>
-                <h5 class="card-title"><strong>Localidad:</strong> 
-                    {{ $profesor->localidad }} 
+                <h5 class="card-title"><strong>Bimestre:</strong> 
+                    {{ $carga->localidad }} 
                     <hr>
                 </h5>
-                <h5 class="card-title"><strong>Domicilio:</strong> 
-                    {{ $profesor->domicilio }} 
+                <h5 class="card-title"><strong>Alumnos:</strong> 
+                    {{ $carga->domicilio }} 
                     <hr>
                 </h5>
 

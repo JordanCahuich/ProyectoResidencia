@@ -8,12 +8,15 @@ use App\Http\Controllers\ConceptosController;
 use App\Http\Controllers\FormaPagoController;   
 use App\Http\Controllers\CargasController;
 use App\Http\Controllers\SettingsController;
+use App\Models\Cargas;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 }); 
+
+
 Route::get('/pago', [PagosController::class,'index']);
 Route::get('/pagos/register', [PagosController::class,'search']);
 Route::get('/pagos/config', [PagosController::class,'configPago'])->name('pagos.configuracion');
@@ -32,8 +35,27 @@ Route::put('/concepts/pago/{id}',[FormaPagoController::class,'update']);
 Route::delete('/concepts/{id}',[ConceptosController::class,'destroy']);
 Route::delete('/concepts/pago/{id}',[FormaPagoController::class,'destroy']);
 
-Route::get('/cargas/index', [CargasController::class, 'index']);
+/* CARGAS */
+
+Route::get('/cargas', [CargasController::class, 'index']);
 Route::get('/cargas/create', [CargasController::class, 'create']);
+Route::post('/cargas', [CargasController::class, 'store']);
+Route::get('/cargas/{id}/edit', [CargasController::class, 'edit']);
+
+Route::put('/cargas/{id}', [CargasController::class, 'update']);
+Route::delete('/cargas/{id}', [CargasController::class, 'destroy']);
+
+/* PROFESORES */
+
+Route::get('/profes', [ProfesoresController::class, 'index']);
+Route::get('/profes/create', [ProfesoresController::class, 'create']);
+Route::post('/profes', [ProfesoresController::class, 'store']);
+Route::get('/profes/{id}/edit', [ProfesoresController::class, 'edit']);
+
+Route::put('/profes/{id}', [ProfesoresController::class, 'update']);
+Route::delete('/profes/{id}', [ProfesoresController::class, 'destroy']);
+
+
 
 Route::get('dashboard', function () {
     return view('dashboard');
@@ -54,10 +76,16 @@ Route::get('/exportPagos', 'App\Http\Controllers\PagosController@exportPagosAlum
 Route::get('/NewPassword',  [SettingsController::class,'NewPassword'])->name('NewPassword')->middleware('auth');
 Route::post('/change/password',  [SettingsController::class,'changePassword'])->name('changePassword');
 
+<<<<<<< HEAD
+
+
+
+=======
 /*Route::get('carga', function () {
     return view('carga');
 })->middleware(['auth', 'verified'])->name('carga');  
 require __DIR__.'/auth.php'; */
+>>>>>>> 1467d6e9e6dcca4290b2a3467adef6ac2705a113
 
 Route::get('/clear-cache', function () {
     echo Artisan::call('config:clear');

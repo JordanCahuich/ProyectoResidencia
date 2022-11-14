@@ -84,7 +84,7 @@
                         @csrf
                         
                         @method('DELETE')
-                        <button type="submit" class="btn btn-inverse-danger" onclick="return confirm('Estas seguro que deseas borrar el alumno: {{ $alumno->nameFullAlumno }} ?');"  style="padding:  8px 5px !important;" title="Borrar Alumno">
+                        <button type="submit" class="btn btn-inverse-danger" onclick="return confirm('Estas seguro que deseas borrar el alumno: {{ $alumno->nombre }} ?');"  style="padding:  8px 5px !important;" title="Borrar Alumno">
                             <i class="mdi mdi-delete-sweep"></i>Borrar
                         </button>
                         
