@@ -22,32 +22,22 @@
 
 @section('content')
 <div class="container" style="margin: 0px auto;",>
-
   <div style="text-align:center; " >
-
      <h3>REGISTRO DE PAGOS</h3>
-    
         <form class="form-inline row" style="margin: 40px 40px;" style="text-align:center;" >
           <input  name="matricula" class="form-control mr-sm-2" style="width: 150px; height: 25px; margin: 10px" type="search" placeholder="Matricula" aria-label="Search">
 
           <div class="col-md-2">
-
             <button class="btn btn-success" type="submit" style="background-color: #64dd17" >buscar</button>
 
             </div>
-
       </form>
   </div>
-
 <hr>
 @foreach($Alumnos as $p)
 <FONT FACE="century gothic" SIZE=4 COLOR="#056daa"  >
 <div class="row row-list">
-
-
-
     <div class="col-md-8 " style="text-align: justify">
-
     <h4 class="country"  style="margin: 10px 0px;"> <b> Alumno: {{$p->nombre}} {{$p->primer_apellido}} {{$p->segundo_apellido}}  ({{$p->id}})</b></h4>
         
     </div>
@@ -78,7 +68,6 @@
            </th>
             </tr>
 </thead>
-
 </tr>
 <tr style="background-color: #ffecb3">
   <td><input type="checkbox" name="Agosto"></td>
@@ -102,10 +91,26 @@
 <FONT FACE="century gothic" SIZE=4 COLOR="#056daa" style="text-align:center"  >
 <div class="form-group">  
   <label for="conceptos">Conceptos</label>
-  <select name="conceptos[]" class="form-control selectpicker" id="conceptos" data-style="btn-primary" 
+  <select name="conceptos[]" class="form-control selectpicker" id="conceptos" data-style="btn-secondary" 
   title="Seleccionar Conceptos a pagar" multiple required>
-    
     @foreach($Conceptos as $c)
+    <option value="{{$c->monto}} " >{{$c->nombre}} $ {{$c->monto}}</option>
+    @endforeach
+   
+  </select>
+  <div class="invalid-feedback">
+    Please select a valid state.
+</div>
+</div>
+<h2 id="result">27</h2>
+</FONT>
+<FONT FACE="century gothic" SIZE=4 COLOR="#056daa" style="text-align:center"  >
+<div class="form-group">  
+  <label for="conceptos">Forma de Pago</label>
+  <select name="conceptos[]" class="form-control selectpicker" id="conceptos" data-style="btn-primary" 
+  title="Seleccionar forma de pago" multiple required>
+   
+  @foreach($Conceptos as $c)
     <option>{{$c->nombre}} $ {{$c->monto}}</option>
     @endforeach
    
@@ -114,14 +119,6 @@
     Please select a valid state.
 </div>
 </div>
-
-</FONT>
-<FONT FACE="century gothic" SIZE=4 COLOR="#056daa" style="text-align:center"  >
-<div class="form-group">  
-  <label for="conceptos">Forma de Pago</label>
-  <select name="conceptos[]" class="form-control selectpicker" id="conceptos" data-style="btn-primary" 
-  title="Seleccionar forma de pago" multiple required>
-  
   </FONT>
 <hr>
 <div class="form-group">
@@ -133,7 +130,6 @@
                 </div>
                 @endif
             </div>
-
 <div>
 <form class="container" style="margin: 10px auto;"; style="text-align:center"; >
 
@@ -142,23 +138,25 @@
 <form   action="../../form-result.php" method="post" enctype="multipart/form-data" target="_blank"  style="background-color:#ffc400">
 
   <p>
-
     Enviar Comprobante:
     <input  type="file" name="subido"archivo>
 </form>
   </p>
-
 </form>
         <button class="btn btn-success" type="submit" style="background-color: 	#64dd17" >Guardar</button>
         </div>
-
     </form>
-
-    </form>
+      </form>
 @endforeach
 @endsection
 </hr>
 </div>
 </body>
-
+<script>
+function test() {
+var x =+ document.getElementById("conceptos").value;
+document.getElementById("result").innerHTML = x;
+document.write(test);
+}
+</script>
 </html>

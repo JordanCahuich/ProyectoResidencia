@@ -31,8 +31,8 @@ class ConceptosController extends Controller
     {
       $inputs = $r->all();
        $concept = new Conceptos(['nombre'=> $inputs['name'],
-       'alumno_id'=> $inputs['cantidad'],
-       'tipo'=> $inputs['fech'],
+       'monto'=> $inputs['cantidad'],
+       'fecha'=> $inputs['fech'],
        'importetotal'=> $inputs['fech']
    ]);
    $concept->save();
