@@ -1,5 +1,5 @@
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML>
 
 <html lang="en">
 
@@ -70,28 +70,36 @@
 </thead>
 </tr>
 <tr style="background-color: #ffecb3">
-  <td><input type="checkbox" name="Agosto"></td>
-  <td><input type="checkbox" name="Septiembre"></td>
-  <td><input type="checkbox" name="Octubre"></td>
-  <td><input type="checkbox" name="Noviembre"></td>
-  <td><input type="checkbox" name="Diciembre"></td>
-  <td><input type="checkbox" name="Enero"></td>
-  <td><input type="checkbox" name="Febrero"></td>
-  <td><input type="checkbox" name="Marzo"></td>
-  <td><input type="checkbox" name="Abril"></td>
-  <td><input type="checkbox" name="Mayo"></td>
-  <td><input type="checkbox" name="Junio"></td>
-  <td><input type="checkbox" name="Julio"></td>
+  <td><input class="mi_checkbox" type="checkbox" value="Agosto"></td>
+  <td><input class="mi_checkbox" type="checkbox" value="Septiembre"></td>
+  <td><input class="mi_checkbox" type="checkbox" value="Octubre"></td>
+  <td><input class="mi_checkbox" type="checkbox" value="Noviembre"></td>
+  <td><input class="mi_checkbox" type="checkbox" value="Diciembre"></td>
+  <td><input class="mi_checkbox" type="checkbox" value="Enero"></td>
+  <td><input class="mi_checkbox" type="checkbox" value="Febrero"></td>
+  <td><input class="mi_checkbox"type="checkbox" value="Marzo"></td>
+  <td><input class="mi_checkbox"type="checkbox" value="Abril"></td>
+  <td><input class="mi_checkbox"type="checkbox" value="Mayo"></td>
+  <td><input class="mi_checkbox"type="checkbox" value="Junio"></td>
+  <td><input class="mi_checkbox" type="checkbox" value="Julio"></td>
 </tr>
 
 </table>
 </div>
-
+<div class="form-group">
+                <label for="exampleInputUsername1">Nombre del Pago</label>
+                <input type="text" id="name"name="nombr"  class="form-control" required>
+                @if ($errors->has('tipo'))
+                <div class="alert alert-danger">
+                    <span class="text-danger">{{ $errors->first('tipo') }}</span>
+                </div>
+                @endif
+            </div>
 <hr>
 <FONT FACE="century gothic" SIZE=4 COLOR="#056daa" style="text-align:center"  >
 <div class="form-group">  
-  <label for="conceptos">Conceptos</label>
-  <select name="conceptos[]" class="form-control selectpicker" id="conceptos" data-style="btn-secondary" 
+<label for="conceptos">Concweptos</label>
+  <select  class="selectpicker form-control"
   title="Seleccionar Conceptos a pagar" multiple required>
     @foreach($Conceptos as $c)
     <option value="{{$c->monto}} " >{{$c->nombre}} $ {{$c->monto}}</option>
@@ -105,20 +113,7 @@
 <h2 id="result">27</h2>
 </FONT>
 <FONT FACE="century gothic" SIZE=4 COLOR="#056daa" style="text-align:center"  >
-<div class="form-group">  
-  <label for="conceptos">Forma de Pago</label>
-  <select name="conceptos[]" class="form-control selectpicker" id="conceptos" data-style="btn-primary" 
-  title="Seleccionar forma de pago" multiple required>
-   
-  @foreach($Conceptos as $c)
-    <option>{{$c->nombre}} $ {{$c->monto}}</option>
-    @endforeach
-   
-  </select>
-  <div class="invalid-feedback">
-    Please select a valid state.
-</div>
-</div>
+
   </FONT>
 <hr>
 <div class="form-group">
@@ -147,16 +142,12 @@
         </div>
     </form>
       </form>
-@endforeach
-@endsection
 </hr>
 </div>
+<script src="{{ asset('js/script.js') }}"></script>
+@endforeach
+@endsection
+
 </body>
-<script>
-function test() {
-var x =+ document.getElementById("conceptos").value;
-document.getElementById("result").innerHTML = x;
-document.write(test);
-}
-</script>
 </html>
+

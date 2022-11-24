@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Alumnos;
 use App\Models\Conceptos;
 
+use App\Models\Pago;
 
 class PagosController extends Controller
 {
@@ -24,15 +25,13 @@ class PagosController extends Controller
 
     }
     public function store(Request $r)
-    {
-        dd(request()->all());
+    {  
       $inputs = $r->all();
-       $pago = new Pagos(['nombre'=> $inputs['name'],
-       'monto'=> $inputs['cantidad'],
+       $pago = new Pago(['nombre'=> $inputs['nombr'],
        'fecha'=> $inputs['fech']
    ]);
-   $concept->save();
-   return redirect('/concepts');
+   $pago->save();
+   return redirect('/pago');
     }
     public function update($id, Request $r)
     {
