@@ -17,9 +17,21 @@ $('.mi_checkbox').change(function() {
     });
 
 
+    $(document).ready(function(){
+      $('.selectpicker').selectpicker();
+      
+      $('.selectpicker').on('change', function(){
+        var selected = []
+        var suma=0
+        selected += $(this).val()
+       var arra= selected.split(",");
+        for(var i=0;i<arra.length; i++)
+        {
+          suma=suma+parseInt(arra[i]);
+        }
+        document.getElementById("result").value  = suma;
+      })
+    })
     
-    $('.selectpicker').click(function () {
-      console.log("hola"); 
-    });
     
         

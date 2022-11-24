@@ -28,7 +28,8 @@ class PagosController extends Controller
     {  
       $inputs = $r->all();
        $pago = new Pago(['nombre'=> $inputs['nombr'],
-       'fecha'=> $inputs['fech']
+       'fecha'=> $inputs['fech'],
+       'importetotal'=> $inputs['resultado']
    ]);
    $pago->save();
    return redirect('/pago');

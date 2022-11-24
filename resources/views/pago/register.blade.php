@@ -109,9 +109,18 @@
   <div class="invalid-feedback">
     Please select a valid state.
 </div>
-</div>
-<h2 id="result">27</h2>
-</FONT>
+
+
+<div class="form-group">
+                <label for="exampleInputUsername1">Fecha de Pago</label>
+                <input type="text" name="resultado" id="result"class="form-control" required>
+                @if ($errors->has('fecha'))
+                <div class="alert alert-danger">
+                    <span class="text-danger">{{ $errors->first('fecha') }}</span>
+                </div>
+                @endif
+            </div>
+<div></FONT>
 <FONT FACE="century gothic" SIZE=4 COLOR="#056daa" style="text-align:center"  >
 
   </FONT>
