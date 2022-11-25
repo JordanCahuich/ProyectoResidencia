@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Alumnos;
 use App\Models\Conceptos;
+use App\Models\FormaPago;
 
 use App\Models\Pago;
 
@@ -31,6 +32,7 @@ class PagosController extends Controller
        $pago = new Pago(['nombre'=> $inputs['nombr'],
        
        'importetotal'=> $inputs['resultado'],
+       'tipo'=> $inputs['Tipo'],
        'fecha'=> $inputs['fech']
    ]);
    $pago->save();
@@ -66,9 +68,10 @@ class PagosController extends Controller
     {
         
         $Conceptos = Conceptos::all();
+        $formapago = FormaPago::all(); 
         $id = $request->get('matricula');
         $Alumnos= Alumnos::where('id',$id)->get(); 
-           return view('pago.register',['Alumnos'=> $Alumnos],['Conceptos'=> $Conceptos]);
+           return view('pago.register')->with('Alumnos', $Alumnos)->with('Conceptos',$Conceptos)->with('Forma',$formapago);
     }
     public function conceptos (){
      

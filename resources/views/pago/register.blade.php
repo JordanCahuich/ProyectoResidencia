@@ -21,7 +21,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="margin: 0px auto;",>
+<div class="container " style="margin: 0px auto;",>
   <div style="text-align:center; " >
      <h3>REGISTRO DE PAGOS</h3>
         <form class="form-inline row" style="margin: 40px 40px;" style="text-align:center;" >
@@ -36,7 +36,7 @@
 <hr>
 @foreach($Alumnos as $p)
 <FONT FACE="century gothic" SIZE=4 COLOR="#056daa"  >
-<div class="row row-list">
+<div class="row row-list text-center">
     <div class="col-md-8 " style="text-align: justify">
     <h4 class="country"  style="margin: 10px 0px;"> <b> Alumno: {{$p->nombre}} {{$p->primer_apellido}} {{$p->segundo_apellido}}  ({{$p->id}})</b></h4>
         
@@ -86,9 +86,9 @@
 
 </table>
 </div>
-<div class="form-group">
-                <label for="exampleInputUsername1">Nombre del Pago</label>
-                <input type="text" id="name"name="nombr"  class="form-control" required>
+<div class="form-group text-center">
+                <label class="text-center" for="exampleInputUsername1 ">Nombre del Pago</label>
+                <input type="text" id="name"name="nombr"  class="form-control text-center" required>
                 @if ($errors->has('tipo'))
                 <div class="alert alert-danger">
                     <span class="text-danger">{{ $errors->first('tipo') }}</span>
@@ -98,7 +98,7 @@
 <hr>
 <FONT FACE="century gothic" SIZE=4 COLOR="#056daa" style="text-align:center"  >
 <div class="form-group">  
-<label for="conceptos">Concweptos</label>
+<label for="conceptos">Conceptos</label>
   <select  class="selectpicker form-control"
   title="Seleccionar Conceptos a pagar" multiple required>
     @foreach($Conceptos as $c)
@@ -110,10 +110,10 @@
     Please select a valid state.
 </div>
 
+<div class="form-group text-center">
 
-<div class="form-group">
-                <label for="total">Fecha de Pago</label>
-                <input type="number" name="resultado" id="result"class="form-control" required>
+                <label style="width : 100px; display: flex; align-items: center;  justify-content: center;"  for="total">Total Pago</label>
+                <input style="width : 200px;"  type="number" name="resultado" id="result"class="form-control" required>
                 @if ($errors->has('fecha'))
                 <div class="alert alert-danger">
                     <span class="text-danger">{{ $errors->first('result') }}</span>
@@ -121,6 +121,19 @@
                 @endif
             </div>
 <div>
+
+<div class="form-group">  
+<label for="formapago">Foma Pago</label>
+  <select  class="selectpicker form-control"
+  title="Seleccionar Forma de pago" name="Tipo" required>
+    @foreach($Forma as $f)
+    <option>{{$f->tipo}}</option>
+    @endforeach
+   
+  </select>
+  <div class="invalid-feedback">
+    Please select a valid state.
+</div>
 
 </FONT>
 <FONT FACE="century gothic" SIZE=4 COLOR="#056daa" style="text-align:center"  >
