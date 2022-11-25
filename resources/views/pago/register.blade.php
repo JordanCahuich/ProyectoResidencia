@@ -112,15 +112,17 @@
 
 
 <div class="form-group">
-                <label for="exampleInputUsername1">Fecha de Pago</label>
-                <input type="text" name="resultado" id="result"class="form-control" required>
+                <label for="total">Fecha de Pago</label>
+                <input type="number" name="resultado" id="result"class="form-control" required>
                 @if ($errors->has('fecha'))
                 <div class="alert alert-danger">
-                    <span class="text-danger">{{ $errors->first('fecha') }}</span>
+                    <span class="text-danger">{{ $errors->first('result') }}</span>
                 </div>
                 @endif
             </div>
-<div></FONT>
+<div>
+
+</FONT>
 <FONT FACE="century gothic" SIZE=4 COLOR="#056daa" style="text-align:center"  >
 
   </FONT>

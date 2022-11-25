@@ -29,7 +29,7 @@ $('.mi_checkbox').change(function() {
         {
           suma=suma+parseInt(arra[i]);
         }
-        document.getElementById("result").value  = suma;
+        document.getElementById("result").value = suma;
       })
     })
     

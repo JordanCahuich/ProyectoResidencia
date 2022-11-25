@@ -26,10 +26,12 @@ class PagosController extends Controller
     }
     public function store(Request $r)
     {  
+    
       $inputs = $r->all();
        $pago = new Pago(['nombre'=> $inputs['nombr'],
-       'fecha'=> $inputs['fech'],
-       'importetotal'=> $inputs['resultado']
+       
+       'importetotal'=> $inputs['resultado'],
+       'fecha'=> $inputs['fech']
    ]);
    $pago->save();
    return redirect('/pago');
