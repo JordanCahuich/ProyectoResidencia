@@ -34,21 +34,20 @@
       </form>
   </div>
 <hr>
-@foreach($Alumnos as $p)
+<form method="post" action="/pago" class="form-horizontal" enctype="multipart/form-data">
+            @csrf
+
+            @foreach($Alumnos as $p)
 <FONT FACE="century gothic" SIZE=4 COLOR="#056daa"  >
 <div class="row row-list text-center">
     <div class="col-md-8 " style="text-align: justify">
-    <h4 class="country"  style="margin: 10px 0px;"> <b> Alumno: {{$p->nombre}} {{$p->primer_apellido}} {{$p->segundo_apellido}}  ({{$p->id}})</b></h4>
+    <h4 class="country"  style="margin: 10px 0px;" > <b> Alumno: {{$p->nombre}} {{$p->primer_apellido}} {{$p->segundo_apellido}}  ({{$p->id}})</b></h4>
+           </div>
+
+           <input style="width : 200px;"  type="hidden" name="Id" id="Id"class="form-control" value="{{$p->id}}"required>
         
-    </div>
-
-    <div class="col-md-6" >
-
-        </div>
 </div>
 </hr>
-<form method="post" action="/pago" class="form-horizontal" enctype="multipart/form-data">
-            @csrf
 <div class="table-responsive-center">
         <table  id="datatables-example" class="table table-hover" style="background-color: 	#FFFACD">
         <thead>

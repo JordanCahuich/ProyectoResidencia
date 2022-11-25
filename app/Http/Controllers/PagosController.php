@@ -33,6 +33,7 @@ class PagosController extends Controller
        
        'importetotal'=> $inputs['resultado'],
        'tipo'=> $inputs['Tipo'],
+       'alumno_id'=> $inputs['Id'],
        'fecha'=> $inputs['fech']
    ]);
    $pago->save();
