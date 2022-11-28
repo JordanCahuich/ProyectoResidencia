@@ -23,19 +23,5 @@ class Alumnos extends Model
     public function profesor(){
         return $this->belongsTo(Profesores::class);
     }
-    public function scopeIds($query, $ids) {
-        if ($ids) {
-            return $query->where('id','like',"%$ids%");
-        }
-    }
-    public function scopeNombres($query, $nombres) {
-        if ($nombres) {
-            return $query->where('nombre','like',"%$nombres%");
-        }
-    }
-    public function scopeGrados($query, $grados) {
-        if ($grados) {
-            return $query->where('grado_escolar','like',"%$grados%");
-        }
-    }   
+
 }

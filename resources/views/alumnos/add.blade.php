@@ -189,7 +189,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <!-- <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Persona autorizada 2</label>
                     <div class="col-sm-12">
                       <input type="text" name="persona_autorizada2" class="form-control"placeholder="Teléfono"/>
@@ -222,7 +222,7 @@
                     <div class="col-sm-12">
                       <input type="text" name="domicilio_autorizada2" class="form-control" placeholder="Domicilio"/>
                     </div>
-                </div>
+                </div>-->
 
 
 

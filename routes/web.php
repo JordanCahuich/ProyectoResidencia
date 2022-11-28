@@ -76,16 +76,9 @@ Route::get('/exportPagos', 'App\Http\Controllers\PagosController@exportPagosAlum
 Route::get('/NewPassword',  [SettingsController::class,'NewPassword'])->name('NewPassword')->middleware('auth');
 Route::post('/change/password',  [SettingsController::class,'changePassword'])->name('changePassword');
 
-<<<<<<< HEAD
 
 
 
-=======
-/*Route::get('carga', function () {
-    return view('carga');
-})->middleware(['auth', 'verified'])->name('carga');  
-require __DIR__.'/auth.php'; */
->>>>>>> 1467d6e9e6dcca4290b2a3467adef6ac2705a113
 
 Route::get('/clear-cache', function () {
     echo Artisan::call('config:clear');
