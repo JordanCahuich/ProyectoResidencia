@@ -24,7 +24,7 @@
 <hr>
 </hr>
 <div class="row justify-content-center";>
-    <div class="card">
+    <div class="card" style="background-color:#82b1ff">
         <div class="card-body">
         <h2 class="card-title text-center"></h2>
         <form method="post" action="/concepto/{{$concept->id}}" class="form-horizontal" enctype="multipart/form-data">
@@ -61,8 +61,8 @@
                 @endif
             </div>
             <div class="form-group text-center">
-                <button type="submit" class="btn btn-primary mr-2 mb-3" style="background-color: 	#64dd17">Guardar</button>
-                <a href="/concepts"  class="btn btn-inverse-dark btn-fw mb-3" style="background-color: 	#d50000">Cancelar</a>
+                <button type="submit" class="btn btn-success" style="background-color: #009624">Guardar</button>
+                <a href="/concepts"  class="btn btn-success" style="background-color: #a30000">Cancelar</a>
             </div>
     
         </form>

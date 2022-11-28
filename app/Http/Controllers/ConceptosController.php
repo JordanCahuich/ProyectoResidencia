@@ -30,9 +30,9 @@ class ConceptosController extends Controller
     public function store(Request $r)
     {
       $inputs = $r->all();
-       $concept = new Conceptos(['nombre'=> $inputs['name'],
-       'alumno_id'=> $inputs['cantidad'],
-       'tipo'=> $inputs['fech'],
+       $concept = new Conceptos(['nombre'=> $inputs['nombre'],
+       'monto'=> $inputs['cantidad'],
+       'fecha'=> $inputs['fech'],
        'importetotal'=> $inputs['fech']
    ]);
    $concept->save();

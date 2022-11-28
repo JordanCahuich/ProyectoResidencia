@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Alumnos;
 use App\Models\Conceptos;
+use App\Models\FormaPago;
 
+use App\Models\Pago;
 
 class PagosController extends Controller
 {
@@ -24,15 +26,18 @@ class PagosController extends Controller
 
     }
     public function store(Request $r)
-    {
-        dd(request()->all());
+    {  
+    
       $inputs = $r->all();
-       $pago = new Pagos(['nombre'=> $inputs['name'],
-       'monto'=> $inputs['cantidad'],
+       $pago = new Pago(['nombre'=> $inputs['nombr'],
+       
+       'importetotal'=> $inputs['resultado'],
+       'tipo'=> $inputs['Tipo'],
+       'alumno_id'=> $inputs['Id'],
        'fecha'=> $inputs['fech']
    ]);
-   $concept->save();
-   return redirect('/concepts');
+   $pago->save();
+   return redirect('/pago');
     }
     public function update($id, Request $r)
     {
@@ -64,9 +69,10 @@ class PagosController extends Controller
     {
         
         $Conceptos = Conceptos::all();
+        $formapago = FormaPago::all(); 
         $id = $request->get('matricula');
         $Alumnos= Alumnos::where('id',$id)->get(); 
-           return view('pago.register',['Alumnos'=> $Alumnos],['Conceptos'=> $Conceptos]);
+           return view('pago.register')->with('Alumnos', $Alumnos)->with('Conceptos',$Conceptos)->with('Forma',$formapago);
     }
     public function conceptos (){
      

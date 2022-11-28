@@ -30,10 +30,10 @@
 
         <div class="col-md-2">
 
-        <button class="btn btn-success" type="submit" >Buscar</button>
+        <button class="btn btn-success" type="submit" style="background-color:#009624">Buscar</button>
         
         </div>
-        <a href="/pagos/register" class="btn btn-secondary" style="background-color: 	#ffc400">
+        <a href="/pagos/register" class="btn btn-secondary" style="background-color: 	#fbc02d">
             Registar 
         </a>
        </div>

@@ -17,7 +17,7 @@ class Pago extends Model
      * @var array
      */
     protected $fillable = [
-        'fecha', 'vigencia','importe_total','status','tipo','photo_pago'
+        'nombre','fecha', 'alumno_id','vigencia','importetotal','status','tipo','photo_pago'
     ];
     public function disease()
     {
