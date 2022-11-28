@@ -28,7 +28,7 @@
           <input  name="matricula" class="form-control mr-sm-2" style="width: 150px; height: 25px; margin: 10px" type="search" placeholder="Matricula" aria-label="Search">
 
           <div class="col-md-2">
-            <button class="btn btn-success" type="submit" style="background-color: #64dd17" >buscar</button>
+            <button class="btn btn-success" type="submit" style="background-color: #009624" >buscar</button>
 
             </div>
       </form>
@@ -51,7 +51,7 @@
 <div class="table-responsive-center">
         <table  id="datatables-example" class="table table-hover" style="background-color: 	#FFFACD">
         <thead>
-            <tr style="background-color: #87CEFA">
+            <tr style="background-color: #45b8e6">
             <th>Agosto</th>
         <th>Septiembre</th>
         <th>Octubre</th>
@@ -68,7 +68,7 @@
             </tr>
 </thead>
 </tr>
-<tr style="background-color: #ffecb3">
+<tr style="background-color: #fff9c4">
   <td><input class="mi_checkbox" type="checkbox" value="Agosto"></td>
   <td><input class="mi_checkbox" type="checkbox" value="Septiembre"></td>
   <td><input class="mi_checkbox" type="checkbox" value="Octubre"></td>
@@ -152,7 +152,7 @@
 <form class="container" style="margin: 10px auto;"; style="text-align:center"; >
 
         <div class="row justify-content-around";>
-        <button class="btn btn-success" type="submit" style="background-color: 	#d50000">Cancelar</button>
+        <button class="btn btn-success" type="submit" style="background-color: 	#a30000">Cancelar</button>
 <form   action="../../form-result.php" method="post" enctype="multipart/form-data" target="_blank"  style="background-color:#ffc400">
 
   <p>
@@ -161,7 +161,7 @@
 </form>
   </p>
 </form>
-        <button class="btn btn-success" type="submit" style="background-color: 	#64dd17" >Guardar</button>
+        <button class="btn btn-success" type="submit" style="background-color: 	#009624" >Guardar</button>
         </div>
     </form>
       </form>

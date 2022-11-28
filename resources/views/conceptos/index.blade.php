@@ -29,17 +29,16 @@
     
 </div>
 </hr>
-
 <div class="row justify-content-end";>
-<a href="/concepto/create" class="btn btn-secondary" style="background-color: 	#ffc400">
+<a href="/concepto/create" class="btn btn-secondary" style="background-color: 	#fbc02d">
             Registar 
         </a>
 </div>
 <hr>
 <div class="table-responsive">
-        <table id="datatables-example" class="table table-hover" style="background-color: 	#FFFACD">
+        <table id="datatables-example" class="table table-hover" style="background-color: 	#fff8e1">
         <thead>
-            <tr style="background-color: #87CEFA">
+            <tr style="background-color: #82b1ff">
             <th>Concepto</th>
             <th>Monto</th>
             <th>Creacion</th>
@@ -52,14 +51,14 @@
         
     @foreach($Conceptos as $c)
     <td>
-    <h4 class="country" style="margin: 0px auto;"> <b>{{$c->nombre}}</b></h4>
+    <h5 class="country" style="margin: 0px auto;"> <b>{{$c->nombre}}</b></h5>
    
         </td>
         <td>
-        <h4 class="country" style="margin: 0px auto;"> <b>{{$c->monto}}</b></h4>
+        <h5 class="country" style="margin: 0px auto;"> <b>{{$c->monto}}</b></h5>
         </td>
         <td>
-        <h4 class="country" style="margin: 0px auto;"> <b>{{ date('d-m-Y', strtotime($c->fecha))}}</b></h4>
+        <h5 class="country" style="margin: 0px auto;"> <b>{{ date('d-m-Y', strtotime($c->fecha))}}</b></h5>
         </td>
         <td style="float: right">
                         <a href="/concepts/{{$c->id}}/edit" class="btn btn-inverse-success"   style="float: left; padding: 8px 5px !important margin: 10px;" title="Actualizar Registro">
