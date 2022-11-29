@@ -26,17 +26,34 @@ class PagosController extends Controller
 
     }
     public function store(Request $r)
-    {  
+    {
+        $inputs = $r->all();  
+        if ($r->hasFile('foto_comprobante')) {
+            $file = $r->file('foto_comprobante');  
+            $nombrearchivo = time()."_".$file->getClientOriginalName();  
+            $file->move(public_path('/fotosPagos/'),$nombrearchivo); 
+        
     
-      $inputs = $r->all();
        $pago = new Pago(['nombre'=> $inputs['nombr'],
        
        'importetotal'=> $inputs['resultado'],
        'tipo'=> $inputs['Tipo'],
        'alumno_id'=> $inputs['Id'],
-       'fecha'=> $inputs['fech']
+       'fecha'=> $inputs['fech'],
+       'photo_pago'=> $nombrearchivo
    ]);
    $pago->save();
+}else{
+    $pago = new Pago(['nombre'=> $inputs['nombr'],
+       
+    'importetotal'=> $inputs['resultado'],
+    'tipo'=> $inputs['Tipo'],
+    'alumno_id'=> $inputs['Id'],
+    'fecha'=> $inputs['fech'],
+    'photo_pago'=> ''
+]);
+   $pago->save();
+}
    return redirect('/pago');
     }
     public function update($id, Request $r)

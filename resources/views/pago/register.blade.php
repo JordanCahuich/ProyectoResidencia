@@ -122,9 +122,8 @@
 <div>
 
 <div class="form-group">  
-<label for="formapago">Foma Pago</label>
-  <select  class="selectpicker form-control"
-  title="Seleccionar Forma de pago" name="Tipo" required>
+<label for="formapago">Seleccionar Forma Pago</label>
+  <select  class="form-control"name="Tipo" required>
     @foreach($Forma as $f)
     <option>{{$f->tipo}}</option>
     @endforeach
@@ -157,7 +156,7 @@
 
   <p>
     Enviar Comprobante:
-    <input  type="file" name="subido"archivo>
+    <input  type="file" name="foto_comprobante"archivo>
 </form>
   </p>
 </form>
