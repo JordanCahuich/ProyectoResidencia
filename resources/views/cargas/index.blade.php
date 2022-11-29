@@ -36,9 +36,9 @@
 </div>
 <hr>
 <div class="table-responsive">
-        <table id="datatables-example" class="table table-hover" style="background-color: 	#c3e2ee">
+        <table id="datatables-example" class="table table-hover" style="background-color: 	#fffde7">
         <thead>
-            <tr style="background-color: #0babdb">
+            <tr style="background-color: #82b1ff">
             <th>Grupo</th>
             <th>Grado</th>
             <th>Nivel</th>
@@ -56,28 +56,28 @@
     @foreach($Cargas as $c)
   
         <td>
-        <h4 class="country" style="margin: 0px auto;" > <b>{{$c->grupo}}</b></h4>
+        <h5 class="country" style="margin: 0px auto;" > <b>{{$c->grupo}}</b></h4>
         </td>
         <td>
-        <h4 class="country" style="margin: 0px auto;"> <b>{{$c->grado}}</b></h4>
+        <h5 class="country" style="margin: 0px auto;"> <b>{{$c->grado}}</b></h4>
         </td>
         <td>
-        <h4 class="country" style="margin: 0px auto;"> <b>{{$c->nivel}}</b></h4>
+        <h5 class="country" style="margin: 0px auto;"> <b>{{$c->nivel}}</b></h4>
         </td>
         <td>
-        <h4 class="country" style="margin: 0px auto;"> <b>{{$c->periodo}}</b></h4>
+        <h5 class="country" style="margin: 0px auto;"> <b>{{$c->periodo}}</b></h4>
         </td>
         <td>
-        <h4 class="country" style="margin: 0px auto;"> <b>{{$c->docente}}</b></h4>
+        <h5 class="country" style="margin: 0px auto;"> <b>{{$c->docente}}</b></h4>
         </td>
         <td>
-        <h4 class="country" style="margin: 0px auto;"> <b>{{$c->asignatura}}</b></h4>
+        <h5 class="country" style="margin: 0px auto;"> <b>{{$c->asignatura}}</b></h4>
         </td>
         <td>
-        <h4 class="country" style="margin: 0px auto;"> <b>{{$c->bimestre}}</b></h4>
+        <h5 class="country" style="margin: 0px auto;"> <b>{{$c->bimestre}}</b></h4>
         </td>
         <td>
-        <h4 class="country" style="margin: 0px auto;"> <b>{{$c->alumnos}}</b></h4>
+        <h5 class="country" style="margin: 0px auto;"> <b>{{$c->alumnos}}</b></h4>
         </td>
         <td style="float: right">
                         <a href="/cargas/{{$c->id}}/edit" class="btn btn-inverse-success"   style="float: left; padding: 8px 5px !important margin: 10px;" title="Actualizar Registro">

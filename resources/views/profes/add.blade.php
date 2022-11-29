@@ -4,6 +4,7 @@
 
 
 <div class="row justify-content-center">
+  <FONT FACE="century gothic" SIZE=4 COLOR="#212121">
 <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
@@ -22,7 +23,7 @@
                 <div class="col-md-4">
                     <label class="col-sm-6 col-form-label">Fecha de nacimiento</label>
                     <div class="col-sm-12">
-                      <input type="number" name="fecha_nacimiento" class="form-control" />
+                      <input type="date" name="fecha_nacimiento" class="form-control" />
                     </div>
                 </div>
 
@@ -55,7 +56,7 @@
                 <div class="col-md-4">
                     <label class="col-sm-6 col-form-label">Telefono</label>
                     <div class="col-sm-12">
-                      <input type="number" name="telefono" class="form-control" />
+                      <input type="tel" name="telefono" class="form-control" />
                     </div>
                 </div>
         
@@ -74,6 +75,7 @@
                     </div>
                 </div>
 
+
         
 
               
@@ -88,6 +90,7 @@
         </div>
     </div>
 </div>
+</FONT>
 </div>
 
 @endsection

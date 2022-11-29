@@ -4,6 +4,7 @@
 
 
 <div class="row justify-content-center">
+    <FONT FACE="century gothic" SIZE=4 COLOR="#212121">
 <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
@@ -57,8 +58,9 @@
                   <label class="col-sm-12 col-form-label">Docente</label>
                   <select name="docente" class="form-control form-control-sm">
                       <option selected=>Seleccione</option>
-                          <option>Felipe Salgado</option>
-                          <option>Omar Chab</option>
+                      @foreach ($Profesores as $profesores)
+                      <option>{{$profesores->nombre}}</option>
+                      @endforeach
                   </select>
               </div>
 
@@ -108,6 +110,7 @@
         </div>
     </div>
 </div>
+    </FONT>
 </div>
 
 @endsection

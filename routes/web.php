@@ -7,6 +7,7 @@ use App\Http\Controllers\PagosController;
 use App\Http\Controllers\ConceptosController; 
 use App\Http\Controllers\FormaPagoController;   
 use App\Http\Controllers\CargasController;
+use App\Http\Controllers\HorariosController;
 use App\Http\Controllers\SettingsController;
 use App\Models\Cargas;
 use Illuminate\Support\Facades\Artisan;
@@ -55,6 +56,14 @@ Route::get('/profes/{id}/edit', [ProfesoresController::class, 'edit']);
 Route::put('/profes/{id}', [ProfesoresController::class, 'update']);
 Route::delete('/profes/{id}', [ProfesoresController::class, 'destroy']);
 
+/*HORARIO*/
+Route::get('/horarios', [HorariosController::class, 'index']);
+Route::get('/horarios/create', [HorariosController::class, 'create']);
+Route::post('/horarios', [HorariosController::class, 'store']);
+Route::get('/horarios/{id}/edit', [HorariosController::class, 'edit']);
+
+Route::put('/horarios/{id}', [HorariosController::class, 'update']);
+Route::delete('/horarios/{id}', [HorariosController::class, 'destroy']);
 
 
 Route::get('dashboard', function () {
@@ -67,6 +76,7 @@ Route::resource('profe', ProfesoresController::class)->middleware('auth');
 Route::resource('alumno', AlumnosController::class)->middleware('auth');
 Route::resource('pago', PagosController::class)->middleware('auth');
 Route::resource('carga', CargasController::class)->middleware('auth');
+Route::resource('horario', HorariosController::class)->middleware('auth');
 Route::resource('concepto', ConceptosController::class)->middleware('auth');
 Route::post('/pagoSave', 'App\Http\Controllers\PagosController@guardarPago')->name("pagoSave")->middleware('auth'); //Guardando Pago
 

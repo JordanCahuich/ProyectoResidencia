@@ -12,6 +12,7 @@ use App\Models\Grados;
 use App\Models\Grupos;
 use App\Models\Niveles;
 use App\Models\Periodos;
+use App\Models\Profesores;
 
 class CargasController extends Controller
 {
@@ -31,9 +32,9 @@ class CargasController extends Controller
         
         $Alumnos= Alumnos::all();
         
-        $Periodos= Periodos::all();
+        $Profesores= Profesores::all();
 
-       return view('cargas.add', ['Alumnos'=> $Alumnos], ['Periodos'=> $Periodos]);
+       return view('cargas.add', ['Alumnos'=> $Alumnos], ['Profesores'=> $Profesores]);
     }
 
     public function store(Request $request)

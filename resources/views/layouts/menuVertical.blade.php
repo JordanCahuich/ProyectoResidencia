@@ -31,7 +31,7 @@ partial -->
 
     <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-        <i class="mdi mdi-coin"></i>
+        <i class="mdi mdi-coin menu-icon"></i>
         <span class="menu-title">Sección de Pagos</span>
         <i class="menu-arrow"></i>
       </a>
@@ -49,7 +49,7 @@ partial -->
 
     <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        <i class="mdi mdi-file-export"></i>
+        <i class="mdi mdi-file-export menu-icon"></i>
         <span class="menu-title">Carga Academica</span>
         <i class="menu-arrow"></i>
       </a>
@@ -74,7 +74,14 @@ partial -->
         </ul>
       </div>
     </li>
-
+    
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('horario.create') }}">
+        <i class="mdi mdi-clock-fast menu-icon"></i>
+        <span class="menu-title">Horarios</span>
+      </a>
+    </li>
+   
 
   </ul>
 </nav>
