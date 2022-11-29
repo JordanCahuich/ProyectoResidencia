@@ -61,8 +61,23 @@
 <tr style="background-color: 	#2962ff">
   <th>Atrasados</th>
 </tr>
+@php
+$total=0;
+  $totala=0;
+    	
+foreach ($Pagos as $p)
+   {  
+$total++;
+   }
+
+
+  foreach ($Alumnos as $a)
+   {  
+$totala++;
+   }
+  @endphp
 <tr style="background-color: #ffecb3">
-  <td>000</td>
+  <td>{{$totala-$total}}</td>
 </tr>
 
 <table class="default" style="margin: 10px "  border=2 width="200" height="150"  text-align: center;>
@@ -70,7 +85,13 @@
   <th>Al dia</th>
 </tr>
 <tr style="background-color: #ffecb3">
-  <td>000</td>
+
+@php
+  
+
+@endphp
+<td>{{$total}}</td>
+
 </tr>
 </table>
 

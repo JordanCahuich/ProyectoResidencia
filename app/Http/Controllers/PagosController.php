@@ -17,10 +17,9 @@ class PagosController extends Controller
             $id = $request->get('Matricula');
             $nombre = $request->get('Nombre');
             $grado = $request->get('Grado');
-         
+            $pagos=Pago::all();
         $alumnos= Alumnos::nombres($nombre)->ids($id)->grados($grado)->paginate(5);
-        return view('pago.index',['Alumnos'=> $alumnos]);
-   
+        return view('pago.index')->with('Alumnos', $alumnos)->with('Pagos',$pagos);   
     }
     public function create(){
 
