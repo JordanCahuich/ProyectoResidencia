@@ -94,7 +94,49 @@ $totala++;
 
 </tr>
 </table>
+</div>
+<div class="table-responsive-center">
+        <table  id="datatables-example" class="table table-hover" style="background-color: 	#FFFACD">
+        <thead>
+            <tr style="background-color: #45b8e6">
+            <th>Agosto</th>
+        <th>Septiembre</th>
+        <th>Octubre</th>
+        <th>Noviembre</th>
+        <th>Diciembre</th>
+        <th>Enero</th>
+        <th>Febrero</th>
+        <th>Marzo</th>
+        <th>Abril</th>
+        <th>Mayo</th>
+        <th>Junio</th>
+        <th>julio</th>
+           </th>
+            </tr>
+</thead>
+</tr>
+<tr style="background-color: #fff9c4">
+  <td>
+@foreach($Pago as $p)
 
+ <b>{{$p->nombre}} </br>{{$p->alumno_id}}</br> {{$p->importetotal}}</b>
+        
+@endforeach
+</td>
+  <td><input class="mi_checkbox" type="checkbox" value="Septiembre"></td>
+  <td><input class="mi_checkbox" type="checkbox" value="Octubre"></td>
+  <td><input class="mi_checkbox" type="checkbox" value="Noviembre"></td>
+  <td><input class="mi_checkbox" type="checkbox" value="Diciembre"></td>
+  <td><input class="mi_checkbox" type="checkbox" value="Enero"></td>
+  <td><input class="mi_checkbox" type="checkbox" value="Febrero"></td>
+  <td><input class="mi_checkbox"type="checkbox" value="Marzo"></td>
+  <td><input class="mi_checkbox"type="checkbox" value="Abril"></td>
+  <td><input class="mi_checkbox"type="checkbox" value="Mayo"></td>
+  <td><input class="mi_checkbox"type="checkbox" value="Junio"></td>
+  <td><input class="mi_checkbox" type="checkbox" value="Julio"></td>
+</tr>
+
+</table>
 </div>
 @endsection
 </body>

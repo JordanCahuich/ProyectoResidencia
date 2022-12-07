@@ -31,11 +31,7 @@ partial -->
 
     <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-<<<<<<< Updated upstream
         <i class="mdi mdi-coin menu-icon"></i>
-=======
-        <i class="mdi mdi-cash-usd menu-icon"></i>
->>>>>>> Stashed changes
         <span class="menu-title">Sección de Pagos</span>
         <i class="menu-arrow"></i>
       </a>
@@ -53,12 +49,7 @@ partial -->
 
     <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-<<<<<<< Updated upstream
         <i class="mdi mdi-file-export menu-icon"></i>
-=======
-     
-      <i class="mdi mdi-file-account menu-icon"></i>
->>>>>>> Stashed changes
         <span class="menu-title">Carga Academica</span>
         <i class="menu-arrow"></i>
       </a>
