@@ -222,7 +222,7 @@ class AlumnosController extends Controller
         $alumno = Alumnos::findOrFail($id);
         $alumno->delete();
         return redirect('/alumno')->with('mensaje', 'El alumno fue borrado correctamente.');
-    }
+    } 
 
 
     public function exportAlumnos()

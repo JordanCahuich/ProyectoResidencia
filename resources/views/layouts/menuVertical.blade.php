@@ -7,13 +7,7 @@ partial -->
         <i class="mdi mdi-home menu-icon"></i>
         <span class="menu-title">Inicio</span>
       </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{{ route('curso.create') }}">
-        <i class="mdi mdi-view-headline menu-icon"></i>
-        <span class="menu-title">Registrar Curso</span>
-      </a>
-    </li>
+   
   
     <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
