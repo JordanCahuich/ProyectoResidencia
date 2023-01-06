@@ -131,7 +131,7 @@
   </select>
   <div class="invalid-feedback">
     Please select a valid state.
-</div>
+  </div>
 
 </FONT>
 <FONT FACE="century gothic" SIZE=4 COLOR="#056daa" style="text-align:center"  >
