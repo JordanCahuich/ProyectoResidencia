@@ -53,7 +53,7 @@
                 <div class="col-md-4">
                     <label class="col-sm-6 col-form-label">Fecha Nacimiento</label>
                     <div class="col-sm-12">
-                      <input type="text" name="fecha_nacimiento" class="form-control" placeholder="Fecha nacimiento"/>
+                      <input type="number" name="fecha_nacimiento" class="form-control" placeholder="Fecha nacimiento"/>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -150,7 +150,7 @@
                 <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Tel. Emergencia</label>
                     <div class="col-sm-12">
-                      <input type="text" name="tel_emergencia" class="form-control" placeholder="Teléfono"/>
+                      <input type="number" name="tel_emergencia" class="form-control" placeholder="Teléfono"/>
                     </div>
                 </div>
 
@@ -171,14 +171,14 @@
                 <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Tel. 1 Autorizada</label>
                     <div class="col-sm-12">
-                      <input type="text" name="tel1_autorizada" class="form-control" placeholder="Teléfono"/>
+                      <input type="number" name="tel1_autorizada" class="form-control" placeholder="Teléfono"/>
                     </div>
                 </div>
 
                 <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Tel. 2 Autorizada</label>
                     <div class="col-sm-12">
-                      <input type="text" name="tel2_autorizada" class="form-control" placeholder="Teléfono"/>
+                      <input type="number" name="tel2_autorizada" class="form-control" placeholder="Teléfono"/>
                     </div>
                 </div>
 
@@ -236,6 +236,7 @@
                 </div>
             </div>
              
+            
           
             <div class="form-group text-center">
                 <button type="submit" class="btn btn-primary mr-2 mb-3">Registrar Alumno</button>

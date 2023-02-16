@@ -74,6 +74,7 @@ require __DIR__.'/auth.php';
 Route::resource('curso', CursosController::class)->middleware('auth');
 Route::resource('profe', ProfesoresController::class)->middleware('auth');
 Route::resource('alumno', AlumnosController::class)->middleware('auth');
+Route::get('/pago', [UsersController::class, 'index'])->name('pago.index');
 Route::resource('pago', PagosController::class)->middleware('auth');
 Route::resource('carga', CargasController::class)->middleware('auth');
 Route::resource('horario', HorariosController::class)->middleware('auth');
@@ -96,3 +97,6 @@ Route::get('/clear-cache', function () {
     echo Artisan::call('cache:clear');
     echo Artisan::call('route:clear');
  });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

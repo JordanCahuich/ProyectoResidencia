@@ -8,19 +8,24 @@ use App\Models\Conceptos;
 use App\Models\FormaPago;
 
 use App\Models\Pago;
+use App\DataTables\UsersPagosDataTable;
+
 
 class PagosController extends Controller
 {
-    public function index(Request $request)
+    public function index(UsersPagosDataTable $dataTable)
     {
         
-            $id = $request->get('Matricula');
+        return $dataTable->render('pago.index');
+
+            /*$id = $request->get('Matricula');
             $nombre = $request->get('Nombre');
             $grado = $request->get('Grado');
             $pagos=Pago::all();
-        $alumnos= Alumnos::nombres($nombre)->ids($id)->grados($grado)->paginate(2);
+            if(isset($id))
+                $alumnos= Alumnos::nombres($nombre)->ids($id)->grados($grado)->paginate(2);
         $pago= Pago::where('alumno_id',$id)->get(); 
-        return view('pago.index')->with('Alumnos', $alumnos)->with('Pagos',$pagos)->with('Pago',$pago);   
+        return view('pago.index')->with('Alumnos', $alumnos)->with('Pagos',$pagos)->with('Pago',$pago);*/   
     }
     public function create(){
 
