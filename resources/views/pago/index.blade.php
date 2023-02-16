@@ -2,8 +2,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="py-4" >
-  <div>
+<div class="py-4" style="margin: 20px auto" >
+  <div style="text-align:center; " >
  
   <h2>Historial de pagos</h2>
 
