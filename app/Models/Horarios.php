@@ -10,7 +10,7 @@ class Horarios extends Model
     use HasFactory;
 
         protected $fillable = [
-       'nombre','aula'
+       'nombre','aula', 'dia', 'hora', 'asignatura', 'profesor'
     ];
 
     
