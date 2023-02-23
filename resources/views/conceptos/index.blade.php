@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 
 <html lang="en">
@@ -18,9 +21,7 @@
 
 
 <body>
-@extends('layouts.app')
 
-@section('content')
 <div class="container" style="margin: 0px auto;",>
 
 <div style="text-align:center; " >
@@ -35,14 +36,17 @@
         </a>
 </div>
 <hr>
-<div class="table-responsive">
-        <table id="datatables-example" class="table table-hover" style="background-color: 	#fff8e1">
-        <thead>
-            <tr style="background-color: #82b1ff">
-            <th>Concepto</th>
-            <th>Monto</th>
-            <th>Creacion</th>
-            <th>Acción
+<div class="card border-0 shadow mb-4">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-centered table-nowrap mb-0 rounded">
+        <thead class= "thead-light">
+            <tr>
+            <th class="border-0 rounded-start">#</th>
+            <th class="border-0">Concepto</th>
+            <th class="border-0">Monto</th>
+            <th class="border-0">Creacion</th>
+            <th class="border-0">Acción
             </th>
             </tr>
 </thead>
@@ -50,8 +54,9 @@
     <tr>
         
     @foreach($Conceptos as $c)
-    <td>
-    <h5 class="country" style="margin: 0px auto;"> <b>{{$c->nombre}}</b></h5>
+    <td><a href="#" class="text-primary fw-folda">1</a></td>
+    <td class="fw-bold d-flex align-items-center">
+    <div class="country" style="margin: 0px auto;"> <b>{{$c->nombre}}</b></div>
    
         </td>
         <td>

@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd ">
 
 <html lang="en">
@@ -16,9 +19,7 @@
 
 </head>
 <body>
-@extends('layouts.app')
 
-@section('content')
 <div class="container" style="margin: 0px auto; " ,>
 
 <div style="text-align:center; " >
@@ -28,8 +29,9 @@
     
 </div>
 <hr>
-<div class="row justify-content-center"  ;>
-    <div class="card" style="background-color:#82b1ff" >
+<div class="col-12 d-flex align-items-center justify-content-center";>
+ <div class="text-center text-md-center mb-4 mt-md-0">
+    <div class="card-body" style="background-color:#82b1ff;" >
         <div class="card-body">
         <h2 class="card-title text-center"></h2>
         <form method="post" action="/concepts/pago" class="form-horizontal" enctype="multipart/form-data">
@@ -53,7 +55,7 @@
                 @endif
             </div>
             <div class="form-group">
-                <label for="exampleInputUsername1">valor</label>
+                <label for="exampleInputUsername1">Valor</label>
                 <input type="number" name="Valor" class="form-control" required>
                 @if ($errors->has('valor'))
                 <div class="alert alert-danger">

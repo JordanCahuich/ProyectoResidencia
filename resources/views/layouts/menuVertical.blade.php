@@ -84,9 +84,7 @@ partial -->
           <li class="nav-item"> <a class="nav-link" href="{{ route('pago.index') }}">Historial de pagos</a></li>
           <li class="nav-item"> <a class="nav-link" href="{{ route('concepto.forma') }}">Formas de pago</a></li>
           <li class="nav-item"> <a class="nav-link" href="{{ route('concepto.index') }}">Concepto</a></li>
-        
-         <li class="nav-item"> <a class="nav-link" href="{{ route('pagos.configuracion') }}">Configuracion</a></li>
-        
+      
         </ul>
       </div>
     </li>
