@@ -17,6 +17,12 @@ return new class extends Migration
             $table->id();
             $table-> string('nombre');
             $table-> string('aula');
+            $table-> string('dia');
+            $table-> time('hora');
+            $table-> string('asignatura');
+            $table-> string('profesor');
+
+
             $table->timestamps();
         });
     }

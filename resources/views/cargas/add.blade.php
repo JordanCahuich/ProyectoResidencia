@@ -71,6 +71,7 @@
                 <select name="asignatura" class="form-control form-control-sm">
                     <option selected=>Seleccione</option>
                         <option>Español</option>
+                        <option>FISICA</option>
                         <option>Matetmaticas</option>
                 </select>
             </div>
@@ -103,7 +104,7 @@
              
           
             <div class="form-group text-center">
-                <button type="submit" class="btn btn-primary mr-2 mb-3" style="background-color: 	#8cf064">Registrar Docente</button>
+                <button type="submit" class="btn btn-primary mr-2 mb-3" style="background-color: 	#8cf064">Registrar</button>
                 <a href="/"  class="btn btn-inverse-dark btn-fw mb-3" style="background-color: 	#f75e5e">Cancelar</a>
             </div>
         </form>

@@ -37,6 +37,10 @@ class HorariosController extends Controller
               
                 'nombre'=>$request->get('nombre'),
                 'aula'=>$request->get('aula'),
+                'dia'=>$request->get('dia'),
+                'hora'=>$request->get('hora'),
+                'asignatura'=>$request->get('asignatura'),
+                'profesor'=>$request->get('profesor'),
                 
                  
 
@@ -47,6 +51,10 @@ class HorariosController extends Controller
                 
                 'nombre'=>$request->get('nombre'),
                 'aula'=>$request->get('aula'),
+                'dia'=>$request->get('dia'),
+                'hora'=>$request->get('hora'),
+                'asignatura'=>$request->get('asignatura'),
+                'profesor'=>$request->get('profesor'),
               
             
               
@@ -82,7 +90,10 @@ class HorariosController extends Controller
             
             $horario->nombre                = $request->nombre;
             $horario->aula                  = $request->aula;
-                      
+            $horario->dia                  = $request->dia;
+            $horario->hora                  = $request->hora;          
+            $horario->asignatura                  = $request->asignatura;
+            $horario->profesor                  = $request->profesor;
        
             $horario->save(); 
         }else{
@@ -90,6 +101,10 @@ class HorariosController extends Controller
             
             $horario->nombre                    = $request->nombre;
             $horario->aula                      = $request->aula;
+            $horario->dia                  = $request->dia;
+            $horario->hora                  = $request->hora;          
+            $horario->asignatura                  = $request->asignatura;
+            $horario->profesor                  = $request->profesor;
            
             $horario->save(); 
         } 
