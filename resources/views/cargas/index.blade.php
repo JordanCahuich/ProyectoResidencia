@@ -2,15 +2,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="margin: 0px auto;",>
+<div class="container">
 
-<div style="text-align:center; " >
-    
-
-    <h3>LISTA DE CARGAS</h3>
-  
-</div>
-</hr>
 
 <div class="py-4">
     <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
@@ -28,74 +21,60 @@
 <div class="row justify-content-end";>
 
 </div>
-<hr>
 
-<div class="card border-0 shadow mb-4">
+<div class="card">
     <div class="card-body">
-<div class="table-responsive">
+        <h2 class="h5 mb-4">LISTA DE CARGAS<hr></h2>
+        <div class="table-responsive">
         <table class="table table-centered table-nowrap mb-0 rounded">
         <thead class="thead-light">
             <tr>
-            <th>Grupo</th>
-            <th>Grado</th>
-            <th>Nivel</th>
-            <th>Periodo</th>
-            <th>Docente</th>
-            <th>Asignatura</th>
-            <th>Bimestre</th>
-            <th>Alumnos</th>
-            <th>Acción</th>
+            <th class="border-0 rounded-start">Grupo</th>
+            <th class="border-0">Grado</th>
+            <th class="border-0">Nivel</th>
+            <th class="border-0">Periodo</th>
+            <th class="border-0">Docente</th>
+            <th class="border-0">Asignatura</th>
+            <th class="border-0">Bimestre</th>
+            <th class="border-0">Alumnos</th>
+            <th class="border-0 rounded-end">Acción</th>
             </tr>
-</thead>
-<tbody>
-    <tr>
-        
-    @foreach($Cargas as $c)
-  
-        <td>
-        <h5 class="country" style="margin: 0px auto;" > <b>{{$c->grupo}}</b></h4>
-        </td>
-        <td>
-        <h5 class="country" style="margin: 0px auto;"> <b>{{$c->grado}}</b></h4>
-        </td>
-        <td>
-        <h5 class="country" style="margin: 0px auto;"> <b>{{$c->nivel}}</b></h4>
-        </td>
-        <td>
-        <h5 class="country" style="margin: 0px auto;"> <b>{{$c->periodo}}</b></h4>
-        </td>
-        <td>
-        <h5 class="country" style="margin: 0px auto;"> <b>{{$c->docente}}</b></h4>
-        </td>
-        <td>
-        <h5 class="country" style="margin: 0px auto;"> <b>{{$c->asignatura}}</b></h4>
-        </td>
-        <td>
-        <h5 class="country" style="margin: 0px auto;"> <b>{{$c->bimestre}}</b></h4>
-        </td>
-        <td>
-        <h5 class="country" style="margin: 0px auto;"> <b>{{$c->alumnos}}</b></h4>
-        </td>
-        <td style="float: right">
-                        <a href="/cargas/{{$c->id}}/edit" class="btn btn-inverse-success"   style="float: left; padding: 8px 5px !important margin: 10px;" title="Actualizar Registro">
+        </thead>
+        <tbody>
+            <tr>
+
+            @foreach($Cargas as $c)
+
+                <td>{{$c->grupo}}</td>
+                <td>{{$c->grado}}</td>
+                <td>{{$c->nivel}}</td>
+                <td>{{$c->periodo}}</td>
+                <td>{{$c->docente}}</td>
+                <td>{{$c->asignatura}}</td>
+                <td>{{$c->bimestre}}</td>
+                <td>{{$c->alumnos}}</td>
+                <td>
+                    <div class="form-group">
+                        <a href="/cargas/{{$c->id}}/edit" class="btn btn-secondary"  style="float: left; padding: 2px 5px;  margin-right: 3px" title="Actualizar Registro">
                             <i class="mdi mdi-autorenew"></i>Actualizar
                         </a>
                         <form action="/cargas/{{$c->id}}}" method="post">
-                        @method('DELETE')
-                        @csrf
-                        <button type="submit" class="btn btn-inverse-danger"  style="float: right; padding:  8px 5px !important;" title="Borrar Carga">
-                            <i class="mdi mdi-delete-sweep"></i>Borrar
-                        </button>
-                    </form>
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn btn-primary"  style="padding: 2px 5px;" title="Borrar Carga">
+                                <i class="mdi mdi-delete-sweep"></i>Borrar
+                            </button>
+                        </form>
+                    </div>
+
                 </td>
-            </td>
-    </tr>
-    @endforeach
-        
-</tbody>
+            </tr>
+            @endforeach
+
+        </tbody>
 </hr>
 </table>
-  
+
 </div>
 
 
