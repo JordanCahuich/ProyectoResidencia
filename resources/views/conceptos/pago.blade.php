@@ -30,16 +30,15 @@
 
 <div class="card">
     <div class="card-body">
-        <h2 class="h5 mb-4">LISTA DE FORMAS DE PAGO</h2>
+        <h2 class="h5 mb-4">LISTA DE FORMAS DE PAGO<hr></h2>
         <div class="table-responsive">
         <table class="table table-centered table-nowrap mb-0 rounded">
         <thead class="thead-light">
-        <thead>
             <tr>
-            <th>Tipo</th>
-            <th>Nombre</th>
-            <th>Valor</th>
-            <th>Acción</th>
+            <th class="border-0 rounded-start">Tipo</th>
+            <th class="border-0">Nombre</th>
+            <th class="border-0">Valor</th>
+            <th class="border-0 rounded-end">Acción</th>
             </tr>
 </thead>
             <tbody>
