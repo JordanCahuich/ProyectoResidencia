@@ -7,7 +7,6 @@
 <div style="text-align:center; " >
    
 
-    <h3>LISTA DE DOCENTES</h3>
   
 </div>
 </hr>
@@ -29,27 +28,27 @@
 
 
 
-
 <div class="row justify-content-end";>
 
 </div>
 <hr>
 
-<div class="card border-0 shadow mb-4">
+<div class="card">
     <div class="card-body">
+        <h2 class="h5 mb-4">LISTA DE DOCENTES<hr></h2>
 <div class="table-responsive">
         <table class="table table-centered table-nowrap mb-0 rounded">
         <thead class="thead-light">
             <tr>
-            <th>Nombre completo</th>
-            <th>Fecha de nacimiento</th>
-            <th>Edad</th>
-            <th>Genero</th>
-            <th>Email</th>
-            <th>Telefono</th>
-            <th>Localidad</th>
-            <th>Domicilio</th>
-            <th>Acción</th>
+            <th class="border-0 rounded-start">Nombre completo</th>
+            <th class="border-0">Fecha de nacimiento</th>
+            <th class="border-0">Edad</th>
+            <th class="border-0">Genero</th>
+            <th class="border-0">Email</th>
+            <th class="border-0">Telefono</th>
+            <th class="border-0">Localidad</th>
+            <th class="border-0">Domicilio</th>
+            <th class="border-0 rounded-end">Acción</th>
             </tr>
 </thead>
 
@@ -61,47 +60,28 @@
         
     @foreach($Profesores as $p)
   
-        <td>
-        <h6 class="country" style="margin: 0px auto;" > <b>{{$p->nombre}}</b></h4>
-        </td>
-        <td>
-        <h6 class="country" style="margin: 0px auto;"> <b>{{ date('d-m-Y', strtotime($p->fecha_nacimiento))}}</b></h4>
-        </td>
-        <td>
-        <h6 class="country" style="margin: 0px auto;"> <b>{{$p->edad}}</b></h4>
-        </td>
-        <td>
-        <h6 class="country" style="margin: 0px auto;"> <b>{{$p->genero}}</b></h4>
-        </td>
-        <td>
-        <h6 class="country" style="margin: 0px auto;"> <b>{{$p->email}}</b></h4>
-        </td>
-        <td>
-        <h6 class="country" style="margin: 0px auto;"> <b>{{$p->telefono}}</b></h4>
-        </td>
-        <td>
-        <h6 class="country" style="margin: 0px auto;"> <b>{{$p->localidad}}</b></h4>
-        </td>
-        <td>
-        <h6 class="country" style="margin: 0px auto;"> <b>{{$p->domicilio}}</b></h4>
-        </td>
+        <td>{{$p->nombre}}</td>
+        <td>{{ date('d-m-Y', strtotime($p->fecha_nacimiento))}}</td>
+        <td>{{$p->edad}}</td>
+        <td>{{$p->genero}}</td>
+        <td>{{$p->email}}</td>
+        <td>{{$p->telefono}}</td>
+        <td>{{$p->localidad}}</td>
+        <td>{{$p->domicilio}}</td>
     
-        <td style="float: right">
-                        <a href="/profes/{{$p->id}}/edit" class="btn btn-inverse-success"   style="float: left; padding: 8px 5px !important margin: 10px;" title="Actualizar Registro">
-                            <i class="mdi mdi-autorenew"></i>Actualizar
-                        </a>
-                        <form action="/profes/{{$p->id}}}" method="post">
-                        @method('DELETE')
-                        @csrf
-                        <button type="submit" class="btn btn-inverse-danger"  style="float: right; padding:  8px 5px !important;" title="Borrar Concepto">
-                            <i class="mdi mdi-delete-sweep"></i>Borrar
-                        </button>
-
-
-                        
-                    </form>
-                </td>
-            </td>
+        <td>
+            <div style="padding-right: 60px;">
+                <a href="/profes/{{$p->id}}/edit" class="btn btn-secondary"  style="float: left; padding: 2px 5px;  margin-right: 3px" title="Actualizar Registro">
+                    <i class="mdi mdi-autorenew"></i>Actualizar
+                </a>
+                <form action="/profes/{{$p->id}}}" method="post">
+                    @method('DELETE')
+                    @csrf
+                    <button type="submit" class="btn btn-primary"  style="padding: 2px 5px;" title="Borrar docente">
+                        <i class="mdi mdi-delete-sweep"></i>Borrar
+                    </button>
+                </form>
+            </div>
     </tr>
     @endforeach
 </tbody>
