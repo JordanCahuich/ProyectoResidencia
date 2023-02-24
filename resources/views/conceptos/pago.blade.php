@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 
 <html lang="en">
@@ -19,9 +22,6 @@
 
 <body>
 
-@extends('layouts.app')
-
-@section('content')
 <div class="container" style="margin: 0px auto;",>
 
 <div style="text-align:center; " >
@@ -32,16 +32,19 @@
 </hr>
 
 <div class="row justify-content-end";>
-<a href="/concepts/formapago" class="btn btn-secondary" style="background-color: 	#fbc02d">
-            Registar 
+<a href="/concepts/formapago" class="btn btn-secondary" style="background-color: 	#fbc02d; width: 100px; height: 40px;">
+            Registrar 
         </a>
 </div>
 <hr>
 
-<div class="table-responsive">
-        <table id="datatables-example" class="table table-hover" style="background-color: 	#fff8e1">
+<div class="col-md-12 grid-margin strech-card">
+<div class="card">
+
+    <div class="table-responsive">
+        <table id="datatables-example" class="table table-hover" >
         <thead>
-            <tr style="background-color: #82b1ff">
+            <tr>
             <th>Tipo</th>
             <th>Nombre</th>
             <th>Valor</th>
@@ -51,18 +54,18 @@
             <tbody>
             @foreach ($Forma as $forma)
             <tr>
-                <td><h5>{{ $forma->tipo }}<h5></td>
-                <td><h5>{{ $forma->nombre }}<h5></td>
-                <td><h5>{{ $forma->valor }}<h5></td>
+                <td>{{ $forma->tipo }}</td>
+                <td>{{ $forma->nombre }}</td>
+                <td>{{ $forma->valor }}</td>
                 
-                <td style="float: right">
-                <a href="/concepts/pago/{{$forma->id}}/edit" class="btn btn-inverse-success"  style="float: left; padding: 8px 5px !important margin: 10px;" title="Actualizar Registro">
+                <td >
+                <a href="/concepts/pago/{{$forma->id}}/edit" class="btn btn-inverse-success"  style="float: left; padding: 8px 15px !important;" title="Actualizar Registro">
                             <i class="mdi mdi-autorenew" ></i>Actualizar
                         </a>
                         <form action="/concepts/pago/{{$forma->id}}}" method="post">
                         @method('DELETE')
                         @csrf
-                        <button type="submit" class="btn btn-inverse-danger"  style="float: right; padding:  8px 5px !important;" title="Borrar">
+                        <button type="submit" class="btn btn-inverse-danger"  style="float: right; padding:  8px 15px !important;" title="Borrar">
                             <i class="mdi mdi-delete-sweep"></i>Borrar
                         </button>
                     </form>
@@ -76,6 +79,4 @@
 
 @endsection
 
-</div>
-</body>
-</html>
+
