@@ -54,7 +54,7 @@
                 <td>{{$c->bimestre}}</td>
                 <td>{{$c->alumnos}}</td>
                 <td>
-                    <div class="form-group">
+                    <div style="padding-right: 60px;">
                         <a href="/cargas/{{$c->id}}/edit" class="btn btn-secondary"  style="float: left; padding: 2px 5px;  margin-right: 3px" title="Actualizar Registro">
                             <i class="mdi mdi-autorenew"></i>Actualizar
                         </a>
@@ -66,8 +66,6 @@
                             </button>
                         </form>
                     </div>
-
-                </td>
             </tr>
             @endforeach
 
