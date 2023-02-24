@@ -3,9 +3,9 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CursosController;
 use App\Http\Controllers\ProfesoresController;
 use App\Http\Controllers\AlumnosController;
-use App\Http\Controllers\PagosController; 
-use App\Http\Controllers\ConceptosController; 
-use App\Http\Controllers\FormaPagoController;   
+use App\Http\Controllers\PagosController;
+use App\Http\Controllers\ConceptosController;
+use App\Http\Controllers\FormaPagoController;
 use App\Http\Controllers\CargasController;
 use App\Http\Controllers\HorariosController;
 use App\Http\Controllers\SettingsController;
@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-}); 
+});
 
 
 Route::get('/pago', [PagosController::class,'index']);
@@ -68,13 +68,12 @@ Route::delete('/horarios/{id}', [HorariosController::class, 'destroy']);
 
 Route::get('dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');  
-require __DIR__.'/auth.php'; 
+})->middleware(['auth', 'verified'])->name('dashboard');
+require __DIR__.'/auth.php';
 
 Route::resource('curso', CursosController::class)->middleware('auth');
 Route::resource('profe', ProfesoresController::class)->middleware('auth');
 Route::resource('alumno', AlumnosController::class)->middleware('auth');
-Route::get('/pago', [UsersController::class, 'index'])->name('pago.index');
 Route::resource('pago', PagosController::class)->middleware('auth');
 Route::resource('carga', CargasController::class)->middleware('auth');
 Route::resource('horario', HorariosController::class)->middleware('auth');
