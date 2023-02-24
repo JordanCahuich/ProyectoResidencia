@@ -66,11 +66,14 @@
             </div>
 
 
-<div class="row justify-content-center">
+            <div class="row justify-content-center">
+
 <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-        <h2 class="card-title text-center">REGISTRAR NUEVO ALUMNO <hr></h2>
+        <h2 class="h5 mb-4">REGISTRAR NUEVO ALUMNO<hr></h2>
+        <form class="forms-sample" method="post" action="/cargas" enctype="multipart/form-data">
+            @csrf
         
         <form class="forms-sample" method="post" action="{{ route('alumno.store') }}" enctype="multipart/form-data">
             @csrf
