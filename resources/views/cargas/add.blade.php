@@ -21,11 +21,11 @@
 
 
 <div class="row justify-content-center">
-   
+
 <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-        <h2 class="card-title text-center">REGISTRAR CARGA ACADEMICA<hr></h2>
+        <h2 class="h5 mb-4">REGISTRAR CARGA ACADEMICA<hr></h2>
         <form class="forms-sample" method="post" action="/cargas" enctype="multipart/form-data">
             @csrf
 
@@ -39,7 +39,7 @@
                 </select>
             </div>
 
-     
+
             <div class="col-md-4">
               <label class="col-sm-12 col-form-label">Grado</label>
               <select name="grado" class="form-control form-control-sm">
@@ -48,9 +48,9 @@
                       <option>2</option>
               </select>
           </div>
-        
 
-      
+
+
           <div class="col-md-4">
             <label class="col-sm-12 col-form-label">Nivel</label>
             <select name="nivel" class="form-control form-control-sm">
@@ -68,7 +68,7 @@
                             <option>20232024</option>
                     </select>
                 </div>
-              
+
 
 
                 <div class="col-md-4">
@@ -92,8 +92,8 @@
                         <option>Matetmaticas</option>
                 </select>
             </div>
-        
-           
+
+
             <div class="col-md-4">
               <label class="col-sm-12 col-form-label">Bimestre</label>
               <select name="bimestre" class="form-control form-control-sm">
@@ -114,21 +114,21 @@
                             @endforeach
                     </select>
                 </div>
-        
 
-              
+
+
             </div> <!--ROW FIN-->
-             
-          
-            <div class="form-group text-center">
-                <button type="submit" class="btn btn-primary mr-2 mb-3" style="background-color: 	#8cf064">Registrar</button>
-                <a href="/"  class="btn btn-inverse-dark btn-fw mb-3" style="background-color: 	#f75e5e">Cancelar</a>
+
+
+            <div class="form-group float-right mt-3" style="float: right">
+                <button type="submit" class="btn btn-secondary mr-2 mb-3">Registrar</button>
+                <a href="/"  class="btn btn-primary btn-fw mb-3">Cancelar</a>
             </div>
         </form>
         </div>
     </div>
 </div>
-    
+
 </div>
 
 @endsection
@@ -145,9 +145,9 @@
         <option value="">20202021</option>
         <option value="">20212022</option>
         <option value="">20222023</option>
-   
-    
-    </select> 
+
+
+    </select>
     </form>
 </p>
 
@@ -160,9 +160,9 @@
         <option value="">Seleccionar...</option>
         <option value="">Nivel preescolar</option>
         <option value="">Nivel primaria</option>
-        
-    
-    </select> 
+
+
+    </select>
     </form>
 
 </p>
@@ -179,8 +179,8 @@
             <option value="">3</option>
             <option value="">4</option>
             <option value="">5</option>
-        
-        </select> 
+
+        </select>
         </form>
 
 
@@ -196,8 +196,8 @@
                 <option value="">C</option>
                 <option value="">D</option>
                 <option value="">E</option>
-            
-            </select> 
+
+            </select>
             </form>
 
 
@@ -210,10 +210,10 @@
                     <option value="">Carlos Omar</option>
                     <option value="">Carlos Jimenez</option>
                     <option value="">Felipe Salgado</option>
-              
-                
-                </select> 
-                </form>   
+
+
+                </select>
+                </form>
 
     </p>
 
@@ -229,14 +229,14 @@
                         <option value="">Etica I</option>
                         <option value="">Historia I</option>
                         <option value="">Fisica I</option>
-                    
-                    </select> 
-                    </form>   
+
+                    </select>
+                    </form>
     </p>
 
                     <div class="form-group text-center">
                         <button type="submit" class="btn btn-primary mr-2 mb-3" style="background-color: #0059ff">Guardar</button>
-                        
-                    </div> 
+
+                    </div>
                 -->
 
