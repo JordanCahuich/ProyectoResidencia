@@ -12,12 +12,17 @@
         <form class="forms-sample" method="post" action="{{ route('alumno.store') }}" enctype="multipart/form-data">
             @csrf
 
+            
+                
+                    
+            <h2 class="h5 mb-4">Información General</h2>
             <div class="col-md-4">
                     <label class="col-sm-6 col-form-label">Foto del Alumno</label>
                     <div class="col-sm-9">
                       <input type="file" name="foto_estudiante" class="form-control" />
                     </div>
                 </div>
+                
 
             <div class="row">
                 <div class="col-md-4">
@@ -50,6 +55,8 @@
                     </select>
                 </div>
 
+               
+
                 <div class="col-md-4">
                     <label class="col-sm-6 col-form-label">Fecha Nacimiento</label>
                     <div class="col-sm-12">
@@ -73,6 +80,8 @@
                 </div>
 
                 
+                
+
                 <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Tipo de sangre</label>
                     <select name="tipo_sangre" class="form-control form-control-sm">
@@ -125,6 +134,8 @@
                     </select>
                 </div>
 
+                <h2 class="h5 my-4">Datos Domicilio</h2>
+                            
                 
                
 
