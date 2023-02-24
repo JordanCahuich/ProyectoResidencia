@@ -2,12 +2,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="margin: 0px auto;",>
+<div class="container">
+
+    
 
 <div style="text-align:center; " >
    
 
-    <h3>HORAIO</h3>
   
 </div>
 </hr>
@@ -32,65 +33,53 @@
 <div class="row justify-content-end";>
 
 </div>
-<hr>
-<div class="card border-0 shadow mb-4">
+
+<div class="card">
     <div class="card-body">
+        <h2 class="h5 mb-4">LISTA DE HORARIOS<hr></h2>
 <div class="table-responsive">
         <table class="table table-centered table-nowrap mb-0 rounded">
         <thead class="thead-light">
             <tr>
-            <th>Grupo</th>
-            <th>Aula</th>
-            <th>Dia</th>
-            <th>Hora</th>
-            <th>Asignatura</th>
-            <th>Docente</th>
-     
-            <th>Acción</th>
+            <th class="border-0 rounded-start">Grupo</th>
+            <th class="border-0">Aula</th>
+            <th class="border-0">Dia</th>
+            <th class="border-0">Hora</th>
+            <th class="border-0">Asignatura</th>
+            <th class="border-0">Docente</th>
+            <th class="border-0 rounded-end">Acción</th>
             </tr>
-</thead>
-<tbody>
+            </thead>
+            <tbody>
     <tr>
         
     @foreach($Horarios as $h)
   
-        <td>
-        <h6 class="country" style="margin: 0px auto;" > <b>{{$h->nombre}}</b></h4>
-        </td>
+        <td>{{$h->nombre}}</td>
     
-        <td>
-        <h6 class="country" style="margin: 0px auto;"> <b>{{$h->aula}}</b></h4>
-        </td>
+        <td>{{$h->aula}}</td>
      
-        <td>
-        <h6 class="country" style="margin: 0px auto;"> <b>{{$h->dia}}</b></h4>
-        </td>
+        <td>{{$h->dia}}</td>
 
-        <td>
-        <h6 class="country" style="margin: 0px auto;"> <b>{{$h->hora}}</b></h4>
-        </td>
+        <td>{{$h->hora}}</td>
 
-        <td>
-        <h6 class="country" style="margin: 0px auto;"> <b>{{$h->asignatura}}</b></h4>
-        </td>
+        <td>{{$h->asignatura}}</td>
 
-        <td>
-        <h6 class="country" style="margin: 0px auto;"> <b>{{$h->profesor}}</b></h4>
-        </td>
+        <td>{{$h->profesor}}</td>
         
-        <td style="float: right">
-                        <a href="/horarios/{{$h->id}}/edit" class="btn btn-inverse-success"   style="float: left; padding: 8px 5px !important margin: 10px;" title="Actualizar Registro">
-                            <i class="mdi mdi-autorenew"></i>Actualizar
-                        </a>
-                        <form action="/horarios/{{$h->id}}}" method="post">
-                        @method('DELETE')
-                        @csrf
-                        <button type="submit" class="btn btn-inverse-danger"  style="float: right; padding:  8px 5px !important;" title="Borrar Concepto">
-                            <i class="mdi mdi-delete-sweep"></i>Borrar
-                        </button>
-                    </form>
-                </td>
-            </td>
+        <td>
+            <div style="padding-right: 60px;">
+                <a href="/horarios/{{$h->id}}/edit" class="btn btn-secondary"  style="float: left; padding: 2px 5px;  margin-right: 3px" title="Actualizar Registro">
+                    <i class="mdi mdi-autorenew"></i>Actualizar
+                </a>
+                <form action="/horarios/{{$h->id}}}" method="post">
+                    @method('DELETE')
+                    @csrf
+                    <button type="submit" class="btn btn-primary"  style="padding: 2px 5px;" title="Borrar horario">
+                        <i class="mdi mdi-delete-sweep"></i>Borrar
+                    </button>
+                </form>
+            </div>
     </tr>
     @endforeach
         

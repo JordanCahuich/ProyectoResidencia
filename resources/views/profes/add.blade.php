@@ -18,13 +18,13 @@
 
 
 
-  
+
 <div class="row justify-content-center">
  
 <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-        <h2 class="card-title text-center">REGISTRAR DOCENTE<hr></h2>
+       <h2 class="h5 mb-4">REGISTRAR DOCENTE<hr></h2>
         <form class="forms-sample" method="post" action="/profes" enctype="multipart/form-data">
             @csrf
 
@@ -100,11 +100,11 @@
             </div> <!--ROW FIN-->
              
           
-            <div class="form-group text-center">
-                <button type="submit" class="btn btn-primary mr-2 mb-3" style="background-color: 	#8cf064">Registrar Docente</button>
-                <a href="/"  class="btn btn-inverse-dark btn-fw mb-3" style="background-color: 	#f75e5e">Cancelar</a>
-        
+            <div class="form-group float-right mt-3" style="float: right">
+                <button type="submit" class="btn btn-secondary mr-2 mb-3">Registrar</button>
+                <a href="/"  class="btn btn-primary btn-fw mb-3">Cancelar</a>
             </div>
+            
 
 
             

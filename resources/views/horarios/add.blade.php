@@ -22,7 +22,7 @@
 <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-        <h2 class="card-title text-center">REGISTRAR HORARIO<hr></h2>
+            <h2 class="h5 mb-4">REGISTRAR HORARIO<hr></h2>
         <form class="forms-sample" method="post" action="/horarios" enctype="multipart/form-data">
             @csrf
 
@@ -95,10 +95,11 @@
             </div> <!--ROW FIN-->
              
           
-            <div class="form-group text-center">
-                <button type="submit" class="btn btn-primary mr-2 mb-3" >Registrar</button>
-                <a href="/"  class="btn btn-outline-gray-600 d-inline-flex align-items-center" >Cancelar</a>
+            <div class="form-group float-right mt-3" style="float: right">
+                <button type="submit" class="btn btn-secondary mr-2 mb-3">Registrar</button>
+                <a href="/"  class="btn btn-primary btn-fw mb-3">Cancelar</a>
             </div>
+            
         </form>
         </div>
     </div>
