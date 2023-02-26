@@ -63,21 +63,16 @@ class AlumnosController extends Controller
                 'grado'=>$request->get('grado'),
                 'grupo'=>$request->get('grupo'),
                 'periodo_escolar'=>$request->get('periodo_escolar'),
-                'domicilio'=>$request->get('domicilio'),
-                'nombre_emergencia'=>$request->get('nombre_emergencia'),
-                'tel_emergencia'=>$request->get('tel_emergencia'),
-                'persona_autorizada'=>$request->get('persona_autorizada'),
+                'nombre_tutor'=>$request->get('nombre_tutor'),
                 'parentesco'=>$request->get('parentesco'),
-                'tel1_autorizada'=>$request->get('tel1_autorizada'),
-                'tel2_autorizada'=>$request->get('tel2_autorizada'),
-                'domicilio_autorizada'=>$request->get('domicilio_autorizada'),
-                'persona_autorizada2'=>$request->get('persona_autorizada2'),
+                'tutor_principal'=>$request->get('tutor_principal'),
+                'direccion'=>$request->get('direccion'),
+                'colonia'=>$request->get('colonia'),
+                'telefono_contacto'=>$request->get('telefono_contacto'),
+                'nombre_emergencia'=>$request->get('nombre_emergencia'),
                 'parentesco2'=>$request->get('parentesco2'),
-                'tel1_autorizada2'=>$request->get('tel1_autorizada2'),
-                'tel2_autorizada2'=>$request->get('tel2_autorizada2'),
-                'domicilio_autorizada2'=>$request->get('domicilio_autorizada2'),
+                'tel1_autorizada'=>$request->get('tel1_autorizada'),
                 'foto_estudiante'=>$nombrearchivo,
-                'observ'=>$request->get('observ'),
                 'profesor_id'=>$request->get('profesor_id'),
                  
 
@@ -97,7 +92,17 @@ class AlumnosController extends Controller
                 'grado'=>$request->get('grado'),
                 'grupo'=>$request->get('grupo'),
                 'periodo_escolar'=>$request->get('periodo_escolar'),
-                'domicilio'=>$request->get('domicilio'),
+                 'nombre_tutor'=>$request->get('nombre_tutor'),
+                'parentesco'=>$request->get('parentesco'),
+                'tutor_principal'=>$request->get('tutor_principal'),
+                'direccion'=>$request->get('direccion'),
+                'colonia'=>$request->get('colonia'),
+                'telefono_contacto'=>$request->get('telefono_contacto'),
+                'nombre_emergencia'=>$request->get('nombre_emergencia'),
+                'parentesco2'=>$request->get('parentesco2'),
+                'tel1_autorizada'=>$request->get('tel1_autorizada'),
+                'foto_estudiante'=>$nombrearchivo,
+                'profesor_id'=>$request->get('profesor_id'),'domicilio'=>$request->get('domicilio'),
                 'nombre_emergencia'=>$request->get('nombre_emergencia'),
                 'tel_emergencia'=>$request->get('tel_emergencia'),
                 'persona_autorizada'=>$request->get('persona_autorizada'),
@@ -111,7 +116,6 @@ class AlumnosController extends Controller
                 'tel2_autorizada2'=>$request->get('tel2_autorizada2'),
                 'domicilio_autorizada2'=>$request->get('domicilio_autorizada2'),
                 'foto_estudiante'=>$nombrearchivo,
-                'observ'=>$request->get('observ'),
                 'profesor_id'=>$request->get('profesor_id'),
                  
             ]);
@@ -176,16 +180,17 @@ class AlumnosController extends Controller
             $alumno->nivel_escolar            = $request->nivel_escolar;
             $alumno->grado                    = $request->grado;
             $alumno->periodo_escolar          = $request->periodo_escolar;
-            $alumno->domicilio                = $request->domicilio;
-            $alumno->nombre_emergencia        = $request->nombre_emergencia;
-            $alumno->tel_emergencia           = $request->tel_emergencia;
-            $alumno->persona_autorizada       = $request->persona_autorizada;
+            $alumno->nombre_tutor             = $request->nombre_tutor;
             $alumno->parentesco               = $request->parentesco;
+            $alumno->tutor_principal          = $request->tutor_principal;
+            $alumno->direccion                = $request->direccion;
+            $alumno->colonia                  = $request->olonia ;
+            $alumno->telefono_contacto        = $request->telefono_contacto;
+            $alumno->nombre_emergencia        = $request->nombre_emergencia;
+            $alumno->parentesco2              = $request->parentesco2;
             $alumno->tel1_autorizada          = $request->tel1_autorizada;
-            $alumno->observ                   = $request->observ;
             $alumno->curso_id                 = $request->curso_id;
             $alumno->profesor_id              = $request->profesor_id;
-
             $alumno->save(); 
         }else{
             $alumno = Alumnos::findOrFail($id);
@@ -200,13 +205,15 @@ class AlumnosController extends Controller
             $alumno->nivel_escolar            = $request->nivel_escolar;
             $alumno->grado                    = $request->grado;
             $alumno->periodo_escolar          = $request->periodo_escolar;
-            $alumno->domicilio                = $request->domicilio;
-            $alumno->nombre_emergencia        = $request->nombre_emergencia;
-            $alumno->tel_emergencia           = $request->tel_emergencia;
-            $alumno->persona_autorizada       = $request->persona_autorizada;
+            $alumno->nombre_tutor             = $request->nombre_tutor;
             $alumno->parentesco               = $request->parentesco;
+            $alumno->tutor_principal          = $request->tutor_principal;
+            $alumno->direccion                = $request->direccion;
+            $alumno->colonia                  = $request->olonia ;
+            $alumno->telefono_contacto        = $request->telefono_contacto;
+            $alumno->nombre_emergencia        = $request->nombre_emergencia;
+            $alumno->parentesco2              = $request->parentesco2;
             $alumno->tel1_autorizada          = $request->tel1_autorizada;
-            $alumno->observ                   = $request->observ;
             $alumno->curso_id                 = $request->curso_id;
             $alumno->profesor_id              = $request->profesor_id;
             $alumno->save(); 

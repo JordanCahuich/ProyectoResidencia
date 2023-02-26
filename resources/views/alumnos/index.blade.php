@@ -1,112 +1,91 @@
+
 @extends('layouts.app')
 
 @section('content')
-        
-@if ( session('updateAlumno') )
-<div class="row re" id="proBanner">
-    <div class="col-md-12 grid-margin">
-      <div class="card bg-gradient-primary border-0">
-        <div class="card-body py-3 px-4 d-flex align-items-center justify-content-between flex-wrap">
-          <p class="mb-0 text-white font-weight-medium" style="margin: 0 auto;">
-            <strong>Felicitaciones !</strong>
-            {{ session('updateAlumno') }}
-          </p>
-          
-          <div class="d-flex">
-            <button id="bannerClose" class="btn border-0 p-0">
-              <i class="mdi mdi-close text-white"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-@endif
-
-@if ( session('mensaje') )
-<div class="row re" id="proBanner">
-    <div class="col-md-12 grid-margin">
-      <div class="card bg-gradient-primary border-0">
-        <div class="card-body py-3 px-4 d-flex align-items-center justify-content-between flex-wrap">
-          <p class="mb-0 text-white font-weight-medium" style="margin: 0 auto;">
-            <strong>Felicitaciones !</strong>
-            {{ session('mensaje') }}
-          </p>
-          
-          <div class="d-flex">
-            <button id="bannerClose" class="btn border-0 p-0">
-              <i class="mdi mdi-close text-white"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-@endif
+<div class="container">
 
 
-@if(!empty($alumnos))
-<div class="col-md-12 grid-margin stretch-card">
+<div class="py-4">
+    <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
+        <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
+            <li class="breadcrumb-item">
+                <a href="#">
+                    <svg class="icon icon-xxs" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                </a>
+            </li>
+            <li class="breadcrumb-item"><a href="#">Sección Alumnos</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Lista de alumnos</li>
+        </ol>
+    </nav>
+
+<div class="row justify-content-end";>
+
+</div>
+
 <div class="card">
     <div class="card-body">
-    <h4 class="card-title text-center">LISTA DE ALUMNOS  </strong>
-      <hr>
-      <!--  <a class="btn btn-inverse-primary" href="{{ route('exportAlumnos') }}"  style="padding: 8px 15px !important;" title="Ver Detalles"> Descargar</a>-->
-    </h4>
-    <div class="table-responsive">
-        <table id="datatables-example" class="table table-hover">
-        <thead>
+        <h2 class="h5 mb-4">LISTA DE ALUMNOS<hr></h2>
+        <div class="table-responsive">
+        <table class="table table-centered table-nowrap mb-0 rounded">
+        <thead class="thead-light">
             <tr>
-            <th>Nombre del Alumno</th>
-            <th>Sexo</th>
-            <th>Grado</th>
-            <th>CURP</th>
-            <th>NIVEL</th>
-            <th>Acción</th>
+            <th class="border-0 rounded-start">Nombre del alumno</th>
+            <th class="border-0">Sexo</th>
+            <th class="border-0">Grado</th>
+            <th class="border-0">CURP</th>
+            <th class="border-0">Nivel</th>
+            
+            <th class="border-0 rounded-end">Acción</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($alumnos as $alumno)
             <tr>
+
+            @foreach ($alumnos as $alumno)
+
                 <td>{{ $alumno->nombre }}</td>
                 <td>{{ $alumno->sexo }}</td>
                 <td>{{ $alumno->grado}}</td>
                 <td>{{ $alumno->curp }}</td>
                 <td>{{ $alumno->nivel_escolar}}</td>
 
+               
+               
                 <td style="float: right">
-                         <a class="btn btn-inverse-primary" href="{{ route('alumno.show',$alumno->id) }}"  style="padding: 8px 15px !important;" title="Ver Detalles">
+                       
+                         <a class="btn btn-secondary" href="{{ route('alumno.show',$alumno->id) }}"  style="padding: 8px 15px !important;" title="Ver Detalles">
                             <i class="mdi mdi-account-card-details"></i> Ver
                         </a>
-                        <a class="btn btn-inverse-success" href="{{ route('alumno.edit',$alumno->id) }}"  style="padding: 8px 5px !important;" title="Actualizar Registro">
+                       
+                        <a class="btn btn-secondary" href="{{ route('alumno.edit',$alumno->id) }}"  style="padding: 8px 5px !important; " title="Actualizar Registro">
                             <i class="mdi mdi-autorenew"></i>Actualizar
                         </a>
-                        @csrf
+                       
                         
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-inverse-danger" onclick="return confirm('Estas seguro que deseas borrar el alumno: {{ $alumno->nombre }} ?');"  style="padding:  8px 5px !important;" title="Borrar Alumno">
+                        
+
+                        <form action="/alumno/{{$alumno->id}}}" method="post">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn btn-primary" onclick="return confirm('Estas seguro que deseas borrar el alumno: {{ $alumno->nombre }} ?');"  style="padding:  8px 5px !important;" title="Borrar Alumno">
                             <i class="mdi mdi-delete-sweep"></i>Borrar
                         </button>
+                        </form>
                         
-                    </form>
+                    
                 </td>
             </tr>
             @endforeach
+
         </tbody>
-        </table>
+</hr>
+</table>
 
-        <br><br>
-        <div class="form-group text-center mt5">
-            {!! $alumnos->links() !!}
-        </div>
+</div>
 
-        </div>
-    </div>
-</div>
-</div>
-@else
-<p> No se han creado Alumnos </p>
-@endif
 
 @endsection
+
+</div>
+
 

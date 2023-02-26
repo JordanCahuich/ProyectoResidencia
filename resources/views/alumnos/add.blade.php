@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
                 <div>
                     <div class="dropdown">
@@ -66,17 +67,15 @@
             </div>
 
 
-            <div class="row justify-content-center">
+ <div class="row justify-content-center">
 
 <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
         <h2 class="h5 mb-4">REGISTRAR NUEVO ALUMNO<hr></h2>
-        <form class="forms-sample" method="post" action="/cargas" enctype="multipart/form-data">
-            @csrf
-        
         <form class="forms-sample" method="post" action="{{ route('alumno.store') }}" enctype="multipart/form-data">
             @csrf
+        
 
             
                 
@@ -114,7 +113,7 @@
 
               <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Genero</label>
-                    <select name="sexo" class="form-control form-control-sm">
+                    <select name="sexo" class="form-select mb-0">
                         <option selected=>Seleccione</option>
                             <option>Masculino</option>
                             <option>Femenino</option>
@@ -123,12 +122,22 @@
 
                
 
+    
                 <div class="col-md-4">
                     <label class="col-sm-6 col-form-label">Fecha Nacimiento</label>
-                    <div class="col-sm-12">
-                      <input type="number" name="fecha_nacimiento" class="form-control" placeholder="Fecha nacimiento"/>
+                    <div class="input-group">
+                        <span class="input-group-text">
+                             <svg class="icon icon-xs" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                        </span>
+                        <input data-datepicker="" class="form-control" name="fecha_nacimiento" type="text" placeholder="dd/mm/yyyy" required>
+                     
                     </div>
                 </div>
+
+            
+                
+
+
                 <div class="col-md-4">
                     <label class="col-sm-6 col-form-label">CURP</label>
                     <div class="col-sm-12">
@@ -150,7 +159,7 @@
 
                 <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Tipo de sangre</label>
-                    <select name="tipo_sangre" class="form-control form-control-sm">
+                    <select name="tipo_sangre" class="form-select mb-0">
                         <option selected=>Seleccione</option>
                             <option>A+</option>
                             <option>A-</option>
@@ -167,7 +176,7 @@
 
                 <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Nivel escolar </label>
-                    <select name="nivel_escolar" class="form-control form-control-sm">
+                    <select name="nivel_escolar" class="form-select mb-0">
                         <option selected=>Seleccione</option>
                             <option>Primaria</option>
                             <option>Prescolar</option>
@@ -191,16 +200,17 @@
                     </div>
                 </div>
 
+                
                 <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Periodo escolar</label>
-                    <select name="periodo_escolar" class="form-control form-control-sm">
-                        <option selected=>Seleccione</option>
-                            <option>2022-2023</option>
-                            <option>2021-2022</option>
-                    </select>
+                    <div class="col-sm-12">
+                      <input type="text" name="periodo_escolar" class="form-control" required placeholder="Periodo escolar" />
+                    </div>
                 </div>
 
-                <h2 class="h5 my-4">Datos Domicilio</h2>
+                
+
+                <h2 class="h5 my-4">Datos del tutor</h2>
                             
                 
                
@@ -209,39 +219,62 @@
 
 
                 <div class="col-md-4">
-                    <label class="col-sm-12 col-form-label">Domicilio</label>
+                    <label class="col-sm-12 col-form-label">Nombre Tutor</label>
                     <div class="col-sm-12">
-                      <input type="text" name="domicilio" class="form-control" placeholder="Domicilio"/>
+                      <input type="text" name="nombre_tutor" class="form-control" placeholder="Nombre completo"/>
                     </div>
                 </div>
 
                 
 
                 <div class="col-md-4">
-                    <label class="col-sm-12 col-form-label">En caso de emergencia hablar a</label>
+                    <label class="col-sm-12 col-form-label">Parentesco</label>
                     <div class="col-sm-12">
-                      <input type="text" name="nombre_emergencia" class="form-control" placeholder="Nombre"/>
+                      <input type="text" name="parentesco" class="form-control" placeholder="Parentesco"/>
                     </div>
                 </div>
 
                 <div class="col-md-4">
-                    <label class="col-sm-12 col-form-label">Tel. Emergencia</label>
+                    <label class="col-sm-12 col-form-label">Tutor principal </label>
+                    <select name="tutor_principal" class="form-select mb-0">
+                        <option selected=>Seleccione</option>
+                            <option>SI</option>
+                            <option>NO</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-12 col-form-label">Dirección</label>
                     <div class="col-sm-12">
-                      <input type="number" name="tel_emergencia" class="form-control" placeholder="Teléfono"/>
+                      <input type="text" name="direccion" class="form-control" placeholder="Dirección"/>
                     </div>
                 </div>
 
                 <div class="col-md-4">
-                    <label class="col-sm-12 col-form-label">Persona autorizada</label>
+                    <label class="col-sm-12 col-form-label">Colonia</label>
                     <div class="col-sm-12">
-                      <input type="text" name="persona_autorizada" class="form-control" placeholder="Nombre persona autorizada"/>
+                      <input type="text" name="colonia" class="form-control" placeholder="Colonia"/>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-12 col-form-label">Teléfono contacto:</label>
+                    <div class="col-sm-12">
+                      <input type="number" name="telefono_contacto" class="form-control" placeholder="Teléfono"/>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-12 col-form-label"> En caso de emergencia hablar a:</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="nombre_emergencia" class="form-control" placeholder="Nombre persona autorizada"/>
                     </div>
                 </div>
 
                 <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Parentesco</label>
                     <div class="col-sm-12">
-                      <input type="text" name="parentesco" class="form-control" placeholder="Parentesco"/>
+                      <input type="text" name="parentesco2" class="form-control" placeholder="Parentesco"/>
                     </div>
                 </div>
 
@@ -252,73 +285,22 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
-                    <label class="col-sm-12 col-form-label">Tel. 2 Autorizada</label>
-                    <div class="col-sm-12">
-                      <input type="number" name="tel2_autorizada" class="form-control" placeholder="Teléfono"/>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <label class="col-sm-12 col-form-label">Domicilio persona autorizada</label>
-                    <div class="col-sm-12">
-                      <input type="text" name="domicilio_autorizada" class="form-control" placeholder="Domicilio"/>
-                    </div>
-                </div>
-
-                <!-- <div class="col-md-4">
-                    <label class="col-sm-12 col-form-label">Persona autorizada 2</label>
-                    <div class="col-sm-12">
-                      <input type="text" name="persona_autorizada2" class="form-control"placeholder="Teléfono"/>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <label class="col-sm-12 col-form-label">Parentesco 2</label>
-                    <div class="col-sm-12">
-                      <input type="text" name="parentesco2" class="form-control" placeholder="Nombre persona autorizada"/>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <label class="col-sm-12 col-form-label">Tel. 1 Autorizada 2</label>
-                    <div class="col-sm-12">
-                      <input type="text" name="tel1_autorizada2" class="form-control" placeholder="Teléfono"/>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <label class="col-sm-12 col-form-label">Tel. 2 Autorizada 2</label>
-                    <div class="col-sm-12">
-                      <input type="text" name="tel2_autorizada2" class="form-control" placeholder="Teléfono"/>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <label class="col-sm-12 col-form-label">Domicilio persona autorizada 2</label>
-                    <div class="col-sm-12">
-                      <input type="text" name="domicilio_autorizada2" class="form-control" placeholder="Domicilio"/>
-                    </div>
-                </div>-->
-
+                
+             
 
 
 
             
                 
                
-                <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Observación</label>
-                    <textarea name="observ" class="form-control" rows="4" cols="50"></textarea>
-                </div>
-            </div>
-             
             
-          
-            <div class="form-group text-center">
-                <button type="submit" class="btn btn-primary mr-2 mb-3">Registrar Alumno</button>
-                <a href="/"  class="btn btn-inverse-dark btn-fw mb-3">Cancelar</a>
+           
+
+            <div class="form-group float-right mt-3" style="float: right">
+                <button type="submit" class="btn btn-secondary mr-2 mb-3">Registrar</button>
+                <a href="/"  class="btn btn-primary btn-fw mb-3">Cancelar</a>
             </div>
+            
         </form>
         </div>
     </div>
