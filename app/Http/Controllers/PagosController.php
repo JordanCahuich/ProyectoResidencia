@@ -104,8 +104,8 @@ class PagosController extends Controller
         $Conceptos = Conceptos::all();
         $formapago = FormaPago::all();
         $id = $request->get('matricula');
-        $Alumnos= Alumnos::where('id',$id)->get();
-           return view('pago.register')->with('Alumnos', $Alumnos)->with('Conceptos',$Conceptos)->with('Forma',$formapago);
+        $Alumnos= Alumnos::find($id);
+           return view('pago.register')->with('p', $Alumnos)->with('Conceptos',$Conceptos)->with('Forma',$formapago);
     }
     public function conceptos (){
 

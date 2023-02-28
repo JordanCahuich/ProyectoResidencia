@@ -61,8 +61,8 @@
 </hr>
 </table>
 </div>
-
+    </div>
 
 @endsection
 
-</div>
+
