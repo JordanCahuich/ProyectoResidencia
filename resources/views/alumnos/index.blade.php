@@ -34,7 +34,7 @@
             <th class="border-0">Grado</th>
             <th class="border-0">CURP</th>
             <th class="border-0">Nivel</th>
-            
+
             <th class="border-0 rounded-end">Acción</th>
             </tr>
         </thead>
@@ -49,30 +49,26 @@
                 <td>{{ $alumno->curp }}</td>
                 <td>{{ $alumno->nivel_escolar}}</td>
 
-               
-               
-                <td style="float: right">
-                       
-                         <a class="btn btn-secondary" href="{{ route('alumno.show',$alumno->id) }}"  style="padding: 8px 15px !important;" title="Ver Detalles">
+
+
+                <td style="padding-right: 60px;">
+
+                         <a class="btn btn-secondary" href="{{ route('alumno.show',$alumno->id) }}"  style="float: left; padding: 2px 5px;  margin-right: 3px" title="Ver Detalles">
                             <i class="mdi mdi-account-card-details"></i> Ver
                         </a>
-                       
-                        <a class="btn btn-secondary" href="{{ route('alumno.edit',$alumno->id) }}"  style="padding: 8px 5px !important; " title="Actualizar Registro">
+
+                        <a class="btn btn-secondary" href="{{ route('alumno.edit',$alumno->id) }}"  style="padding: 2px 5px;" title="Actualizar Registro">
                             <i class="mdi mdi-autorenew"></i>Actualizar
                         </a>
-                       
-                        
-                        
-
-                        <form action="/alumno/{{$alumno->id}}}" method="post">
+                        <form action="/alumno/{{$alumno->id}}}" method="post" style="float:right;">
                             @method('DELETE')
                             @csrf
-                            <button type="submit" class="btn btn-primary" onclick="return confirm('Estas seguro que deseas borrar el alumno: {{ $alumno->nombre }} ?');"  style="padding:  8px 5px !important;" title="Borrar Alumno">
+                            <button type="submit" class="btn btn-primary" onclick="return confirm('Estas seguro que deseas borrar el alumno: {{ $alumno->nombre }} ?');"  style="padding: 2px 5px;" title="Borrar Alumno">
                             <i class="mdi mdi-delete-sweep"></i>Borrar
                         </button>
                         </form>
-                        
-                    
+
+
                 </td>
             </tr>
             @endforeach
