@@ -21,7 +21,7 @@ class PagosController extends Controller
             $nombre = $request->get('Nombre');
             $grado = $request->get('Grado');
             $pagos=Pago::all();
-            Datatables::of($pagos)
+            return Datatables::of($pagos)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
 
@@ -31,7 +31,6 @@ class PagosController extends Controller
                 })
                 ->rawColumns(['action'])
                 ->make(true);;
-
             /*$id = $request->get('Matricula');
             $nombre = $request->get('Nombre');
             $grado = $request->get('Grado');
