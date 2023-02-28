@@ -10,7 +10,7 @@
                 </a>
             </li>
             <li class="breadcrumb-item"><a href="#">Seccion de pagos</a></li>
-            <li class="breadcrumb-item"><a href="#">Concepto</a></li>
+            <li class="breadcrumb-item"><a href="#">Conceptos</a></li>
             <li class="breadcrumb-item active" aria-current="page">Nuevo concepto</li>
         </ol>
     </nav>
