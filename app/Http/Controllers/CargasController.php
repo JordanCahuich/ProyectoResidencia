@@ -34,7 +34,12 @@ class CargasController extends Controller
         
         $Profesores= Profesores::all();
 
-       return view('cargas.add', ['Alumnos'=> $Alumnos], ['Profesores'=> $Profesores]);
+        $periodos = Periodos::all();
+
+       return view('cargas.add', [
+        'Alumnos'=> $Alumnos,
+        'Profesores'=> $Profesores,
+        'Periodos'=>$periodos]);
     }
 
     public function store(Request $request)
