@@ -2,7 +2,6 @@
 
 @section('content')
 
-</hr>
 <div class="py-4">
     <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
         <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
@@ -17,14 +16,10 @@
     </nav>
 
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
-<a href="/concepto/create"  class="btn btn-secondary" style=" width: 100px; height: 40px;">
+        <a href="/concepto/create"  class="btn btn-secondary" style=" width: 100px; height: 40px;">
             Registar
         </a>
-</div>
-
-<div class="row justify-content-end";>
-
-</div>
+    </div>
 <div class="card">
     <div class="card-body">
         <h2 class="h5 mb-4">LISTA DE CONCEPTOS<hr></h2>
