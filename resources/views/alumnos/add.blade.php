@@ -260,7 +260,7 @@
                 <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Teléfono contacto:</label>
                     <div class="col-sm-12">
-                      <input type="number" name="telefono_contacto" class="form-control" placeholder="Teléfono"/>
+                      <input type="phone" name="telefono_contacto" class="form-control" placeholder="Teléfono"/>
                     </div>
                 </div>
 
@@ -281,20 +281,12 @@
                 <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Tel. 1 Autorizada</label>
                     <div class="col-sm-12">
-                      <input type="number" name="tel1_autorizada" class="form-control" placeholder="Teléfono"/>
+                      <input type="phone" name="tel1_autorizada" class="form-control" placeholder="Teléfono"/>
                     </div>
                 </div>
 
                 
-             
-
-
-
-            
-                
-               
-            
-           
+   
 
             <div class="form-group float-right mt-3" style="float: right">
                 <button type="submit" class="btn btn-secondary mr-2 mb-3">Registrar</button>

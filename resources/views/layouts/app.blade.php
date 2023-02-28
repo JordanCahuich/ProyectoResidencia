@@ -86,12 +86,13 @@
     <div id="app">
       {{--  @include('layouts.menuHorizontal')--}}
      
-        @include('layouts.menuVertical')
+       
 
 
         
     <main class="content">
-    
+    @include('layouts.menuVertical')
+    @include('layouts.menuHorizontal')
               
     @yield('content')
 

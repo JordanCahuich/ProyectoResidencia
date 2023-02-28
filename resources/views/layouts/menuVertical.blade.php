@@ -1,4 +1,3 @@
-partial -->
 <div class="container-fluid page-body-wrapper">
 <nav class="sidebar d-lg-block bg-gray-800 text-white collapse" data-simplebar id="sidebar">
 
@@ -8,7 +7,7 @@ partial -->
     </div>
     <ul class="nav flex-column pt-3 pt-md-0">
     <li class="nav-item">
-        <a href="/" class="nav-link d-flex align-items-center">
+        <a href="{{ route('dashboard') }}" class="nav-link d-flex align-items-center">
           <span class="sidebar-icon">
           <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg>
           </span>

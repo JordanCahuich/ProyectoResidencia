@@ -1,5 +1,4 @@
 
-
 <x-guest-layout>
     <x-auth-card>
         
