@@ -64,8 +64,10 @@
                     <label class="col-sm-12 col-form-label">Periodo</label>
                     <select name="periodo" class="form-control form-control-sm">
                         <option selected=>Seleccione</option>
-                            <option>20222023</option>
-                            <option>20232024</option>
+                        @foreach ($Periodos as $p)
+                            <option value="{{$p->id}}">{{$p->nombre}}</option>
+                        @endforeach
+                            
                     </select>
                 </div>
 
