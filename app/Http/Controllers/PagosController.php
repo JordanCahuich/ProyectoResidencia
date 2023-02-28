@@ -13,24 +13,22 @@ use App\DataTables\UsersPagosDataTable;
 
 class PagosController extends Controller
 {
-    public function index(UsersPagosDataTable $dataTable)
+    public function index(Request $request)
     {
 
-        return $dataTable->render('pago.index');
+
             $id = $request->get('Matricula');
             $nombre = $request->get('Nombre');
             $grado = $request->get('Grado');
-            $pagos=Pago::all();
-            return Datatables::of($pagos)
-                ->addIndexColumn()
-                ->addColumn('action', function($row){
+            $grupo = $request->get('Grupo');
+            $pagos=Pago::with('alumnos');
+            $alumnos = null;
+            if(isset($id))
+                $alumnos= Alumnos::nombres($nombre)->ids($id)->grados($grado)->paginate(2);
+            $pago= Pago::where('alumno_id',$id)->get();
+            //dd($pagos->get());
+            return view('pago.index',['pagos'=>$pagos->get()]);
 
-                    $btn = '<a href="javascript:void(0)" class="edit btn btn-primary btn-sm">View</a>';
-
-                    return $btn;
-                })
-                ->rawColumns(['action'])
-                ->make(true);;
             /*$id = $request->get('Matricula');
             $nombre = $request->get('Nombre');
             $grado = $request->get('Grado');
@@ -38,7 +36,7 @@ class PagosController extends Controller
             if(isset($id))
                 $alumnos= Alumnos::nombres($nombre)->ids($id)->grados($grado)->paginate(2);
         $pago= Pago::where('alumno_id',$id)->get();
-        return view('pago.index')->with('Alumnos', $alumnos)->with('Pagos',$pagos)->with('Pago',$pago);*/
+        */
     }
     public function create(){
 

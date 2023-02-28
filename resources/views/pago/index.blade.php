@@ -47,12 +47,32 @@
             </div>
 
 </div>
+<div class="card-header">Lista de Pagos</div>
+<table class="table table-centered table-nowrap mb-0 rounded">
+    <thead class="thead-light">
+    <tr>
+        <th class="border-0 rounded-start">Matricula</th>
+        <th class="border-0">Nombre</th>
+        <th class="border-0">Apellido</th>
+        <th class="border-0 rounded-end">Fecha Pago</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach($pagos as $p)
+    <tr>
 
 
+            <td>{{$p->alumnos->id}}</td>
 
-            <div class="card-header">Lista de Pagos</div>
+            <td>{{$p->alumnos->nombre}}</td>
+            <td>{{$p->alumnos->primer_apellido." ".$p->Alumnos->segundo_apellido}}</td>
+            <td>{{ date('d-m-Y', strtotime($p->fecha))}}</td>
 
-                {{ $dataTable->table() }}
+    </tr>
+    @endforeach
+    </tbody>
+</table>
+
 
 
 @endsection

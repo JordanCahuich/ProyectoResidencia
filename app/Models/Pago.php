@@ -28,8 +28,10 @@ class Pago extends Model
             return $query->where('id','like',"%id%");
         }
     }
-    public function pago(){
-        return $this->belongsTo(Pago::class);
+
+    public function alumnos()
+    {
+        return $this->belongsTo('App\Models\Alumnos','alumno_id');
     }
 
 }
