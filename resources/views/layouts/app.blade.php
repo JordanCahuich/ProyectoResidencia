@@ -82,21 +82,10 @@
 </head>
 <body>
     <div id="app">
-<<<<<<< Updated upstream
-      {{--  @include('layouts.menuHorizontal')--}}
-     
-
-=======
-
-        
-        @include('layouts.menuVertical')
->>>>>>> Stashed changes
-
-
     <main class="content">
     @include('layouts.menuVertical')
     @include('layouts.menuHorizontal')
-              
+
     @yield('content')
 
     </main>
