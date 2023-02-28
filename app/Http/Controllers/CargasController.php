@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 use App\Models\Cargas;
 use App\Models\Alumnos;
+use App\Models\Asignaturas;
 use App\Models\Grados;
 use App\Models\Grupos;
 use App\Models\Niveles;
@@ -36,10 +37,24 @@ class CargasController extends Controller
 
         $periodos = Periodos::all();
 
+        $niveles = Niveles::all();
+
+        $grupos = Grupos::all();
+
+        $grados = Grados::all();
+
+        $asignaturas = Asignaturas::all();
+
        return view('cargas.add', [
         'Alumnos'=> $Alumnos,
         'Profesores'=> $Profesores,
-        'Periodos'=>$periodos]);
+        'Periodos'=>$periodos,
+        'Niveles'=>$niveles,
+        'Grupos'=>$grupos,
+        'Grados'=>$grados,
+        'Asignaturas'=>$asignaturas
+
+    ]);
     }
 
     public function store(Request $request)
