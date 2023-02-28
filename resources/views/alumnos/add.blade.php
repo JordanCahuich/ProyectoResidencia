@@ -2,6 +2,11 @@
 
 @section('content')
 
+<div class="py-4" style="margin: 20px auto" >
+  <div style="text-align:center; " >
+ 
+  
+
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
                 <div>
