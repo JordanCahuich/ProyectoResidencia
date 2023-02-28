@@ -18,9 +18,9 @@
     </nav>
 
 
-<div class="row justify-content-end";>
-<a href="/concepts/formapago" class="btn btn-secondary" style=" width: 100px; height: 40px;">
-            Registrar 
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+    <a href="/concepts/formapago" class="btn btn-secondary" style=" width: 100px; height: 40px;">
+            Registrar
         </a>
 </div>
 
@@ -47,7 +47,7 @@
                 <td>{{ $forma->tipo }}</td>
                 <td>{{ $forma->nombre }}</td>
                 <td>{{ $forma->valor }}</td>
-                
+
                 <td style="padding-right: 60px;">
                 <a href="/concepts/pago/{{$forma->id}}/edit" class="btn btn-secondary"  style="float: left; padding: 2px 5px;  margin-right: 3px" title="Actualizar Registro">
                             <i class="mdi mdi-autorenew" ></i>Actualizar
