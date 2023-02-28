@@ -3,9 +3,9 @@
 @section('content')
 
 <div class="py-4" style="margin: 20px auto" >
-  <div style="text-align:center; " >
- 
-  
+  <div >
+
+
 
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
@@ -25,7 +25,7 @@
                                 Message
                             </a>
                             <a class="dropdown-item d-flex align-items-center" href="#">
-                                <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 13H11V9.413l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13H5.5z"></path><path d="M9 13h2v5a1 1 0 11-2 0v-5z"></path></svg>                            
+                                <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 13H11V9.413l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13H5.5z"></path><path d="M9 13h2v5a1 1 0 11-2 0v-5z"></path></svg>
                                 Product
                             </a>
                             <div role="separator" class="dropdown-divider my-1"></div>
@@ -51,7 +51,7 @@
                             Products
                         </a>
                         <a class="dropdown-item d-flex align-items-center" href="#">
-                            <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path></svg>                            
+                            <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path></svg>
                             Customers
                         </a>
                         <a class="dropdown-item d-flex align-items-center" href="#">
@@ -80,11 +80,11 @@
         <h2 class="h5 mb-4">REGISTRAR NUEVO ALUMNO<hr></h2>
         <form class="forms-sample" method="post" action="{{ route('alumno.store') }}" enctype="multipart/form-data">
             @csrf
-        
 
-            
-                
-                    
+
+
+
+
             <h2 class="h5 mb-4">Información General</h2>
             <div class="col-md-4">
                     <label class="col-sm-6 col-form-label">Foto del Alumno</label>
@@ -92,14 +92,14 @@
                       <input type="file" name="foto_estudiante" class="form-control" />
                     </div>
                 </div>
-                
+
 
             <div class="row">
                 <div class="col-md-4">
                     <label class="col-sm-6 col-form-label">Nombre(s)</label>
                     <div class="col-sm-12">
                       <input type="text" name="nombre" class="form-control" required placeholder="Nombre"/>
-                     
+
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -114,7 +114,7 @@
                       <input type="text" name="segundo_apellido" class="form-control" placeholder="Apellido materno" />
                     </div>
                 </div>
-              
+
 
               <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Genero</label>
@@ -125,9 +125,9 @@
                     </select>
                 </div>
 
-               
 
-    
+
+
                 <div class="col-md-4">
                     <label class="col-sm-6 col-form-label">Fecha Nacimiento</label>
                     <div class="input-group">
@@ -135,12 +135,12 @@
                              <svg class="icon icon-xs" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
                         </span>
                         <input data-datepicker="" class="form-control" name="fecha_nacimiento" type="text" placeholder="dd/mm/yyyy" required>
-                     
+
                     </div>
                 </div>
 
-            
-                
+
+
 
 
                 <div class="col-md-4">
@@ -159,8 +159,8 @@
                     </div>
                 </div>
 
-                
-                
+
+
 
                 <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Tipo de sangre</label>
@@ -196,8 +196,8 @@
                     </div>
                 </div>
 
-              
-            
+
+
                 <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Grupo</label>
                     <div class="col-sm-12">
@@ -205,7 +205,7 @@
                     </div>
                 </div>
 
-                
+
                 <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Periodo escolar</label>
                     <div class="col-sm-12">
@@ -213,14 +213,14 @@
                     </div>
                 </div>
 
-                
+
 
                 <h2 class="h5 my-4">Datos del tutor</h2>
-                            
-                
-               
 
-                
+
+
+
+
 
 
                 <div class="col-md-4">
@@ -230,7 +230,7 @@
                     </div>
                 </div>
 
-                
+
 
                 <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Parentesco</label>
@@ -290,14 +290,14 @@
                     </div>
                 </div>
 
-                
-   
+
+
 
             <div class="form-group float-right mt-3" style="float: right">
                 <button type="submit" class="btn btn-secondary mr-2 mb-3">Registrar</button>
                 <a href="/"  class="btn btn-primary btn-fw mb-3">Cancelar</a>
             </div>
-            
+
         </form>
         </div>
     </div>
