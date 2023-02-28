@@ -16,9 +16,9 @@
         </ol>
     </nav>
 
-<div class="row justify-content-end";>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
 <a href="/concepto/create"  class="btn btn-secondary" style=" width: 100px; height: 40px;">
-            Registar 
+            Registar
         </a>
 </div>
 
@@ -40,7 +40,7 @@
 </thead>
 <tbody>
     <tr>
-        
+
     @foreach($Conceptos as $c)
     <td>{{$c->nombre}}</td>
 
@@ -61,7 +61,7 @@
             </td>
     </tr>
     @endforeach
-        
+
 </tbody>
 </hr>
 </table>

@@ -77,7 +77,7 @@
             </li>
             <li class="nav-item">
             <a class="nav-link" href="{{ route('concepto.index') }}">
-                <span class="sidebar-text">Concepto</span>
+                <span class="sidebar-text">Conceptos</span>
               </a>
             </li>            
           </ul>
