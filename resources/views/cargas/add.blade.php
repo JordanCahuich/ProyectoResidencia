@@ -34,8 +34,9 @@
                 <label class="col-sm-12 col-form-label">Grupo</label>
                 <select name="grupo" class="form-control form-control-sm">
                     <option selected=>Seleccione</option>
-                        <option>A</option>
-                        <option>B</option>
+                    @foreach ($Grupos as $g)
+                        <option value="{{$g->id}}">{{$g->letra}}</option>
+                    @endforeach
                 </select>
             </div>
 
@@ -43,9 +44,10 @@
             <div class="col-md-4">
               <label class="col-sm-12 col-form-label">Grado</label>
               <select name="grado" class="form-control form-control-sm">
-                  <option selected=>Seleccione</option>
-                      <option>1</option>
-                      <option>2</option>
+                <option selected=>Seleccione</option>
+                @foreach ($Grados as $grados)
+                    <option value="{{$grados->id}}">{{$grados->numero}}</option>
+                @endforeach
               </select>
           </div>
 
@@ -55,8 +57,9 @@
             <label class="col-sm-12 col-form-label">Nivel</label>
             <select name="nivel" class="form-control form-control-sm">
                 <option selected=>Seleccione</option>
-                    <option>Primaria</option>
-                    <option>Preescolar</option>
+                @foreach ($Niveles as $n)
+                    <option value="{{$n->id}}">{{$n->nombre}}</option>
+                @endforeach
             </select>
         </div>
 
@@ -89,9 +92,9 @@
                 <label class="col-sm-12 col-form-label">Asignatura</label>
                 <select name="asignatura" class="form-control form-control-sm">
                     <option selected=>Seleccione</option>
-                        <option>Español</option>
-                        <option>FISICA</option>
-                        <option>Matetmaticas</option>
+                    @foreach ($Asignaturas as $a)
+                        <option value="{{$a->id}}">{{$a->nombre}}</option>
+                    @endforeach
                 </select>
             </div>
 
@@ -102,6 +105,8 @@
                   <option selected=>Seleccione</option>
                       <option>1</option>
                       <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
               </select>
           </div>
 

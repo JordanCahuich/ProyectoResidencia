@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Grados extends Model
 {
     use HasFactory;
+    protected $table = "grados";
+    protected $primaryKey = "id";
+
     protected $fillable = ['numero'];
 
-    public function periodo(){
-        return $this->belongsTo(Periodos::class);
-    }
+  
 }
