@@ -79,6 +79,9 @@
     <!-- Volt CSS -->
     <link type="text/css" href="{{ asset('css/volt.css')}}" rel="stylesheet">
 
+
+   @yield('styles')
+    
 </head>
 <body>
     <div id="app">
@@ -139,5 +142,6 @@
 
 <!-- Volt JS -->
 <script src="{{ asset('js/volt.js')}}"></script>
+
 </body>
 </html>

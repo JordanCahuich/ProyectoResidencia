@@ -60,29 +60,19 @@ class CargasController extends Controller
     public function store(Request $request)
     {
 
-  
+        $grupo = $request->get('grupo');
+        $grado = $request->get('grado');
+        $nivel =$request->get('nivel');
+        $periodo =$request->get('periodo');
+        $docente = $request->get('docente');
+        $asignatura =$request->get('asignatura');
+        $bimestre =$request->get('bimestre');
+        $alumnos =$request->get('alumnos');
 
-        if ($request->hasFile('foto_carga')) {
-            $file = $request->file('foto_carga');  
-            $nombrearchivo = time()."_".$file->getClientOriginalName();  
-            $file->move(public_path('/fotosCarga/'),$nombrearchivo); 
+        foreach($alumnos as $alumno){
 
-            $data = new Cargas([
-                
-                'grupo'=>$request->get('grupo'),
-                'grado'=>$request->get('grado'),
-                'nivel'=>$request->get('nivel'),
-                'periodo'=>$request->get('periodo'),
-                'docente'=>$request->get('docente'),
-                'asignatura'=>$request->get('asignatura'),
-                'bimestre'=>$request->get('bimestre'),
-                'alumnos'=>$request->get('alumnos'),
-         
-                 
-
-            ]);
-            $data->save(); 
-        }else{
+        
+        
             $data = new Cargas([
                 'grupo'=>$request->get('grupo'),
                 'grado'=>$request->get('grado'),
@@ -91,12 +81,12 @@ class CargasController extends Controller
                 'docente'=>$request->get('docente'),
                 'asignatura'=>$request->get('asignatura'),
                 'bimestre'=>$request->get('bimestre'),
-                'alumnos'=>$request->get('alumnos'),
+                'alumnos'=>$alumno,
             
               
             ]);
             $data->save(); 
-        } 
+        }
 
      /*  return view('profes.store'); */
         return redirect('/cargas')->with('mensaje','Carga Registrada Correctamente.'); 

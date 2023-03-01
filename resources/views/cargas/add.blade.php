@@ -1,8 +1,14 @@
 @extends('layouts.app')
 
+
+
 @section('content')
 
-
+<style>
+    .bootstrap-select .btn{
+        border: 0.0625rem solid #D1D5DB;
+    }
+</style>
 
 <div class="py-4">
     <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
@@ -107,22 +113,32 @@
                       <option>2</option>
                       <option>3</option>
                       <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
               </select>
           </div>
 
 
-                        <div class="col-md-4">
-                    <label class="col-sm-12 col-form-label">Alumnos</label>
-                    <select name="alumnos" class="form-control form-control-sm">
-                        <option selected=>Seleccione</option>
+  <!--      <div class="col-md-4">
+            <label class="col-sm-12 col-form-label">Alumnos</label>
+            <select name="alumnos" class="form-control form-control-sm">
+            <option selected=>Seleccione</option>
+                @foreach ($Alumnos as $alumno)
+                <option>{{$alumno->nombre}}</option>
+                @endforeach
+            </select>
+        </div>  -->
 
-                            @foreach ($Alumnos as $alumno)
-                            <option>{{$alumno->nombre}}</option>
-                            @endforeach
-                    </select>
-                </div>
-
-
+        <div class="col-md-4">
+            <label class="col-sm-12 col-form-label">Alumnos</label>
+            
+            <select name="alumnos[]" id="alumnos"  class="selectpicker  form-control" 
+            title="Seleccionar alumnos" multiple required>
+            @foreach ($Alumnos as $alumno)
+            <option value="{{$alumno->id}}">{{$alumno->nombre}}</option>
+            @endforeach
+              </select>
+        </div>
 
             </div> <!--ROW FIN-->
 
@@ -142,109 +158,9 @@
 @endsection
 
 
+@section('scripts')
 
-<!--
-<p>
-<div style="text-align: center; ">
-    <FONT FACE="impact" SIZE=4 COLOR="#056daa">Seleccionar periodo</FONT>
-    <form action="" method="post">
-    <select name="cargas" id="cargas" onchange="this.form.submit()">
-        <option value="">Seleccionar...</option>
-        <option value="">20202021</option>
-        <option value="">20212022</option>
-        <option value="">20222023</option>
+ 
+@endsection
 
-
-    </select>
-    </form>
-</p>
-
-
-<p>
-    <div style="text-align: center; ">
-        <FONT FACE="impact" SIZE=4 COLOR="#056daa">Seleccionar nivel</FONT>
-    <form action="" method="post">
-    <select name="cargas" id="cargas" onchange="this.form.submit()">
-        <option value="">Seleccionar...</option>
-        <option value="">Nivel preescolar</option>
-        <option value="">Nivel primaria</option>
-
-
-    </select>
-    </form>
-
-</p>
-
-
-<p>
-    <div style="text-align: center; ">
-        <FONT FACE="impact" SIZE=4 COLOR="#056daa">Seleccionar grado</FONT>
-        <form action="" method="post">
-        <select name="cargas" id="cargas" onchange="this.form.submit()">
-            <option value="">Seleccionar...</option>
-            <option value="">1</option>
-            <option value="">2</option>
-            <option value="">3</option>
-            <option value="">4</option>
-            <option value="">5</option>
-
-        </select>
-        </form>
-
-
-</p>
-
-        <div style="text-align: center; ">
-        <FONT FACE="impact" SIZE=4 COLOR="#056daa">Seleccionar grupo</FONT>
-            <form action="" method="post">
-            <select name="cargas" id="cargas" onchange="this.form.submit()">
-                <option value="">Seleccionar...</option>
-                <option value="">A</option>
-                <option value="">B</option>
-                <option value="">C</option>
-                <option value="">D</option>
-                <option value="">E</option>
-
-            </select>
-            </form>
-
-
-     <p>
-            <div style="text-align: center; ">
-            <FONT FACE="impact" SIZE=4 COLOR="#056daa">Seleccionar profesor</FONT>
-                <form action="" method="post">
-                <select name="cargas" id="cargas" onchange="this.form.submit()">
-                    <option value="">Seleccionar...</option>
-                    <option value="">Carlos Omar</option>
-                    <option value="">Carlos Jimenez</option>
-                    <option value="">Felipe Salgado</option>
-
-
-                </select>
-                </form>
-
-    </p>
-
-
-    <p>
-                <div style="text-align: center; ">
-            <FONT FACE="impact" SIZE=4 COLOR="#056daa">Seleccionar asignatura</FONT>
-                    <form action="" method="post">
-                    <select name="cargas" id="cargas" onchange="this.form.submit()">
-                        <option value="">Seleccionar...</option>
-                        <option value="">Matetmaticas I</option>
-                        <option value="">Español I</option>
-                        <option value="">Etica I</option>
-                        <option value="">Historia I</option>
-                        <option value="">Fisica I</option>
-
-                    </select>
-                    </form>
-    </p>
-
-                    <div class="form-group text-center">
-                        <button type="submit" class="btn btn-primary mr-2 mb-3" style="background-color: #0059ff">Guardar</button>
-
-                    </div>
-                -->
 

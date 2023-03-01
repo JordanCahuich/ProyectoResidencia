@@ -39,7 +39,7 @@
 
                 
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Fecha de nacimiento</label>
+                    <label class="col-sm-12 col-form-label">Fecha de nacimiento</label>
                     <div class="col-sm-12">
                       <input type="date" name="fecha_nacimiento" class="form-control" />
                     </div>
