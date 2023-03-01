@@ -22,6 +22,7 @@
 
 </div>
 
+
 <div class="card">
     <div class="card-body">
         <h2 class="h5 mb-4">LISTA DE CARGAS<hr></h2>
@@ -48,11 +49,11 @@
                 <td>{{$c->grupo}}</td>
                 <td>{{$c->grado}}</td>
                 <td>{{$c->nivel}}</td>
-                <td>{{$c->periodo}}</td>
-                <td>{{$c->docente}}</td>
-                <td>{{$c->asignatura}}</td>
+                <td>{{$c->periodos->nombre}}</td>
+                <td>{{$c->profesores->nombre}}</td>
+                <td>{{$c->asignaturas->nombre}}</td>
                 <td>{{$c->bimestre}}</td>
-                <td>{{$c->alumnos}}</td>
+                <td>{{$c->alumno_id}}</td>
                 <td>
                     <div style="padding-right: 60px;">
                         <a href="/cargas/{{$c->id}}/edit" class="btn btn-secondary"  style="float: left; padding: 2px 5px;  margin-right: 3px" title="Actualizar Registro">

@@ -87,7 +87,7 @@
                   <select name="docente" class="form-control form-control-sm">
                       <option selected=>Seleccione</option>
                       @foreach ($Profesores as $profesores)
-                      <option>{{$profesores->nombre}}</option>
+                      <option value="{{$profesores->id}}">{{$profesores->nombre}}</option>
                       @endforeach
                   </select>
               </div>
@@ -119,15 +119,7 @@
           </div>
 
 
-  <!--      <div class="col-md-4">
-            <label class="col-sm-12 col-form-label">Alumnos</label>
-            <select name="alumnos" class="form-control form-control-sm">
-            <option selected=>Seleccione</option>
-                @foreach ($Alumnos as $alumno)
-                <option>{{$alumno->nombre}}</option>
-                @endforeach
-            </select>
-        </div>  -->
+
 
         <div class="col-md-4">
             <label class="col-sm-12 col-form-label">Alumnos</label>

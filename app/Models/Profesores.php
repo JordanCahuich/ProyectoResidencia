@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Profesores extends Model
 {
@@ -19,9 +19,10 @@ class Profesores extends Model
     protected $primaryKey = "id";
 
 
-    /**RELACION DE 1 A MUCHOS, un profe puede tener mas de una materia (curso)*/
-    public function curso(){
-        return $this->belongsTo(Cursos::class);
+
+    public function cargas(): HasMany
+    {
+        return $this->hasMany(Cargas::class);
     }
 
 }

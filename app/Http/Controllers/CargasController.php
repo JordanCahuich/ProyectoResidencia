@@ -22,7 +22,9 @@ class CargasController extends Controller
     public function index()
     {
       
-        $Cargas = Cargas::all();
+        $Cargas = Cargas::with('profesores')->with('periodos')->with('asignaturas')->get();
+        
+        //dd($Cargas);
        return view('cargas.index', ['Cargas'=> $Cargas]);
 
   
@@ -60,13 +62,8 @@ class CargasController extends Controller
     public function store(Request $request)
     {
 
-        $grupo = $request->get('grupo');
-        $grado = $request->get('grado');
-        $nivel =$request->get('nivel');
-        $periodo =$request->get('periodo');
-        $docente = $request->get('docente');
-        $asignatura =$request->get('asignatura');
-        $bimestre =$request->get('bimestre');
+        //dd($request->get('docente'));
+    
         $alumnos =$request->get('alumnos');
 
         foreach($alumnos as $alumno){
@@ -78,12 +75,10 @@ class CargasController extends Controller
                 'grado'=>$request->get('grado'),
                 'nivel'=>$request->get('nivel'),
                 'periodo'=>$request->get('periodo'),
-                'docente'=>$request->get('docente'),
-                'asignatura'=>$request->get('asignatura'),
+                'docente_id'=> $request->get('docente'),
+                'asignatura_id'=>$request->get('asignatura'),
                 'bimestre'=>$request->get('bimestre'),
-                'alumnos'=>$alumno,
-            
-              
+                'alumno_id'=>$alumno,
             ]);
             $data->save(); 
         }
