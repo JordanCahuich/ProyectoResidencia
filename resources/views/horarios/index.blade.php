@@ -82,13 +82,19 @@
             </div>
     </tr>
     @endforeach
-        
+
+
 </tbody>
 </hr>
+
+
 </table>
   
 </div>
 
+<div class="form-group float-right mt-3" style="float: right">
+    <a href="/horarios/create"  class="btn btn-primary btn-fw mb-3">Regresar</a>
+</div>
 
 @endsection
 

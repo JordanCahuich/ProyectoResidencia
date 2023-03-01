@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Asignaturas;
+use App\Models\Grupos;
 use App\Models\Horarios;
+use App\Models\Profesores;
 use Illuminate\Http\Request;
 
 class HorariosController extends Controller
@@ -12,14 +15,29 @@ class HorariosController extends Controller
     {
        
         $Horarios = Horarios::all();
-        return view('horarios.index', ['Horarios'=> $Horarios]);
+
+        return view('horarios.index', [
+            
+        'Horarios'=> $Horarios,
+
+    ]);
 
     }
 
 
     public function create()
     {
-        return view('horarios.add');
+        $Profesores = Profesores::all();
+        $asignaturas = Asignaturas::all();
+        $grupos = Grupos::all();
+
+        return view('horarios.add', [
+            
+        'Profesores'=>$Profesores,
+        'Asignaturas'=>$asignaturas,
+        'Grupos'=>$grupos
+    
+    ]);
 
     }
 

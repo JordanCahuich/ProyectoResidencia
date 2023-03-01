@@ -28,10 +28,13 @@
 
             <div class="row"> <!--ROW INICIO -->
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Grupo</label>
-                    <div class="col-sm-12">
-                      <input type="text" name="nombre" class="form-control" required/>
-                    </div>
+                    <label class="col-sm-12 col-form-label">Grupo</label>
+                    <select name="grupo" class="form-control form-control-sm">
+                        <option selected=>Seleccione</option>
+                        @foreach ($Grupos as $g)
+                            <option value="{{$g->id}}">{{$g->letra}}</option>
+                        @endforeach
+                    </select>
                 </div>
 
                 <div class="col-md-4">
@@ -59,18 +62,24 @@
 
                 
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Asignatura</label>
-                    <div class="col-sm-12">
-                      <input type="text" name="asignatura" class="form-control" />
-                    </div>
+                    <label class="col-sm-12 col-form-label">Asignatura</label>
+                    <select name="asignatura" class="form-control form-control-sm">
+                        <option selected=>Seleccione</option>
+                        @foreach ($Asignaturas as $a)
+                            <option value="{{$a->id}}">{{$a->nombre}}</option>
+                        @endforeach
+                    </select>
                 </div>
-
                 
+
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Docente</label>
-                    <div class="col-sm-12">
-                      <input type="text" name="profesor" class="form-control" />
-                    </div>
+                    <label class="col-sm-12 col-form-label">Docente</label>
+                    <select name="docente" class="form-control form-control-sm">
+                        <option selected=>Seleccione</option>
+                        @foreach ($Profesores as $profesores)
+                        <option>{{$profesores->nombre}}</option>
+                        @endforeach
+                    </select>
                 </div>
             <!--    <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Asignatura</label>
