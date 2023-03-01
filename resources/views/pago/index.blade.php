@@ -21,56 +21,51 @@
                 <form class="form-inline row">
                     <div class="row">
                         <div class="col">
-                            <input  name="Nombre" class="form-control" type="search" placeholder="Nombre" aria-label="Search">
+                            <input  name="Nombre" class="form-control" type="search" placeholder="nombre" aria-label="Search">
                         </div>
 
                         <div class="col">
                             <input  name="Matricula" class="form-control "  type="search" placeholder="Matricula" aria-label="Search">
                         </div>
-                    
-
                     <div class="col-md-2">
 
-                        <button class="btn btn-success" type="submit" style="background-color:#5DBB63">Buscar</button>
+                        <button class="btn btn-success" type="submit" style="background-color:#009624">Buscar</button>
 
                     </div>
-                    <a href="/pagos/register" class="btn btn-secondary mr-2 mb-3" style=" width: 100px; height: 40px; ">
+                    <a href="/pagos/register" class="btn btn-secondary" style=" width: 100px; height: 40px; ">
                         Registar
                     </a>
                     </div>
                 </form>
             </div>
 
-    <h5>Lista de Pagos</h5>
-            <div class="table-responsive">
-                <table class="table table-centered table-nowrap mb-0 rounded">
-                    <thead class="thead-light">
-                    <tr>
-                        <th class="border-0 rounded-start">Matricula</th>
-                        <th class="border-0">Nombre</th>
-                        <th class="border-0">Apellido</th>
-                        <th class="border-0 rounded-end">Fecha Pago</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($pagos as $p)
-                        <tr>
+</div>
+<div class="card-header">Lista de Pagos</div>
+<table class="table table-centered table-nowrap mb-0 rounded">
+    <thead class="thead-light">
+    <tr>
+        <th class="border-0 rounded-start">Matricula</th>
+        <th class="border-0">Nombre</th>
+        <th class="border-0">Apellido</th>
+        <th class="border-0 rounded-end">Fecha Pago</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach($pagos as $p)
+    <tr>
 
 
-                            <td>{{$p->alumnos->id}}</td>
+            <td>{{$p->alumnos->id}}</td>
 
-                            <td>{{$p->alumnos->nombre}}</td>
-                            <td>{{$p->alumnos->primer_apellido." ".$p->alumnos->segundo_apellido}}</td>
-                            <td>{{ date('d-m-Y', strtotime($p->fecha))}}</td>
+            <td>{{$p->alumnos->nombre}}</td>
+            <td>{{$p->alumnos->primer_apellido." ".$p->alumnos->segundo_apellido}}</td>
+            <td>{{ date('d-m-Y', strtotime($p->fecha))}}</td>
 
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
-            </div>
+    </tr>
+    @endforeach
+    </tbody>
+</table>
 
-        </div>
-    </div>
 
 
 @endsection
