@@ -21,13 +21,21 @@ class PagosController extends Controller
             $nombre = $request->get('Nombre');
             $grado = $request->get('Grado');
             $grupo = $request->get('Grupo');
-            $pagos=Pago::with('alumnos');
+           
             $alumnos = null;
-            if(isset($id))
-                $alumnos= Alumnos::nombres($nombre)->ids($id)->grados($grado)->paginate(2);
-            $pago= Pago::where('alumno_id',$id)->get();
-            //dd($pagos->get());
-            return view('pago.index',['pagos'=>$pagos->get()]);
+            if(isset($nombre)){
+                $alumnos= Alumnos::where('nombre', $nombre)->get()->pluck('id');
+                $pago= Pago::where('alumno_id',$alumnos)->get();
+            
+            }else if(isset($id))
+            {
+                $pago= Pago::where('alumno_id',$id)->get();
+           
+            }else{
+                $pago=Pago::with('alumnos');
+            }
+            //dd($alumnos);
+            return view('pago.index',['pagos'=>$pago]);
 
             /*$id = $request->get('Matricula');
             $nombre = $request->get('Nombre');
