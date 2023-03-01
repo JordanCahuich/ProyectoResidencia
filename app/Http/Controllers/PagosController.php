@@ -32,7 +32,7 @@ class PagosController extends Controller
                 $pago= Pago::where('alumno_id',$id)->get();
            
             }else{
-                $pago=Pago::with('alumnos');
+                $pago=Pago::all();
             }
             //dd($alumnos);
             return view('pago.index',['pagos'=>$pago]);
