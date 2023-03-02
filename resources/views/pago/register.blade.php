@@ -78,7 +78,7 @@
               </div>
               <div class="form-group col-6">
                   <label class="text-center" for="exampleInputUsername1 ">Nombre del Pago</label>
-                  <input type="text" id="name"name="nombr"  class="form-control text-center" required>
+                  <input type="text" id="name"name="nombr" readonly  class="form-control text-center" required>
                   @if ($errors->has('tipo'))
                       <div class="alert alert-danger">
                           <span class="text-danger">{{ $errors->first('tipo') }}</span>
@@ -87,10 +87,10 @@
               </div>
               <div class="form-group col-6">
                   <label for="conceptos">Conceptos</label>
-                  <select  class="selectpicker form-control"
+                  <select name="conceptos[]" class="selectpicker form-control"
                            title="Seleccionar Conceptos a pagar" multiple required>
                       @foreach($Conceptos as $c)
-                          <option value="{{$c->monto}} " >{{$c->nombre}} $ {{$c->monto}}</option>
+                          <option value="{{$c->id}} " data-monto="{{$c->monto}}" >{{$c->nombre}} $ {{$c->monto}}</option>
                       @endforeach
                   </select>
                   <div class="invalid-feedback">

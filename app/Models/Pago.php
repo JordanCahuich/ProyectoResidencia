@@ -35,9 +35,9 @@ class Pago extends Model
         return $this->belongsTo('App\Models\Alumnos','alumno_id');
     }
 
-    public function conceptos(): BelongsToMany
+    public function concepto(): BelongsToMany
     {
-        return $this->belongsToMany(conceptos::class);
+        return $this->belongsToMany(Conceptos::class,'concepto_pago', 'pago_id', 'concepto_id');
     }
 
 }

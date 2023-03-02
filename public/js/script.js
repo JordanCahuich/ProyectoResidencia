@@ -23,11 +23,12 @@ $('.mi_checkbox').change(function() {
       $('.selectpicker').on('change', function(){
         var selected = []
         var suma=0
-        selected += $(this).val()
-       var arra= selected.split(",");
+        
+        selected = $('option:selected', this);
+       var arra= selected;
         for(var i=0;i<arra.length; i++)
         {
-          suma=suma+parseInt(arra[i]);
+          suma=suma+parseInt($(arra[i]).data("monto"));
         }
         document.getElementById("result").value = suma;
       })

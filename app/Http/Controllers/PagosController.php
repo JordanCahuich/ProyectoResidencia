@@ -51,6 +51,7 @@ class PagosController extends Controller
     }
     public function store(Request $r)
     {
+        $conceptos = Conceptos::whereIn('id',$r->get('conceptos'))->get();
         $inputs = $r->all();
         if ($r->hasFile('foto_comprobante')) {
             $file = $r->file('foto_comprobante');
@@ -67,6 +68,9 @@ class PagosController extends Controller
        'photo_pago'=> $nombrearchivo
    ]);
    $pago->save();
+   $pago->concepto()->attach($conceptos);
+ 
+    $pago->save();
 }else{
     $pago = new Pago(['nombre'=> $inputs['nombr'],
 
@@ -77,6 +81,10 @@ class PagosController extends Controller
     'photo_pago'=> ''
 ]);
    $pago->save();
+
+   $pago->concepto()->attach($conceptos);
+ 
+    $pago->save();
 }
    return redirect('/pago');
     }
@@ -100,11 +108,9 @@ class PagosController extends Controller
     }
 
     public function show(Request $request, $id){
-        $idAlumno= Pago::where('id', $id)->get()->pluck('alumno_id');
-        $p = Pago::findOrFail($id);
-        $alumnos= Alumnos::where('id', $idAlumno)->get();
-       // dd($alumnos); 
-        return view('pago.view')->with('p', $p)->with('alumno',$alumnos);
+        $p = Pago::with(['concepto','alumnos'])->where('id',$id)->first();
+        //dd($p);
+        return view('pago.view')->with('p', $p);
     }
     public function register(){
 

@@ -15,8 +15,8 @@ class Conceptos extends Model
         'id','nombre', 'monto','fecha'
     ];
 
-    public function pagos(): BelongsToMany
+    public function pago(): BelongsToMany
     {
-        return $this->belongsToMany(Pago::class);
+        return $this->belongsToMany(Pago::class,'concepto_pago', 'concepto_id', 'pago_id');
     }
 }

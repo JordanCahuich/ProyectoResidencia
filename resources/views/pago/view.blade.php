@@ -21,7 +21,7 @@
         <div class="card">
             <div class="card-body">
             <h2 class="text-center mb-3">
-                <a href="/profesor" class="btn btn-primary">
+                <a href="/pago" class="btn btn-primary">
                     <i class="mdi mdi-undo-variant"></i> Volver
                 </a> 
                 DETALLES DE PAGO<hr>
@@ -34,22 +34,23 @@
                 
                 <div class="card-body">
                 <h5 class="card-title"><strong>Nombre del Alumno:</strong> 
-                    {{ $alumno[0]->nombre }} 
+                    {{ $p->alumnos->nombre }} {{ $p->alumnos->primer_apellido." ".$p->alumnos->segundo_apellido}} 
                     <hr>
                 </h5>
-                
-                <h5 class="card-title"><strong>Apellido:</strong> 
-                    {{ $p->primer_apellido." ".$p->alumnos->segundo_apellido}} 
-                    <hr>
+                <h5 class="card-title"><strong>Matricula:</strong>
+                     {{ $p->alumnos->id }} <hr>
                 </h5>
-                <h6 class="card-title"><strong>Matricula</strong>
-                     {{ $alumno[0]->id }} <hr>
-                </h6>
-                <h5 class="card-title"><strong>Nombre</strong> 
+                <h5 class="card-title"><strong>Mes de pago:</strong> 
                     {{ $p->nombre }} 
                     <hr>
                 </h5>
-                <h5 class="card-title"><strong>Total:</strong> 
+                <h5 class="card-title"><strong>Conceptos:</strong> 
+                @foreach($p->concepto as $c)
+                    {{$c->nombre}} 
+                    <hr>
+                @endforeach
+                </h5>
+                <h5 class="card-title"><strong>Total de pago:</strong> 
                     {{ $p->importetotal }} 
                     <hr>
                 </h5>
@@ -57,7 +58,7 @@
                     {{ $p->tipo }} 
                     <hr>
                 </h5>
-                <h5 class="card-title"><strong>Fecha de pago</strong> 
+                <h5 class="card-title"><strong>Fecha de pago:</strong> 
                     {{ date('d-m-Y', strtotime($p->fecha)) }} 
                     <hr>
                 </h5>
@@ -70,7 +71,6 @@
                 
                <div class="card-body">
 
-                
             
                 </div>
             </div>
