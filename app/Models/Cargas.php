@@ -29,6 +29,11 @@ class Cargas extends Model
         return $this->belongsTo(Asignaturas::class, 'asignatura_id');
     }
 
+    public function alumnos(): BelongsTo
+    {
+        return $this->belongsTo(Alumnos::class, 'alumno_id');
+    }
+
 
     public function periodos(): BelongsTo
     {
