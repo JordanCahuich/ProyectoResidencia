@@ -38,146 +38,97 @@
                 <img class="card-img-top imgs" src="{{ asset('images/users.png') }}" alt="Foto-Alumno" style="width:200px; margin: 0 auto;">   
                 @endif
                 
-               <div class="card-body">
-                <h6 class="card-title"><strong>Nombre:</strong>
-                     {{ $alumno->nombre }} <hr>
-                </h6>
-                <h5 class="card-title"><strong>Primer Apellido:</strong> 
+              
+                <p class="text-gray mb-4"><strong>Nombre:
+                    {{ $alumno->nombre }} 
+                </p> 
+                
+                <p class="text-gray mb-4"><strong>Primer Apellido:
                     {{ $alumno->primer_apellido }} 
-                    <hr>
-                </h5>
-                <h5 class="card-title"><strong>Segundo Apellido:</strong> 
-                    {{ $alumno->segundo_apellido }} 
-                    <hr>
-                </h5>
-                <h5 class="card-title"><strong>Genero:</strong> 
+                </p> 
+
+                <p class="text-gray mb-4"><strong>Segundo Apellido:
+                    {{ $alumno->segundo_apellido}} 
+                </p>
+
+                <p class="text-gray mb-4"><strong>Genero:
                     {{ $alumno->sexo }} 
-                    <hr>
-                </h5>
-                <h5 class="card-title"><strong>Fecha Nacimiento:</strong> 
-                    {{ $alumno->fecha_nacimiento }} 
-                    <hr>
-                </h5>
-                <h5 class="card-title"><strong>CURP:</strong> 
-                    {{ $alumno->curp }} 
-                    <hr>
-                </h5>
-                <h5 class="card-title"><strong>Edad:</strong> 
-                    {{ $alumno->edad }} 
-                    <hr>
-                </h5>
-                <h5 class="card-title"><strong>Tipo Sangre:</strong> 
+                </p>
+
+                <p class="text-gray mb-4"><strong>Fecha Nacimiento:
+                    {{ $alumno->fecha_nacimiento  }} 
+                </p>
+
+                <p class="text-gray mb-4"><strong>CURP:
+                    {{ $alumno->curp  }} 
+                </p>
+
+                <p class="text-gray mb-4"><strong>Edad:
+                    {{ $alumno->edad  }} 
+                </p>
+
+                <p class="text-gray mb-4"><strong>Tipo Sangre:
                     {{ $alumno->tipo_sangre }} 
-                    <hr>
-                </h5>
+                </p>
 
-                </h5>
-                <h5 class="card-title"><strong>Nivel Escolar:</strong> 
-                    {{ $alumno->nivel_escolar }} 
-                    <hr>
-                </h5>
+                <p class="text-gray mb-4"><strong>Nivel Escolar:
+                    {{ $alumno->nivel_escolar}} 
+                </p>
 
-                </h5>
-                <h5 class="card-title"><strong>Grado:</strong> 
+                <p class="text-gray mb-4"><strong>Grado:
                     {{ $alumno->grado }} 
-                    <hr>
-                </h5>
+                </p>
 
-                </h5>
-                <h5 class="card-title"><strong>Grupo:</strong> 
+                <p class="text-gray mb-4"><strong>Grupo:
                     {{ $alumno->grupo }} 
-                    <hr>
-                </h5>
+                </p>
 
-                </h5>
-                <h5 class="card-title"><strong>Periodo escolar:</strong> 
-                    {{ $alumno->periodo_escolar }} 
-                    <hr>
-                </h5>
+                <p class="text-gray mb-4"><strong>Periodo escolar:
+                    {{ $alumno->periodo_escolar}} 
+                </p>
+                
+                <p class="text-gray mb-4"><strong>Nombre Tutor:
+                    {{ $alumno->nombre_tutor}} 
+                </p>
+               
+                <p class="text-gray mb-4"><strong>Parentesco:
+                    {{ $alumno->parentesco}} 
+                </p>
 
-                </h5>
-                <h5 class="card-title"><strong>Domicilio:</strong> 
-                    {{ $alumno->domicilio }} 
-                    <hr>
-                </h5>
+                <p class="text-gray mb-4"><strong>Tutor principal:
+                    {{ $alumno->tutor_principal}} 
+                </p>
 
-                </h5>
-                <h5 class="card-title"><strong>En caso de emergencia hablar a:</strong> 
+                <p class="text-gray mb-4"><strong>Dirección:
+                    {{ $alumno->direccion}} 
+                </p>
+
+                <p class="text-gray mb-4"><strong>Colonia:
+                    {{ $alumno->colonia}} 
+                </p>
+
+                
+                <p class="text-gray mb-4"><strong>Teléfono contacto:
+                    {{ $alumno->telefono_contacto}} 
+                </p>
+
+                <p class="text-gray mb-4"><strong>En caso de emergencia hablar a:
                     {{ $alumno->nombre_emergencia}} 
-                    <hr>
-                </h5>
+                </p>
 
-                </h5>
-                <h5 class="card-title"><strong>Tel. emergencia:</strong> 
-                    {{ $alumno->tel_emergencia}} 
-                    <hr>
-                </h5>
+                <p class="text-gray mb-4"><strong>En caso de emergencia hablar a:
+                    {{ $alumno->nombre_emergencia}} 
+                </p>
 
-                </h5>
-                <h5 class="card-title"><strong>Persona autorizada:</strong> 
-                    {{ $alumno->persona_autorizada}} 
-                    <hr>
-                </h5>
+                <p class="text-gray mb-4"><strong>Tel. 1 Autorizada:
+                    {{ $alumno->tel1_autorizada}} 
+                </p>
 
-                </h5>
-                <h5 class="card-title"><strong>Parentesco:</strong> 
-                    {{ $alumno->parentesco }} 
-                    <hr>
-                </h5>
+               
 
-                </h5>
-                <h5 class="card-title"><strong>Tel. 1 autorizada:</strong> 
-                    {{ $alumno->tel1_autorizada }} 
-                    <hr>
-                </h5>
-
-                </h5>
-                <h5 class="card-title"><strong>Tel. 2 autorizada:</strong> 
-                    {{ $alumno->tel2_autorizada }} 
-                    <hr>
-                </h5>
-
-                </h5>
-                <h5 class="card-title"><strong>Domicilio persona autorizada:</strong> 
-                    {{ $alumno->domicilio_autorizada }} 
-                    <hr>
-                </h5>
-
-                </h5>
-                <h5 class="card-title"><strong>Persona autorizada 2:</strong> 
-                    {{ $alumno->persona_autorizada2}} 
-                    <hr>
-                </h5>
-
-                </h5>
-                <h5 class="card-title"><strong>Parentesco 2:</strong> 
-                    {{ $alumno->parentesco2 }} 
-                    <hr>
-                </h5>
-
-                </h5>
-                <h5 class="card-title"><strong>Tel. 1 autorizada 2:</strong> 
-                    {{ $alumno->tel1_autorizada2 }} 
-                    <hr>
-                </h5>
-
-                </h5>
-                <h5 class="card-title"><strong>Tel. 2 autorizada 2:</strong> 
-                    {{ $alumno->tel2_autorizada2}} 
-                    <hr>
-                </h5>
-
-                </h5>
-                <h5 class="card-title"><strong>Domicilio persona autorizada 2:</strong> 
-                    {{ $alumno->domicilio_autorizada2 }} 
-                    <hr>
-                </h5>
                 
             
-                <h5 class="card-title"><strong>Observeción:</strong> 
-                    {{ $alumno->observ }} 
-                    <hr>
-                </h5>
+               
                 </div>
             </div>
         </div>

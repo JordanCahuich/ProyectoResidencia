@@ -63,6 +63,7 @@ class AlumnosController extends Controller
                 'grado'=>$request->get('grado'),
                 'grupo'=>$request->get('grupo'),
                 'periodo_escolar'=>$request->get('periodo_escolar'),
+
                 'nombre_tutor'=>$request->get('nombre_tutor'),
                 'parentesco'=>$request->get('parentesco'),
                 'tutor_principal'=>$request->get('tutor_principal'),
@@ -92,7 +93,7 @@ class AlumnosController extends Controller
                 'grado'=>$request->get('grado'),
                 'grupo'=>$request->get('grupo'),
                 'periodo_escolar'=>$request->get('periodo_escolar'),
-                 'nombre_tutor'=>$request->get('nombre_tutor'),
+               'nombre_tutor'=>$request->get('nombre_tutor'),
                 'parentesco'=>$request->get('parentesco'),
                 'tutor_principal'=>$request->get('tutor_principal'),
                 'direccion'=>$request->get('direccion'),
@@ -102,21 +103,8 @@ class AlumnosController extends Controller
                 'parentesco2'=>$request->get('parentesco2'),
                 'tel1_autorizada'=>$request->get('tel1_autorizada'),
                 'foto_estudiante'=>$nombrearchivo,
-                'profesor_id'=>$request->get('profesor_id'),'domicilio'=>$request->get('domicilio'),
-                'nombre_emergencia'=>$request->get('nombre_emergencia'),
-                'tel_emergencia'=>$request->get('tel_emergencia'),
-                'persona_autorizada'=>$request->get('persona_autorizada'),
-                'parentesco'=>$request->get('parentesco'),
-                'tel1_autorizada'=>$request->get('tel1_autorizada'),
-                'tel2_autorizada'=>$request->get('tel2_autorizada'),
-                'domicilio_autorizada'=>$request->get('domicilio_autorizada'),
-                'persona_autorizada2'=>$request->get('persona_autorizada2'),
-                'parentesco2'=>$request->get('parentesco2'),
-                'tel1_autorizada2'=>$request->get('tel1_autorizada2'),
-                'tel2_autorizada2'=>$request->get('tel2_autorizada2'),
-                'domicilio_autorizada2'=>$request->get('domicilio_autorizada2'),
-                'foto_estudiante'=>$nombrearchivo,
                 'profesor_id'=>$request->get('profesor_id'),
+                 
                  
             ]);
             $data->save(); 

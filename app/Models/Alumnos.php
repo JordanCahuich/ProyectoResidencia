@@ -23,6 +23,7 @@ class Alumnos extends Model
     {
         return $this->hasMany('App\Pago');
     }
+    
 
 
 }
