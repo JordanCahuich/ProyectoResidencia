@@ -46,9 +46,9 @@
 
             @foreach($Cargas as $c)
 
-                <td>{{$c->grupo}}</td>
-                <td>{{$c->grado}}</td>
-                <td>{{$c->nivel}}</td>
+                <td>{{$c->grupos->letra}}</td>
+                <td>{{$c->grados->numero}}</td>
+                <td>{{$c->niveles->nombre}}</td>
                 <td>{{$c->periodos->nombre}}</td>
                 <td>{{$c->profesores->nombre}}</td>
                 <td>{{$c->asignaturas->nombre}}</td>

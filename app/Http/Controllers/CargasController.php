@@ -23,7 +23,8 @@ class CargasController extends Controller
     {
       
         $Cargas = Cargas::with('profesores')->with('periodos')
-        ->with('asignaturas')->with('alumnos')->get();
+        ->with('asignaturas')->with('alumnos')->with('niveles')
+        ->with('grupos')->with('grados')->get();
         
         //dd($Cargas);
        return view('cargas.index', ['Cargas'=> $Cargas]);
