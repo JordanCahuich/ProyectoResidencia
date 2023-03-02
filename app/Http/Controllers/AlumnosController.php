@@ -132,17 +132,9 @@ class AlumnosController extends Controller
         $pagosCursoAlumno = Pagos::where('alumno_id',$id)->get();
         $verificarPago = $pagosCursoAlumno->count();
    
-        if($verificarPago !=0){
-            $sumaPagoTotal  = Pagos::where('alumno_id',$id)->sum('aporte');
-            $SqlvalorCurso = Pagos::where('alumno_id',$id)->limit(1)->get();
-            $valorCurso = ($SqlvalorCurso[0]->valor_curso);
-            $alumno = Alumnos::findOrFail($id);
-            return view('alumnos.view', compact('alumno', 'pagosCursoAlumno','sumaPagoTotal','valorCurso'));
-        }else{
-            $pagosCursoAlumno = 0;
-            $alumno = Alumnos::findOrFail($id); 
-            return view('alumnos.view', compact('alumno','pagosCursoAlumno'));
-        }
+        $pagosCursoAlumno = 0;
+        $alumno = Alumnos::findOrFail($id); 
+        return view('alumnos.view', compact('alumno','pagosCursoAlumno'));
         
         
     }

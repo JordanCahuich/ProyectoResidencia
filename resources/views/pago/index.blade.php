@@ -21,7 +21,7 @@
                 <form class="form-inline row">
                     <div class="row">
                         <div class="col">
-                            <input  name="Nombre" class="form-control" type="search" placeholder="nombre" aria-label="Search">
+                            <input  name="Nombre" class="form-control" type="search" placeholder="Nombre" aria-label="Search">
                         </div>
 
                         <div class="col">
@@ -29,7 +29,7 @@
                         </div>
                     <div class="col-md-2">
 
-                        <button class="btn btn-success" type="submit" style="background-color:#009624">Buscar</button>
+                        <button class="btn btn-success" type="submit" style="background-color:#5DBB63">Buscar</button>
 
                     </div>
                     <a href="/pagos/register" class="btn btn-secondary" style=" width: 100px; height: 40px; ">
