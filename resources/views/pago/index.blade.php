@@ -47,7 +47,8 @@
         <th class="border-0 rounded-start">Matricula</th>
         <th class="border-0">Nombre</th>
         <th class="border-0">Apellido</th>
-        <th class="border-0 rounded-end">Fecha Pago</th>
+        <th class="border-0">Fecha Pago</th>
+        <th class="border-0 rounded-end">Accion</th>
     </tr>
     </thead>
     <tbody>
@@ -56,10 +57,16 @@
 
 
             <td>{{$p->alumnos->id}}</td>
-
             <td>{{$p->alumnos->nombre}}</td>
             <td>{{$p->alumnos->primer_apellido." ".$p->alumnos->segundo_apellido}}</td>
             <td>{{ date('d-m-Y', strtotime($p->fecha))}}</td>
+
+            <td style="padding-right: 60px;">
+
+                <a class="btn btn-secondary" href="{{ route('pago.show',$p->id) }}"  style="float: left; padding: 2px 5px;  margin-right: 3px" title="Ver Detalles">
+                  <i class="mdi mdi-account-card-details"></i> Ver
+                </a>
+        </td>
 
     </tr>
     @endforeach

@@ -99,8 +99,10 @@ class PagosController extends Controller
         return redirect('/concepts');
     }
 
-    public function show(){
-
+    public function show(Request $request, $id){
+        $p = Pago::findOrFail($id);
+        //dd($p)->get(); 
+        return view('pago.view', compact('p'));
     }
     public function register(){
 

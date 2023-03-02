@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Pago extends Model
 {
@@ -32,6 +33,11 @@ class Pago extends Model
     public function alumnos()
     {
         return $this->belongsTo('App\Models\Alumnos','alumno_id');
+    }
+
+    public function conceptos(): BelongsToMany
+    {
+        return $this->belongsToMany(conceptos::class);
     }
 
 }
