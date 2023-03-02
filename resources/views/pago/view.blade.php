@@ -33,22 +33,42 @@
               
                 
                 <div class="card-body">
+                <h5 class="card-title"><strong>Nombre del Alumno:</strong> 
+                    {{ $alumno[0]->nombre }} 
+                    <hr>
+                </h5>
+                
+                <h5 class="card-title"><strong>Apellido:</strong> 
+                    {{ $p->primer_apellido." ".$p->alumnos->segundo_apellido}} 
+                    <hr>
+                </h5>
                 <h6 class="card-title"><strong>Matricula</strong>
-                     {{ $p->id }} <hr>
+                     {{ $alumno[0]->id }} <hr>
                 </h6>
                 <h5 class="card-title"><strong>Nombre</strong> 
                     {{ $p->nombre }} 
                     <hr>
                 </h5>
-                <h5 class="card-title"><strong>Apellid0</strong> 
-                    {{ $p->primer_apellido." ".$p->alumnos->segundo_apellido}} 
+                <h5 class="card-title"><strong>Total:</strong> 
+                    {{ $p->importetotal }} 
+                    <hr>
+                </h5>
+                <h5 class="card-title"><strong>Forma de pago:</strong> 
+                    {{ $p->tipo }} 
                     <hr>
                 </h5>
                 <h5 class="card-title"><strong>Fecha de pago</strong> 
                     {{ date('d-m-Y', strtotime($p->fecha)) }} 
                     <hr>
                 </h5>
+                <div class="card" style="width: 30rem;">
+                @if ( $p->photo_pago !=NULL )
+                <img class="card-img-top imgs" src="/fotosPagos/{{ $p->photo_pago }}" alt="Foto-Alumno" style="width:400px; margin: 0 auto;">
+                @else
+                <img class="card-img-top imgs" src="{{ asset('images/vacia.png') }}" alt="Foto-Alumno" style="width:400px; margin: 0 auto;">   
+                @endif
                 
+               <div class="card-body">
 
                 
             

@@ -100,9 +100,11 @@ class PagosController extends Controller
     }
 
     public function show(Request $request, $id){
+        $idAlumno= Pago::where('id', $id)->get()->pluck('alumno_id');
         $p = Pago::findOrFail($id);
-        //dd($p)->get(); 
-        return view('pago.view', compact('p'));
+        $alumnos= Alumnos::where('id', $idAlumno)->get();
+       // dd($alumnos); 
+        return view('pago.view')->with('p', $p)->with('alumno',$alumnos);
     }
     public function register(){
 
@@ -110,7 +112,7 @@ class PagosController extends Controller
     }
     public function search(Request $request)
     {
-
+        
         $Conceptos = Conceptos::all();
         $formapago = FormaPago::all();
         $id = $request->get('matricula');
