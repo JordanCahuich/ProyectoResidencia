@@ -19,6 +19,7 @@ class CargasController extends Controller
 {
 
    
+    
     public function index()
     {
       
@@ -31,6 +32,9 @@ class CargasController extends Controller
 
   
     }
+
+
+
 
     public function create()
     {
@@ -61,6 +65,11 @@ class CargasController extends Controller
     ]);
     }
 
+
+
+
+
+
     public function store(Request $request)
     {
 
@@ -90,12 +99,20 @@ class CargasController extends Controller
 
     }
 
+
+
+
+
     public function edit($id){
 
         $Cargas= Cargas::find($id);
    
            return view('cargas.edit',['cargas'=>$Cargas]);
        }
+
+
+
+
 
 
 
@@ -139,6 +156,10 @@ class CargasController extends Controller
             $updateCarga ="Carga academica actualizada Correctamente";
         return redirect('cargas/')->with(['updateCarga' => $updateCarga]);
     }
+
+
+
+
 
 
     public function destroy($id){
