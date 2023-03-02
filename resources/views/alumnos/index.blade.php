@@ -30,10 +30,12 @@
         <thead class="thead-light">
             <tr>
             <th class="border-0 rounded-start">Nombre del alumno</th>
-            <th class="border-0">Sexo</th>
-            <th class="border-0">Grado</th>
-            <th class="border-0">CURP</th>
-            <th class="border-0">Nivel</th>
+            <th class="border-0">Tutor</th>
+            <th class="border-0">Teléfono </th>
+            <th class="border-0">Dirección</th>
+            <th class="border-0">En caso de emergencia hablar a</th>
+            <th class="border-0">Parentesco</th>
+            <th class="border-0">Teléfono </th>
 
             <th class="border-0 rounded-end">Acción</th>
             </tr>
@@ -44,10 +46,13 @@
             @foreach ($alumnos as $alumno)
 
                 <td>{{ $alumno->nombre }}</td>
-                <td>{{ $alumno->sexo }}</td>
-                <td>{{ $alumno->grado}}</td>
-                <td>{{ $alumno->curp }}</td>
-                <td>{{ $alumno->nivel_escolar}}</td>
+                <td>{{ $alumno->nombre_tutor }}</td>
+                <td>{{ $alumno->telefono_contacto}}</td>
+                <td>{{ $alumno->direccion}}</td>
+                <td>{{ $alumno->nombre_emergencia}}</td>
+                <td>{{ $alumno->parentesco2}}</td>
+                <td>{{ $alumno->tel1_autorizada}}</td>
+                
 
 
 

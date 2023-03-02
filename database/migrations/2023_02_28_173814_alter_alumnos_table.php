@@ -20,7 +20,14 @@ return new class extends Migration
             $table->string('colonia',50)->nullable();
             $table->string('telefono_contacto',150)->nullable();
 
-            $table->dropColumn('domicilio');
+           
+            $table->dropColumn('nombre_tutor');
+            $table->dropColumn('tutor_principal');
+            $table->dropColumn('direccion');
+            $table->dropColumn('colonia');
+            $table->dropColumn('telefono_contacto');
+            
+
             $table->dropColumn('tel_emergencia');
             $table->dropColumn('persona_autorizada');
             $table->dropColumn('tel2_autorizada');

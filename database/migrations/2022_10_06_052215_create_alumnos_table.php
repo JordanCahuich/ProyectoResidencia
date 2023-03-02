@@ -23,12 +23,7 @@ class CreateAlumnosTable extends Migration
             $table->string('grado',50)->nullable();
             $table->string('grupo',50)->nullable();
             $table->string('periodo_escolar', 150)->nullable();
-            $table->string('nombre_tutor', 150)->nullable();
             $table->string('parentesco', 150)->nullable();
-            $table->string('tutor_principal', 150)->nullable();
-            $table->string('direccion',50)->nullable();
-            $table->string('colonia',50)->nullable();
-            $table->string('telefono_contacto',150)->nullable();
             $table->string('nombre_emergencia',50)->nullable();
             $table->string('parentesco2',50)->nullable();
             $table->string('tel1_autorizada',50)->nullable();

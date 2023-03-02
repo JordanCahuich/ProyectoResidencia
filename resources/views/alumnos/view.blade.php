@@ -116,9 +116,11 @@
                     {{ $alumno->nombre_emergencia}} 
                 </p>
 
-                <p class="text-gray mb-4"><strong>En caso de emergencia hablar a:
-                    {{ $alumno->nombre_emergencia}} 
+                <p class="text-gray mb-4"><strong>Parentesco:
+                    {{ $alumno->parentesco2}} 
                 </p>
+
+               
 
                 <p class="text-gray mb-4"><strong>Tel. 1 Autorizada:
                     {{ $alumno->tel1_autorizada}} 
