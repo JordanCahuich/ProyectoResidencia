@@ -87,6 +87,7 @@
 
             <h2 class="h5 mb-4">Información General</h2>
             <div class="col-md-4">
+                    
                     <label class="col-sm-6 col-form-label">Foto del Alumno</label>
                     <div class="col-sm-9">
                       <input type="file" name="foto_estudiante" class="form-control" />

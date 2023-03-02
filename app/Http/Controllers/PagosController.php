@@ -34,7 +34,7 @@ class PagosController extends Controller
             }else{
                 $pago=Pago::all();
             }
-            //dd($alumnos);
+            //dd($pago);
             return view('pago.index',['pagos'=>$pago]);
 
             /*$id = $request->get('Matricula');
