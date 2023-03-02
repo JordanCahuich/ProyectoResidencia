@@ -52,7 +52,7 @@
                 <td>{{$c->periodos->nombre}}</td>
                 <td>{{$c->profesores->nombre}}</td>
                 <td>{{$c->asignaturas->nombre}}</td>
-                <td>{{$c->bimestre}}</td>
+                <td>{{$c->bimestres->numero}}</td>
                 <td>{{$c->alumnos->nombre}}</td>
                 <td>
                     <div style="padding-right: 60px;">

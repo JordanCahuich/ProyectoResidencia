@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Cargas;
 use App\Models\Alumnos;
 use App\Models\Asignaturas;
+use App\Models\Bimestres;
 use App\Models\Grados;
 use App\Models\Grupos;
 use App\Models\Niveles;
@@ -19,7 +20,7 @@ class CargasController extends Controller
 {
 
    
-    
+
     public function index()
     {
       
@@ -53,6 +54,11 @@ class CargasController extends Controller
 
         $asignaturas = Asignaturas::all();
 
+        $bimestres = Bimestres::all();
+
+
+        
+
        return view('cargas.add', [
         'Alumnos'=> $Alumnos,
         'Profesores'=> $Profesores,
@@ -60,7 +66,8 @@ class CargasController extends Controller
         'Niveles'=>$niveles,
         'Grupos'=>$grupos,
         'Grados'=>$grados,
-        'Asignaturas'=>$asignaturas
+        'Asignaturas'=>$asignaturas,
+        'Bimestres'=>$bimestres
 
     ]);
     }

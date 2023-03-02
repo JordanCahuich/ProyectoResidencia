@@ -108,13 +108,11 @@
             <div class="col-md-4">
               <label class="col-sm-12 col-form-label">Bimestre</label>
               <select name="bimestre" class="form-control form-control-sm">
-                  <option selected=>Seleccione</option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
+                <option selected=>Seleccione</option>
+                @foreach ($Bimestres as $b)
+                    <option value="{{$b->id}}">{{$b->numero}}</option>
+                @endforeach
+                   
               </select>
           </div>
 

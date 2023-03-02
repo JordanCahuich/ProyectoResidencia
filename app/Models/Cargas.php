@@ -24,30 +24,41 @@ class Cargas extends Model
         return $this->belongsTo(Profesores::class, 'docente_id');
     }
 
+
+
     public function asignaturas(): BelongsTo
     {
         return $this->belongsTo(Asignaturas::class, 'asignatura_id');
     }
+
+
 
     public function alumnos(): BelongsTo
     {
         return $this->belongsTo(Alumnos::class, 'alumno_id');
     }
 
+
+
     public function periodos(): BelongsTo
     {
         return $this->belongsTo(Periodos::class, 'periodo');
     }
+
+
 
     public function niveles(): BelongsTo
     {
         return $this->belongsTo(Niveles::class, 'nivel');
     }
 
+
+
     public function grupos(): BelongsTo
     {
         return $this->belongsTo(Grupos::class, 'grupo');
     }
+
 
 
     public function grados(): BelongsTo
@@ -56,4 +67,8 @@ class Cargas extends Model
     }
 
 
+    public function bimestres(): BelongsTo
+    {
+        return $this->belongsTo(Bimestres::class, 'bimestre');
+    }
 }
