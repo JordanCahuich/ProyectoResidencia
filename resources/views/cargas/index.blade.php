@@ -56,9 +56,12 @@
                 <td>{{$c->alumnos->nombre}}</td>
                 <td>
                     <div style="padding-right: 60px;">
-                        <a href="/cargas/{{$c->id}}/edit" class="btn btn-secondary"  style="float: left; padding: 2px 5px;  margin-right: 3px" title="Actualizar Registro">
-                            <i class="mdi mdi-autorenew"></i>Actualizar
-                        </a>
+                        <a class="btn btn-secondary" href="/cargas/{{$c->id}}/edit"   style="float: left; padding: 2px 5px;  margin-right: 3px" title="Actualizar Registro">
+                            <i class="mdi mdi-autorenew"></i>Actualizar</a>
+
+                        <a class="btn btn-secondary" href="{{ route('carga.show',$c->id) }}"  style="float: left; padding: 2px 5px;  margin-right: 3px" title="Ver Detalles">
+                            <i class="mdi mdi-account-card-details"></i>Ver</a>
+
                         <form action="/cargas/{{$c->id}}}" method="post">
                             @method('DELETE')
                             @csrf
@@ -70,7 +73,7 @@
             </tr>
             @endforeach
 
-        </tbody>
+        </tbody>    
 </hr>
 </table>
 

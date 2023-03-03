@@ -26,7 +26,7 @@ class CargasController extends Controller
       
         $Cargas = Cargas::with('profesores')->with('periodos')
         ->with('asignaturas')->with('alumnos')->with('niveles')
-        ->with('grupos')->with('grados')->get();
+        ->with('grupos')->with('grados')->with('bimestres')->get();
         
         //dd($Cargas);
        return view('cargas.index', ['Cargas'=> $Cargas]);
@@ -166,6 +166,19 @@ class CargasController extends Controller
 
 
 
+
+    public function show(Request $request, $id){
+
+        //$pagosCursoAlumno = Pagos::where('alumno_id',$id)->get();
+        //$verificarPago = $pagosCursoAlumno->count();
+   
+        //$pagosCursoAlumno = 0;
+        $carga = Cargas::findOrFail($id); 
+        return view('cargas.view', compact('carga'));
+        
+        
+    }
+    
 
 
 

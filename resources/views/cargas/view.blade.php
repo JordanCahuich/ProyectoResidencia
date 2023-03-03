@@ -8,7 +8,7 @@
         <div class="card">
             <div class="card-body">
             <h2 class="text-center mb-3">
-                <a href="/profesor" class="btn btn-primary">
+                <a href="/carga/7" class="btn btn-primary">
                     <i class="mdi mdi-undo-variant"></i> Volver
                 </a> 
                 DETALLES DEL DOCENTE<hr>
@@ -21,34 +21,34 @@
                 
                 <div class="card-body">
                 <h6 class="card-title"><strong>Grupo:</strong>
-                     {{ $carga->nombre }} <hr>
+                     {{ $carga->grupo }} <hr>
                 </h6>
                 <h5 class="card-title"><strong>Grado:</strong> 
-                    {{ $carga->fecha_nacimiento }} 
+                    {{ $carga->grado}} 
                     <hr>
                 </h5>
                 <h5 class="card-title"><strong>Nivel:</strong> 
-                    {{ $carga->edad }} 
+                    {{ $carga->nivel}} 
                     <hr>
                 </h5>
                 <h5 class="card-title"><strong>Periodo:</strong> 
-                    {{ $carga->genero }} 
+                    {{ $carga->periodo }} 
                     <hr>
                 </h5>
                 <h5 class="card-title"><strong>Docente:</strong> 
-                    {{ $carga->email }} 
+                    {{ $carga->docente }} 
                     <hr>
                 </h5>
                 <h5 class="card-title"><strong>Asignatura:</strong> 
-                    {{ $carga->telefono }} 
+                    {{ $carga->asignatura_id }} 
                     <hr>
                 </h5>
                 <h5 class="card-title"><strong>Bimestre:</strong> 
-                    {{ $carga->localidad }} 
+                    {{ $carga->bimestre }} 
                     <hr>
                 </h5>
                 <h5 class="card-title"><strong>Alumnos:</strong> 
-                    {{ $carga->domicilio }} 
+                    {{ $carga->alumno}} 
                     <hr>
                 </h5>
 
