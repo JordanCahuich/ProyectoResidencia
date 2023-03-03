@@ -62,7 +62,7 @@ class PagosController extends Controller
        $pago = new Pago(['nombre'=> $inputs['nombr'],
 
        'importetotal'=> $inputs['resultado'],
-       'tipo'=> $inputs['Tipo'],
+       'formaPago_id'=> $inputs['Tipo'],
        'alumno_id'=> $inputs['Id'],
        'fecha'=> $inputs['fech'],
        'photo_pago'=> $nombrearchivo
@@ -75,7 +75,7 @@ class PagosController extends Controller
     $pago = new Pago(['nombre'=> $inputs['nombr'],
 
     'importetotal'=> $inputs['resultado'],
-    'tipo'=> $inputs['Tipo'],
+    'formaPago_id'=> $inputs['Tipo'],
     'alumno_id'=> $inputs['Id'],
     'fecha'=> $inputs['fech'],
     'photo_pago'=> ''
@@ -108,7 +108,7 @@ class PagosController extends Controller
     }
 
     public function show(Request $request, $id){
-        $p = Pago::with(['concepto','alumnos'])->where('id',$id)->first();
+        $p = Pago::with(['concepto','alumnos','formaPago'])->where('id',$id)->first();
         //dd($p);
         return view('pago.view')->with('p', $p);
     }

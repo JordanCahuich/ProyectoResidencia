@@ -18,7 +18,7 @@ class Pago extends Model
      * @var array
      */
     protected $fillable = [
-        'nombre','fecha', 'alumno_id','vigencia','importetotal','status','tipo','photo_pago'
+        'nombre','fecha', 'alumno_id','vigencia','importetotal','status','formaPago_id','photo_pago'
     ];
     public function disease()
     {
@@ -38,6 +38,11 @@ class Pago extends Model
     public function concepto(): BelongsToMany
     {
         return $this->belongsToMany(Conceptos::class,'concepto_pago', 'pago_id', 'concepto_id');
+    }
+
+    public function formaPago()
+    {
+        return $this->belongsTo('App\Models\FormaPago','FormaPago_id');
     }
 
 }

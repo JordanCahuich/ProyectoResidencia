@@ -20,49 +20,37 @@
     <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-            <h2 class="text-center mb-3">
-                <a href="/pago" class="btn btn-primary">
-                    <i class="mdi mdi-undo-variant"></i> Volver
-                </a> 
-                DETALLES DE PAGO<hr>
-            </h2>
+            <h2 class="h5 mb-4">Detalles de Pago<hr></h2>
+        
 
         <div class="row">
             <div class="col-md-6">
-            <div class="card" style="width: 30rem;">
+
               
-                
-                <div class="card-body">
-                <h5 class="card-title"><strong>Nombre del Alumno:</strong> 
+                <p class="card-title"><strong>Nombre del Alumno:</strong> 
                     {{ $p->alumnos->nombre }} {{ $p->alumnos->primer_apellido." ".$p->alumnos->segundo_apellido}} 
-                    <hr>
-                </h5>
-                <h5 class="card-title"><strong>Matricula:</strong>
-                     {{ $p->alumnos->id }} <hr>
-                </h5>
-                <h5 class="card-title"><strong>Mes de pago:</strong> 
+                </p>
+                <p class="card-title"><strong>Matricula:</strong>
+                     {{ $p->alumnos->id }} 
+                </p>
+                <p class="card-title"><strong>Mes de pago:</strong> 
                     {{ $p->nombre }} 
-                    <hr>
-                </h5>
-                <h5 class="card-title"><strong>Conceptos:</strong> 
+                </p>
+                <p class="card-title"><strong>Conceptos:</strong> 
                 @foreach($p->concepto as $c)
-                    {{$c->nombre}} 
-                    <hr>
+                <BR></BR> {{$c->nombre}} 
                 @endforeach
-                </h5>
-                <h5 class="card-title"><strong>Total de pago:</strong> 
+                </p>
+                <p class="card-title"><strong>Total de pago:</strong> 
                     {{ $p->importetotal }} 
-                    <hr>
-                </h5>
-                <h5 class="card-title"><strong>Forma de pago:</strong> 
-                    {{ $p->tipo }} 
-                    <hr>
-                </h5>
-                <h5 class="card-title"><strong>Fecha de pago:</strong> 
+                </P>
+                <p class="card-title"><strong>Forma de pago:</strong> 
+                    {{ $p->formaPago->tipo." ".$p->formaPago->nombre }} 
+                </p>
+                <p class="card-title"><strong>Fecha de pago:</strong> 
                     {{ date('d-m-Y', strtotime($p->fecha)) }} 
-                    <hr>
-                </h5>
-                <div class="card" style="width: 30rem;">
+                </p>
+        
                 @if ( $p->photo_pago !=NULL )
                 <img class="card-img-top imgs" src="/fotosPagos/{{ $p->photo_pago }}" alt="Foto-Alumno" style="width:400px; margin: 0 auto;">
                 @else
@@ -70,11 +58,16 @@
                 @endif
                 
                <div class="card-body">
-
+            </div>
+            </div>
+            <div class="form-group float-right mt-3" style= "float: right">
+            <h2 class="text-center mb-3">
+                <a href="/pago" class="btn btn-primary mr-2 mb-3">
+                    <i class="mdi mdi-undo-variant"></i> Volver
+                </a> 
             
-                </div>
-            </div>
-            </div>
+            </h2>
+</div>
 
             
 @endsection

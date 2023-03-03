@@ -110,7 +110,7 @@
                   <label for="formapago">Seleccionar Forma Pago</label>
                   <select  class="form-control"name="Tipo" required>
                       @foreach($Forma as $f)
-                          <option>{{$f->tipo}}</option>
+                          <option value="{{$f->id}}" >{{$f->tipo}}</option>
                       @endforeach
                   </select>
                   <div class="invalid-feedback">
@@ -132,7 +132,7 @@
                   <input class="form-control"  type="file" name="foto_comprobante"archivo>
 
               </div>
-              <div class="form-group float-right mt-3" style= "float: right"">
+              <div class="form-group float-right mt-3" style= "float: right">
                   <button class="btn btn-primary btn-fw mb-3">Cancelar</button>
                   <button type="submit" class="btn btn-secondary mr-2 mb-3" >Guardar</button>
               </div>
