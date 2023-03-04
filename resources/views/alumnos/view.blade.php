@@ -31,102 +31,108 @@
 
         <div class="row">
             <div class="col-md-6">
-            <div class="card" style="width: 30rem;">
+                
                 @if ( $alumno->foto_estudiante !=NULL )
                 <img class="card-img-top imgs" src="/fotosAlumnos/{{ $alumno->foto_estudiante }}" alt="Foto-Alumno" style="width:200px; margin: 0 auto;">
                 @else
                 <img class="card-img-top imgs" src="{{ asset('images/users.png') }}" alt="Foto-Alumno" style="width:200px; margin: 0 auto;">   
                 @endif
                 
-              
-                <p class="text-gray mb-4"><strong>Nombre:
+                
+                <p class="card-title"><strong>Nombre:</strong> 
                     {{ $alumno->nombre }} 
                 </p> 
                 
-                <p class="text-gray mb-4"><strong>Primer Apellido:
+                <p class="card-title"><strong>Primer Apellido:</strong> 
                     {{ $alumno->primer_apellido }} 
                 </p> 
 
-                <p class="text-gray mb-4"><strong>Segundo Apellido:
+                <p class="card-title"><strong>Segundo Apellido:</strong> 
                     {{ $alumno->segundo_apellido}} 
                 </p>
 
-                <p class="text-gray mb-4"><strong>Genero:
+                <p class="card-title"><strong>Genero:</strong> 
                     {{ $alumno->sexo }} 
                 </p>
 
-                <p class="text-gray mb-4"><strong>Fecha Nacimiento:
+                <p class="card-title"><strong>Fecha Nacimiento:</strong> 
                     {{ $alumno->fecha_nacimiento  }} 
                 </p>
 
-                <p class="text-gray mb-4"><strong>CURP:
+                <p class="card-title"><strong>CURP:</strong> 
                     {{ $alumno->curp  }} 
                 </p>
 
-                <p class="text-gray mb-4"><strong>Edad:
+                <p class="card-title"><strong>Edad:</strong> 
                     {{ $alumno->edad  }} 
                 </p>
 
-                <p class="text-gray mb-4"><strong>Tipo Sangre:
+                <p class="card-title"><strong>Tipo Sangre:</strong> 
                     {{ $alumno->tipo_sangre }} 
                 </p>
 
-                <p class="text-gray mb-4"><strong>Nivel Escolar:
+                <p class="card-title"><strong>Nivel Escolar:</strong> 
                     {{ $alumno->nivel_escolar}} 
                 </p>
 
-                <p class="text-gray mb-4"><strong>Grado:
+                <p class="card-title"><strong>Grado:</strong> 
                     {{ $alumno->grado }} 
                 </p>
 
-                <p class="text-gray mb-4"><strong>Grupo:
+                <p class="card-title"><strong>Grupo:</strong> 
                     {{ $alumno->grupo }} 
                 </p>
 
-                <p class="text-gray mb-4"><strong>Periodo escolar:
+                <p class="card-title"><strong>Periodo escolar:</strong> 
                     {{ $alumno->periodo_escolar}} 
                 </p>
                 
-                <p class="text-gray mb-4"><strong>Nombre Tutor:
+                <p class="card-title"><strong>Nombre Tutor:</strong> 
                     {{ $alumno->nombre_tutor}} 
                 </p>
                
-                <p class="text-gray mb-4"><strong>Parentesco:
+                <p class="card-title"><strong>Parentesco:</strong> 
                     {{ $alumno->parentesco}} 
                 </p>
 
-                <p class="text-gray mb-4"><strong>Tutor principal:
+                <p class="card-title"><strong>Tutor principal:</strong> 
                     {{ $alumno->tutor_principal}} 
                 </p>
 
-                <p class="text-gray mb-4"><strong>Dirección:
+                <p class="card-title"><strong>Dirección:</strong> 
                     {{ $alumno->direccion}} 
                 </p>
 
-                <p class="text-gray mb-4"><strong>Colonia:
+                <p class="card-title"><strong>Colonia:</strong> 
                     {{ $alumno->colonia}} 
                 </p>
 
                 
-                <p class="text-gray mb-4"><strong>Teléfono contacto:
+                <p class="card-title"><strong>Teléfono contacto:</strong> 
                     {{ $alumno->telefono_contacto}} 
                 </p>
 
-                <p class="text-gray mb-4"><strong>En caso de emergencia hablar a:
+                <p class="card-title"><strong>En caso de emergencia hablar a:</strong> 
                     {{ $alumno->nombre_emergencia}} 
                 </p>
 
-                <p class="text-gray mb-4"><strong>Parentesco:
+                <p class="card-title"><strong>Parentesco:</strong> 
                     {{ $alumno->parentesco2}} 
                 </p>
 
                
 
-                <p class="text-gray mb-4"><strong>Tel. 1 Autorizada:
+                <p class="card-title"><strong>Tel. 1 Autorizada:</strong> 
                     {{ $alumno->tel1_autorizada}} 
                 </p>
 
-               
+                <div class="form-group float-right mt-3" style= "float: right">
+            <h2 class="text-center mb-3">
+                <a href="/alumno" class="btn btn-primary mr-2 mb-3">
+                    <i class="mdi mdi-undo-variant"></i> Volver
+                </a> 
+            
+            </h2>
 
                 
             
