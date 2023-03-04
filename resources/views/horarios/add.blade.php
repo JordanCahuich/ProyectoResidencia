@@ -38,6 +38,17 @@
                 </div>
 
                 <div class="col-md-4">
+                    <label class="col-sm-12 col-form-label">Grado</label>
+                    <select name="grado" class="form-control form-control-sm">
+                      <option selected=>Seleccione</option>
+                      @foreach ($Grados as $grados)
+                          <option value="{{$grados->id}}">{{$grados->numero}}</option>
+                      @endforeach
+                    </select>
+                </div>
+
+
+                <div class="col-md-4">
                     <label class="col-sm-6 col-form-label">Aula</label>
                     <div class="col-sm-12">
                       <input type="text" name="aula" class="form-control" />

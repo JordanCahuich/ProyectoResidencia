@@ -173,8 +173,8 @@ class CargasController extends Controller
         //$verificarPago = $pagosCursoAlumno->count();
    
         //$pagosCursoAlumno = 0;
-        $carga = Cargas::findOrFail($id); 
-        return view('cargas.view', compact('carga'));
+        $carga = Cargas::where('id', $id)->first();
+        return view('cargas.view')->with('carga', $carga);
         
         
     }

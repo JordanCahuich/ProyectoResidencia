@@ -128,7 +128,14 @@ class ProfesoresController extends Controller
         return redirect('profes/')->with(['updateProfesor' => $updateProfesor]);
     }
 
+    public function show(Request $request, $id){
 
+      
+        $profesores = Profesores::where('id', $id)->first();
+        return view('profes.view')->with('profesores', $profesores);
+        
+        
+    }
 
     public function destroy($id){
         $profesor = Profesores::findOrFail($id);

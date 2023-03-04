@@ -63,7 +63,12 @@
                     </select>
                 </div>
               
-
+                <div class="col-md-4">
+                    <label class="col-sm-6 col-form-label">Nivel Academico</label>
+                    <div class="col-sm-12">
+                      <input type="text" name="nivelacademico" class="form-control"/>
+                    </div>
+                </div>
 
                 <div class="col-md-4">
                     <label class="col-sm-6 col-form-label">Correo electronico</label>
@@ -71,6 +76,7 @@
                       <input type="text" name="email" class="form-control"/>
                     </div>
                 </div>
+
                 <div class="col-md-4">
                     <label class="col-sm-6 col-form-label">Telefono</label>
                     <div class="col-sm-12">
@@ -93,8 +99,13 @@
                     </div>
                 </div>
 
-
+                <div class="form-group col-6">
+                    <label for="comprobante">Foto del docente</label>
+                    <input class="form-control"  type="file" name="foto_profesor"archivo>
+  
+                </div>
         
+
 
               
             </div> <!--ROW FIN-->

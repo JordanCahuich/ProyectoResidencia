@@ -79,6 +79,16 @@
                     @endif
                 </div>
 
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Nivel Academico</label>
+                        <input type="text" name="nivelacademico" class="form-control" value="{{$profesores->nivelacademico}}" required>
+                       
+                        @if ($errors->has('nivelacademico'))
+                        <div class="alert alert-danger">
+                            <span class="text-danger">{{ $errors->first('nivelacademico') }}</span>
+                        </div>
+                        @endif
+                    </div>
 
                 <div class="form-group">
                     <label for="exampleInputUsername1">Correo electronico</label>

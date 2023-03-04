@@ -44,6 +44,7 @@
             <th class="border-0">Fecha de nacimiento</th>
             <th class="border-0">Edad</th>
             <th class="border-0">Genero</th>
+            <th class="border-0">Nivel Academico</th>
             <th class="border-0">Email</th>
             <th class="border-0">Telefono</th>
             <th class="border-0">Localidad</th>
@@ -64,6 +65,7 @@
         <td>{{ date('d-m-Y', strtotime($p->fecha_nacimiento))}}</td>
         <td>{{$p->edad}}</td>
         <td>{{$p->genero}}</td>
+        <td>{{$p->nivelacademico}}</td>
         <td>{{$p->email}}</td>
         <td>{{$p->telefono}}</td>
         <td>{{$p->localidad}}</td>
@@ -74,6 +76,10 @@
                 <a href="/profes/{{$p->id}}/edit" class="btn btn-secondary"  style="float: left; padding: 2px 5px;  margin-right: 3px" title="Actualizar Registro">
                     <i class="mdi mdi-autorenew"></i>Actualizar
                 </a>
+
+                <a class="btn btn-secondary" href="{{ route('profe.show',$p->id) }}"  style="float: left; padding: 2px 5px;  margin-right: 3px" title="Ver Detalles">
+                    <i class="mdi mdi-account-card-details"></i>Ver</a>
+
                 <form action="/profes/{{$p->id}}}" method="post">
                     @method('DELETE')
                     @csrf

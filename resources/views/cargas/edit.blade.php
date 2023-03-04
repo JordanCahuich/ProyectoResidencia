@@ -81,7 +81,7 @@
 
                 <div class="form-group">
                     <label for="exampleInputUsername1">Docente</label>
-                        <input type="text" name="docente" class="form-control" value="{{$cargas->docente}}" required>
+                        <input type="text" name="docente" class="form-control" value="{{$cargas->profesores->nombre}}" required>
                        
                         @if ($errors->has('docente'))
                         <div class="alert alert-danger">
@@ -92,7 +92,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputUsername1">Asignatura</label>
-                            <input type="text" name="asignatura" class="form-control" value="{{$cargas->asignatura}}" required>
+                            <input type="text" name="asignatura" class="form-control" value="{{$cargas->asignaturas->nombre}}" required>
                            
                             @if ($errors->has('asignatura'))
                             <div class="alert alert-danger">
@@ -115,7 +115,7 @@
 
                             <div class="form-group">
                                 <label for="exampleInputUsername1">Alumnos</label>
-                                    <input type="text" name="alumnos" class="form-control" value="{{$cargas->alumnos}}" required>
+                                    <input type="text" name="alumnos" class="form-control" value="{{$cargas->alumnos->nombre}}" required>
                                    
                                     @if ($errors->has('alumnos'))
                                     <div class="alert alert-danger">

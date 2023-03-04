@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Asignaturas;
+use App\Models\Grados;
 use App\Models\Grupos;
 use App\Models\Horarios;
 use App\Models\Profesores;
@@ -25,17 +26,20 @@ class HorariosController extends Controller
     }
 
 
+
     public function create()
     {
         $Profesores = Profesores::all();
         $asignaturas = Asignaturas::all();
         $grupos = Grupos::all();
+        $grados = Grados::all();
 
         return view('horarios.add', [
             
         'Profesores'=>$Profesores,
         'Asignaturas'=>$asignaturas,
-        'Grupos'=>$grupos
+       'Grupos'=>$grupos,
+        'Grados'=>$grados
     
     ]);
 

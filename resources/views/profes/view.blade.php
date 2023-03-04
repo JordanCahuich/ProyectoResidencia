@@ -7,12 +7,10 @@
     <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-            <h2 class="text-center mb-3">
-                <a href="/profesor" class="btn btn-primary">
-                    <i class="mdi mdi-undo-variant"></i> Volver
-                </a> 
-                DETALLES DEL DOCENTE<hr>
-            </h2>
+            <h2 class="h5 mb-4">DETALLES DOCENTES<hr></h2>
+            <form class="forms-sample" method="post" action="/profes" enctype="multipart/form-data">
+                @csrf
+
 
         <div class="row">
             <div class="col-md-6">
@@ -20,43 +18,53 @@
               
                 
                 <div class="card-body">
-                <h6 class="card-title"><strong>Nombre:</strong>
-                     {{ $profesor->nombre }} <hr>
-                </h6>
-                <h5 class="card-title"><strong>Fecha de nacimiento:</strong> 
-                    {{ $profesor->fecha_nacimiento }} 
-                    <hr>
-                </h5>
-                <h5 class="card-title"><strong>Edad:</strong> 
-                    {{ $profesor->edad }} 
-                    <hr>
-                </h5>
-                <h5 class="card-title"><strong>Genero:</strong> 
-                    {{ $profesor->genero }} 
-                    <hr>
-                </h5>
-                <h5 class="card-title"><strong>Correo Electronico:</strong> 
-                    {{ $profesor->email }} 
-                    <hr>
-                </h5>
-                <h5 class="card-title"><strong>Telefono:</strong> 
-                    {{ $profesor->telefono }} 
-                    <hr>
-                </h5>
-                <h5 class="card-title"><strong>Localidad:</strong> 
-                    {{ $profesor->localidad }} 
-                    <hr>
-                </h5>
-                <h5 class="card-title"><strong>Domicilio:</strong> 
-                    {{ $profesor->domicilio }} 
-                    <hr>
-                </h5>
+                <p class="card-title"><strong>Nombre completo:</strong>
+                     {{ $profesores->nombre}} 
+                </p>
+                <p class="card-title"><strong>Fecha de nacimiento:</strong> 
+                    {{ $profesores->fecha_nacimeinto}} 
+                   
+                </p>
+                <p class="card-title"><strong>Edad:</strong> 
+                    {{ $profesores->edad}} 
+                
+                </p>
+                <p class="card-title"><strong>Genero:</strong> 
+                    {{ $profesores->genero }} 
+                  
+                </p>
+
+                <p class="card-title"><strong>Nivel Academico:</strong> 
+                    {{ $profesores->nivelacademico }} 
+    
+                </p>
+
+                <p class="card-title"><strong>Correo electronico:</strong> 
+                    {{ $profesores->email }} 
+    
+                </p>
+                <p class="card-title"><strong>Telefono:</strong> 
+                    {{ $profesores->telefono }} 
+                   
+                </p>
+                <p class="card-title"><strong>Localidad:</strong> 
+                    {{ $profesores->localidad}} 
+                   
+                </p>
+                <p class="card-title"><strong>Domicilio:</strong> 
+                    {{ $profesores->domicilio}} 
+                    
+                </p>
 
                 
-            
+                <div class="form-group float-right mt-3" style="float: right">
+                   
+                    <a href="/profes"  class="btn btn-primary btn-fw mb-3">Regresar</a>
+                </div>
+
                 </div>
             </div>
             </div>
 
             
-@endsection
+@endsection 

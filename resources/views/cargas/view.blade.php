@@ -7,12 +7,10 @@
     <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-            <h2 class="text-center mb-3">
-                <a href="/carga/7" class="btn btn-primary">
-                    <i class="mdi mdi-undo-variant"></i> Volver
-                </a> 
-                DETALLES DEL DOCENTE<hr>
-            </h2>
+            <h2 class="h5 mb-4">DETALLES DE CARGAS<hr></h2>
+            <form class="forms-sample" method="post" action="/cargas" enctype="multipart/form-data">
+                @csrf
+
 
         <div class="row">
             <div class="col-md-6">
@@ -20,43 +18,47 @@
               
                 
                 <div class="card-body">
-                <h6 class="card-title"><strong>Grupo:</strong>
-                     {{ $carga->grupo }} <hr>
-                </h6>
-                <h5 class="card-title"><strong>Grado:</strong> 
-                    {{ $carga->grado}} 
-                    <hr>
-                </h5>
-                <h5 class="card-title"><strong>Nivel:</strong> 
-                    {{ $carga->nivel}} 
-                    <hr>
-                </h5>
-                <h5 class="card-title"><strong>Periodo:</strong> 
-                    {{ $carga->periodo }} 
-                    <hr>
-                </h5>
-                <h5 class="card-title"><strong>Docente:</strong> 
-                    {{ $carga->docente }} 
-                    <hr>
-                </h5>
-                <h5 class="card-title"><strong>Asignatura:</strong> 
-                    {{ $carga->asignatura_id }} 
-                    <hr>
-                </h5>
-                <h5 class="card-title"><strong>Bimestre:</strong> 
-                    {{ $carga->bimestre }} 
-                    <hr>
-                </h5>
-                <h5 class="card-title"><strong>Alumnos:</strong> 
-                    {{ $carga->alumno}} 
-                    <hr>
-                </h5>
+                <p class="card-title"><strong>Grupo:</strong>
+                     {{ $carga->grupos->letra }} 
+                </p>
+                <p class="card-title"><strong>Grado:</strong> 
+                    {{ $carga->grados->numero}} 
+                   
+                </p>
+                <p class="card-title"><strong>Nivel:</strong> 
+                    {{ $carga->niveles->nombre}} 
+                
+                </p>
+                <p class="card-title"><strong>Periodo:</strong> 
+                    {{ $carga->periodos->nombre }} 
+                  
+                </p>
+                <p class="card-title"><strong>Docente:</strong> 
+                    {{ $carga->profesores->nombre }} 
+                    
+                </p>
+                <p class="card-title"><strong>Asignatura:</strong> 
+                    {{ $carga->asignaturas->nombre }} 
+                   
+                </p>
+                <p class="card-title"><strong>Bimestre:</strong> 
+                    {{ $carga->bimestres->numero }} 
+                   
+                </p>
+                <p class="card-title"><strong>Alumnos:</strong> 
+                    {{ $carga->alumnos->nombre}} 
+                    
+                </p>
 
                 
-            
+                <div class="form-group float-right mt-3" style="float: right">
+                   
+                    <a href="/cargas"  class="btn btn-primary btn-fw mb-3">Regresar</a>
+                </div>
+
                 </div>
             </div>
             </div>
 
             
-@endsection
+@endsection 
