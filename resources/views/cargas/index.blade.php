@@ -34,7 +34,6 @@
             <th class="border-0">Grado</th>
             <th class="border-0">Nivel</th>
             <th class="border-0">Periodo</th>
-            <th class="border-0">Docente</th>
             <th class="border-0">Asignatura</th>
             <th class="border-0">Bimestre</th>
             <th class="border-0">Alumnos</th>
@@ -50,7 +49,6 @@
                 <td>{{$c->grados->numero}}</td>
                 <td>{{$c->niveles->nombre}}</td>
                 <td>{{$c->periodos->nombre}}</td>
-                <td>{{$c->profesores->nombre}}</td>
                 <td>{{$c->asignaturas->nombre}}</td>
                 <td>{{$c->bimestres->numero}}</td>
                 <td>{{$c->alumnos->nombre}}</td>

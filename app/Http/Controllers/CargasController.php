@@ -73,6 +73,14 @@ class CargasController extends Controller
     }
 
 
+    
+    public function edit($id){
+
+        $Cargas= Cargas::find($id);
+   
+           return view('cargas.edit',['cargas'=>$Cargas]);
+       }
+
 
 
 
@@ -110,12 +118,7 @@ class CargasController extends Controller
 
 
 
-    public function edit($id){
 
-        $Cargas= Cargas::find($id);
-   
-           return view('cargas.edit',['cargas'=>$Cargas]);
-       }
 
 
 

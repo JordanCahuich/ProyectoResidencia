@@ -33,11 +33,11 @@
             @csrf
             <div class="form-group">
                 <label for="name" class="control-label">Grupo</label>
-                    <input type="text" name="grupo" id="grupo" class="form-control" value="{{$cargas->grupo}}">
+                    <input type="text" name="grupo" id="grupos" class="form-control" value="{{$cargas->grupos->letra}}">
 
-                    @if ($errors->has('grupo'))
+                    @if ($errors->has('grupos'))
                 <div class="alert alert-danger">
-                    <span class="text-danger">{{ $errors->first('grupo') }}</span>
+                    <span class="text-danger">{{ $errors->first('grupos') }}</span>
                 </div>
                 @endif
 
@@ -79,24 +79,15 @@
                 </div>
 
 
-                <div class="form-group">
-                    <label for="exampleInputUsername1">Docente</label>
-                        <input type="text" name="docente" class="form-control" value="{{$cargas->profesores->nombre}}" required>
-                       
-                        @if ($errors->has('docente'))
-                        <div class="alert alert-danger">
-                            <span class="text-danger">{{ $errors->first('docente') }}</span>
-                        </div>
-                        @endif
-                    </div>
+
 
                     <div class="form-group">
                         <label for="exampleInputUsername1">Asignatura</label>
                             <input type="text" name="asignatura" class="form-control" value="{{$cargas->asignaturas->nombre}}" required>
                            
-                            @if ($errors->has('asignatura'))
+                            @if ($errors->has('asignaturas'))
                             <div class="alert alert-danger">
-                                <span class="text-danger">{{ $errors->first('asignatura') }}</span>
+                                <span class="text-danger">{{ $errors->first('asignaturas') }}</span>
                             </div>
                             @endif
                         </div>
@@ -127,7 +118,7 @@
 
                                 <div class="form-group float-right mt-3" style="float: right">
                                     <button type="submit" class="btn btn-secondary mr-2 mb-3">Guardar</button>
-                                    <a href="/cargas/1/edit"  class="btn btn-primary btn-fw mb-3">Cancelar</a>
+                                    <a href="/cargas/17/edit"  class="btn btn-primary btn-fw mb-3">Cancelar</a>
                                     <a href="/cargas"  class="btn btn-primary btn-fw mb-3">Regresar</a>
                                 </div>
     

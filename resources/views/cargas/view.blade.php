@@ -21,33 +21,35 @@
                 <p class="card-title"><strong>Grupo:</strong>
                      {{ $carga->grupos->letra }} 
                 </p>
+
+
                 <p class="card-title"><strong>Grado:</strong> 
                     {{ $carga->grados->numero}} 
-                   
                 </p>
+
+
                 <p class="card-title"><strong>Nivel:</strong> 
                     {{ $carga->niveles->nombre}} 
-                
                 </p>
+
+
                 <p class="card-title"><strong>Periodo:</strong> 
                     {{ $carga->periodos->nombre }} 
-                  
                 </p>
-                <p class="card-title"><strong>Docente:</strong> 
-                    {{ $carga->profesores->nombre }} 
-                    
-                </p>
+      
+
                 <p class="card-title"><strong>Asignatura:</strong> 
                     {{ $carga->asignaturas->nombre }} 
-                   
                 </p>
+
+
                 <p class="card-title"><strong>Bimestre:</strong> 
                     {{ $carga->bimestres->numero }} 
-                   
                 </p>
+
+
                 <p class="card-title"><strong>Alumnos:</strong> 
                     {{ $carga->alumnos->nombre}} 
-                    
                 </p>
 
                 

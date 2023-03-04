@@ -82,16 +82,6 @@
 
 
 
-                <div class="col-md-4">
-                  <label class="col-sm-12 col-form-label">Docente</label>
-                  <select name="docente" class="form-control form-control-sm">
-                      <option selected=>Seleccione</option>
-                      @foreach ($Profesores as $profesores)
-                      <option value="{{$profesores->id}}">{{$profesores->nombre}}</option>
-                      @endforeach
-                  </select>
-              </div>
-
 
 
               <div class="col-md-4">
