@@ -19,7 +19,7 @@
 
 <div style="text-align:center; " >
 
-  
+
 </div>
 
 <hr>
@@ -34,7 +34,7 @@
             @csrf
             <div class="form-group">
                 <label for="name" class="control-label">Nombre del docente:</label>
-                    <input type="text" name="name" id="nombre" class="form-control" value="{{$profesores->nombre}}">
+                    <input type="text" name="nombre" id="nombre" class="form-control" value="{{$profesores->nombre}}">
 
                     @if ($errors->has('nombre'))
                 <div class="alert alert-danger">
@@ -44,8 +44,8 @@
 
                 <div class="form-group">
                     <label for="exampleInputUsername1">Fecha de nacimiento</label>
-                        <input type="date" name="fecha_nacimiento" class="form-control" value="{{$profesores->fecha_nacimeinto}}" required>
-                       
+                        <input type="date" name="fecha_nacimiento" class="form-control" value="{{$profesores->fecha_nacimiento}}" required>
+
                         @if ($errors->has('fecha_nacimiento'))
                         <div class="alert alert-danger">
                             <span class="text-danger">{{ $errors->first('fecha_nacimiento') }}</span>
@@ -53,12 +53,12 @@
                         @endif
                     </div>
 
-           
+
 
             <div class="form-group">
             <label for="exampleInputUsername1">Edad</label>
                 <input type="number" name="edad" class="form-control" value="{{$profesores->edad}}" required>
-               
+
                 @if ($errors->has('edad'))
                 <div class="alert alert-danger">
                     <span class="text-danger">{{ $errors->first('edad') }}</span>
@@ -69,7 +69,7 @@
             <div class="form-group">
                 <label for="exampleInputUsername1">Genero</label>
                     <input type="text" name="genero" class="form-control" value="{{$profesores->genero}}" required>
-                   
+
                     @if ($errors->has('genero'))
                     <div class="alert alert-danger">
                         <span class="text-danger">{{ $errors->first('genero') }}</span>
@@ -80,7 +80,7 @@
             <div class="form-group">
                     <label for="exampleInputUsername1">Nivel Academico</label>
                     <input type="text" name="nivelacademico" class="form-control" value="{{$profesores->nivelacademico}}" required>
-                       
+
                     @if ($errors->has('nivelacademico'))
                     <div class="alert alert-danger">
                     <span class="text-danger">{{ $errors->first('nivelacademico') }}</span>
@@ -91,7 +91,7 @@
             <div class="form-group">
                     <label for="exampleInputUsername1">Correo electronico</label>
                         <input type="text" name="email" class="form-control" value="{{$profesores->email}}" required>
-                       
+
                         @if ($errors->has('email'))
                         <div class="alert alert-danger">
                             <span class="text-danger">{{ $errors->first('email') }}</span>
@@ -102,7 +102,7 @@
             <div class="form-group">
                 <label for="exampleInputUsername1">Telefono</label>
                      <input type="number" name="telefono" class="form-control" value="{{$profesores->telefono}}" required>
-                           
+
                     @if ($errors->has('telefono'))
                     <div class="alert alert-danger">
                         <span class="text-danger">{{ $errors->first('telefono') }}</span>
@@ -113,7 +113,7 @@
             <div class="form-group">
                     <label for="exampleInputUsername1">Localidad</label>
                     <input type="text" name="localidad" class="form-control" value="{{$profesores->localidad}}" required>
-                               
+
                      @if ($errors->has('localidad'))
                     <div class="alert alert-danger">
                     <span class="text-danger">{{ $errors->first('localidad') }}</span>
@@ -125,7 +125,7 @@
             <div class="form-group">
                      <label for="exampleInputUsername1">Domicilio</label>
                     <input type="text" name="domicilio" class="form-control" value="{{$profesores->domicilio}}" required>
-                                   
+
                     @if ($errors->has('domicilio'))
                     <div class="alert alert-danger">
                     <span class="text-danger">{{ $errors->first('domicilio') }}</span>
@@ -136,7 +136,7 @@
             <div class="form-group">
                 <label for="exampleInputUsername1">Tipo</label>
                     <input type="text" name="tipo_profesor" class="form-control" value="{{$profesores->tipo_profesor}}" required>
-                   
+
                     @if ($errors->has('tipo_profesor'))
                     <div class="alert alert-danger">
                         <span class="text-danger">{{ $errors->first('tipo_profesor') }}</span>
@@ -150,11 +150,11 @@
                 <a href="/profes/5/edit"  class="btn btn-primary btn-fw mb-3">Cancelar</a>
                <a href="/profes"  class="btn btn-primary btn-fw mb-3">Regresar</a>
             </div>
-    
+
         </form>
         </div>
     </div>
-</div> 
+</div>
 
 </hr>
 </table>

@@ -14,10 +14,10 @@ use App\Models\Pagos;
 
 class ProfesoresController extends Controller
 {
-    
+
     public function index()
     {
-       
+
         $Profesores = Profesores::all();
         return view('profes.index', ['Profesores'=> $Profesores]);
 
@@ -33,16 +33,16 @@ class ProfesoresController extends Controller
 
     }
 
-    
+
     public function store(Request $request)
     {
 
-//dd($request->get('nivelacademico'));  
+//dd($request->get('nivelacademico'));
 
         if ($request->hasFile('foto_profesor')) {
-            $file = $request->file('foto_profesor');  
-            $nombrearchivo = time()."_".$file->getClientOriginalName();  
-            $file->move(public_path('/fotosProfesor/'),$nombrearchivo); 
+            $file = $request->file('foto_profesor');
+            $nombrearchivo = time()."_".$file->getClientOriginalName();
+            $file->move(public_path('/fotosProfesor/'),$nombrearchivo);
 
             $data = new Profesores([
                 'name'=>$request->get('name'),
@@ -57,13 +57,13 @@ class ProfesoresController extends Controller
                 'domicilio'=>$request->get('domicilio'),
                 'tipo_profesor'=>$request->get('tipo_profesor'),
                 'foto_profesor'=>$nombrearchivo
-         
-       
+
+
 
             ]);
-            $data->save(); 
+            $data->save();
 
-            
+
         }else{
             $data = new Profesores([
                 'name'=>$request->get('name'),
@@ -78,20 +78,20 @@ class ProfesoresController extends Controller
                 'domicilio'=>$request->get('domicilio'),
                 'tipo_profesor'=>$request->get('tipo_profesor'),
                 'foto_profesor'=> ''
-            
-              
+
+
             ]);
-            $data->save(); 
-        } 
+            $data->save();
+        }
 
      /*  return view('profes.store'); */
-        return redirect('/profes')->with('mensaje','Docente Registrado Correctamente.'); 
+        return redirect('/profes')->with('mensaje','Docente Registrado Correctamente.');
 
     }
 
-    
-   
-    
+
+
+
     public function edit($id){
 
      $Profesores= Profesores::find($id);
@@ -102,14 +102,12 @@ class ProfesoresController extends Controller
 
     public function update(Request $request, $id)
     {
-  
         if ($request->hasFile('foto_profesor')) {
-            $file = $request->file('foto_profesor');  
-            $nombrearchivo = time()."_".$file->getClientOriginalName();  
-            $file->move(public_path('/fotosProfesor/'),$nombrearchivo); 
+            $file = $request->file('foto_profesor');
+            $nombrearchivo = time()."_".$file->getClientOriginalName();
+            $file->move(public_path('/fotosProfesor/'),$nombrearchivo);
 
             $profesor = Profesores::findOrFail($id);
-            $profesor->name                  = $request->name;
             $profesor->nombre                = $request->nombre;
             $profesor->fecha_nacimiento      = $request->fecha_nacimiento;
             $profesor->edad                  = $request->edad;
@@ -118,12 +116,11 @@ class ProfesoresController extends Controller
             $profesor->telefono              = $request->telefono;
             $profesor->localidad             = $request->localidad;
             $profesor->domicilio             = $request->domicilio;
-          
-       
-            $profesor->save(); 
+
+
+            $profesor->save();
         }else{
             $profesor = Profesores::findOrFail($id);
-            $profesor->name                      = $request->name;
             $profesor->nombre                    = $request->nombre;
             $profesor->fecha_nacimiento          = $request->fecha_nacimiento;
             $profesor->edad                      = $request->edad;
@@ -132,9 +129,9 @@ class ProfesoresController extends Controller
             $profesor->telefono                  = $request->telefono;
             $profesor->localidad                 = $request->localidad;
             $profesor->domicilio                 = $request->domicilio;
-            
-            $profesor->save(); 
-        } 
+
+            $profesor->save();
+        }
 
 
             $updateProfesor ="Docente actualizado Correctamente";
@@ -144,11 +141,11 @@ class ProfesoresController extends Controller
 
     public function show(Request $request, $id){
 
-      
+
         $profesores = Profesores::where('id', $id)->first();
         return view('profes.view')->with('profesores', $profesores);
-        
-        
+
+
     }
 
     public function destroy($id){
@@ -158,8 +155,8 @@ class ProfesoresController extends Controller
     }
 
 
-    
-    
+
+
 
 
 }

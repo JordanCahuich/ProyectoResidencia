@@ -13,12 +13,12 @@ class Cargas extends Model
 
     protected $fillable = [
         'grupo', 'grado', 'nivel', 'periodo', 'docente_id', 'asignatura_id', 'bimestre', 'alumno_id' ];
- 
+
 
     protected $table = "cargas";
     protected $primaryKey = "id";
-    
-  
+
+
     public function profesores(): BelongsTo
     {
         return $this->belongsTo(Profesores::class, 'docente_id');
@@ -49,7 +49,7 @@ class Cargas extends Model
 
     public function niveles(): BelongsTo
     {
-        return $this->belongsTo(Niveles::class, 'nivel');
+        return $this->belongsTo(Niveles::class, 'nivel_id');
     }
 
 

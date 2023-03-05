@@ -11,7 +11,7 @@ class Profesores extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'nombre','fecha_nacimiento', 'edad', 'genero', 'nivelacademico', 'email',
+        'nombre','fecha_nacimiento', 'edad', 'genero', 'nivelacademico', 'email',
         'telefono', 'localidad', 'domicilio', 'tipo_profesor',  'curso_id', 'foto_profesor'
     ];
 
