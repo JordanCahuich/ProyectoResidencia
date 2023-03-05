@@ -5,9 +5,9 @@
 <div class="container" style="margin: 0px auto;",>
 
 <div style="text-align:center; " >
-   
 
-  
+
+
 </div>
 </hr>
 
@@ -59,20 +59,20 @@
 
 <tbody>
     <tr>
-        
+
     @foreach($Profesores as $p)
-  
+
         <td>{{$p->nombre}}</td>
         <td>{{ date('d-m-Y', strtotime($p->fecha_nacimiento))}}</td>
         <td>{{$p->edad}}</td>
         <td>{{$p->genero}}</td>
-        <td>{{$p->nivelacademico}}</td>
+        <td>{{$p->nivel}}</td>
         <td>{{$p->email}}</td>
         <td>{{$p->telefono}}</td>
         <td>{{$p->localidad}}</td>
         <td>{{$p->domicilio}}</td>
-        <td>{{$p->tipo_profesor}}</td>
-    
+        <td>{{$p->tipo}}</td>
+
         <td>
             <div style="padding-right: 60px;">
                 <a href="/profes/{{$p->id}}/edit" class="btn btn-secondary"  style="float: left; padding: 2px 5px;  margin-right: 3px" title="Actualizar Registro">
@@ -95,7 +95,7 @@
 </tbody>
 </hr>
 </table>
-  
+
 </div>
 @endsection
 </div>

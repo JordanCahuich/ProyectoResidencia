@@ -14,12 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::table('profesores', function(Blueprint $table) {
-            
-         
-            $table->integer('tipo_profesor');
 
-           
-          
+
+                //$table->integer('tipo_profesor');
+                //$table->integer('nivelacademico');
+                $table->string('foto_profesor',1000);
+
+
         });
     }
 
