@@ -74,22 +74,24 @@
         <td>{{$p->tipo}}</td>
 
         <td>
-            <div style="padding-right: 60px;">
-                <a href="/profes/{{$p->id}}/edit" class="btn btn-secondary"  style="float: left; padding: 2px 5px;  margin-right: 3px" title="Actualizar Registro">
+
+            <form action="/profes/{{$p->id}}}" method="post">
+                @method('DELETE')
+                @csrf
+                <a href="/profes/{{$p->id}}/edit" class="btn btn-secondary"  style="padding: 2px 5px;  margin-right: 3px" title="Actualizar Registro">
                     <i class="mdi mdi-autorenew"></i>Actualizar
                 </a>
 
-                <a class="btn btn-secondary" href="{{ route('profe.show',$p->id) }}"  style="float: left; padding: 2px 5px;  margin-right: 3px" title="Ver Detalles">
+                <a class="btn btn-secondary" href="{{ route('profe.show',$p->id) }}"  style="padding: 2px 5px;  margin-right: 3px" title="Ver Detalles">
                     <i class="mdi mdi-account-card-details"></i>Ver</a>
 
-                <form action="/profes/{{$p->id}}}" method="post">
-                    @method('DELETE')
-                    @csrf
-                    <button type="submit" class="btn btn-primary"  style="padding: 2px 5px;" title="Borrar docente">
-                        <i class="mdi mdi-delete-sweep"></i>Borrar
-                    </button>
-                </form>
-            </div>
+                <button type="submit" class="btn btn-primary"  style="padding: 2px 5px;" title="Borrar docente">
+                    <i class="mdi mdi-delete-sweep"></i>Borrar
+                </button>
+
+
+            </form>
+
     </tr>
     @endforeach
 </tbody>

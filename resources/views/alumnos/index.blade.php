@@ -32,7 +32,7 @@
             <th class="border-0 rounded-start">Nombre del alumno</th>
             <th class="border-0">Tutor</th>
             <th class="border-0">Teléfono </th>
-           
+
             <th class="border-0">En caso de emergencia hablar a</th>
             <th class="border-0">Parentesco</th>
             <th class="border-0">Teléfono </th>
@@ -48,30 +48,26 @@
                 <td>{{ $alumno->nombre }}</td>
                 <td>{{ $alumno->nombre_tutor }}</td>
                 <td>{{ $alumno->telefono_contacto}}</td>
-                
+
                 <td>{{ $alumno->nombre_emergencia}}</td>
                 <td>{{ $alumno->parentesco2}}</td>
                 <td>{{ $alumno->tel1_autorizada}}</td>
-                
-
-
-
-                <td style="padding-right: 60px;">
-
-                         <a class="btn btn-secondary" href="{{ route('alumno.show',$alumno->id) }}"  style="float: left; padding: 2px 5px;  margin-right: 3px" title="Ver Detalles">
+                <td>
+                    <form action="/alumno/{{$alumno->id}}}" method="post">
+                        @method('DELETE')
+                        @csrf
+                         <a class="btn btn-secondary" href="{{ route('alumno.show',$alumno->id) }}"  style="padding: 2px 5px;  margin-right: 3px" title="Ver Detalles">
                             <i class="mdi mdi-account-card-details"></i> Ver
                         </a>
 
-                        <a class="btn btn-secondary" href="{{ route('alumno.edit',$alumno->id) }}"  style="padding: 2px 5px;" title="Actualizar Registro">
+                        <a class="btn btn-secondary" href="{{ route('alumno.edit',$alumno->id) }}"  style="padding: 2px 5px; margin-right: 3px" title="Actualizar Registro">
                             <i class="mdi mdi-autorenew"></i>Actualizar
                         </a>
-                        <form action="/alumno/{{$alumno->id}}}" method="post" style="float:right;">
-                            @method('DELETE')
-                            @csrf
+
                             <button type="submit" class="btn btn-primary" onclick="return confirm('Estas seguro que deseas borrar el alumno: {{ $alumno->nombre }} ?');"  style="padding: 2px 5px;" title="Borrar Alumno">
                             <i class="mdi mdi-delete-sweep"></i>Borrar
                         </button>
-                        </form>
+                    </form>
 
 
                 </td>
