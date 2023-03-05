@@ -69,21 +69,25 @@
 
         <td>{{$h->asignatura_id}}</td>
 
-        <td>{{$h->profesor_id}}</td>
+        <td>{{$h->docente_id}}</td>
         
         <td>
-            <div style="padding-right: 60px;">
-                <a href="/horarios/{{$h->id}}/edit" class="btn btn-secondary"  style="float: left; padding: 2px 5px;  margin-right: 3px" title="Actualizar Registro">
+            <form action="/profes/{{$h->id}}}" method="post">
+                @method('DELETE')
+                @csrf
+                <a href="/profes/{{$h->id}}/edit" class="btn btn-secondary"  style="padding: 2px 5px;  margin-right: 3px" title="Actualizar Registro">
                     <i class="mdi mdi-autorenew"></i>Actualizar
                 </a>
-                <form action="/horarios/{{$h->id}}}" method="post">
-                    @method('DELETE')
-                    @csrf
-                    <button type="submit" class="btn btn-primary"  style="padding: 2px 5px;" title="Borrar horario">
-                        <i class="mdi mdi-delete-sweep"></i>Borrar
-                    </button>
-                </form>
-            </div>
+
+                <a class="btn btn-secondary" href="{{ route('profe.show',$h->id) }}"  style="padding: 2px 5px;  margin-right: 3px" title="Ver Detalles">
+                    <i class="mdi mdi-account-card-details"></i>Ver</a>
+
+                <button type="submit" class="btn btn-primary"  style="padding: 2px 5px;" title="Borrar docente">
+                    <i class="mdi mdi-delete-sweep"></i>Borrar
+                </button>
+
+
+            </form>
     </tr>
     @endforeach
 

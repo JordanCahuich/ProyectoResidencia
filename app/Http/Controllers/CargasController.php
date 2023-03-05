@@ -24,7 +24,7 @@ class CargasController extends Controller
     public function index()
     {
       
-        $Cargas = Cargas::with('profesores')->with('periodos')
+        $Cargas = Cargas::with('periodos')
         ->with('asignaturas')->with('alumnos')->with('niveles')
         ->with('grupos')->with('grados')->with('bimestres')->get();
         
@@ -41,7 +41,6 @@ class CargasController extends Controller
     {
         
         $Alumnos= Alumnos::all();
-        $Profesores= Profesores::all();
         $periodos = Periodos::all();
         $niveles = Niveles::all();
         $grupos = Grupos::all();
@@ -52,7 +51,6 @@ class CargasController extends Controller
 
        return view('cargas.add', [
         'Alumnos'=> $Alumnos,
-        'Profesores'=> $Profesores,
         'Periodos'=>$periodos,
         'Niveles'=>$niveles,
         'Grupos'=>$grupos,
@@ -89,7 +87,6 @@ class CargasController extends Controller
                 'grado'=>$request->get('grado'),
                 'nivel'=>$request->get('nivel'),
                 'periodo'=>$request->get('periodo'),
-                'docente_id'=> $request->get('docente'),
                 'asignatura_id'=>$request->get('asignatura'),
                 'bimestre'=>$request->get('bimestre'),
                 'alumno_id'=>$alumno,
@@ -122,7 +119,6 @@ class CargasController extends Controller
             $carga->grado                = $request->grado;
             $carga->nivel                  = $request->nivel;
             $carga->periodo                = $request->periodo;
-            $carga->docente                 = $request->docente;
             $carga->asignatura              = $request->asignatura;
             $carga->bimestre             = $request->bimestre;
             $carga->alumnos             = $request->alumnos;
@@ -136,7 +132,6 @@ class CargasController extends Controller
             $carga->grado                = $request->grado;
             $carga->nivel                  = $request->nivel;
             $carga->periodo                = $request->periodo;
-            $carga->docente                 = $request->docente;
             $carga->asignatura              = $request->asignatura;
             $carga->bimestre             = $request->bimestre;
             $carga->alumnos             = $request->alumnos;
