@@ -5,6 +5,7 @@ use App\Models\Alumnos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Cursos;
+use App\Models\Nivelacademico;
 use App\Models\Profesores;
 use App\Models\Pagos;
 
@@ -25,7 +26,10 @@ class ProfesoresController extends Controller
 
     public function create()
     {
-        return view('profes.add');
+        $Nivelacademico= Nivelacademico::all();
+        return view('profes.add', [
+            'Nivelacademico'=>$Nivelacademico
+        ]);
 
     }
 
@@ -33,7 +37,7 @@ class ProfesoresController extends Controller
     public function store(Request $request)
     {
 
-  
+//dd($request->get('nivelacademico'));  
 
         if ($request->hasFile('foto_profesor')) {
             $file = $request->file('foto_profesor');  
@@ -46,15 +50,20 @@ class ProfesoresController extends Controller
                 'fecha_nacimiento'=>$request->get('fecha_nacimiento'),
                 'edad'=>$request->get('edad'),
                 'genero'=>$request->get('genero'),
+                'nivelacademico'=>$request->get('nivelacademico'),
                 'email'=>$request->get('email'),
                 'telefono'=>$request->get('telefono'),
                 'localidad'=>$request->get('localidad'),
                 'domicilio'=>$request->get('domicilio'),
+                'tipo_profesor'=>$request->get('tipo_profesor'),
+                'foto_profesor'=>$nombrearchivo
          
-                 
+       
 
             ]);
             $data->save(); 
+
+            
         }else{
             $data = new Profesores([
                 'name'=>$request->get('name'),
@@ -62,10 +71,13 @@ class ProfesoresController extends Controller
                 'fecha_nacimiento'=>$request->get('fecha_nacimiento'),
                 'edad'=>$request->get('edad'),
                 'genero'=>$request->get('genero'),
+                'nivelacademico'=>$request->get('nivelacademico'),
                 'email'=>$request->get('email'),
                 'telefono'=>$request->get('telefono'),
                 'localidad'=>$request->get('localidad'),
                 'domicilio'=>$request->get('domicilio'),
+                'tipo_profesor'=>$request->get('tipo_profesor'),
+                'foto_profesor'=> ''
             
               
             ]);
@@ -124,9 +136,11 @@ class ProfesoresController extends Controller
             $profesor->save(); 
         } 
 
+
             $updateProfesor ="Docente actualizado Correctamente";
         return redirect('profes/')->with(['updateProfesor' => $updateProfesor]);
     }
+
 
     public function show(Request $request, $id){
 

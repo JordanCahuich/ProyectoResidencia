@@ -87,14 +87,11 @@ class CargasController extends Controller
 
     public function store(Request $request)
     {
-
-        //dd($request->get('docente'));
     
         $alumnos =$request->get('alumnos');
 
         foreach($alumnos as $alumno){
 
-        
         
             $data = new Cargas([
                 'grupo'=>$request->get('grupo'),
@@ -109,17 +106,10 @@ class CargasController extends Controller
             $data->save(); 
         }
 
-     /*  return view('profes.store'); */
+   
         return redirect('/cargas')->with('mensaje','Carga Registrada Correctamente.'); 
 
     }
-
-
-
-
-
-
-
 
 
 
@@ -172,17 +162,12 @@ class CargasController extends Controller
 
     public function show(Request $request, $id){
 
-        //$pagosCursoAlumno = Pagos::where('alumno_id',$id)->get();
-        //$verificarPago = $pagosCursoAlumno->count();
-   
-        //$pagosCursoAlumno = 0;
         $carga = Cargas::where('id', $id)->first();
         return view('cargas.view')->with('carga', $carga);
         
         
     }
     
-
 
 
     public function destroy($id){

@@ -53,8 +53,6 @@
                         @endif
                     </div>
 
-
-
            
 
             <div class="form-group">
@@ -77,20 +75,20 @@
                         <span class="text-danger">{{ $errors->first('genero') }}</span>
                     </div>
                     @endif
-                </div>
+            </div>
 
-                <div class="form-group">
+            <div class="form-group">
                     <label for="exampleInputUsername1">Nivel Academico</label>
-                        <input type="text" name="nivelacademico" class="form-control" value="{{$profesores->nivelacademico}}" required>
+                    <input type="text" name="nivelacademico" class="form-control" value="{{$profesores->nivelacademico}}" required>
                        
-                        @if ($errors->has('nivelacademico'))
-                        <div class="alert alert-danger">
-                            <span class="text-danger">{{ $errors->first('nivelacademico') }}</span>
-                        </div>
-                        @endif
+                    @if ($errors->has('nivelacademico'))
+                    <div class="alert alert-danger">
+                    <span class="text-danger">{{ $errors->first('nivelacademico') }}</span>
                     </div>
+                    @endif
+            </div>
 
-                <div class="form-group">
+            <div class="form-group">
                     <label for="exampleInputUsername1">Correo electronico</label>
                         <input type="text" name="email" class="form-control" value="{{$profesores->email}}" required>
                        
@@ -101,46 +99,57 @@
                         @endif
                     </div>
 
-                    <div class="form-group">
-                        <label for="exampleInputUsername1">Telefono</label>
-                            <input type="number" name="telefono" class="form-control" value="{{$profesores->telefono}}" required>
+            <div class="form-group">
+                <label for="exampleInputUsername1">Telefono</label>
+                     <input type="number" name="telefono" class="form-control" value="{{$profesores->telefono}}" required>
                            
-                            @if ($errors->has('telefono'))
-                            <div class="alert alert-danger">
-                                <span class="text-danger">{{ $errors->first('telefono') }}</span>
-                            </div>
-                            @endif
-                        </div>
+                    @if ($errors->has('telefono'))
+                    <div class="alert alert-danger">
+                        <span class="text-danger">{{ $errors->first('telefono') }}</span>
+                    </div>
+                    @endif
+            </div>
 
-                        <div class="form-group">
-                            <label for="exampleInputUsername1">Localidad</label>
-                                <input type="text" name="localidad" class="form-control" value="{{$profesores->localidad}}" required>
+            <div class="form-group">
+                    <label for="exampleInputUsername1">Localidad</label>
+                    <input type="text" name="localidad" class="form-control" value="{{$profesores->localidad}}" required>
                                
-                                @if ($errors->has('localidad'))
-                                <div class="alert alert-danger">
-                                    <span class="text-danger">{{ $errors->first('localidad') }}</span>
-                                </div>
-                                @endif
-                            </div>
+                     @if ($errors->has('localidad'))
+                    <div class="alert alert-danger">
+                    <span class="text-danger">{{ $errors->first('localidad') }}</span>
+                    </div>
+                    @endif
+            </div>
 
 
-                            <div class="form-group">
-                                <label for="exampleInputUsername1">Domicilio</label>
-                                    <input type="text" name="domicilio" class="form-control" value="{{$profesores->domicilio}}" required>
+            <div class="form-group">
+                     <label for="exampleInputUsername1">Domicilio</label>
+                    <input type="text" name="domicilio" class="form-control" value="{{$profesores->domicilio}}" required>
                                    
-                                    @if ($errors->has('domicilio'))
-                                    <div class="alert alert-danger">
-                                        <span class="text-danger">{{ $errors->first('domicilio') }}</span>
-                                    </div>
-                                    @endif
-                                </div>
+                    @if ($errors->has('domicilio'))
+                    <div class="alert alert-danger">
+                    <span class="text-danger">{{ $errors->first('domicilio') }}</span>
+                    </div>
+                    @endif
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputUsername1">Tipo</label>
+                    <input type="text" name="tipo_profesor" class="form-control" value="{{$profesores->tipo_profesor}}" required>
+                   
+                    @if ($errors->has('tipo_profesor'))
+                    <div class="alert alert-danger">
+                        <span class="text-danger">{{ $errors->first('tipo_profesor') }}</span>
+                    </div>
+                    @endif
+            </div>
 
 
-                                <div class="form-group float-right mt-3" style="float: right">
-                                    <button type="submit" class="btn btn-secondary mr-2 mb-3">Guardar</button>
-                                    <a href="/profes/5/edit"  class="btn btn-primary btn-fw mb-3">Cancelar</a>
-                                    <a href="/profes"  class="btn btn-primary btn-fw mb-3">Regresar</a>
-                                </div>
+            <div class="form-group float-right mt-3" style="float: right">
+                <button type="submit" class="btn btn-secondary mr-2 mb-3">Guardar</button>
+                <a href="/profes/5/edit"  class="btn btn-primary btn-fw mb-3">Cancelar</a>
+               <a href="/profes"  class="btn btn-primary btn-fw mb-3">Regresar</a>
+            </div>
     
         </form>
         </div>

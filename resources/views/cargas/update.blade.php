@@ -42,12 +42,7 @@
                     <input type="number" name="periodo" class="form-control"  value="{{ $carga->periodo }}"/>
                   </div>
               </div>
-              <div class="col-md-4">
-                  <label class="col-sm-6 col-form-label">Docente</label>
-                  <div class="col-sm-12">
-                    <input type="text" name="docente" class="form-control" value="{{ $carga->docente }}"/>
-                  </div>
-              </div>
+
               <div class="col-md-4">
                   <label class="col-sm-6 col-form-label">Asignatura</label>
                   <div class="col-sm-12">

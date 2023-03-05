@@ -64,10 +64,13 @@
                 </div>
               
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Nivel Academico</label>
-                    <div class="col-sm-12">
-                      <input type="text" name="nivelacademico" class="form-control"/>
-                    </div>
+                    <label class="col-sm-12 col-form-label">Nivel academico</label>
+                    <select name="nivelacademico" class="form-control form-control-sm">
+                        <option selected=>Seleccione</option>
+                            <option value="1">Doctorado</option>
+                            <option value="2">Licenciatura</option>
+                            <option value="3">Maestria</option>
+                    </select>
                 </div>
 
                 <div class="col-md-4">
@@ -97,6 +100,15 @@
                     <div class="col-sm-12">
                       <input type="text" name="domicilio" class="form-control" />
                     </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-sm-12 col-form-label">Tipo</label>
+                    <select name="tipo_profesor" class="form-control form-control-sm">
+                        <option selected=>Seleccione</option>
+                            <option value="1">Asignaturas</option>
+                            <option value="2">Tiempo completo</option>
+                    </select>
                 </div>
 
                 <div class="form-group col-6">

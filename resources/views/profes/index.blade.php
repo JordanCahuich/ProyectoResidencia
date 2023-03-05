@@ -49,6 +49,7 @@
             <th class="border-0">Telefono</th>
             <th class="border-0">Localidad</th>
             <th class="border-0">Domicilio</th>
+            <th class="border-0">Tipo</th>
             <th class="border-0 rounded-end">Acción</th>
             </tr>
 </thead>
@@ -70,6 +71,7 @@
         <td>{{$p->telefono}}</td>
         <td>{{$p->localidad}}</td>
         <td>{{$p->domicilio}}</td>
+        <td>{{$p->tipo_profesor}}</td>
     
         <td>
             <div style="padding-right: 60px;">

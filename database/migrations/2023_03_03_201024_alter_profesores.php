@@ -15,12 +15,11 @@ return new class extends Migration
     {
         Schema::table('profesores', function(Blueprint $table) {
             
-            $table->string('foto_profesor');
-            $table->integer('nivelacademico');
+         
+            $table->integer('tipo_profesor');
 
            
           
-
         });
     }
 
