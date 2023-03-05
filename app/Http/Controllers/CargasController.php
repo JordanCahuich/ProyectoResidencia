@@ -41,23 +41,14 @@ class CargasController extends Controller
     {
         
         $Alumnos= Alumnos::all();
-        
         $Profesores= Profesores::all();
-
         $periodos = Periodos::all();
-
         $niveles = Niveles::all();
-
         $grupos = Grupos::all();
-
         $grados = Grados::all();
-
         $asignaturas = Asignaturas::all();
-
         $bimestres = Bimestres::all();
 
-
-        
 
        return view('cargas.add', [
         'Alumnos'=> $Alumnos,

@@ -15,13 +15,9 @@ class HorariosController extends Controller
     public function index()
     {
        
-        $Horarios = Horarios::all();
+        $Horarios = Horarios::with('grupos')->with('grados')->with('asignaturas')->with('profesores')->get();
 
-        return view('horarios.index', [
-            
-        'Horarios'=> $Horarios,
-
-    ]);
+        return view('horarios.index', ['Horarios'=> $Horarios,]);
 
     }
 
@@ -29,6 +25,8 @@ class HorariosController extends Controller
 
     public function create()
     {
+
+
         $Profesores = Profesores::all();
         $asignaturas = Asignaturas::all();
         $grupos = Grupos::all();
@@ -38,7 +36,7 @@ class HorariosController extends Controller
             
         'Profesores'=>$Profesores,
         'Asignaturas'=>$asignaturas,
-       'Grupos'=>$grupos,
+        'Grupos'=>$grupos,
         'Grados'=>$grados
     
     ]);
@@ -48,43 +46,28 @@ class HorariosController extends Controller
     public function store(Request $request)
     {
 
+        $profesores = $request->get('profesores');
+
+        foreach ($profesores as $profesor){
+
+
+                $data = new Horarios([
+              
+                'nombre'=>$request->get('nombre'),
+                'grupo_id'=>$request->get('grupo'),
+                'grado_id'=>$request->get('grado'),
+                'aula'=>$request->get('aula'),
+                'dia'=>$request->get('dia'),
+                'hora'=>$request->get('hora'),
+                'asignatura_id'=>$request->get('asignatura'),
+                'docente_id'=>$profesor,
+                
+            ]);
+            $data->save(); 
   
+        }
 
-        if ($request->hasFile('foto_profesor')) {
-            $file = $request->file('foto_profesor');  
-            $nombrearchivo = time()."_".$file->getClientOriginalName();  
-            $file->move(public_path('/fotosProfesor/'),$nombrearchivo); 
-
-            $data = new Horarios([
-              
-                'nombre'=>$request->get('nombre'),
-                'aula'=>$request->get('aula'),
-                'dia'=>$request->get('dia'),
-                'hora'=>$request->get('hora'),
-                'asignatura'=>$request->get('asignatura'),
-                'profesor'=>$request->get('profesor'),
-                
-                 
-
-            ]);
-            $data->save(); 
-        }else{
-            $data = new Horarios([
-                
-                'nombre'=>$request->get('nombre'),
-                'aula'=>$request->get('aula'),
-                'dia'=>$request->get('dia'),
-                'hora'=>$request->get('hora'),
-                'asignatura'=>$request->get('asignatura'),
-                'profesor'=>$request->get('profesor'),
-              
-            
-              
-            ]);
-            $data->save(); 
-        } 
-
-     /*  return view('profes.store'); */
+       
         return redirect('/horarios')->with('mensaje','Horario Registrado Correctamente.'); 
 
     }

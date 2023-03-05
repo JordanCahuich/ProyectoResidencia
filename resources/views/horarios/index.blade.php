@@ -41,7 +41,9 @@
         <table class="table table-centered table-nowrap mb-0 rounded">
         <thead class="thead-light">
             <tr>
+                
             <th class="border-0 rounded-start">Grupo</th>
+            <th class="border-0">Grado</th>
             <th class="border-0">Aula</th>
             <th class="border-0">Dia</th>
             <th class="border-0">Hora</th>
@@ -55,17 +57,19 @@
         
     @foreach($Horarios as $h)
   
-        <td>{{$h->nombre}}</td>
-    
+        <td>{{$h->grupo_id}}</td>
+
+        <td>{{$h->grado_id}}</td>
+
         <td>{{$h->aula}}</td>
      
         <td>{{$h->dia}}</td>
 
         <td>{{$h->hora}}</td>
 
-        <td>{{$h->asignatura}}</td>
+        <td>{{$h->asignatura_id}}</td>
 
-        <td>{{$h->profesor}}</td>
+        <td>{{$h->profesor_id}}</td>
         
         <td>
             <div style="padding-right: 60px;">

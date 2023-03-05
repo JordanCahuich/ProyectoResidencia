@@ -2,6 +2,11 @@
 
 @section('content')
 
+<style>
+    .bootstrap-select .btn{
+        border: 0.0625rem solid #D1D5DB;
+    }
+</style>
 
 <div class="py-4">
     <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
@@ -72,16 +77,19 @@
                 </div>
 
                 
+
+                
                 <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Asignatura</label>
-                    <select name="asignatura" class="form-control form-control-sm">
-                        <option selected=>Seleccione</option>
-                        @foreach ($Asignaturas as $a)
-                            <option value="{{$a->id}}">{{$a->nombre}}</option>
-                        @endforeach
-                    </select>
+                    
+                    <select name="asignaturas[]" id="asignaturas"  class="selectpicker  form-control" 
+                    title="Seleccionar asignaturas" multiple required>
+                    @foreach ($Asignaturas as $a)
+                    <option value="{{$a->id}}">{{$a->nombre}}</option>
+                    @endforeach
+                      </select>
                 </div>
-                
+
 
                 <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Docente</label>
@@ -92,25 +100,10 @@
                         @endforeach
                     </select>
                 </div>
-            <!--    <div class="col-md-4">
-                    <label class="col-sm-12 col-form-label">Asignatura</label>
-                    <select name="genero" class="form-control form-control-sm">
-                        <option selected=>Seleccione</option>
-                            <option>Masculino</option>
-                            <option>Femenino</option>
-                    </select>
-                </div>
 
 
-                <div class="col-md-4">
-                    <label class="col-sm-12 col-form-label">Docente</label>
-                    <select name="genero" class="form-control form-control-sm">
-                        <option selected=>Seleccione</option>
-                            <option>Masculino</option>
-                            <option>Femenino</option>
-                    </select>
-                </div> -->
-              
+                
+       
               
             </div> <!--ROW FIN-->
              

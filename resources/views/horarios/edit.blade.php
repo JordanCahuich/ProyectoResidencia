@@ -40,21 +40,33 @@
                     <span class="text-danger">{{ $errors->first('grupo') }}</span>
                 </div>
                 @endif
+            </div>
 
-                <div class="form-group">
-                    <label for="exampleInputUsername1">Aula</label>
-                        <input type="text" name="aula" class="form-control" value="{{$horarios->aula}}" required>
+
+            <div class="form-group">
+                <label for="exampleInputUsername1">Grado</label>
+                <input type="text" name="grado" class="form-control" value="{{$horarios->grado}}" required>
                        
-                        @if ($errors->has('aula'))
-                        <div class="alert alert-danger">
-                            <span class="text-danger">{{ $errors->first('aula') }}</span>
-                        </div>
-                        @endif
-                    </div>
+                @if ($errors->has('grado'))
+                <div class="alert alert-danger">
+                <span class="text-danger">{{ $errors->first('grado') }}</span>
+                </div>
+                @endif
+            </div>
 
 
+            <div class="form-group">
+                <label for="exampleInputUsername1">Aula</label>
+                <input type="text" name="aula" class="form-control" value="{{$horarios->aula}}" required>
+                       
+                @if ($errors->has('aula'))
+                <div class="alert alert-danger">
+                <span class="text-danger">{{ $errors->first('aula') }}</span>
+                </div>
+                @endif
+            </div>
 
-           
+
 
             <div class="form-group">
             <label for="exampleInputUsername1">Dia</label>
