@@ -82,7 +82,7 @@
                 <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Asignatura</label>
                     
-                    <select name="asignaturas[]" id="asignaturas"  class="selectpicker  form-control" 
+                    <select name="asignaturas[]" id="asignatura"  class="selectpicker  form-control" 
                     title="Seleccionar asignaturas" multiple required>
                     @foreach ($Asignaturas as $a)
                     <option value="{{$a->id}}">{{$a->nombre}}</option>

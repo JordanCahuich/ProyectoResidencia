@@ -13,9 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('nivelacademico', function (Blueprint $table) {
-            $table->id();
-            $table->string('nombre', 250)->nullable();
+        Schema::create('asignaturas_cargas', function (Blueprint $table) {
+            $table->integer('asignatura_id');
+            $table->integer('carga_id');
+
+
+
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nivelacademico');
+        Schema::dropIfExists('asignaturas_cargas');
     }
 };

@@ -79,8 +79,11 @@
 
             <div class="form-group">
                     <label for="exampleInputUsername1">Nivel Academico</label>
-                    <input type="text" name="nivel" class="form-control" value="{{$profesores->nivel}}" required>
-
+                    <select name="nivel" value="{{$profesores->nivel}}" class="form-control form-control-sm" >
+                            <option value="{{$profesores->nivel}}" value="1">Licenciatura</option>
+                            <option value="2">Maestría</option>
+                            <option value="3">Doctorado</option>
+                    </select>
                     @if ($errors->has('nivel'))
                     <div class="alert alert-danger">
                     <span class="text-danger">{{ $errors->first('nivel') }}</span>
@@ -135,8 +138,11 @@
 
             <div class="form-group">
                 <label for="exampleInputUsername1">Tipo</label>
-                    <input type="text" name="tipo" class="form-control" value="{{$profesores->tipo}}" required>
-
+                    <select name="tipo_profesor" class="form-control form-control-sm" value="{{$profesores->tipo}}" required>
+                      
+                            <option value="1">Asignaturas</option>
+                            <option value="2">Tiempo completo</option>
+                    </select>
                     @if ($errors->has('tipo'))
                     <div class="alert alert-danger">
                         <span class="text-danger">{{ $errors->first('tipo') }}</span>

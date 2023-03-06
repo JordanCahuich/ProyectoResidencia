@@ -46,9 +46,9 @@ class HorariosController extends Controller
     public function store(Request $request)
     {
 
-        $profesores = $request->get('profesores');
+        $profesor = $request->get('profesores');
 
-        foreach ($profesores as $profesor){
+        foreach ($profesor as $p){
 
 
                 $data = new Horarios([
@@ -60,7 +60,7 @@ class HorariosController extends Controller
                 'dia'=>$request->get('dia'),
                 'hora'=>$request->get('hora'),
                 'asignatura_id'=>$request->get('asignatura'),
-                'docente_id'=>$profesor,
+                'docente_id'=>$p,
                 
             ]);
             $data->save(); 
