@@ -72,19 +72,22 @@
                 </p>
 
                 <p class="card-title"><strong>Nivel Escolar:</strong> 
-                    {{ $alumno->nivel_escolar}} 
+                   
+                    {{ $alumno->niveles->nombre}} 
+                    
                 </p>
 
                 <p class="card-title"><strong>Grado:</strong> 
-                    {{ $alumno->grado }} 
+                    {{ $alumno->grados->numero}} 
                 </p>
 
                 <p class="card-title"><strong>Grupo:</strong> 
-                    {{ $alumno->grupo }} 
+                  {{ $alumno->grupos->letra }}
                 </p>
 
                 <p class="card-title"><strong>Periodo escolar:</strong> 
-                    {{ $alumno->periodo_escolar}} 
+                    {{ $alumno->periodos->nombre }} 
+                    
                 </p>
                 
                 <p class="card-title"><strong>Nombre Tutor:</strong> 

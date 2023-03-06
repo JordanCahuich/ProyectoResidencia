@@ -171,7 +171,7 @@
                 <div class="col-md-4">
                     <label class="col-sm-6 col-form-label">Nivel escolar</label>
                     <div class="col-sm-12">
-                      <input type="text" name="nivel_escolar" class="form-control" value="{{ $alumno->nivel_escolar}}"/>
+                      <input type="text" name="nivel" class="form-control" value="{{ $alumno->niveles->nombre}}"/>
                     </div>
                 </div>
             </div>
@@ -180,20 +180,20 @@
               <div class="col-md-4">
                 <label class="col-sm-12 col-form-label">Grado</label>
                 <div class="col-sm-12">
-                  <input type="text" name="grado" class="form-control" value="{{ $alumno->grado }}"/>
+                  <input type="text" name="grado" class="form-control" value="{{ $alumno->grados->numero }}"/>
                 </div>
               </div>
                 <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Grupo</label>
                     <div class="col-sm-12">
-                      <input type="text" name="grupo" class="form-control" value="{{ $alumno->grupo }}"/>
+                      <input type="text" name="grupo" class="form-control" value="{{ $alumno->grupos->letra }}"/>
                     </div>
                 </div>
 
                 <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Periodo escolar</label>
                     <div class="col-sm-12">
-                      <input type="text" name="periodo_escolar" class="form-control" value="{{ $alumno->periodo_escolar }}"/>
+                      <input type="text" name="periodo" class="form-control" value="{{ $alumno->periodos->nombre }}"/>
                     </div>
                 </div>
 

@@ -3,11 +3,17 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\DB;
+
 use App\Models\Alumnos;
 use App\Models\Cursos;
 use App\Models\Profesores;
 use App\Models\Pagos;
+use App\Models\Periodos;
+use App\Models\Grupos;
+use App\Models\Grados;
+use App\Models\Niveles;
 
 
 
@@ -31,8 +37,23 @@ class AlumnosController extends Controller
         #$cursos = Cursos::all();
         $profesores = Profesores::orderBy('id','asc')->get();
         //$alumnos = Alumnos::orderBy('id', 'DESC')->paginate(3);
+        $periodos = Periodos::all();
+        $grupos = Grupos::all();
+        $grados = Grados::all();
+        $niveles = Niveles::all();
+
+        return view('alumnos.add', [
+            
+            
+            'Periodos'=>$periodos,
+            'Grupos'=>$grupos,
+            'Grados'=>$grados,
+            'Niveles'=>$niveles,
+           
+    
+        ]);
+
         
-        return view('alumnos.add',compact('cursos','profesores'));
 
     }
 
@@ -40,10 +61,7 @@ class AlumnosController extends Controller
     public function store(Request $request)
     {
 
-        /*
-            return $request('nameFullAlumno');
-            return $request->all();
-        */
+       
 
         if ($request->hasFile('foto_estudiante')) {
             $file = $request->file('foto_estudiante');  
@@ -59,11 +77,10 @@ class AlumnosController extends Controller
                 'curp'=>$request->get('curp'),
                 'edad'=>$request->get('edad'),
                 'tipo_sangre'=>$request->get('tipo_sangre'),
-                'nivel_escolar'=>$request->get('nivel_escolar'),
+                'nivel'=>$request->get('nivel'),
                 'grado'=>$request->get('grado'),
                 'grupo'=>$request->get('grupo'),
-                'periodo_escolar'=>$request->get('periodo_escolar'),
-
+                'periodo'=>$request->get('periodo'),
                 'nombre_tutor'=>$request->get('nombre_tutor'),
                 'parentesco'=>$request->get('parentesco'),
                 'tutor_principal'=>$request->get('tutor_principal'),
@@ -89,10 +106,10 @@ class AlumnosController extends Controller
                 'curp'=>$request->get('curp'),
                 'edad'=>$request->get('edad'),
                 'tipo_sangre'=>$request->get('tipo_sangre'),
-                'nivel_escolar'=>$request->get('nivel_escolar'),
+                'nivel'=>$request->get('nivel'),
                 'grado'=>$request->get('grado'),
                 'grupo'=>$request->get('grupo'),
-                'periodo_escolar'=>$request->get('periodo_escolar'),
+                'periodo'=>$request->get('periodo'),
                'nombre_tutor'=>$request->get('nombre_tutor'),
                 'parentesco'=>$request->get('parentesco'),
                 'tutor_principal'=>$request->get('tutor_principal'),
@@ -122,6 +139,7 @@ class AlumnosController extends Controller
    
         $pagosCursoAlumno = 0;
         $alumno = Alumnos::findOrFail($id); 
+        //dd($alumno->get());
         return view('alumnos.view', compact('alumno','pagosCursoAlumno'));
         
         
@@ -157,14 +175,14 @@ class AlumnosController extends Controller
             $alumno->curp                     = $request->curp;
             $alumno->edad                     = $request->edad;
             $alumno->tipo_sangre              = $request->tipo_sangre;
-            $alumno->nivel_escolar            = $request->nivel_escolar;
+            $alumno->nivel                    = $request->nivel;
             $alumno->grado                    = $request->grado;
-            $alumno->periodo_escolar          = $request->periodo_escolar;
+            $alumno->periodo                  = $request->periodo;
             $alumno->nombre_tutor             = $request->nombre_tutor;
             $alumno->parentesco               = $request->parentesco;
             $alumno->tutor_principal          = $request->tutor_principal;
             $alumno->direccion                = $request->direccion;
-            $alumno->colonia                  = $request->olonia ;
+            $alumno->colonia                  = $request->colonia ;
             $alumno->telefono_contacto        = $request->telefono_contacto;
             $alumno->nombre_emergencia        = $request->nombre_emergencia;
             $alumno->parentesco2              = $request->parentesco2;
@@ -182,14 +200,14 @@ class AlumnosController extends Controller
             $alumno->curp                     = $request->curp;
             $alumno->edad                     = $request->edad;
             $alumno->tipo_sangre              = $request->tipo_sangre;
-            $alumno->nivel_escolar            = $request->nivel_escolar;
+            $alumno->nivel                    = $request->nivel;
             $alumno->grado                    = $request->grado;
-            $alumno->periodo_escolar          = $request->periodo_escolar;
+            $alumno->periodo                  = $request->periodo;
             $alumno->nombre_tutor             = $request->nombre_tutor;
             $alumno->parentesco               = $request->parentesco;
             $alumno->tutor_principal          = $request->tutor_principal;
             $alumno->direccion                = $request->direccion;
-            $alumno->colonia                  = $request->olonia ;
+            $alumno->colonia                  = $request->colonia ;
             $alumno->telefono_contacto        = $request->telefono_contacto;
             $alumno->nombre_emergencia        = $request->nombre_emergencia;
             $alumno->parentesco2              = $request->parentesco2;

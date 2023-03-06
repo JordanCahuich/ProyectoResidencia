@@ -182,36 +182,55 @@
 
                 <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Nivel escolar </label>
-                    <select name="nivel_escolar" class="form-select mb-0">
-                        <option selected=>Seleccione</option>
-                            <option>Primaria</option>
-                            <option>Prescolar</option>
+                    <select name="nivel" class="form-control form-control-sm">
+                    <option selected=>Seleccione</option>
+                    @foreach ($Niveles as $n)
+                    <option value="{{$n->id}}">{{$n->nombre}}</option>
+                    @endforeach
                     </select>
                 </div>
+
+             
 
                 <div class="row">
                 <div class="col-md-4">
                     <label class="col-sm-6 col-form-label">Grado</label>
-                    <div class="col-sm-12">
-                      <input type="number" name="grado" class="form-control" required placeholder="Grado" />
-                    </div>
+                    <select name="grado" class="form-control form-control-sm">
+                        <option selected=>Seleccione</option>
+                        @foreach ($Grados as $grados)
+                        <option value="{{$grados->id}}">{{$grados->numero}}</option>
+                        @endforeach
+                    </select>
                 </div>
+
+                
 
 
 
                 <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Grupo</label>
-                    <div class="col-sm-12">
-                      <input type="text" name="grupo" class="form-control" placeholder="Grupo"/>
-                    </div>
+                    <select name="grupo" class="form-control form-control-sm">
+                    <option selected=>Seleccione</option>
+                    @foreach ($Grupos as $g)
+                        <option value="{{$g->id}}">{{$g->letra}}</option>
+                    @endforeach
+                    </select>
                 </div>
 
+             
 
+               
+
+                
                 <div class="col-md-4">
-                    <label class="col-sm-12 col-form-label">Periodo escolar</label>
-                    <div class="col-sm-12">
-                      <input type="text" name="periodo_escolar" class="form-control" required placeholder="Periodo escolar" />
-                    </div>
+                    <label class="col-sm-12 col-form-label">Periodo</label>
+                    <select name="periodo" class="form-control form-control-sm">
+                        <option selected=>Seleccione</option>
+                        @foreach ($Periodos as $p)
+                            <option value="{{$p->id}}">{{$p->nombre}}</option>
+                        @endforeach
+                            
+                    </select>
                 </div>
 
 
@@ -306,3 +325,4 @@
 </div>
 
 @endsection
+@section('scripts')

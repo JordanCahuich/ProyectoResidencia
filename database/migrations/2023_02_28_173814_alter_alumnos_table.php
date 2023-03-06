@@ -14,29 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::table('alumnos', function(Blueprint $table) {
-            $table->string('nombre_tutor', 150)->nullable();
-            $table->string('tutor_principal', 150)->nullable();
-            $table->string('direccion',50)->nullable();
-            $table->string('colonia',50)->nullable();
-            $table->string('telefono_contacto',150)->nullable();
-
-           
-            $table->dropColumn('nombre_tutor');
-            $table->dropColumn('tutor_principal');
-            $table->dropColumn('direccion');
-            $table->dropColumn('colonia');
-            $table->dropColumn('telefono_contacto');
             
-
-            $table->dropColumn('tel_emergencia');
-            $table->dropColumn('persona_autorizada');
-            $table->dropColumn('tel2_autorizada');
-            $table->dropColumn('domicilio_autorizada');
-            $table->dropColumn('persona_autorizada2');
-            $table->dropColumn('tel1_autorizada2');
-            $table->dropColumn('tel2_autorizada2');
-            $table->dropColumn('domicilio_autorizada2');
-            $table->dropColumn('observ');
+            $table->string('nivel',150)->nullable();
+            $table->string('periodo',150)->nullable();
+           
+            $table->dropColumn('nivel_escolar');
+            $table->dropColumn('periodo_escolar');
+            
+            
         });
     }
 
@@ -48,11 +33,9 @@ return new class extends Migration
     public function down()
     {
         Schema::table('alumnos', function (Blueprint $table) {
-            $table->dropColumn('nombre_tutor', 150)->nullable();
-            $table->dropColumn('tutor_principal', 150)->nullable();
-            $table->dropColumn('direccion',50)->nullable();
-            $table->dropColumn('colonia',50)->nullable();
-            $table->dropColumn('telefono_contacto',150)->nullable();
+           
+            $table->string('nivel',150)->nullable();
+            $table->string('periodo',150)->nullable();
         });
     }
 };
