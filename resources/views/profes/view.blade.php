@@ -56,7 +56,7 @@
 
 
                 <p class="card-title"><strong>Nivel Academico:</strong> 
-                    {{ $profesores->nivelacademico }} 
+                    {{ $profesores->nivel}} 
                 </p>
 
 
@@ -81,7 +81,7 @@
                 
 
                 <p class="card-title"><strong>Tipo:</strong> 
-                    {{ $profesores->tipo_profesor}} 
+                    {{ $profesores->tipo}} 
                 </p>
 
                 @if ( $profesores->foto_profesor !=NULL )

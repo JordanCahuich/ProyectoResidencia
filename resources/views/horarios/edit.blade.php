@@ -33,7 +33,7 @@
             @csrf
             <div class="form-group">
                 <label for="name" class="control-label">Grupo</label>
-                    <input type="number" name="grupo" id="grupo" class="form-control" value="{{$horarios->grupo}}">
+                    <input type="number" name="grupo" id="grupo" class="form-control" value="{{$horarios->grupo_id}}">
 
                     @if ($errors->has('grupo'))
                 <div class="alert alert-danger">
@@ -45,7 +45,7 @@
 
             <div class="form-group">
                 <label for="exampleInputUsername1">Grado</label>
-                <input type="text" name="grado" class="form-control" value="{{$horarios->grado}}" required>
+                <input type="text" name="grado" class="form-control" value="{{$horarios->grado_id}}" required>
                        
                 @if ($errors->has('grado'))
                 <div class="alert alert-danger">
@@ -93,7 +93,7 @@
 
                 <div class="form-group">
                     <label for="exampleInputUsername1">Asignatura</label>
-                        <input type="text" name="asignatura" class="form-control" value="{{$horarios->asignatura}}" required>
+                        <input type="text" name="asignatura" class="form-control" value="{{$horarios->asignatura_id}}" required>
                        
                         @if ($errors->has('asignatura'))
                         <div class="alert alert-danger">
@@ -104,7 +104,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputUsername1">Docente</label>
-                            <input type="text" name="profesor" class="form-control" value="{{$horarios->profesor}}" required>
+                            <input type="text" name="profesor" class="form-control" value="{{$horarios->profesores}}" required>
                            
                             @if ($errors->has('profesor'))
                             <div class="alert alert-danger">

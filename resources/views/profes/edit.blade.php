@@ -79,11 +79,11 @@
 
             <div class="form-group">
                     <label for="exampleInputUsername1">Nivel Academico</label>
-                    <input type="text" name="nivelacademico" class="form-control" value="{{$profesores->nivelacademico}}" required>
+                    <input type="text" name="nivel" class="form-control" value="{{$profesores->nivel}}" required>
 
-                    @if ($errors->has('nivelacademico'))
+                    @if ($errors->has('nivel'))
                     <div class="alert alert-danger">
-                    <span class="text-danger">{{ $errors->first('nivelacademico') }}</span>
+                    <span class="text-danger">{{ $errors->first('nivel') }}</span>
                     </div>
                     @endif
             </div>
@@ -135,11 +135,11 @@
 
             <div class="form-group">
                 <label for="exampleInputUsername1">Tipo</label>
-                    <input type="text" name="tipo_profesor" class="form-control" value="{{$profesores->tipo_profesor}}" required>
+                    <input type="text" name="tipo" class="form-control" value="{{$profesores->tipo}}" required>
 
-                    @if ($errors->has('tipo_profesor'))
+                    @if ($errors->has('tipo'))
                     <div class="alert alert-danger">
-                        <span class="text-danger">{{ $errors->first('tipo_profesor') }}</span>
+                        <span class="text-danger">{{ $errors->first('tipo') }}</span>
                     </div>
                     @endif
             </div>
