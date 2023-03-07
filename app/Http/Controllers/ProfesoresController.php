@@ -118,6 +118,7 @@ class ProfesoresController extends Controller
             $profesor->localidad             = $request->localidad;
             $profesor->domicilio             = $request->domicilio;
             $profesor->nivelacademico        = $request->nivel;
+            $profesor->tipo_profesor         = $request->tipo;
           
        
             $profesor->save(); 
@@ -132,6 +133,7 @@ class ProfesoresController extends Controller
             $profesor->localidad                 = $request->localidad;
             $profesor->domicilio                 = $request->domicilio;
             $profesor->nivelacademico            = $request->nivel;
+            $profesor->tipo_profesor             = $request->tipo;
             $profesor->save(); 
         } 
 

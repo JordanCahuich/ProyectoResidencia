@@ -32,124 +32,125 @@
         <form method="post" action="/profes/{{$profesores->id}}" class="form-horizontal" enctype="multipart/form-data">
         @method('PUT')
             @csrf
-            <div class="form-group">
-                <label for="name" class="control-label">Nombre del docente:</label>
-                    <input type="text" name="nombre" id="nombre" class="form-control" value="{{$profesores->nombre}}">
 
-                    @if ($errors->has('nombre'))
-                <div class="alert alert-danger">
-                    <span class="text-danger">{{ $errors->first('nombre') }}</span>
-                </div>
-                @endif
+<div class="form-group">
+        <label for="name" class="control-label">Nombre del docente:</label>
+        <input type="text" name="nombre" id="nombre" class="form-control" value="{{$profesores->nombre}}">
 
-                <div class="form-group">
-                    <label for="exampleInputUsername1">Fecha de nacimiento</label>
-                        <input type="date" name="fecha_nacimiento" class="form-control" value="{{$profesores->fecha_nacimiento}}" required>
+        @if ($errors->has('nombre'))
+        <div class="alert alert-danger">
+        <span class="text-danger">{{ $errors->first('nombre') }}</span>
+       </div>
+        @endif
+</div>
 
-                        @if ($errors->has('fecha_nacimiento'))
-                        <div class="alert alert-danger">
-                            <span class="text-danger">{{ $errors->first('fecha_nacimiento') }}</span>
-                        </div>
-                        @endif
-                    </div>
+<div class="form-group">
+        <label for="exampleInputUsername1">Fecha de nacimiento</label>
+        <input type="date" name="fecha_nacimiento" class="form-control" value="{{$profesores->fecha_nacimiento}}" required>
 
-
-
-            <div class="form-group">
-            <label for="exampleInputUsername1">Edad</label>
-                <input type="number" name="edad" class="form-control" value="{{$profesores->edad}}" required>
-
-                @if ($errors->has('edad'))
-                <div class="alert alert-danger">
-                    <span class="text-danger">{{ $errors->first('edad') }}</span>
-                </div>
-                @endif
-            </div>
-
-            <div class="form-group">
-                <label for="exampleInputUsername1">Genero</label>
-                    <input type="text" name="genero" class="form-control" value="{{$profesores->genero}}" required>
-
-                    @if ($errors->has('genero'))
-                    <div class="alert alert-danger">
-                        <span class="text-danger">{{ $errors->first('genero') }}</span>
-                    </div>
-                    @endif
-            </div>
-
-            <div class="form-group">
-                    <label for="exampleInputUsername1">Nivel Academico</label>
-                    <select name="nivel" class="form-control form-control-sm" >
-                            <option value="" selected>{{$profesores->nivel}} </option>
-                            <option value="1">Licenciatura</option>
-                            <option value="2">Maestría</option>
-                            <option value="3">Doctorado</option>
-                    </select>
-                    @if ($errors->has('nivel'))
-                    <div class="alert alert-danger">
-                    <span class="text-danger">{{ $errors->first('nivel') }}</span>
-                    </div>
-                    @endif
-            </div>
-
-            <div class="form-group">
-                    <label for="exampleInputUsername1">Correo electronico</label>
-                        <input type="text" name="email" class="form-control" value="{{$profesores->email}}" required>
-
-                        @if ($errors->has('email'))
-                        <div class="alert alert-danger">
-                            <span class="text-danger">{{ $errors->first('email') }}</span>
-                        </div>
-                        @endif
-                    </div>
-
-            <div class="form-group">
-                <label for="exampleInputUsername1">Telefono</label>
-                     <input type="number" name="telefono" class="form-control" value="{{$profesores->telefono}}" required>
-
-                    @if ($errors->has('telefono'))
-                    <div class="alert alert-danger">
-                        <span class="text-danger">{{ $errors->first('telefono') }}</span>
-                    </div>
-                    @endif
-            </div>
-
-            <div class="form-group">
-                    <label for="exampleInputUsername1">Localidad</label>
-                    <input type="text" name="localidad" class="form-control" value="{{$profesores->localidad}}" required>
-
-                     @if ($errors->has('localidad'))
-                    <div class="alert alert-danger">
-                    <span class="text-danger">{{ $errors->first('localidad') }}</span>
-                    </div>
-                    @endif
-            </div>
+        @if ($errors->has('fecha_nacimiento'))
+        <div class="alert alert-danger">
+        <span class="text-danger">{{ $errors->first('fecha_nacimiento') }}</span>
+        </div>
+        @endif
+</div>
 
 
-            <div class="form-group">
-                     <label for="exampleInputUsername1">Domicilio</label>
-                    <input type="text" name="domicilio" class="form-control" value="{{$profesores->domicilio}}" required>
+<div class="form-group">
+        <label for="exampleInputUsername1">Edad</label>
+        <input type="number" name="edad" class="form-control" value="{{$profesores->edad}}" required>
 
-                    @if ($errors->has('domicilio'))
-                    <div class="alert alert-danger">
-                    <span class="text-danger">{{ $errors->first('domicilio') }}</span>
-                    </div>
-                    @endif
-            </div>
+        @if ($errors->has('edad'))
+        <div class="alert alert-danger">
+        <span class="text-danger">{{ $errors->first('edad') }}</span>
+        </div>
+        @endif
+</div>
 
-            <div class="form-group">
-                <label for="exampleInputUsername1">Tipo</label>
-                    <select name="tipo_profesor" class="form-control form-control-sm" value="{{$profesores->tipo}}" required>
-                      
-                            <option value="1">Asignaturas</option>
-                            <option value="2">Tiempo completo</option>
-                    </select>
-                    @if ($errors->has('tipo'))
-                    <div class="alert alert-danger">
-                        <span class="text-danger">{{ $errors->first('tipo') }}</span>
-                    </div>
-                    @endif
-            </div>
+<div class="form-group">
+        <label for="exampleInputUsername1">Genero</label>
+        <input type="text" name="genero" class="form-control" value="{{$profesores->genero}}" required>
+
+        @if ($errors->has('genero'))
+        <div class="alert alert-danger">
+        <span class="text-danger">{{ $errors->first('genero') }}</span>
+        </div>
+        @endif
+</div>
+
+<div class="form-group">
+        <label for="exampleInputUsername1">Nivel Academico</label>
+        <select name="nivel" class="form-control form-control-sm" >
+            <option value="" selected>{{$profesores->nivel}} </option>
+            <option value="1">Licenciatura</option>
+            <option value="2">Maestría</option>
+            <option value="3">Doctorado</option>
+        </select>
+        @if ($errors->has('nivel'))
+        <div class="alert alert-danger">
+        <span class="text-danger">{{ $errors->first('nivel') }}</span>
+        </div>
+        @endif
+</div>
+
+<div class="form-group">
+        <label for="exampleInputUsername1">Correo electronico</label>
+        <input type="text" name="email" class="form-control" value="{{$profesores->email}}" required>
+
+        @if ($errors->has('email'))
+        <div class="alert alert-danger">
+        <span class="text-danger">{{ $errors->first('email') }}</span>
+        </div>
+        @endif
+</div>
+
+<div class="form-group">
+        <label for="exampleInputUsername1">Telefono</label>
+        <input type="number" name="telefono" class="form-control" value="{{$profesores->telefono}}" required>
+
+        @if ($errors->has('telefono'))
+        <div class="alert alert-danger">
+        <span class="text-danger">{{ $errors->first('telefono') }}</span>
+        </div>
+        @endif
+</div>
+
+<div class="form-group">
+        <label for="exampleInputUsername1">Localidad</label>
+        <input type="text" name="localidad" class="form-control" value="{{$profesores->localidad}}" required>
+
+        @if ($errors->has('localidad'))
+        <div class="alert alert-danger">
+        <span class="text-danger">{{ $errors->first('localidad') }}</span>
+        </div>
+        @endif
+</div>
+
+
+<div class="form-group">
+        <label for="exampleInputUsername1">Domicilio</label>
+        <input type="text" name="domicilio" class="form-control" value="{{$profesores->domicilio}}" required>
+
+        @if ($errors->has('domicilio'))
+        <div class="alert alert-danger">
+        <span class="text-danger">{{ $errors->first('domicilio') }}</span>
+        </div>
+        @endif
+</div>
+
+<div class="form-group">
+        <label for="exampleInputUsername1">Tipo</label>
+        <select name="tipo" class="form-control form-control-sm">
+            <option value="" selected>{{$profesores->tipo}}</option>         
+            <option value="1">Asignaturas</option>
+            <option value="2">Tiempo completo</option>
+        </select>
+        @if ($errors->has('tipo'))
+        <div class="alert alert-danger">
+        <span class="text-danger">{{ $errors->first('tipo') }}</span>
+        </div>
+        @endif
+</div>
 
 
             <div class="form-group float-right mt-3" style="float: right">
