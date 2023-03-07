@@ -40,4 +40,24 @@ class Horarios extends Model
         return $this->belongsTo(Profesores::class, 'docente_id');
     }
 
+    public function getDiaAttribute()
+    {
+        $val = "-";
+        if($this->dia==1)
+            $val ="Lunes";
+        else if($this->dia==2)
+            $val ="Martes";
+        else if($this->dia==3)
+            $val ="Miércoles";
+        else if($this->dia==4)
+            $val ="Jueves";
+        else if($this->dia==5)
+            $val ="Viernes";
+        else
+            $val ="Sábado";
+
+        return $val;
+    }
+
+
 }
