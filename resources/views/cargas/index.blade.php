@@ -53,21 +53,22 @@
                 <td>{{$c->bimestres->numero}}</td>
                 <td>{{$c->alumnos->nombre}}</td>
                 <td>
-                    <div style="padding-right: 60px;">
-                        <a class="btn btn-secondary" href="/cargas/{{$c->id}}/edit"   style="float: left; padding: 2px 5px;  margin-right: 3px" title="Actualizar Registro">
-                            <i class="mdi mdi-autorenew"></i>Actualizar</a>
-
-                        <a class="btn btn-secondary" href="{{ route('carga.show',$c->id) }}"  style="float: left; padding: 2px 5px;  margin-right: 3px" title="Ver Detalles">
+                    <form action="/cargas/{{$c->id}}}" method="post">
+                        @method('DELETE')
+                        @csrf
+                        <a href="/cargas/{{$c->id}}/edit" class="btn btn-secondary"  style="padding: 2px 5px;  margin-right: 3px" title="Actualizar Registro">
+                            <i class="mdi mdi-autorenew"></i>Actualizar
+                        </a>
+        
+                        <a class="btn btn-secondary" href="{{ route('carga.show',$c->id) }}"  style="padding: 2px 5px;  margin-right: 3px" title="Ver Detalles">
                             <i class="mdi mdi-account-card-details"></i>Ver</a>
-
-                        <form action="/cargas/{{$c->id}}}" method="post">
-                            @method('DELETE')
-                            @csrf
-                            <button type="submit" class="btn btn-primary"  style="padding: 2px 5px;" title="Borrar Carga">
-                                <i class="mdi mdi-delete-sweep"></i>Borrar
-                            </button>
-                        </form>
-                    </div>
+        
+                        <button type="submit" class="btn btn-primary"  style="padding: 2px 5px;" title="Borrar docente">
+                            <i class="mdi mdi-delete-sweep"></i>Borrar
+                        </button>
+        
+        
+                    </form>
             </tr>
             @endforeach
 

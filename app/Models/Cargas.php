@@ -49,7 +49,7 @@ class Cargas extends Model
 
     public function niveles(): BelongsTo
     {
-        return $this->belongsTo(Niveles::class, 'nivel_id');
+        return $this->belongsTo(Niveles::class, 'nivel');
     }
 
 
