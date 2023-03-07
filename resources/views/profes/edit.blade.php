@@ -79,7 +79,8 @@
 
             <div class="form-group">
                     <label for="exampleInputUsername1">Nivel Academico</label>
-                    <select name="nivel" value="{{$profesores->nivel}}" class="form-control form-control-sm" >
+                    <select name="nivel" class="form-control form-control-sm" >
+                            <option value="" selected>{{$profesores->nivel}} </option>
                             <option value="1">Licenciatura</option>
                             <option value="2">Maestría</option>
                             <option value="3">Doctorado</option>
