@@ -46,7 +46,8 @@
             <th class="border-0">Grado</th>
             <th class="border-0">Aula</th>
             <th class="border-0">Dia</th>
-            <th class="border-0">Hora</th>
+            <th class="border-0">Hora inicio</th>
+            <th class="border-0">Hora fin</th>
             <th class="border-0">Asignatura</th>
             <th class="border-0">Docente</th>
             <th class="border-0 rounded-end">Acción</th>
@@ -66,6 +67,8 @@
         <td>{{$h->dia}}</td>
 
         <td>{{$h->hora}}</td>
+
+        <td>{{$h->hora_fin}}</td>
 
         <td>{{$h->asignatura_id}}</td>
 
