@@ -43,6 +43,19 @@ class HorariosController extends Controller
 
     }
 
+
+    public function show(Request $request, $id){
+
+      
+        $Horarios = Horarios::where('id', $id)->first();
+        return view('horarios.view')->with('horarios', $Horarios);
+        
+        
+    }
+
+
+
+
     public function store(Request $request)
     {
 
@@ -88,12 +101,14 @@ class HorariosController extends Controller
 
             $horario = Horarios::findOrFail($id);
 
-            $horario->nombre                    = $request->nombre;
+            $horario->grupo             =$request->grupo;
+            $horario->grado             =$request->grado;
             $horario->aula                      = $request->aula;
             $horario->dia                  = $request->dia;
             $horario->hora                  = $request->hora;
+            $horario->hora_fin                  = $request->hora_fin;
             $horario->asignatura                  = $request->asignatura;
-            $horario->profesor                  = $request->profesor;
+            $horario->profesores                  = $request->profesores;
 
             $horario->save();
 

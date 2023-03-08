@@ -70,7 +70,7 @@
 
             <div class="form-group">
             <label for="exampleInputUsername1">Dia</label>
-                <input type="date" name="dia" class="form-control" value="{{$horarios->dia}}" required>
+                <input type="text" name="dia" class="form-control" value="{{$horarios->diaS}}" required>
                
                 @if ($errors->has('dia'))
                 <div class="alert alert-danger">
@@ -104,7 +104,7 @@
 
                 <div class="form-group">
                     <label for="exampleInputUsername1">Asignatura</label>
-                        <input type="text" name="asignatura" class="form-control" value="{{$horarios->asignatura_id}}" required>
+                        <input type="text" name="asignatura" class="form-control" value="{{$horarios->materias}}" required>
                        
                         @if ($errors->has('asignatura'))
                         <div class="alert alert-danger">
@@ -115,7 +115,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputUsername1">Docente</label>
-                            <input type="text" name="profesor" class="form-control" value="{{$horarios->profesores}}" required>
+                            <input type="text" name="profesor" class="form-control" value="{{$horarios->profesores->nombre}}" required>
                            
                             @if ($errors->has('profesor'))
                             <div class="alert alert-danger">
