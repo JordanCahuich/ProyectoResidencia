@@ -55,6 +55,7 @@ class HorariosController extends Controller
                 'aula'=>$request->get('aula'),
                 'dia'=>$request->get('dia'),
                 'hora'=>$request->get('hora'),
+                'hora_fin'=>$request->get('hora_fin'),
                 'asignatura_id' => 0,
                 
                 'asignatura_id'=>$request->get('asignatura'),
