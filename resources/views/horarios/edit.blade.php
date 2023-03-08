@@ -79,7 +79,6 @@
                 @endif
             </div>
 
-
             <div class="form-group">
                 <label for="exampleInputUsername1">Hora inicio</label>
                     <input type="time" name="hora" class="form-control" value="{{$horarios->hora}}" required>
@@ -90,27 +89,14 @@
                     </div>
                     @endif
                 </div>
-            
 
-            <div class="form-group">
+                        <div class="form-group">
                 <label for="exampleInputUsername1">Hora fin</label>
                     <input type="time" name="hora_fin" class="form-control" value="{{$horarios->hora_fin}}" required>
-                       
+                   
                     @if ($errors->has('hora_fin'))
                     <div class="alert alert-danger">
                         <span class="text-danger">{{ $errors->first('hora_fin') }}</span>
-                    </div>
-                    @endif
-                </div>
-
-
-                        <div class="form-group">
-                <label for="exampleInputUsername1">Hora</label>
-                    <input type="time" name="hora" class="form-control" value="{{$horarios->hora}}" required>
-                   
-                    @if ($errors->has('hora'))
-                    <div class="alert alert-danger">
-                        <span class="text-danger">{{ $errors->first('hora') }}</span>
                     </div>
                     @endif
                 </div>
