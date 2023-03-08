@@ -11,10 +11,10 @@ use Illuminate\Http\Request;
 
 class HorariosController extends Controller
 {
-    
+
     public function index()
     {
-       
+
         $Horarios = Horarios::with('grupos')->with('grados')->with('asignaturas')->with('profesores')->get();
 
         return view('horarios.index', ['Horarios'=> $Horarios,]);
@@ -33,12 +33,12 @@ class HorariosController extends Controller
         $grados = Grados::all();
 
         return view('horarios.add', [
-            
+
         'Profesores'=>$Profesores,
         'Asignaturas'=>$asignaturas,
         'Grupos'=>$grupos,
         'Grados'=>$grados
-    
+
     ]);
 
     }
@@ -46,34 +46,35 @@ class HorariosController extends Controller
     public function store(Request $request)
     {
 
-       
+        $asignaturas = Asignaturas::whereIn('id', $request->get('asignaturas'))->get();
+
 
                 $data = new Horarios([
-            
+
                 'grupo_id'=>$request->get('grupo'),
                 'grado_id'=>$request->get('grado'),
                 'aula'=>$request->get('aula'),
                 'dia'=>$request->get('dia'),
                 'hora'=>$request->get('hora'),
                 'hora_fin'=>$request->get('hora_fin'),
-                'asignatura_id' => 0,
-                
+
                 'asignatura_id'=>$request->get('asignatura'),
                 'docente_id'=>$request->get('docente'),
-                
-            ]);
-            $data->save(); 
-  
-    
 
-       
-        return redirect('/horarios')->with('mensaje','Horario Registrado Correctamente.'); 
+            ]);
+            $data->save();
+            $data->asignaturas()->attach($asignaturas);
+
+
+
+
+        return redirect('/horarios')->with('mensaje','Horario Registrado Correctamente.');
 
     }
 
-    
-   
-    
+
+
+
     public function edit($id){
 
      $Horarios= Horarios::find($id);
@@ -84,18 +85,18 @@ class HorariosController extends Controller
 
     public function update(Request $request, $id)
     {
-  
+
             $horario = Horarios::findOrFail($id);
-            
+
             $horario->nombre                    = $request->nombre;
             $horario->aula                      = $request->aula;
             $horario->dia                  = $request->dia;
-            $horario->hora                  = $request->hora;          
+            $horario->hora                  = $request->hora;
             $horario->asignatura                  = $request->asignatura;
             $horario->profesor                  = $request->profesor;
-           
-            $horario->save(); 
-        
+
+            $horario->save();
+
 
             $updateHorario ="Horario actualizado Correctamente";
         return redirect('horarios/')->with(['updateHorario' => $updateHorario]);
@@ -110,6 +111,6 @@ class HorariosController extends Controller
     }
 
 
-    
-    
+
+
 }
