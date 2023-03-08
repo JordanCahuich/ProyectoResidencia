@@ -78,12 +78,19 @@
 
 
                 <div class="col-md-4">
-                    <label class="col-sm-6 col-form-label">Hora</label>
+                    <label class="col-sm-6 col-form-label">Hora inicio</label>
                     <div class="col-sm-12">
                       <input type="time" name="hora" class="form-control" />
                     </div>
                 </div>
 
+
+                <div class="col-md-4">
+                    <label class="col-sm-6 col-form-label">Hora fin</label>
+                    <div class="col-sm-12">
+                      <input type="time" name="hora_fin" class="form-control" />
+                    </div>
+                </div>
                 
 
                 
@@ -104,7 +111,7 @@
                     <select name="docente" class="form-control form-control-sm">
                         <option selected=>Seleccione</option>
                         @foreach ($Profesores as $profesores)
-                        <option>{{$profesores->nombre}}</option>
+                        <option value="{{$profesores->id}}">{{$profesores->nombre}}</option>
                         @endforeach
                     </select>
                 </div>
