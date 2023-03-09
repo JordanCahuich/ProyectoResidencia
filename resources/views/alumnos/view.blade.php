@@ -39,6 +39,11 @@
                 @endif
                 
                 
+                <p class="card-title"><strong>Id:</strong> 
+                    {{ $alumno->id }} 
+                </p> 
+                
+
                 <p class="card-title"><strong>Nombre:</strong> 
                     {{ $alumno->nombre }} 
                 </p> 
