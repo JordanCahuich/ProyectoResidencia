@@ -39,7 +39,7 @@
                 @endif
                 
                 
-                <p class="card-title"><strong>Id:</strong> 
+                <p class="card-title"><strong>Matrícula:</strong> 
                     {{ $alumno->id }} 
                 </p> 
                 
