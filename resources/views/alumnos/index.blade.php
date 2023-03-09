@@ -29,7 +29,7 @@
         <table class="table table-centered table-nowrap mb-0 rounded">
         <thead class="thead-light">
             <tr>
-            <th class="border-0 rounded-start">Id</th>
+            <th class="border-0 rounded-start">Matrícula</th>
             <th class="border-0">Nombre del alumno</th>
             <th class="border-0">Tutor</th>
             <th class="border-0">Teléfono </th>
