@@ -12,7 +12,7 @@ class Horarios extends Model
     use HasFactory;
 
         protected $fillable = [
-       'aula', 'dia', 'hora', 'grupo_id', 'grado_id', 'docente_id','hora_fin'
+       'aula', 'dia', 'hora', 'grupo_id', 'grado_id','hora_fin'
     ];
 
 
@@ -36,10 +36,11 @@ class Horarios extends Model
         return $this->belongsToMany(Asignaturas::class, 'asignaturas_horarios','horario_id','asignatura_id');
     }
 
-    public function profesores(): BelongsTo
+    public function profesores(): BelongsToMany
     {
-        return $this->belongsTo(Profesores::class, 'docente_id');
+        return $this->belongsToMany(Profesores::class, 'profesores_horarios','horario_id','profesor_id');
     }
+  
 
     public function getDiaSAttribute()
     {
@@ -70,4 +71,12 @@ class Horarios extends Model
         return substr($val,1,null);
     }
 
+    public function getProfeAttribute()
+    {
+        $val = "";
+        foreach ($this-> profesores as $profesor){
+            $val = $val.', '. $profesor->nombre;
+        }
+        return substr($val,1,null);
+    }
 }

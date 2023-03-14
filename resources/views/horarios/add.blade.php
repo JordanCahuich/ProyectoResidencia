@@ -111,7 +111,7 @@
                     <select name="docente" class="form-control form-control-sm">
                         <option selected=>Seleccione</option>
                         @foreach ($Profesores as $profesores)
-                        <option value="{{$profesores->id}}">{{$profesores->nombre}}</option>
+                        <option value="{{$profesores->id}}">{{$profesores}}</option>
                         @endforeach
                     </select>
                 </div>

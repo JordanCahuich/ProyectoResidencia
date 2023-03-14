@@ -158,11 +158,31 @@
                     
                     <div class="form-group">
                         <label for="exampleInputUsername1">Docente</label>
-                            <input type="text" name="profesor" class="form-control" value="{{$horarios->profesores->nombre}}" required>
-                           
+                        <select name="profesores[]" id="profesores"  class="selectpicker  form-control"
+                        title="Seleccionar profesor" multiple required>
+
+
+                        @foreach ($profesores as $p)
+                            @php
+                                $selected = false;
+                            @endphp
+                            @foreach($horarios->profesores as $pr)
+                                @if($pr->id==$p->id)
+                                    <option value="{{$p->id}}"  selected >{{$p->nombre}}</option>
+                                    @php
+                                        $selected = true;
+                                    @endphp
+                                @endif
+                            @endforeach
+                            @if(!$selected)
+                                <option value="{{$p->id}}" >{{$p->nombre}}</option>
+                            @endif
+                        @endforeach
+                </select>
+
                             @if ($errors->has('profesor'))
                             <div class="alert alert-danger">
-                                <span class="text-danger">{{ $errors->first('profesor') }}</span>
+                                <span class="text-danger">{{ $errors->first('profesores') }}</span>
                             </div>
                             @endif
                         </div>

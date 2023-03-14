@@ -60,6 +60,8 @@ class HorariosController extends Controller
     {
 
         $asignaturas = Asignaturas::whereIn('id', $request->get('asignaturas'))->get();
+        $profesores = Profesores::whereIn('id', $request->get('profesores'))->get();
+
 
 
                 $data = new Horarios([
@@ -77,6 +79,7 @@ class HorariosController extends Controller
             ]);
             $data->save();
             $data->asignaturas()->attach($asignaturas);
+            $data->profesores()->attach($profesores);
 
 
 
@@ -112,7 +115,7 @@ class HorariosController extends Controller
        
         
         $asignaturas = Asignaturas::whereIn('id',$request->get('asignaturas'))->get();
-            
+        $profesores = Profesores::whereIn('id',$request->get('profesores'))->get();
         
         $horario = Horarios::findOrFail($id);
          
@@ -123,12 +126,14 @@ class HorariosController extends Controller
             $horario->dia                  = $request->dia;
             $horario->hora                  = $request->hora;
             $horario->hora_fin              = $request->hora_fin;
-            $horario->profesores            = $request->profesores;
+          
 
             $horario->save();
          
             $horario->asignaturas()->detach();
+            $horario->profesores()->detach();
             $horario->asignaturas()->attach($asignaturas);
+            $horario->profesores()->attach($profesores);
            
 
 

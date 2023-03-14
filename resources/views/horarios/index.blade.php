@@ -72,7 +72,7 @@
 
         <td>{{$h->materias}}</td>
 
-        <td>{{$h->profesores->nombre}}</td>
+        <td>{{$h->profe}}</td>
 
         <td>
             <form action="/horarios/{{$h->id}}}" method="post">
