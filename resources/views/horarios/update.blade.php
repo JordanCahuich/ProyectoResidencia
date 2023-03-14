@@ -66,7 +66,7 @@
       <div class="col-md-4">
         <label class="col-sm-6 col-form-label">Docente</label>
         <div class="col-sm-12">
-        <input type="text" name="docente" class="form-control" value="{{ $horario->profesor}}" required/>
+        <input type="text" name="docente" class="form-control" value="{{ $horario->profe}}" required/>
         </div>
       </div>
 

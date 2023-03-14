@@ -105,16 +105,37 @@
                       </select>
                 </div>
 
+          <!--      <div class="col-md-4">
+                    <label class="col-sm-12 col-form-label">Docente</label>
+                    
+                    <select name="profesores[]" id="profesor"  class="form-control form-control-sm" 
+                    title="Seleccionar profesores" multiple required>
+                    @foreach ($Profesores as $p)
+                    <option value="{{$p->id}}">{{$p->nombre}}</option>
+                    @endforeach
+                      </select>
+                </div>  -->
+
 
                 <div class="col-md-4">
                     <label class="col-sm-12 col-form-label">Docente</label>
-                    <select name="docente" class="form-control form-control-sm">
+                    <select name="profesores[]" id="profesor"  class="form-control form-control-sm">
+                        <option selected=>Seleccione</option>
+                        @foreach ($Profesores as $p)
+                            <option value="{{$p->id}}">{{$p->nombre}}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <!-- <div class="col-md-4">
+                    <label class="col-sm-12 col-form-label">Docente</label>
+                    <select name="profesor" class="form-control form-control-sm">
                         <option selected=>Seleccione</option>
                         @foreach ($Profesores as $profesores)
                         <option value="{{$profesores->id}}">{{$profesores}}</option>
                         @endforeach
                     </select>
-                </div>
+                </div>  -->
 
 
                 

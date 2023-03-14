@@ -74,7 +74,7 @@ class HorariosController extends Controller
                 'hora_fin'=>$request->get('hora_fin'),
 
                 'asignatura_id'=>$request->get('asignatura'),
-                'docente_id'=>$request->get('docente'),
+                'profesor_id'=>$request->get('profesor'),
 
             ]);
             $data->save();

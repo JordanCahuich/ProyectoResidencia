@@ -158,7 +158,7 @@
                     
                     <div class="form-group">
                         <label for="exampleInputUsername1">Docente</label>
-                        <select name="profesores[]" id="profesores"  class="selectpicker  form-control"
+                        <select name="profesores[]" id="profesor"  class="selectpicker  form-control"
                         title="Seleccionar profesor" multiple required>
 
 
@@ -182,7 +182,7 @@
 
                             @if ($errors->has('profesor'))
                             <div class="alert alert-danger">
-                                <span class="text-danger">{{ $errors->first('profesores') }}</span>
+                                <span class="text-danger">{{ $errors->first('profesor') }}</span>
                             </div>
                             @endif
                         </div>

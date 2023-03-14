@@ -67,7 +67,7 @@
 
 
                 <p class="card-title"><strong>Docente:</strong>
-                    {{$horarios->profesores->nombre}}
+                    {{$horarios->profe}}
                 </p>
 
     
