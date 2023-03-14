@@ -123,7 +123,7 @@ class HorariosController extends Controller
             $horario->dia                  = $request->dia;
             $horario->hora                  = $request->hora;
             $horario->hora_fin              = $request->hora_fin;
-            $horario->docente_id            = $request->profesores;
+            $horario->profesores            = $request->profesores;
 
             $horario->save();
          

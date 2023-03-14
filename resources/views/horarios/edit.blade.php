@@ -171,8 +171,8 @@
 
                         <div class="form-group float-right mt-3" style="float: right">
                             <button type="submit" class="btn btn-secondary mr-2 mb-3">Guardar</button>
-                            <a href="/horarios/11/edit"  class="btn btn-primary btn-fw mb-3">Cancelar</a>
-                            <a href="/horarios"  class="btn btn-primary btn-fw mb-3">Regresar</a>
+                            <a href="/horarios"  class="btn btn-primary btn-fw mb-3">Cancelar</a>
+       
                         </div>
     
         </form>

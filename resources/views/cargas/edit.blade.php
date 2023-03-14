@@ -2,6 +2,13 @@
 
 @section('content')
 
+
+<style>
+    .bootstrap-select .btn{
+        border: 0.0625rem solid #D1D5DB;
+    }
+</style>
+
 <div class="py-4">
     <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
         <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
@@ -166,8 +173,8 @@
 
                                 <div class="form-group float-right mt-3" style="float: right">
                                     <button type="submit" class="btn btn-secondary mr-2 mb-3">Guardar</button>
-                                    <a href="/cargas/17/edit"  class="btn btn-primary btn-fw mb-3">Cancelar</a>
-                                    <a href="/cargas"  class="btn btn-primary btn-fw mb-3">Regresar</a>
+                                    <a href="/cargas"  class="btn btn-primary btn-fw mb-3">Cancelar</a>
+                               
                                 </div>
 
         </form>
