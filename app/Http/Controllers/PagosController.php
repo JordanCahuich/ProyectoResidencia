@@ -15,27 +15,28 @@ class PagosController extends Controller
 {
     public function index(Request $request)
     {
-
-
             $id = $request->get('Matricula');
             $nombre = $request->get('Nombre');
             $grado = $request->get('Grado');
             $grupo = $request->get('Grupo');
-           
+            $pago =[]; 
             $alumnos = null;
             if(isset($nombre)){
                 $alumnos= Alumnos::where('nombre','LIKE',"%{$nombre}%")->get()->pluck('id');
-                if($alumnos->toArray() ==null){
-                  
-                $pago= Pago::where('alumno_id',-1)->get();
-                }else{
-                $pago= Pago::where('alumno_id',$alumnos)->get();
+                if($alumnos->count()==0){ 
+        
+                }else if($alumnos->count()>1){
+                    foreach($alumnos as $id){
+                        $pagos = Pago::where('alumno_id',$id)->get();
+                        array_push($pago, $pagos);                    
+                     }
                 }
-                
+                else{
+                    $pago= Pago::where('alumno_id',$alumnos)->get();
+            }
             }else if(isset($id))
-            {
-                $pago= Pago::where('alumno_id',$id)->get();
-           
+            {   
+                $pago= Pago::where('alumno_id',$id)->get();   
             }else{
                 $pago=Pago::all();
             }

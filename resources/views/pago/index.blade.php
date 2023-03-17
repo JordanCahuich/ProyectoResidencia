@@ -54,19 +54,30 @@
     <tbody>
     @foreach($pagos as $p)
     <tr>
+            @if($p[0]!=null)
+            <td>{{$p[0]->alumnos->id }}</td>
+            <td>{{$p[0]->alumnos->nombre}}</td>
+            <td>{{$p[0]->alumnos->primer_apellido." ".$p[0]->alumnos->segundo_apellido}}</td>
+            <td>{{ date('d-m-Y', strtotime($p[0]->fecha))}}</td>
 
-
-            <td>{{$p->alumnos->id}}</td>
+            <td style="padding-right: 60px;">
+                <a class="btn btn-secondary" href="{{ route('pago.show',$p[0]->id) }}"  style="float: left; padding: 2px 5px;  margin-right: 3px" title="Ver Detalles">
+                  <i class="mdi mdi-account-card-details"></i> Ver
+                </a>
+             </td>
+            @else 
+            <td>{{$p->alumnos->id }}</td>
             <td>{{$p->alumnos->nombre}}</td>
             <td>{{$p->alumnos->primer_apellido." ".$p->alumnos->segundo_apellido}}</td>
             <td>{{ date('d-m-Y', strtotime($p->fecha))}}</td>
 
             <td style="padding-right: 60px;">
-
                 <a class="btn btn-secondary" href="{{ route('pago.show',$p->id) }}"  style="float: left; padding: 2px 5px;  margin-right: 3px" title="Ver Detalles">
                   <i class="mdi mdi-account-card-details"></i> Ver
                 </a>
-        </td>
+            </td>
+           
+            @endif
 
     </tr>
     @endforeach
